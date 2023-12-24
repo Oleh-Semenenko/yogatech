@@ -20,6 +20,7 @@
 .hero__inner
   display: flex
   justify-content: space-between
+  padding-bottom: 60px
 
 .hero__title
   font-family: 'Open Sans', sans-serif
