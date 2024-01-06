@@ -32,20 +32,38 @@
 
 <style lang="sass" scoped>
 .about-founder
-  border-left: 56px solid var(--orange)
+  position: relative
+
+  &::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 56px
+    height: 440px
+    background: var(--orange)
+    z-index: 1
+  &::after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: calc( 440px + 56px )
+    height: 56px
+    background: var(--orange)
+    z-index: 2
 
 .about-founder__inner
   padding-top: 120px
   padding-bottom: 60px
 
-.about-founder__inner-title
-  font-size: 52px
-  font-weight: 700
 .about-founder__inner-wrapper
-  display: flex
+  display: grid
+  grid-template-columns: 1fr 1.5fr
   gap: 52px
 
-// .about-founder__inner-content
+.about-founder__inner-content
+  grid-column: 2
 
 .about-founder__inner-subtitle
   font-size: 48px

@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  devtools: { enabled: true },
   app: {
     head: {
       title: 'YogaTech',
@@ -16,6 +17,11 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/styles/main.sass'],
   modules: [
+    'nuxt-swiper',
     '@nuxt/image',
-  ]
+  ],
+  swiper: {
+    styleLang: 'scss',
+    modules: ['navigation', 'pagination']
+  }
 })

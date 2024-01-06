@@ -1,5 +1,5 @@
 <template>
-  <div class="features">
+  <div class="features section-blue">
     <div class="container">
       <div class="features__inner">
         <ul class="features__list">
@@ -42,11 +42,6 @@ const features = ref([
 </script>
 
 <style lang="sass" scoped>
-.features
-  background-color: var(--light-blue-color)
-  padding-top: 82px
-  padding-bottom: 82px
-
 .features__list
   display: grid
   grid-template-columns: repeat(3, 1fr)
