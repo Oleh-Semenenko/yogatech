@@ -1,15 +1,16 @@
 <template>
   <div>
     <BaseHeader />
-    <slot></slot>
+    <main>
+      <slot></slot>
+    </main>
 
+    <footer>
+      <BaseFooter />
+    </footer>
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style lang="sass" scoped>
-
-</style>
+<style lang="sass" scoped></style>
