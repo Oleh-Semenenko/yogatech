@@ -25,13 +25,20 @@
   display: grid
   grid-template-columns: 1fr 1fr
   padding-bottom: 60px
+  @include xl
+    padding-bottom: 52px
+  @include l
+    padding-bottom: 36px
 
 .hero__title
-  font-family: 'Open Sans', sans-serif
-  font-size: 64px
-  font-weight: 700
   margin-top: 128px
   grid-column: 1
+
+  @include xl
+    margin-top: 100px
+
+  @include l
+    margin-top: 60px
 
 .hero__image
   max-width: 741px

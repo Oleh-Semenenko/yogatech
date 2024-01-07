@@ -43,6 +43,14 @@
     height: 440px
     background: var(--orange)
     z-index: 1
+    @include xxl
+      width: 44px
+    @include xl
+      width: 40px
+    @include l
+      width: 32px
+      height: 320px
+
   &::after
     content: ""
     position: absolute
@@ -52,15 +60,34 @@
     height: 56px
     background: var(--orange)
     z-index: 2
+    @include xxl
+      height: 44px
+    @include xl
+      height: 40px
+    @include l
+      height: 32px
+      width: calc( 320px + 56px )
+
 
 .about-founder__inner
   padding-top: 120px
   padding-bottom: 60px
+  @include xl
+    padding-top: 100px
+    padding-bottom: 52px
+  @include l
+    padding-top: 60px
+    padding-bottom: 36px
 
 .about-founder__inner-wrapper
   display: grid
   grid-template-columns: 1fr 1.5fr
   gap: 52px
+  @include xl
+    gap: 40px
+  @include l
+    grid-template-columns: 1fr 1fr
+    gap: 28px
 
 .about-founder__inner-content
   grid-column: 2
@@ -70,6 +97,22 @@
   font-weight: 700
   margin-bottom: 24px
 
+  @include xl
+    font-size: 40px
+  @include l
+    font-size: 32px
+    margin-bottom: 20px
+  @include m
+    font-size: 24px
+    margin-bottom: 16px
+
+
 .about-founder__inner-text
   font-size: 40px
+  @include xl
+    font-size: 36px
+  @include l
+    font-size: 28px
+  @include m
+    font-size: 20px
 </style>
