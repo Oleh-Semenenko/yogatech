@@ -4,40 +4,46 @@
   box-sizing: border-box
 
 html, body, #__nuxt, #__layout
-  height: 100%
+  min-height: 100vh
+  width: 100vw
+
 
 html
-  font-size: 62.5%
   scroll-behavior: smooth
 
 body
+  margin: 0
   font-size: 1.6rem
   font-family: var(--primary-font)
-  color: var(--primary-text-colorcolor)
+  color: var(--primary-text-color)
   min-height: 100vh
   overflow-y: auto
 
 a:-webkit-any-link
   color: var(--primary-text-color)
+a.router-link-active
+  color: var(--orange)
 
 .container
-  width: 1600px
+  width: 1400px
   padding-right: 16px
   padding-left: 16px
   margin-right: auto
   margin-left: auto
 
   @include xxl
-    width: 1300px
+    width: 1250px
 
   @include xl
     width: 1050px
 
   @include ll
     width: 950px
-
+  
   @include l
     width: 100%
+    padding-left: 32px
+    padding-right: 32px
 
   @include s
     padding-left: 16px
@@ -46,10 +52,28 @@ a:-webkit-any-link
 .section
   padding-top: 60px
   padding-bottom: 60px
-.section-blue
-  padding-top: 60px
-  padding-bottom: 60px
+  @include xl
+    padding-top: 52px
+    padding-bottom: 52px
+  @include l
+    padding-top: 36px
+    padding-bottom: 36px
+.blue
   background-color: var(--light-blue-color)
+
+.nav__list
+  display: flex
+  align-items: center
+  gap: 32px
+  font-size: 28px
+  font-weight: 700
+
+  @include xl
+    gap: 24px
+    font-size: 24px
+  @include l
+    gap: 20px
+    font-size: 20px
 
 // Swiper
 
@@ -69,228 +93,29 @@ h1, h2, h3, h4, h5, h6
   font-weight: 700
   font-family: 'Open Sans', sans-serif
 
-// h1
-//   // @include adaptive-font-size(64, 42, 24)
-//   // @include adaptive-line-height(80, 51, 29)
-//   font-weight: 700
-
-//   // @include l
-//     font-weight: 600
+h1
+  font-size: 64px
+  @include xxl
+    font-size: 60px
+  @include xl
+    font-size: 56px
+  @include ll
+    font-size: 52px
+  @include l
+    font-size: 40px
+  @include m
+    font-size: 32px
 
 h2
   font-size: 52px
+  @include xl
+    font-size: 44px
+    margin-bottom: 40px
+  @include l
+    font-size: 36px
+    margin-bottom: 28px
+  @include m
+    font-size: 28px
 
 h3
   font-size: 40px
-
-// h4
-//   font-size: 3.6rem
-//   line-height: 4.4rem
-//   font-weight: 700
-
-//   @include ms
-//     font-size: 2.8rem
-//     line-height: 3.2rem
-
-// h5
-//   font-size: 2.8rem
-//   line-height: 3.2rem
-//   font-weight: 700
-
-// h6
-//   font-size: 2.4rem
-//   line-height: 2.9rem
-//   font-weight: 600
-
-// .home-title
-//   position: relative
-//   display: inline-block
-//   font-size: 76px
-//   font-weight: 700
-
-//   @include xxl
-//     font-size: 64px
-
-//   @include xl
-//     font-size: 52px
-
-//   @include l
-//     font-size: 40px
-
-//   @include ms
-//     font-size: 24px
-//   &::after
-//     content: ''
-//     position: absolute
-//     right: -5%
-//     top: -15%
-//     background-image: url('/images/home_titles_pseudoelement.png')
-//     background-repeat: no-repeat
-//     background-position: center
-//     background-size: contain
-//     width: 51px
-//     height: 93px
-
-//     @include xxl
-//       width: 41px
-//       height: 78px
-//     @include xl
-//       width: 31px
-//       height: 68px
-//     @include l
-//       width: 24px
-//       height: 38px
-//       top: -10%
-//       right: -10%
-
-
-
-// .home-section
-//   padding-top: 150px
-//   padding-bottom: 150px
-//   @include xxl
-//     padding-top: 120px
-//     padding-bottom: 120px
-
-//   @include xl
-//     padding-top: 100px
-//     padding-bottom: 100px
-
-//   @include l
-//     padding-top: 50px
-//     padding-bottom: 50px
-
-//   @include ms
-//     padding-top: 32px
-//     padding-bottom: 32px
-
-// p
-//   font-size: 1.6rem
-//   line-height: 2.4rem
-//   font-weight: 500
-
-// .title
-//   color: var(--primary-blue-dark-color)
-
-// input::-webkit-outer-spin-button,
-// input::-webkit-inner-spin-button
-//   -webkit-appearance: none
-//   margin: 0
-
-// input::-webkit-contacts-auto-fill-button,
-// input::-webkit-credentials-auto-fill-button
-//   visibility: hidden
-//   position: absolute
-//   right: 0
-//   background-color: var(--white)
-
-// // Box
-
-// .grid
-//   background: var(--grid-box-bg-color)
-//   box-shadow: 0px 17px 33px -2px rgba(28, 39, 49, 0.05)
-//   border: 1px solid var(--grid-box-border-color)
-//   border-radius: 24px
-//   padding: 48px
-
-//   @include l
-//     padding: 48px 24px
-
-//   @include ms
-//     background: transparent
-//     border: none
-//     padding: 0
-//     box-shadow: none
-
-//   & + &
-//     margin-top: 24px
-
-//     @include l
-//       margin-top: 40px
-
-//     @include m
-//       margin-top: 48px
-
-// .grid__title
-//   color: var(--text-primary-color)
-//   text-align: left
-//   margin-bottom: 40px
-
-// .grid__row
-//   display: grid
-//   grid-template-columns: 1fr 1fr
-//   gap: 40px
-
-//   @include l
-//     gap: 40px 16px
-
-//   @include m
-//     grid-template-columns: 1fr
-
-//   &.triple
-//     grid-template-columns: 1fr 1fr 1fr
-
-//     @include m
-//       grid-template-columns: 1fr 1fr
-
-//     @include ms
-//       grid-template-columns: 1fr
-
-//     &.tablet_2_col
-//       @include l
-//         grid-template-columns: 1fr 1fr
-
-//       @include ms
-//         grid-template-columns: 1fr
-
-//   &.socials
-//     @include m
-//       gap: 32px
-
-// .grid__col
-//   display: flex
-//   flex-direction: column
-//   align-items: flex-start
-
-//   &.full
-//     grid-column: 1/-1
-
-//   &.full-mob
-//     @include l
-//       grid-column: 1/-1
-
-//   &.right
-//     grid-column: 2/3
-
-//     @include m
-//       grid-column: auto
-
-//   &.align-right
-//     align-items: flex-end
-
-// .grid__col_btn
-//   grid-column: 1/-1
-
-// .grid-control
-//   display: flex
-//   align-items: center
-//   justify-content: flex-end
-//   gap: 16px
-//   margin-top: 40px
-
-//   @include ms
-//     flex-direction: column-reverse
-//     margin-top: 48px
-
-// .grid-control__btn
-//   @include ms
-//     width: 100%
-
-//   .btn__icon--left
-//     svg
-//       path
-//         fiLL: var(--primary-blue-color)
-
-//   &:hover
-//     .btn__icon--left
-//       color: var(--white)

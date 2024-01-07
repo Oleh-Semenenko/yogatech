@@ -58,21 +58,41 @@ const contacts = [
     position: absolute
     bottom: 0
     right: 0
-    width: 56px
+    width: 48px
     height: 440px
     background: var(--orange)
     z-index: 1
+    @include xxl
+      width: 44px
+    @include xl
+      width: 40px
+    @include l
+      width: 32px
+      height: 320px
   &::after
     content: ""
     position: absolute
     bottom: 0
     right: 0
     width: calc( 440px + 56px )
-    height: 56px
+    height: 48px
     background: var(--orange)
     z-index: 2
+    @include xxl
+      height: 44px
+    @include xl
+      height: 40px
+    @include l
+      height: 32px
+      width: calc( 320px + 56px )
+
 .contacts__list
+  width: 100%
   display: grid
-  grid-template-columns: repeat(3, 1fr)
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr))
   gap: 52px
+  @include xxl
+    gap: 40px
+  @include ll
+    gap: 32px
 </style>

@@ -1,6 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        sass: {
+          additionalData: '@use "~/assets/styles/config/mixins.sass" as *\n'
+        }
+      }
+    }
+  },
+
+  css: ['@/assets/styles/main.sass'],
   app: {
     head: {
       title: 'YogaTech',
@@ -15,7 +26,6 @@ export default defineNuxtConfig({
       ]
     }
   },
-  css: ['~/assets/styles/main.sass'],
   modules: [
     'nuxt-swiper',
     '@nuxt/image',

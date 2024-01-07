@@ -1,5 +1,5 @@
 <template>
-  <div class="footer section-blue">
+  <div class="footer section blue">
     <div class="container">
       <div class="footer__inner">
         <div class="footer__inner-left">
@@ -37,23 +37,20 @@
   display: flex
   justify-content: space-between
   align-items: start
+  gap: 24px
 
 .footer__inner-left
   display: flex
   flex-direction: column
+  max-width: 20%
   gap: 60px
 
 .nav__list
-  display: flex
-  align-items: center
-  gap: 32px
-  font-size: 28px
-  font-weight: 700
   flex-grow: 1
   justify-content: flex-end
 .logo
   display: inline-block
-  width: 230px
+  max-width: 230px
   height: 68px
   background-color: gray
 </style>

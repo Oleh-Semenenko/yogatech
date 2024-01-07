@@ -58,7 +58,12 @@ const projects: IProject[] = [
 
 <style lang="sass" scoped>
 .projects__list
+  width: 100%
   display: grid
-  grid-template-columns: repeat(3, 1fr)
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr))
   gap: 52px
+  @include xxl
+    gap: 40px
+  @include ll
+    gap: 32px
 </style>
