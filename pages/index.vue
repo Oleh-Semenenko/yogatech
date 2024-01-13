@@ -1,10 +1,10 @@
 <template>
-  <Hero />
-  <Features/>
-  <AboutFounder />
-  <Projects />
-  <Youtube />
-  <Contacts />
+  <IntroHero />
+  <IntroFeatures/>
+  <IntroAboutFounder />
+  <IntroProjects />
+  <IntroYoutube />
+  <IntroContacts />
 </template>
 
 <script setup lang="ts"></script>
