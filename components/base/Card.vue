@@ -7,7 +7,7 @@
 
     <p class="card__description">{{ data.description }}</p>
 
-    <div class="card__footer">
+    <div v-if="!withoutFooter" class="card__footer">
       <a :href="data.link" class="card__footer-link">{{ data.linksText }}</a>
     </div>
   </li>
@@ -20,9 +20,10 @@ interface ICardProps {
     title: string
     description: string
     photo: string
-    link: string
-    linksText: string
-  }
+    link?: string
+    linksText?: string
+  },
+  withoutFooter?: boolean
 }
 defineProps<ICardProps>()
 </script>

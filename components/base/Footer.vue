@@ -36,7 +36,7 @@
 .footer__inner
   display: flex
   justify-content: space-between
-  align-items: start
+  align-items: flex-start
   gap: 24px
 
 .footer__inner-left

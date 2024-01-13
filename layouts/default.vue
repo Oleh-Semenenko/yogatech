@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="app-wrapper">
     <BaseHeader />
-    <main>
+    <main class="main">
       <slot></slot>
     </main>
 
@@ -13,4 +13,15 @@
 
 <script setup lang="ts"></script>
 
-<style lang="sass" scoped></style>
+<style lang="sass" scoped>
+.app-wrapper
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+.main
+  flex-grow: 1
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+</style>
