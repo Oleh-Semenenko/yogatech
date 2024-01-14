@@ -4,14 +4,20 @@
       <div class="header__inner">
         <div class="logo">logo</div>
 
-      <nav>
-        <ul class="nav__list">
-          <li><NuxtLink to="/">Про YogaTech</NuxtLink></li>
-          <li><NuxtLink to="/fest">Конференція</NuxtLink></li>
-          <li><NuxtLink>Навчання</NuxtLink></li>
-          <li><NuxtLink>Магазин</NuxtLink></li>
-        </ul>
-      </nav>
+        <nav>
+          <ul class="nav__list">
+            <li><NuxtLink to="/">Про YogaTech</NuxtLink></li>
+            <li>
+              <NuxtLink
+                to="/fest"
+                :class="{ 'router-link-active': isFestLinkActive }"
+                >Конференція</NuxtLink
+              >
+            </li>
+            <li><NuxtLink to="/courses">Навчання</NuxtLink></li>
+            <li><NuxtLink to="/shop">Магазин</NuxtLink></li>
+          </ul>
+        </nav>
       </div>
     </div>
   </div>
@@ -19,6 +25,10 @@
 
 <script setup lang="ts">
 const route = useRoute()
+
+const isFestLinkActive = computed(() => {
+  return route.path.includes('fest')
+})
 </script>
 
 <style lang="sass" scoped>

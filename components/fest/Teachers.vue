@@ -25,7 +25,7 @@ const teachers = [
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
     photo: '',
-    link: '#',
+    link: '/fest/teachers/ahekyan',
     linksText: 'Дізнатись більше'
   },
   {
@@ -34,7 +34,7 @@ const teachers = [
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
     photo: '',
-    link: '#',
+    link: '/fest/teachers/scherbakov',
     linksText: 'Дізнатись більше'
   },
   {
@@ -43,7 +43,7 @@ const teachers = [
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
     photo: '',
-    link: '#',
+    link: '/fest/teachers/roman',
     linksText: 'Дізнатись більше'
   }
 ]

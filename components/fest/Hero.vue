@@ -3,19 +3,11 @@
     <div class="fest-hero">
       <div class="container">
         <div class="fest-hero__inner">
-          <!-- <div class="fest-hero__image">
-          <NuxtImg
-            src="/images/hero.png"
-            format="webp"
-            width="741"
-            height="887"
-          />
-        </div> -->
           <h1 class="fest-hero__title">
             Навчання нон-стоп на виїздній йога-конференції від YogaTech
           </h1>
 
-          <BaseButton class="fest-hero__register-btn"
+          <BaseButton class="fest-hero__register-btn" @click="emit('register')"
             >Зареєструватись</BaseButton
           >
         </div>
@@ -24,7 +16,9 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const emit = defineEmits(['register'])
+</script>
 
 <style lang="sass" scoped>
 .fest-hero

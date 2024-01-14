@@ -1,10 +1,10 @@
 <template>
-  <IntroHero />
-  <IntroFeatures/>
-  <IntroAboutFounder />
-  <IntroProjects />
-  <IntroYoutube />
-  <IntroContacts />
+  <LazyIntroHero />
+  <LazyIntroFeatures/>
+  <LazyIntroAboutFounder />
+  <LazyIntroProjects />
+  <LazyIntroYoutube />
+  <LazyIntroContacts />
 </template>
 
 <script setup lang="ts"></script>
