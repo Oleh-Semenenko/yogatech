@@ -1,29 +1,70 @@
 <template>
-  <div class="shop-hero section">
-    <div class="shop-swiper">
-      <Swiper
-        :modules="[SwiperAutoplay]"
-        :slides-per-view="1"
-        :loop="true"
-        :autoplay="{ delay: 5000 }"
-      >
-        <SwiperSlide>
-          <NuxtImg src="/images/book.png" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <NuxtImg src="/images/banda.png" />
-        </SwiperSlide>
-      </Swiper>
-    </div>
-    <div class="container">
-      <div class="shop-hero__content">
-        <h1>Простими словами про складні теми</h1>
+  <div class="">
+    <div class="shop-hero section">
+      <div class="shop-swiper">
+        <Swiper
+          :modules="[SwiperAutoplay]"
+          :slides-per-view="1"
+          :loop="true"
+          :autoplay="{ delay: 5000 }"
+        >
+          <SwiperSlide class="shop-swiper__item">
+            <NuxtImg src="/images/book.png" class="shop-swiper__img" />
+          </SwiperSlide>
+          <SwiperSlide class="shop-swiper__item">
+            <NuxtImg src="/images/banda.png" class="shop-swiper__img" />
+          </SwiperSlide>
+        </Swiper>
       </div>
+      <div class="container">
+        <div class="shop-hero__content">
+          <h1>Простими словами про складні теми</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container section">
+      <ul class="shop__list">
+        <BaseGoodsCard
+          v-for="product in products"
+          :key="product.id"
+          :product="product"
+        />
+      </ul>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { IProduct } from '@/types/index'
+
+const products: IProduct[] = [
+  {
+    id: 1,
+    title: 'Книга “Технологія йоги” Михайла Ахекяна',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro obcaecati ratione, aliquam ducimus optio ea minima maiores inventore omnis illum distinctio. Facere, architecto quaerat. Nobis, iusto. Nam commodi obcaecati ullam.',
+    price: '500 грн',
+    photos: ['/images/book.png', '/images/book.png', '/images/book.png']
+  },
+  {
+    id: 2,
+    title: 'Брендована біла футболка YOGATECH',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro obcaecati ratione, aliquam ducimus optio ea minima maiores inventore omnis illum distinctio. Facere, architecto quaerat. Nobis, iusto. Nam commodi obcaecati ullam.',
+    price: '500 грн',
+    photos: ['/images/t_shirt/t-shirt.png', '/images/t_shirt/t-shirt-2.png', '/images/t_shirt/t-shirt-3.png']
+  },
+  {
+    id: 3,
+    title: 'Книга “Технологія йоги” Михайла Ахекяна',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro obcaecati ratione, aliquam ducimus optio ea minima maiores inventore omnis illum distinctio. Facere, architecto quaerat. Nobis, iusto. Nam commodi obcaecati ullam.',
+    price: '500 грн',
+    photos: ['/images/book.png', '/images/book.png', '/images/book.png']
+  },
+]
+</script>
 
 <style lang="sass" scoped>
 .shop-hero
@@ -33,6 +74,23 @@
   margin-left: auto
 
 .shop-hero__content
+  width: 40%
   position: absolute
-  top: 0
+  top: 20%
+  z-index: 20
+
+.shop-swiper__item
+  width: 100%
+  height: 100%
+
+.shop-swiper__img
+  width: 100%
+  height: 100%
+  object-fit: cover
+
+.shop__list
+  display: grid
+  grid-template-columns: repeat(3, auto)
+  justify-content: space-between
+  gap: 52px
 </style>
