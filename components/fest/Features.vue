@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="section blue">
     <div class="container">
       <div class="features__inner">
         <BaseFeaturesList :features="festFeatures" />

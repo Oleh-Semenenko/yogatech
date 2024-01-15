@@ -32,7 +32,7 @@ const projects: IProject[] = [
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
     photo: '',
-    link: '#',
+    link: '/fest',
     linksText: 'Дізнатись більше'
   },
   {
@@ -41,7 +41,7 @@ const projects: IProject[] = [
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
     photo: '',
-    link: '#',
+    link: '/courses',
     linksText: 'Дізнатись більше'
   },
   {
@@ -50,7 +50,7 @@ const projects: IProject[] = [
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
     photo: '',
-    link: '#',
+    link: '/shop',
     linksText: 'Дізнатись більше'
   }
 ]

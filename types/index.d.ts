@@ -4,3 +4,11 @@ export interface IFeature {
   text: string
   color: string
 }
+
+export interface IProduct {
+  id: number
+  title: string
+  description: string
+  price: string
+  photos: string[]
+}

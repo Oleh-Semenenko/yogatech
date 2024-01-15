@@ -8,7 +8,7 @@
     <p class="card__description">{{ data.description }}</p>
 
     <div v-if="!withoutFooter" class="card__footer">
-      <a :href="data.link" class="card__footer-link">{{ data.linksText }}</a>
+      <NuxtLink :to="data.link" class="card__footer-link">{{ data.linksText }}</NuxtLink>
     </div>
   </li>
 </template>
@@ -31,6 +31,7 @@ defineProps<ICardProps>()
 <style lang="sass" scoped>
 .card
   border: 1px solid var(--primary-text-color)
+  background-color: #fff
   border-radius: 2px
   box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.16)
   padding: 40px 32px 20px
