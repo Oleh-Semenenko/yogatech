@@ -71,7 +71,9 @@ const _inlineRuntimeConfig = {
       "dir": "/Users/user/freelance/yogatech/public"
     },
     "http": {
-      "domains": []
+      "domains": [
+        "grand-croissant-9817bd.netlify.app"
+      ]
     }
   }
 };
