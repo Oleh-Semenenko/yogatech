@@ -5,7 +5,7 @@ import type { BaseCard } from '#build/components';
       <div class="teachers__inner">
         <h2>Викладачі</h2>
 
-        <ul class="teachers__list">
+        <ul class="cards__list">
           <BaseCard
             v-for="teacher in teachers"
             :key="teacher.id"
@@ -49,14 +49,4 @@ const teachers = [
 ]
 </script>
 
-<style lang="sass" scoped>
-.teachers__list
-  width: 100%
-  display: grid
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr))
-  gap: 52px
-  @include xxl
-    gap: 40px
-  @include ll
-    gap: 32px
-</style>
+<style lang="sass" scoped></style>

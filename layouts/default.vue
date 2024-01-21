@@ -24,4 +24,8 @@
   display: flex
   flex-direction: column
   justify-content: space-between
+  padding-top: 180px
+
+  @include m
+    padding-top: 100px
 </style>

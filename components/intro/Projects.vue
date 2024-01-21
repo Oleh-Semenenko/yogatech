@@ -4,7 +4,7 @@
       <div class="projects__inner">
         <h2 class="projects__title">Про проекти</h2>
 
-        <ul class="projects__list">
+        <ul class="cards__list">
           <BaseCard
             v-for="project in projects"
             :key="project.id"
@@ -25,6 +25,7 @@ interface IProject {
   link: string
   linksText: string
 }
+
 const projects: IProject[] = [
   {
     id: 1,
@@ -56,14 +57,4 @@ const projects: IProject[] = [
 ]
 </script>
 
-<style lang="sass" scoped>
-.projects__list
-  width: 100%
-  display: grid
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr))
-  gap: 52px
-  @include xxl
-    gap: 40px
-  @include ll
-    gap: 32px
-</style>
+<style lang="sass" scoped></style>

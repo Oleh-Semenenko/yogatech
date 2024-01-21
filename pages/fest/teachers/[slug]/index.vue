@@ -4,7 +4,7 @@
       <div class="container">
         <div class="teacher-hero__inner">
           <div></div>
-          <div>
+          <div class="teacher-hero__inner-content">
             <h1 class="teacher-hero__title">Михайло Ахекян</h1>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat
@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <div class="section blue">
+  <!-- <div class="section blue">
     <div class="container">
       <h2>Про себе</h2>
       <p>
@@ -34,9 +34,9 @@
         architecto quos exercitationem inventore reprehenderit.
       </p>
     </div>
-  </div>
+  </div> -->
 
-  <div class="section">
+  <!-- <div class="section">
     <div class="container">
       <div class="video-intro">
         <iframe
@@ -50,7 +50,7 @@
         ></iframe>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script setup lang="ts"></script>
@@ -61,6 +61,9 @@
   background-position: left top
   background-repeat: no-repeat
   background-size: calc( 50% - 26px )
+  @include ll
+    background-size: 100%
+
 
 .teacher-hero__inner
   display: grid
@@ -68,13 +71,25 @@
   gap: 52px
   justify-content: space-between
   padding-bottom: 260px
+  @include ll
+    padding-bottom: 0
+    color: var(--white)
+    grid-template-columns: 1fr
+    grid-template-rows: repeat(2, 1fr)
+
+.teacher-hero__inner-content
+  @include ll
+    grid-row: 1
 
 .teacher-hero__title
   margin-top: 100px
-  margin-bottom: 120px
+  margin-bottom: 80px
 
   @include xl
-    margin-top: 100px
+    margin-top: 80px
+    margin-bottom: 60px
+  @include ll
+    color: var(--white)
 
   @include l
     margin-top: 60px
@@ -83,6 +98,9 @@
   max-width: 741px
   height: auto
   grid-column: 2
+  @include ll
+    grid-column: 1
+    grid-row: 2
 
 .video-intro
   display: flex
