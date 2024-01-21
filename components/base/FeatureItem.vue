@@ -28,6 +28,9 @@ defineProps<{
   @include l
     padding-top: 32px
     padding-left: 28px
+  @include m
+    padding-top: 24px
+    padding-left: 24px
   &::before
     content: ''
     display: block
@@ -49,6 +52,9 @@ defineProps<{
     @include l
       width: 80px
       height: 80px
+    @include m
+      width: 60px
+      height: 60px
 
 .feature__title
   font-size: 40px
@@ -60,6 +66,9 @@ defineProps<{
   @include l
     font-size: 24px
     margin-bottom: 24px
+  @include m
+    font-size: 20px
+    margin-bottom: 18px
 
 .feature__text
   font-size: 20px
@@ -67,4 +76,6 @@ defineProps<{
 
   @include l
     font-size: 18px
+  @include m
+    font-size: 16px
 </style>

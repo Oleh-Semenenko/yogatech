@@ -48,8 +48,11 @@
     @include xl
       width: 40px
     @include l
-      width: 32px
+      width: 24px
       height: 320px
+    @include m
+      width: 16px
+      height: 100px
 
   &::after
     content: ""
@@ -65,8 +68,11 @@
     @include xl
       height: 40px
     @include l
-      height: 32px
-      width: calc( 320px + 56px )
+      height: 24px
+      width: calc( 320px + 24px )
+    @include m
+      height: 16px
+      width: 100px
 
 
 .about-founder__inner
@@ -79,6 +85,10 @@
     padding-top: 60px
     padding-bottom: 36px
 
+.about-founder__inner-title
+  @include m
+    text-align: center
+
 .about-founder__inner-wrapper
   display: grid
   grid-template-columns: 1fr 1.5fr
@@ -88,9 +98,13 @@
   @include l
     grid-template-columns: 1fr 1fr
     gap: 28px
+  @include m
+    grid-template-columns: 1fr
 
 .about-founder__inner-content
   grid-column: 2
+  @include m
+    grid-column: 1
 
 .about-founder__inner-subtitle
   font-size: 48px
@@ -115,4 +129,6 @@
     font-size: 28px
   @include m
     font-size: 20px
+  @include ms
+    font-size: 18px
 </style>

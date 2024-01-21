@@ -4,7 +4,7 @@
       <div class="location__inner">
         <div>
           <h2>Локація</h2>
-          <p>
+          <p class="location__inner-text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
             officiis error pariatur illo totam, voluptas consectetur ullam odio
             consequuntur perferendis provident cupiditate doloribus dolorem
@@ -22,13 +22,25 @@
             :loop="true"
           >
             <SwiperSlide class="location__swiper-item">
-              <NuxtImg src="/images/banda.png" />
+              <NuxtImg
+                src="/images/banda.png"
+                width="885"
+                format="webp, avif"
+              />
             </SwiperSlide>
             <SwiperSlide class="location__swiper-item">
-              <NuxtImg src="/images/banda.png" />
+              <NuxtImg
+                src="/images/banda.png"
+                width="885"
+                format="webp, avif"
+              />
             </SwiperSlide>
             <SwiperSlide class="location__swiper-item">
-              <NuxtImg src="/images/banda.png" />
+              <NuxtImg
+                src="/images/banda.png"
+                width="885"
+                format="webp, avif"
+              />
             </SwiperSlide>
           </Swiper>
         </div>
@@ -37,17 +49,39 @@
   </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style lang="sass" scoped>
 .location__inner
   display: grid
   grid-template-columns: 1fr 885px
   gap: 40px
+  @include xxl
+    grid-template-columns: 1fr 700px
+  @include xl
+    grid-template-columns: 100%
+  @include l
+    gap: 32px
+  @include m
+    gap: 24px
+
+.location__inner-text
+  font-size: 36px
+  @include l
+    font-size: 28px
+  @include m
+    font-size: 20px
+  @include ms
+    font-size: 18px
 
 .location__swiper
   width: 100%
+  justify-self: center
 
+.location__swiper-item
+  width: 100%
+
+  & img
+    width: 100%
+    border-radius: 20px
 </style>

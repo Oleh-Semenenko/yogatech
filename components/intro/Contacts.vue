@@ -4,7 +4,7 @@
       <div class="contacts__inner">
         <h2>Контакти</h2>
 
-        <ul class="contacts__list">
+        <ul class="cards__list">
           <BaseCard
             v-for="contact in contacts"
             :key="contact.id"
@@ -67,8 +67,11 @@ const contacts = [
     @include xl
       width: 40px
     @include l
-      width: 32px
+      width: 24px
       height: 320px
+    @include m
+      width: 16px
+      height: 100px
   &::after
     content: ""
     position: absolute
@@ -83,16 +86,9 @@ const contacts = [
     @include xl
       height: 40px
     @include l
-      height: 32px
-      width: calc( 320px + 56px )
-
-.contacts__list
-  width: 100%
-  display: grid
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr))
-  gap: 52px
-  @include xxl
-    gap: 40px
-  @include ll
-    gap: 32px
+      height: 24px
+      width: calc( 320px + 24px )
+    @include m
+      height: 16px
+      width: 100px
 </style>
