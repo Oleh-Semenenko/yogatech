@@ -22,13 +22,14 @@
             <input v-model="phone" type="tel" id="phone" />
           </div>
 
-          <BaseButton
+          <button
             type="submit"
-            class="form__btn"
+            class="form__btn btn"
             @click.prevent="handleFormSubmit"
           >
-            Зареєструватись та перейти до оплати
-          </BaseButton>
+            <span class="long">Зареєструватись та перейти до оплати</span>
+            <span class="short">Зареєструватись</span>
+          </button>
         </form>
       </div>
     </div>
@@ -43,10 +44,6 @@ const {
   phone,
   clearForm
 } = useForm()
-// const name = ref('')
-// const surname = ref('')
-// const phone = ref('')
-// const email = ref('')
 
 const handleFormSubmit = () => {
   const data = {
@@ -67,11 +64,30 @@ const handleFormSubmit = () => {
   grid-template-columns: repeat(2, 1fr)
   grid-template-rows: repeat(3, 1fr)
   gap: 52px
-  width: 1060px
+  max-width: 1060px
   margin: 0 auto
-  background-color: #fff
+  background-color: var(--white)
   padding: 60px 140px
   border: 1px solid #000
+
+  @include xxl
+    max-width: 800px
+    padding-right: 100px
+    padding-left: 100px
+    gap: 40px
+  @include xl
+    padding-right: 80px
+    padding-left: 80px
+  @include l
+    gap: 32px
+    padding: 40px 60px
+    width: 100%
+    grid-template-columns: 100%
+    grid-template-rows: repeat(5, 1fr)
+  @include ms
+    gap: 24px
+    padding-right: 32px
+    padding-left: 32px
 
 .form__item
   display: flex
@@ -88,4 +104,13 @@ const handleFormSubmit = () => {
 .form__btn
   grid-column: 1 / -1
   justify-self: center
+
+  & .short
+    display: none
+    @include l
+      display: block
+  & .long
+    display: block
+    @include l
+      display: none
 </style>

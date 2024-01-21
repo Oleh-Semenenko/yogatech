@@ -5,7 +5,7 @@ import type { BaseCard } from '#build/components';
       <div class="program__inner">
         <h2>Програма конференції</h2>
 
-        <ul class="program__list">
+        <ul class="program__list cards__list">
           <BaseCard v-for="day in days" :key="day.id" :data="day" without-footer />
         </ul>
       </div>
@@ -33,8 +33,8 @@ const days = [
 </script>
 
 <style lang="sass" scoped>
-.program__list
-  display: flex
-  justify-content: center
-  gap: 52px
+// .program__list
+//   display: flex
+//   justify-content: center
+//   gap: 52px
 </style>

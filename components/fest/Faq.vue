@@ -3,7 +3,7 @@
     <div class="container">
       <div class="faq__inner">
         <div>
-          <h2>FAQ</h2>
+          <h2 class="faq__inner__title">FAQ</h2>
 
           <div class="accordion">
             <div
@@ -12,7 +12,7 @@
               class="accordion-panel"
             >
               <div class="accordion-header" @click="togglePanel(id)">
-                {{ title }}
+                <span class="accordion-header__title">{{ title }}</span>
                 <span
                   :class="{
                     'cross-icon': open,
@@ -27,7 +27,7 @@
           </div>
         </div>
 
-        <NuxtImg src="/images/placeholder.png" class="faq__inner-img"/>
+        <NuxtImg src="/images/placeholder.png" width="642" class="faq__inner-img" format="webp,avif"/>
       </div>
     </div>
   </div>
@@ -75,38 +75,67 @@ const togglePanel = (id: number) => {
   grid-template-columns: 1fr 642px
   justify-content: space-between
   gap: 52px
+  @include xxl
+    grid-template-columns: 1fr 500px
+  @include xl
+    grid-template-columns: 1fr 400px
+
+  @include l
+    grid-template-columns: 1fr
+
+.faq__inner__title
+  @include m
+    margin-bottom: 20px
 .accordion
   width: 100%
 
 .accordion-panel
   border-bottom: 1px solid #ccc
   margin-bottom: 5px
-  position: relative
-
 .accordion-header
+  position: relative
   font-size: 28px
   padding: 28px 10px
   cursor: pointer
   display: flex
   align-items: center
   justify-content: space-between
+  @include l
+    font-size: 24px
+    padding: 24px 10px
+  @include m
+    font-size: 20px
+    padding: 16px 10px
+
+  & .accordion-header__title
+    width: 80%
 
 .accordion-content
   font-size: 24px
   padding: 10px
   display: block
-  background-color: #fff
+  background-color: var(--white)
+  @include l
+    font-size: 20px
+  @include m
+    padding: 8px
+    font-size: 18px
 
 .cross-icon,
 .plus-icon
   position: absolute
-  top: 24px
+  top: 25%
   right: 10px
   width: 44px
   height: 44px
   background-size: contain
   background-repeat: no-repeat
   cursor: pointer
+
+  @include m
+    width: 32px
+    height: 32px
+    top: 25%
 
 .cross-icon
   background-image: url('/images/plus.svg')
@@ -118,4 +147,6 @@ const togglePanel = (id: number) => {
 .faq__inner-img
   width: 100%
   height: auto
+  @include l
+    display: none
 </style>

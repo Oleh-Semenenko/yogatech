@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <div class="fest section">
     <div class="fest-hero">
       <div class="container">
         <div class="fest-hero__inner">
@@ -7,8 +7,8 @@
             Навчання нон-стоп на виїздній йога-конференції від YogaTech
           </h1>
 
-          <BaseButton class="fest-hero__register-btn" @click="emit('register')"
-            >Зареєструватись</BaseButton
+          <button class="fest-hero__register-btn btn" @click="emit('register')"
+            >Зареєструватись</button
           >
         </div>
       </div>
@@ -21,10 +21,14 @@ const emit = defineEmits(['register'])
 </script>
 
 <style lang="sass" scoped>
+.fest.section
+  padding-top: 16px
 .fest-hero
-  background: linear-gradient(to right, grey 0 50%, #fff 50% 100%)
+  background: linear-gradient(to right, grey 0 50%, var(--white) 50% 100%)
   background-position: left top
   background-repeat: no-repeat
+  @include m
+    background: none
 
 .fest-hero__inner
   display: flex
@@ -32,6 +36,13 @@ const emit = defineEmits(['register'])
   gap: 130px
   align-items: flex-end
   padding-bottom: 260px
+  @include l
+    padding-bottom: 150px
+    gap: 80px
+  @include m
+    align-items: center
+    gap: 44px
+    padding-bottom: 0
 
 .fest-hero__title
   margin-top: 240px
@@ -39,9 +50,10 @@ const emit = defineEmits(['register'])
 
   @include xl
     margin-top: 100px
-
   @include l
     margin-top: 60px
+  @include m
+    margin: 0px
 
 .fest-hero__image
   max-width: 741px

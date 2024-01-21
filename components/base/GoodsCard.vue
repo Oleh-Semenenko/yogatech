@@ -16,11 +16,17 @@
 
     <div class="goods__controller">
       <div class="goods__controller-quantity">
-        <span @click="() => count--">-</span>
+        <Icon
+          name="streamline:interface-remove-circle-delete-add-circle-subtract-button-buttons-remove"
+          @click="() => count--"
+        />
         {{ count }}
-        <span @click="() => count++">+</span>
+        <Icon
+          name="streamline:interface-add-circle-button-remove-cross-add-buttons-plus-circle"
+          @click="() => count++"
+        />
       </div>
-      <BaseButton>Замовити</BaseButton>
+      <button class="btn">Замовити</button>
     </div>
   </li>
 </template>
@@ -89,13 +95,4 @@ watch(count, () => {
   gap: 16px
   font-size: 24px
   font-weight: 300
-
-  & span
-    border: 1px solid black
-    border-radius: 50%
-    width: 24px
-    height: 24px
-    display: flex
-    align-items: center
-    justify-content: center
 </style>

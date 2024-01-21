@@ -29,6 +29,7 @@ export default defineNuxtConfig({
   modules: [
     'nuxt-swiper',
     '@nuxt/image',
+    'nuxt-icon'
   ],
   swiper: {
     styleLang: 'scss',

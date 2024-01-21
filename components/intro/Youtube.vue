@@ -85,6 +85,9 @@
     grid-template-rows: 1fr 1fr
   @include l
     gap: 32px
+  @include m
+    grid-template-columns: 100%
+    gap: 24px
 .youtube__inner-text
   width: 100%
 
@@ -157,7 +160,7 @@
   @include m
     width: 550px
   @include ms
-    width: 400px
+    width: 100%
 
 
 .youtube__swiper-item
