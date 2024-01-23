@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <!-- <div class="section blue">
+  <div class="section blue">
     <div class="container">
       <h2>Про себе</h2>
       <p>
@@ -34,9 +34,9 @@
         architecto quos exercitationem inventore reprehenderit.
       </p>
     </div>
-  </div> -->
+  </div>
 
-  <!-- <div class="section">
+  <div class="section">
     <div class="container">
       <div class="video-intro">
         <iframe
@@ -50,7 +50,7 @@
         ></iframe>
       </div>
     </div>
-  </div> -->
+  </div>
 </template>
 
 <script setup lang="ts"></script>
@@ -75,7 +75,7 @@
     padding-bottom: 0
     color: var(--white)
     grid-template-columns: 1fr
-    grid-template-rows: repeat(2, 1fr)
+    grid-template-rows: 1fr
 
 .teacher-hero__inner-content
   @include ll
@@ -107,8 +107,12 @@
   align-items: center
   justify-content: center
   margin: 0 auto
-  width: 1050px
+  width: 100%
   height: 576px
+  @include ll
+    height: 450px
+  @include m
+    height: 200px
 
   & iframe
     width: 100%
