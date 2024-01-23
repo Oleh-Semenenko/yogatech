@@ -25,21 +25,21 @@
               <NuxtImg
                 src="/images/banda.png"
                 width="885"
-                format="webp, avif"
+                format="webp,avif"
               />
             </SwiperSlide>
             <SwiperSlide class="location__swiper-item">
               <NuxtImg
                 src="/images/banda.png"
                 width="885"
-                format="webp, avif"
+                format="webp,avif"
               />
             </SwiperSlide>
             <SwiperSlide class="location__swiper-item">
               <NuxtImg
                 src="/images/banda.png"
                 width="885"
-                format="webp, avif"
+                format="webp,avif"
               />
             </SwiperSlide>
           </Swiper>
