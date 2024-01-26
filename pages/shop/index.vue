@@ -24,7 +24,7 @@
     </div>
 
     <div class="container section">
-      <ul class="shop__list">
+      <ul class="cards__list">
         <BaseGoodsCard
           v-for="product in products"
           :key="product.id"
@@ -69,15 +69,32 @@ const products: IProduct[] = [
 <style lang="sass" scoped>
 .shop-hero
   position: relative
+  @include l
+    display: flex
+    flex-direction: column-reverse
+    gap: 32px
+  @include m
+    gap: 24px
 .shop-swiper
   width: 50%
   margin-left: auto
+  @include l
+    margin-left: 0
+    width: 100%
 
 .shop-hero__content
   width: 40%
   position: absolute
   top: 20%
   z-index: 20
+  @include l
+    position: relative
+    width: 100%
+    top: 0
+  
+  & h1
+    @include m
+      margin-bottom: 0
 
 .shop-swiper__item
   width: 100%
@@ -87,10 +104,4 @@ const products: IProduct[] = [
   width: 100%
   height: 100%
   object-fit: cover
-
-.shop__list
-  display: grid
-  grid-template-columns: repeat(3, auto)
-  justify-content: space-between
-  gap: 52px
 </style>
