@@ -54,6 +54,11 @@ watch(count, () => {
   overflow-x: hidden
   width: 100%
   box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.16)
+  @include l
+    padding-top: 32px
+    padding-bottom: 32px
+  @include ms
+    padding: 20px 16px
 
 .goods__photos-list
   position: relative
@@ -74,15 +79,23 @@ watch(count, () => {
 .goods__title
   font-size: 24px
   margin-bottom: 12px
+  @include ms
+    font-size: 20px
 
 .goods__description
   font-size: 18px
   margin-bottom: 12px
+  @include ms
+    font-size: 16px
 
 .goods__price
   font-size: 40px
   font-weight: 700
   margin-bottom: 12px
+  @include l
+    font-size: 32px
+  @include ms
+    font-size: 28px
 
 .goods__controller
   display: flex

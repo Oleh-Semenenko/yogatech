@@ -95,6 +95,7 @@ const handleToggleMobMenu = () => {
 
   &.without-blur
     backdrop-filter: none
+    background-color: var(--white)
 
 .header__inner
   display: flex

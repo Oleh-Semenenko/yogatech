@@ -3,10 +3,10 @@
     <div class="teacher-hero">
       <div class="container">
         <div class="teacher-hero__inner">
-          <div></div>
+          <div class="teacher-hero__inner-img"></div>
           <div class="teacher-hero__inner-content">
             <h1 class="teacher-hero__title">Михайло Ахекян</h1>
-            <p>
+            <p class="teacher-hero__description">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat
               maiores quam at sed ipsa, tempore consequatur. Neque ea nesciunt
               officia exercitationem, totam possimus! Eos voluptate officiis
@@ -20,8 +20,8 @@
 
   <div class="section blue">
     <div class="container">
-      <h2>Про себе</h2>
-      <p>
+      <h2 class="teacher__about-title">Про себе</h2>
+      <p class="teacher__about-text">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique ad
         ex fuga non sed, dolorum earum laboriosam quis magnam delectus, soluta
         tempora autem dolores sint accusamus officiis doloremque adipisci quasi.
@@ -63,6 +63,7 @@
   background-size: calc( 50% - 26px )
   @include ll
     background-size: 100%
+    background-image: none
 
 
 .teacher-hero__inner
@@ -73,13 +74,28 @@
   padding-bottom: 260px
   @include ll
     padding-bottom: 0
-    color: var(--white)
     grid-template-columns: 1fr
-    grid-template-rows: 1fr
+    grid-template-rows: 1fr 2fr
+    gap: 40px
+  @include m
+    grid-template-rows: 1fr 1fr
+    gap: 32px
+  @include s
+    grid-template-rows: 1fr 1fr
+    gap: 24px
 
 .teacher-hero__inner-content
   @include ll
     grid-row: 1
+
+.teacher-hero__inner-img
+  @include ll
+    background-image: url('/images/miha.png')
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    grid-row: 2
+
 
 .teacher-hero__title
   margin-top: 100px
@@ -89,10 +105,19 @@
     margin-top: 80px
     margin-bottom: 60px
   @include ll
-    color: var(--white)
+    margin-top: 0
+    margin-bottom: 40px
+  @include m
+    margin-bottom: 32px
+  @include ms
+    margin-bottom: 24px
 
-  @include l
-    margin-top: 60px
+.teacher-hero__description
+  font-size: 32px
+  @include ll
+    font-size: 28px
+  @include m
+    font-size: 24px
 
 .teacher-hero__image
   max-width: 741px
@@ -101,6 +126,27 @@
   @include ll
     grid-column: 1
     grid-row: 2
+
+.teacher__about-title
+  @include xl
+    font-size: 40px
+  @include l
+    font-size: 32px
+    margin-bottom: 20px
+  @include m
+    font-size: 24px
+    margin-bottom: 16px
+
+.teacher__about-text
+  font-size: 40px
+  @include xl
+    font-size: 36px
+  @include l
+    font-size: 28px
+  @include m
+    font-size: 20px
+  @include ms
+    font-size: 18px
 
 .video-intro
   display: flex
@@ -111,7 +157,11 @@
   height: 576px
   @include ll
     height: 450px
+  @include l
+    height: 350px
   @include m
+    height: 300px
+  @include s
     height: 200px
 
   & iframe
