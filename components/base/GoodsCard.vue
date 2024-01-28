@@ -26,7 +26,12 @@
           @click="() => count++"
         />
       </div>
-      <button class="btn">Замовити</button>
+      <a
+        :href="product.payment_link"
+        class="btn"
+      >
+        Оплатити
+      </a>
     </div>
   </li>
 </template>
