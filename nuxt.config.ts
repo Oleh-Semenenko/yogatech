@@ -26,16 +26,18 @@ export default defineNuxtConfig({
       ]
     }
   },
-  modules: [
-    'nuxt-swiper',
-    '@nuxt/image',
-    'nuxt-icon'
-  ],
+  modules: ['nuxt-swiper', '@nuxt/image', 'nuxt-icon'],
   swiper: {
     styleLang: 'scss',
     modules: ['navigation', 'pagination', 'autoplay']
   },
   image: {
+    format: ['webp','avif'],
     domains: ['netlify.app']
+  },
+  runtimeConfig: {
+    public: {
+      baseURL: process.env.BASE_URL,
+    }
   }
 })

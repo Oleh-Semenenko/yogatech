@@ -44,24 +44,27 @@ const products: IProduct[] = [
     title: 'Книга “Технологія йоги” Михайла Ахекяна',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro obcaecati ratione, aliquam ducimus optio ea minima maiores inventore omnis illum distinctio. Facere, architecto quaerat. Nobis, iusto. Nam commodi obcaecati ullam.',
-    price: '500 грн',
-    photos: ['/images/book.png', '/images/book.png', '/images/book.png']
+    price: '1 грн',
+    photos: ['/images/book.png', '/images/book.png', '/images/book.png'],
+    payment_link: 'https://secure.wayforpay.com/button/bac90579800e7'
   },
   {
     id: 2,
     title: 'Брендована біла футболка YOGATECH',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro obcaecati ratione, aliquam ducimus optio ea minima maiores inventore omnis illum distinctio. Facere, architecto quaerat. Nobis, iusto. Nam commodi obcaecati ullam.',
-    price: '500 грн',
-    photos: ['/images/t_shirt/t-shirt.png', '/images/t_shirt/t-shirt-2.png', '/images/t_shirt/t-shirt-3.png']
+    price: '1 грн',
+    photos: ['/images/t_shirt/t-shirt.png', '/images/t_shirt/t-shirt-2.png', '/images/t_shirt/t-shirt-3.png'],
+    payment_link: 'https://secure.wayforpay.com/button/b50682ce6b3a0'
   },
   {
     id: 3,
-    title: 'Книга “Технологія йоги” Михайла Ахекяна',
+    title: 'Курс "Медитація 2.0"',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro obcaecati ratione, aliquam ducimus optio ea minima maiores inventore omnis illum distinctio. Facere, architecto quaerat. Nobis, iusto. Nam commodi obcaecati ullam.',
-    price: '500 грн',
-    photos: ['/images/book.png', '/images/book.png', '/images/book.png']
+    price: '1 грн',
+    photos: ['/images/book.png', '/images/book.png', '/images/book.png'],
+    payment_link: 'https://secure.wayforpay.com/button/bc04782a4b6aa'
   },
 ]
 </script>

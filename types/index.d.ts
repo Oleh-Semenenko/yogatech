@@ -11,4 +11,5 @@ export interface IProduct {
   description: string
   price: string
   photos: string[]
+  payment_link: string
 }

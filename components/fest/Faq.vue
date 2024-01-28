@@ -27,7 +27,7 @@
           </div>
         </div>
 
-        <NuxtImg src="/images/placeholder.png" width="642" class="faq__inner-img" format="webp,avif"/>
+        <NuxtImg src="/images/placeholder.png" width="642" class="faq__inner-img"/>
       </div>
     </div>
   </div>
