@@ -69,7 +69,7 @@
 .socials__nav-list
   grid-column: 2
   grid-row: 2
-  justify-content: end
+  justify-content: flex-end
   display: flex
   gap: 32px
   @include m
