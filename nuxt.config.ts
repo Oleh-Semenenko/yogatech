@@ -36,6 +36,6 @@ export default defineNuxtConfig({
     modules: ['navigation', 'pagination', 'autoplay']
   },
   image: {
-    domains: ['https://grand-croissant-9817bd.netlify.app']
+    domains: ['netlify.app']
   }
 })

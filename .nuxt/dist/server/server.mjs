@@ -1,1 +1,0 @@
-export { default } from "file:///Users/user/freelance/yogatech/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
