@@ -9,10 +9,12 @@
           :autoplay="{ delay: 5000 }"
         >
           <SwiperSlide class="shop-swiper__item">
-            <NuxtImg src="/images/book.png" class="shop-swiper__img" />
+            <!-- <NuxtImg src="/images/book.png" class="shop-swiper__img" /> -->
+            <img src="/images/book.png" class="shop-swiper__img" />
           </SwiperSlide>
           <SwiperSlide class="shop-swiper__item">
-            <NuxtImg src="/images/banda.png" class="shop-swiper__img" />
+            <!-- <NuxtImg src="/images/banda.png" class="shop-swiper__img" /> -->
+            <img src="/images/banda.png" class="shop-swiper__img" />
           </SwiperSlide>
         </Swiper>
       </div>
