@@ -6,9 +6,14 @@
           Перший україномовний йогічний проект з науковим підгрунтям
         </h1>
         <div class="hero__image">
-          <NuxtImg
+          <!-- <NuxtImg
             src="/images/hero.png"
             format="webp"
+            width="741"
+            height="887"
+          /> -->
+          <img
+            src="/images/hero.png"
             width="741"
             height="887"
           />

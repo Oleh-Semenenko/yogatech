@@ -4,9 +4,14 @@
       <div class="about-founder__inner">
         <h2 class="about-founder__inner-title">Про засновника</h2>
         <div class="about-founder__inner-wrapper">
-          <NuxtImg
+          <!-- <NuxtImg
             src="/images/hero.png"
             format="webp"
+            width="741"
+            height="887"
+          /> -->
+          <img
+            src="/images/hero.png"
             width="741"
             height="887"
           />
