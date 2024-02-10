@@ -83,8 +83,11 @@ const handleToggleMobMenu = () => {
   padding-bottom: 56px
   position: fixed
   width: 100%
-  backdrop-filter: blur(10px)
+  background-color: var(--white)
+  border-bottom-left-radius: var(--primary-border-radius)
+  border-bottom-right-radius: var(--primary-border-radius)
   z-index: 1000
+  box-shadow: var(--box-shadow)
 
   @include l
     padding-top: 40px
@@ -94,8 +97,8 @@ const handleToggleMobMenu = () => {
     padding-bottom: 32px
 
   &.without-blur
-    backdrop-filter: none
-    background-color: var(--white)
+    box-shadow: none
+    border-radius: 0
 
 .header__inner
   display: flex
