@@ -95,5 +95,5 @@
 
   & img
     width: 100%
-    border-radius: 20px
+    border-radius: var(--primary-border-radius)
 </style>

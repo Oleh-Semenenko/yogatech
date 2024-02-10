@@ -7,9 +7,10 @@
             Навчання нон-стоп на виїздній йога-конференції від YogaTech
           </h1>
 
-          <button class="fest-hero__register-btn btn" @click="emit('register')"
+          <!-- <button class="fest-hero__register-btn btn" @click="emit('register')"
             >Зареєструватись</button
-          >
+          > -->
+          <NuxtLink to="https://docs.google.com/forms/d/e/1FAIpQLSe1p_AiS0axlgap-nxMBZYr9moEG4747P5VDR1ny6Snf_kmxQ/viewform?usp=sf_link">Зареєструватись</NuxtLink>
         </div>
       </div>
     </div>

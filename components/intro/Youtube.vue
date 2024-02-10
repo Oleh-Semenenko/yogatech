@@ -122,21 +122,21 @@
 .youtube__inner-text--bottom
   display: flex
   justify-content: space-between
+  gap: 20px
   padding-top: 60px
   border-top: 1px solid var(--primary-text-color)
-  font-size: 40px
+  font-size: 36px
   font-weight: 400
   @include xl
     font-size: 32px
   @include l
     font-size: 24px
+    gap: 12px
 
   & .big
-    font-size: 64px
+    font-size: 60px
     font-style: italic
     font-weight: 700
-    @include xxl
-      font-size: 60px
     @include xl
       font-size: 56px
     @include ll
@@ -175,5 +175,5 @@
     left: 0
     width: 100%
     height: 100%
-    border-radius: 20px
+    border-radius: var(--primary-border-radius)
 </style>
