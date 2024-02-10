@@ -33,7 +33,7 @@ defineProps<ICardProps>()
   border: 1px solid var(--primary-text-color)
   background-color: var(--white)
   border-radius: 2px
-  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.16)
+  box-shadow: var(--box-shadow)
   padding: 40px 32px 20px
   display: flex
   flex-direction: column

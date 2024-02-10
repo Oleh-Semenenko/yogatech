@@ -42,7 +42,7 @@
         <iframe
           width="560"
           height="315"
-          src="https://www.youtube.com/embed/Mqa60lgJ1Bk?si=na3lXkPwsf384y5f"
+          :src="videoSrc"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -53,7 +53,17 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const route = useRoute()
+const videoSrc = computed(() => {
+  if (route.path.includes('ahekyan')) {
+    return 'https://www.youtube.com/embed/-UY_vLmb2UQ?si=rmJJUaN3DJ562Uwj'
+  } else if(route.path.includes('scherbakov')) {
+    return 'https://www.youtube.com/embed/2nynd0FmhHc?si=q9flh8we8FY7x2q-'
+
+  }
+})
+</script>
 
 <style lang="sass" scoped>
 .teacher-hero
@@ -167,5 +177,5 @@
   & iframe
     width: 100%
     height: 100%
-    border-radius: 20px
+    border-radius: var(--primary-border-radius)
 </style>

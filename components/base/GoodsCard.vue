@@ -58,7 +58,7 @@ watch(count, () => {
   border: 1px solid black
   overflow-x: hidden
   width: 100%
-  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.16)
+  box-shadow: var(--box-shadow)
   @include l
     padding-top: 32px
     padding-bottom: 32px
