@@ -19,6 +19,17 @@
           </ul>
         </nav>
 
+        <div class="basket" v-if="$route.path === '/shop'" @click="handleToggleBasketOpen">
+          <Icon name="prime:shopping-cart" />
+          <span class="basket-goods-quantity">{{ selectedGoods.length }}</span>
+        </div>
+
+        <BasketModal
+          v-if="isBasketOpen"
+          :is-basket-open="isBasketOpen"
+          :set-is-basket-open="handleToggleBasketOpen"
+        />
+
         <div class="mob-menu__btn" @click="handleToggleMobMenu">
           <Icon v-if="!isMobMenuOpen" name="ci:hamburger" />
           <Icon v-else name="ci:close-big" />
@@ -40,11 +51,6 @@
                   >Конференція</NuxtLink
                 >
               </li>
-              <!-- <li>
-                <NuxtLink to="/courses" @click="handleToggleMobMenu"
-                  >Навчання</NuxtLink
-                >
-              </li> -->
               <li>
                 <NuxtLink to="/shop" @click="handleToggleMobMenu"
                   >Магазин</NuxtLink
@@ -60,7 +66,8 @@
 
 <script setup lang="ts">
 const route = useRoute()
-
+const {selectedGoods} = useBasket()
+const isBasketOpen = ref(false)
 const isMobMenuOpen = ref(false)
 
 const isFestLinkActive = computed(() => {
@@ -75,12 +82,16 @@ const handleToggleMobMenu = () => {
     document.documentElement.style.overflow = ''
   }
 }
+
+const handleToggleBasketOpen = () => {
+  isBasketOpen.value = !isBasketOpen.value
+}
 </script>
 
 <style lang="sass" scoped>
 .header
-  padding-top: 56px
-  padding-bottom: 56px
+  padding-top: 40px
+  padding-bottom: 40px
   position: fixed
   width: 100%
   background-color: var(--white)
@@ -89,9 +100,6 @@ const handleToggleMobMenu = () => {
   z-index: 1000
   box-shadow: var(--box-shadow)
 
-  @include l
-    padding-top: 40px
-    padding-bottom: 40px
   @include m
     padding-top: 32px
     padding-bottom: 32px
@@ -106,8 +114,24 @@ const handleToggleMobMenu = () => {
   justify-content: space-between
   gap: 20px
 .header__inner-nav
+  margin-left: auto
   @include m
     display: none
+
+.basket
+  cursor: pointer
+
+.basket-goods-quantity
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  font-size: 12px
+  width: 20px
+  height: 20px
+  background-color: #ccc
+  border-radius: 50% 
+  position: relative
+
 .mob-menu__btn
   display: none
   @include m

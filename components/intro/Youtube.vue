@@ -1,5 +1,5 @@
 <template>
-  <div class="youtube section blue">
+  <div class="youtube section">
     <div class="container">
       <div class="youtube__inner">
         <div class="youtube__inner-text">

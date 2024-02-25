@@ -1,8 +1,9 @@
 <template>
   <div class="app-wrapper">
     <BaseHeader />
+    
     <main class="main">
-      <slot></slot>
+      <NuxtPage />
     </main>
 
     <footer>
@@ -11,9 +12,7 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
-
-<style lang="sass" scoped>
+<style lang="sass">
 .app-wrapper
   min-height: 100vh
   display: flex
