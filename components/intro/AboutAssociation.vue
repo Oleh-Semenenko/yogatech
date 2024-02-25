@@ -2,7 +2,7 @@
   <div class="about-founder">
     <div class="container">
       <div class="about-founder__inner">
-        <h2 class="about-founder__inner-title">Про засновника</h2>
+        <h2 class="about-founder__inner-title">Про асоціацію</h2>
         <div class="about-founder__inner-wrapper">
           <!-- <NuxtImg
             src="/images/hero.png"
@@ -16,7 +16,6 @@
             height="887"
           />
           <div class="about-founder__inner-content">
-            <h3 class="about-founder__inner-subtitle">Михайло Ахекян</h3>
             <p class="about-founder__inner-text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia illo
               pariatur iure ab molestias, aperiam dolore expedita, perferendis
@@ -26,6 +25,8 @@
               error commodi! Explicabo similique est repellat dolor iusto, ipsa
               libero temporibus iure, illum iste deleniti tempora perferendis?
             </p>
+
+            <button class="btn">Дізнатись більше</button>
           </div>
         </div>
       </div>
@@ -110,6 +111,9 @@
   grid-column: 2
   @include m
     grid-column: 1
+
+  & .btn
+    margin-top: 32px
 
 .about-founder__inner-subtitle
   font-size: 48px
