@@ -1,7 +1,7 @@
 <template>
   <div class="app-wrapper">
     <BaseHeader />
-    
+
     <main class="main">
       <NuxtPage />
     </main>
@@ -11,6 +11,10 @@
     </footer>
   </div>
 </template>
+
+<script setup lang="ts">
+import 'animate.css'
+</script>
 
 <style lang="sass">
 .app-wrapper

@@ -14,21 +14,26 @@
                 >Конференція</NuxtLink
               >
             </li>
-            <!-- <li><NuxtLink to="/courses">Навчання</NuxtLink></li> -->
             <li><NuxtLink to="/shop">Магазин</NuxtLink></li>
           </ul>
         </nav>
 
-        <div class="basket" v-if="$route.path === '/shop'" @click="handleToggleBasketOpen">
+        <div
+          class="basket"
+          v-if="$route.path === '/shop'"
+          @click="handleToggleBasketOpen"
+        >
           <Icon name="prime:shopping-cart" />
           <span class="basket-goods-quantity">{{ selectedGoods.length }}</span>
         </div>
 
-        <BasketModal
-          v-if="isBasketOpen"
-          :is-basket-open="isBasketOpen"
-          :set-is-basket-open="handleToggleBasketOpen"
-        />
+        <Transition name="page">
+          <BasketModal
+            v-if="isBasketOpen"
+            :is-basket-open="isBasketOpen"
+            :set-is-basket-open="handleToggleBasketOpen"
+          />
+        </Transition>
 
         <div class="mob-menu__btn" @click="handleToggleMobMenu">
           <Icon v-if="!isMobMenuOpen" name="ci:hamburger" />
@@ -66,7 +71,7 @@
 
 <script setup lang="ts">
 const route = useRoute()
-const {selectedGoods} = useBasket()
+const { selectedGoods } = useBasket()
 const isBasketOpen = ref(false)
 const isMobMenuOpen = ref(false)
 
@@ -89,6 +94,14 @@ const handleToggleBasketOpen = () => {
 </script>
 
 <style lang="sass" scoped>
+.page-enter-active,
+.page-leave-active
+  transition: all 0.4s
+
+.page-enter-from,
+.page-leave-to
+  opacity: 0
+
 .header
   padding-top: 40px
   padding-bottom: 40px
@@ -120,6 +133,8 @@ const handleToggleBasketOpen = () => {
 
 .basket
   cursor: pointer
+  display: flex
+  gap: 4px
 
 .basket-goods-quantity
   display: inline-flex
@@ -128,8 +143,8 @@ const handleToggleBasketOpen = () => {
   font-size: 12px
   width: 20px
   height: 20px
-  background-color: #ccc
-  border-radius: 50% 
+  background-color: rgba(255, 185, 37, 0.3)
+  border-radius: 50%
   position: relative
 
 .mob-menu__btn

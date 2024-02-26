@@ -26,7 +26,13 @@
           @click="() => count++"
         />
       </div>
-      <button class="btn" @click="addProduct(productData)">Додати в кошик</button>
+      <button
+        class="btn"
+        :disabled="count === 0"
+        @click="addProduct(productData)"
+      >
+        Додати в кошик
+      </button>
       <!-- <a
         :href="product.payment_link"
         class="btn"
@@ -118,4 +124,7 @@ watch(count, () => {
   gap: 16px
   font-size: 24px
   font-weight: 300
+
+  & svg:hover
+    cursor: pointer
 </style>
