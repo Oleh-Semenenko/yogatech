@@ -24,7 +24,7 @@ export default defineNuxtConfig({
           charset: 'utf-8'
         }
       ]
-    }
+    },
   },
   modules: ['nuxt-swiper', '@nuxt/image', 'nuxt-icon'],
   swiper: {

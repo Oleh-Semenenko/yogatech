@@ -1,8 +1,9 @@
 <template>
   <div class="app-wrapper">
     <BaseHeader />
+
     <main class="main">
-      <slot></slot>
+      <NuxtPage />
     </main>
 
     <footer>
@@ -11,9 +12,11 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import 'animate.css'
+</script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .app-wrapper
   min-height: 100vh
   display: flex

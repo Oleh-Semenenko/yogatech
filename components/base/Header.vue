@@ -2,7 +2,7 @@
   <div class="header" :class="{ 'without-blur': isMobMenuOpen }">
     <div class="container">
       <div class="header__inner">
-        <div class="logo">logo</div>
+        <img src="/images/logo.svg" class="logo"/>
 
         <nav class="header__inner-nav">
           <ul class="nav__list">
@@ -14,10 +14,26 @@
                 >Конференція</NuxtLink
               >
             </li>
-            <!-- <li><NuxtLink to="/courses">Навчання</NuxtLink></li> -->
             <li><NuxtLink to="/shop">Магазин</NuxtLink></li>
           </ul>
         </nav>
+
+        <div
+          class="basket"
+          v-if="$route.path === '/shop'"
+          @click="handleToggleBasketOpen"
+        >
+          <Icon name="prime:shopping-cart" />
+          <span class="basket-goods-quantity">{{ selectedGoods.length }}</span>
+        </div>
+
+        <Transition name="page">
+          <BasketModal
+            v-if="isBasketOpen"
+            :is-basket-open="isBasketOpen"
+            :set-is-basket-open="handleToggleBasketOpen"
+          />
+        </Transition>
 
         <div class="mob-menu__btn" @click="handleToggleMobMenu">
           <Icon v-if="!isMobMenuOpen" name="ci:hamburger" />
@@ -40,11 +56,6 @@
                   >Конференція</NuxtLink
                 >
               </li>
-              <!-- <li>
-                <NuxtLink to="/courses" @click="handleToggleMobMenu"
-                  >Навчання</NuxtLink
-                >
-              </li> -->
               <li>
                 <NuxtLink to="/shop" @click="handleToggleMobMenu"
                   >Магазин</NuxtLink
@@ -60,7 +71,8 @@
 
 <script setup lang="ts">
 const route = useRoute()
-
+const { selectedGoods } = useBasket()
+const isBasketOpen = ref(false)
 const isMobMenuOpen = ref(false)
 
 const isFestLinkActive = computed(() => {
@@ -75,12 +87,24 @@ const handleToggleMobMenu = () => {
     document.documentElement.style.overflow = ''
   }
 }
+
+const handleToggleBasketOpen = () => {
+  isBasketOpen.value = !isBasketOpen.value
+}
 </script>
 
 <style lang="sass" scoped>
+.page-enter-active,
+.page-leave-active
+  transition: all 0.4s
+
+.page-enter-from,
+.page-leave-to
+  opacity: 0
+
 .header
-  padding-top: 56px
-  padding-bottom: 56px
+  padding-top: 40px
+  padding-bottom: 40px
   position: fixed
   width: 100%
   background-color: var(--white)
@@ -89,9 +113,6 @@ const handleToggleMobMenu = () => {
   z-index: 1000
   box-shadow: var(--box-shadow)
 
-  @include l
-    padding-top: 40px
-    padding-bottom: 40px
   @include m
     padding-top: 32px
     padding-bottom: 32px
@@ -106,8 +127,26 @@ const handleToggleMobMenu = () => {
   justify-content: space-between
   gap: 20px
 .header__inner-nav
+  margin-left: auto
   @include m
     display: none
+
+.basket
+  cursor: pointer
+  display: flex
+  gap: 4px
+
+.basket-goods-quantity
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  font-size: 12px
+  width: 20px
+  height: 20px
+  background-color: rgba(255, 185, 37, 0.3)
+  border-radius: 50%
+  position: relative
+
 .mob-menu__btn
   display: none
   @include m

@@ -12,7 +12,7 @@
 
     <p class="goods__title">{{ product.title }}</p>
     <p class="goods__description">{{ product.description }}</p>
-    <p class="goods__price">{{ product.price }}</p>
+    <p class="goods__price">{{ product.price }} грн</p>
 
     <div class="goods__controller">
       <div class="goods__controller-quantity">
@@ -26,12 +26,19 @@
           @click="() => count++"
         />
       </div>
-      <a
+      <button
+        class="btn"
+        :disabled="count === 0"
+        @click="addProduct(productData)"
+      >
+        Додати в кошик
+      </button>
+      <!-- <a
         :href="product.payment_link"
         class="btn"
       >
         Оплатити
-      </a>
+      </a> -->
     </div>
   </li>
 </template>
@@ -42,8 +49,12 @@ import type { IProduct } from '@/types/index'
 const props = defineProps<{
   product: IProduct
 }>()
-
+const { addProduct } = useBasket()
 const count = ref(0)
+const productData = computed(() => ({
+  ...props.product,
+  quantity: count.value
+}))
 
 watch(count, () => {
   if (count.value <= 0) {
@@ -113,4 +124,7 @@ watch(count, () => {
   gap: 16px
   font-size: 24px
   font-weight: 300
+
+  & svg:hover
+    cursor: pointer
 </style>

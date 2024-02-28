@@ -1,12 +1,14 @@
 <template>
   <LazyIntroHero />
-  <LazyIntroFeatures/>
-  <LazyIntroAboutFounder />
+  <LazyIntroFeatures />
+  <LazyIntroAboutAssociation />
   <LazyIntroProjects />
   <LazyIntroYoutube />
+  <LazyIntroProfits />
   <LazyIntroContacts />
 </template>
 
 <script setup lang="ts"></script>
 
-<style lang="sass" scoped></style>
+<style lang="sass" scoped>
+</style>

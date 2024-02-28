@@ -1,5 +1,5 @@
 <template>
-  <div class="projects section">
+  <div class="projects section blue">
     <div class="container">
       <div class="projects__inner">
         <h2 class="projects__title">Про проекти</h2>
