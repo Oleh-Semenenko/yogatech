@@ -2,7 +2,7 @@
   <div class="footer section blue">
     <div class="container">
       <div class="footer__inner">
-        <div class="logo">logo</div>
+        <img src="/images/logo.svg" class="logo"/>
         <p class="copyright">© Copyright 2022 YogaTech.ua All Rights Reserved</p>
 
         <ul class="nav__list">

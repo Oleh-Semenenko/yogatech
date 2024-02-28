@@ -2,7 +2,7 @@
   <div class="header" :class="{ 'without-blur': isMobMenuOpen }">
     <div class="container">
       <div class="header__inner">
-        <div class="logo">logo</div>
+        <img src="/images/logo.svg" class="logo"/>
 
         <nav class="header__inner-nav">
           <ul class="nav__list">

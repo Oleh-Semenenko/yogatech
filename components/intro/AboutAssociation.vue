@@ -39,48 +39,7 @@
 <style lang="sass" scoped>
 .about-founder
   position: relative
-
-  &::before
-    content: ""
-    position: absolute
-    top: 0
-    left: 0
-    width: 56px
-    height: 440px
-    background: var(--orange)
-    z-index: 1
-    @include xxl
-      width: 44px
-    @include xl
-      width: 40px
-    @include l
-      width: 24px
-      height: 320px
-    @include m
-      width: 16px
-      height: 100px
-
-  &::after
-    content: ""
-    position: absolute
-    top: 0
-    left: 0
-    width: calc( 440px + 56px )
-    height: 56px
-    background: var(--orange)
-    z-index: 2
-    @include xxl
-      height: 44px
-    @include xl
-      height: 40px
-    @include l
-      height: 24px
-      width: calc( 320px + 24px )
-    @include m
-      height: 16px
-      width: 100px
-
-
+  
 .about-founder__inner
   padding-top: 120px
   padding-bottom: 60px
