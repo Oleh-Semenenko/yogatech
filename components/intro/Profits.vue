@@ -53,4 +53,17 @@ const profits: IProfit[] = [
   display: flex
   flex-direction: column
   gap: 60px
+
+  @include ll
+    gap: 40px
+
+  @include ll
+    gap: 24px
+
+  @include ms
+    max-width: 100%
+
+.profits__list
+  @include m
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
 </style>
