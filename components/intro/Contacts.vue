@@ -52,4 +52,8 @@ const contacts = [
 .contacts
   position: relative
   padding-bottom: 120px
+  @include l
+    padding-bottom: 80px
+  @include m
+    padding-bottom: 40px
 </style>

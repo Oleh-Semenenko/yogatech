@@ -29,6 +29,15 @@ const emit = defineEmits(['register'])
   top: 40%
   animation: spin 30s linear infinite
 
+  @include ll
+    width: 250px
+    height: 250px
+    right: -125px
+  @include m
+    width: 150px
+    height: 150px
+    right: -75px
+
 @keyframes spin
   from
     transform: rotate(0deg)
@@ -61,6 +70,7 @@ const emit = defineEmits(['register'])
 .fest-hero__title
   margin-top: 240px
   text-align: right
+  z-index: 20
 
   @include xl
     margin-top: 100px

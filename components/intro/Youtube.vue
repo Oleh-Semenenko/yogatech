@@ -82,7 +82,7 @@
   @include xl
     gap: 44px
     grid-template-columns: 1fr
-    grid-template-rows: 1fr 1fr
+    grid-template-rows: 1fr auto
   @include l
     gap: 32px
   @include m
@@ -161,7 +161,6 @@
     width: 550px
   @include ms
     width: 100%
-
 
 .youtube__swiper-item
   position: relative
