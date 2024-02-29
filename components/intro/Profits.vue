@@ -4,17 +4,38 @@
       <div class="profits__inner">
         <h2 class="profits__title">Чим ми можемо бути вам корисні</h2>
 
+        <div class="mandala-wrapper">
+          <img
+            src="/images/mandala_gray.png"
+            width="230"
+            height="230"
+            class="mandala-1"
+          />
+          <img
+            src="/images/mandala_gray.png"
+            width="230"
+            height="230"
+            class="mandala-2"
+          />
+        </div>
+
         <div class="profits__content">
           <ul class="cards__list profits__list">
-          <BaseCard
-            v-for="profit in profits"
-            :key="profit.id"
-            :data="profit"
-            withoutFooter
-          ></BaseCard>
-        </ul>
+            <BaseCard
+              v-for="profit in profits"
+              :key="profit.id"
+              :data="profit"
+              withoutFooter
+            ></BaseCard>
+          </ul>
 
-        <p>І звісно, кожен із вас може бути учасником наших конференцій, за наявності сертифікату RYT-200 від будь-якої школи йоги. Рівно як у клуб автомобілістів не беруть без водійського посвідчення, наша асоціація створена для викладачів і це необхідно підтвердити документально, задля вашої безпеки та комфорту оточуючих</p>
+          <p>
+            І звісно, кожен із вас може бути учасником наших конференцій, за
+            наявності сертифікату RYT-200 від будь-якої школи йоги. Рівно як у
+            клуб автомобілістів не беруть без водійського посвідчення, наша
+            асоціація створена для викладачів і це необхідно підтвердити
+            документально, задля вашої безпеки та комфорту оточуючих
+          </p>
         </div>
       </div>
     </div>
@@ -47,6 +68,8 @@ const profits: IProfit[] = [
 </script>
 
 <style lang="sass" scoped>
+.profits__inner
+  position: relative
 .profits__content
   margin: 0 auto
   max-width: 80%
@@ -64,6 +87,38 @@ const profits: IProfit[] = [
     max-width: 100%
 
 .profits__list
+  z-index: 50
   @include m
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
+
+.mandala-wrapper
+  width: 400px
+  display: flex
+  position: absolute
+  top: 50%
+  left: -10%
+
+.mandala-1
+  animation: spin-1 30s linear infinite
+  transform-origin: center
+
+.mandala-2
+  opacity: 0.5
+  animation: spin-2 30s linear infinite
+  transform-origin: center
+  position: absolute
+  left: 39%
+  bottom: 65%
+
+@keyframes spin-1
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+
+@keyframes spin-2
+  from
+    transform: rotate(25deg)
+  to
+    transform: rotate(-335deg)
 </style>

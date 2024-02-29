@@ -8,7 +8,7 @@
     <p class="card__description">{{ data.description }}</p>
 
     <div v-if="!withoutFooter" class="card__footer">
-      <NuxtLink :to="data.link" class="card__footer-link">{{ data.linksText }}</NuxtLink>
+      <NuxtLink :to="data.link" class="card__footer-link btn">{{ data.linksText }}</NuxtLink>
     </div>
   </li>
 </template>
@@ -107,7 +107,7 @@ defineProps<ICardProps>()
   display: inline-block
   padding: 8px 20px
   font-size: 24px
-  border: 1px solid var(--primary-text-color)
+  color: var(--white)
   @include xl
     font-size: 20px
   @include m
