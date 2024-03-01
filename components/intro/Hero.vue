@@ -5,18 +5,10 @@
         <h1 class="hero__title">
           Перший україномовний йогічний проект з науковим підгрунтям
         </h1>
-        <div class="hero__image">
-          <!-- <NuxtImg
-            src="/images/hero.png"
-            format="webp"
-            width="741"
-            height="887"
-          /> -->
-          <img
-            src="/images/hero.png"
-            width="741"
-            height="887"
-          />
+        <div class="hero__logo">
+          <img src="/images/YOG.png" alt="Logo" width="529" class="">
+          <img src="/images/logo_triangle.png" alt="Logo" width="200" height="170" class="hero__logo-img">
+          <img src="/images/TECH.png" alt="Logo" width="614" class="">
         </div>
       </div>
     </div>
@@ -28,7 +20,9 @@
 <style lang="sass" scoped>
 .hero__inner
   display: grid
-  grid-template-columns: 1fr 1fr
+  grid-template-columns: 1fr
+  grid-template-rows: repeat(2, auto)
+  gap: 14px
   padding-bottom: 60px
   @include xl
     padding-bottom: 52px
@@ -41,7 +35,6 @@
 
 .hero__title
   margin-top: 128px
-  grid-column: 1
 
   @include xl
     margin-top: 100px
@@ -62,4 +55,12 @@
   @include m
     grid-column: 1
     grid-row: 2
+
+.hero__logo
+  justify-self: end
+  display: grid
+  grid-template-columns: repeat(3, max-content)
+  gap: 12px
+.hero__logo-img
+  display: inline-block
 </style>
