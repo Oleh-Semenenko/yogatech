@@ -39,7 +39,7 @@ defineProps<ICardProps>()
   flex-direction: column
   gap: 28px
   justify-content: space-between
-  @include xxl
+  @include xl
     padding: 40px 28px 20px
   @include xl
     padding: 32px 24px 20px
@@ -74,7 +74,7 @@ defineProps<ICardProps>()
   width: 120px
   height: 120px
   flex-shrink: 0
-  @include xxl
+  @include xl
     width: 100px
     height: 100px
   @include xl

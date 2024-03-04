@@ -77,7 +77,7 @@
   grid-template-columns: auto 1fr
   gap: 60px
   justify-content: space-between
-  @include xxl
+  @include xl
     gap: 52px
   @include xl
     gap: 44px
@@ -106,12 +106,12 @@
   text-align: right
   font-weight: 700
   margin-bottom: 60px
-  @include xxl
+  @include xl
     font-size: 60px
   @include xl
     margin-bottom: 40px
     font-size: 56px
-  @include ll
+  @include l
     font-size: 52px
   @include l
     margin-bottom: 28px
@@ -139,7 +139,7 @@
     font-weight: 700
     @include xl
       font-size: 56px
-    @include ll
+    @include l
       font-size: 52px
     @include l
       font-size: 40px
@@ -150,7 +150,7 @@
   justify-self: center
   width: 700px
   margin-top: 52px
-  @include xxl
+  @include xl
     width: 650px
   @include xl
     margin-top: 0
@@ -159,7 +159,7 @@
     width: 650px
   @include m
     width: 550px
-  @include ms
+  @include m
     width: 100%
 
 .youtube__swiper-item

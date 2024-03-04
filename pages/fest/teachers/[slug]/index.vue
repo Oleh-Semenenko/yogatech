@@ -71,7 +71,7 @@ const videoSrc = computed(() => {
   background-position: left top
   background-repeat: no-repeat
   background-size: calc( 50% - 26px )
-  @include ll
+  @include l
     background-size: 100%
     background-image: none
 
@@ -82,7 +82,7 @@ const videoSrc = computed(() => {
   gap: 52px
   justify-content: space-between
   padding-bottom: 260px
-  @include ll
+  @include l
     padding-bottom: 0
     grid-template-columns: 1fr
     grid-template-rows: 1fr 2fr
@@ -95,11 +95,11 @@ const videoSrc = computed(() => {
     gap: 24px
 
 .teacher-hero__inner-content
-  @include ll
+  @include l
     grid-row: 1
 
 .teacher-hero__inner-img
-  @include ll
+  @include l
     background-image: url('/images/miha.png')
     background-position: center
     background-repeat: no-repeat
@@ -114,17 +114,17 @@ const videoSrc = computed(() => {
   @include xl
     margin-top: 80px
     margin-bottom: 60px
-  @include ll
+  @include l
     margin-top: 0
     margin-bottom: 40px
   @include m
     margin-bottom: 32px
-  @include ms
+  @include m
     margin-bottom: 24px
 
 .teacher-hero__description
   font-size: 32px
-  @include ll
+  @include l
     font-size: 28px
   @include m
     font-size: 24px
@@ -133,7 +133,7 @@ const videoSrc = computed(() => {
   max-width: 741px
   height: auto
   grid-column: 2
-  @include ll
+  @include l
     grid-column: 1
     grid-row: 2
 
@@ -155,7 +155,7 @@ const videoSrc = computed(() => {
     font-size: 28px
   @include m
     font-size: 20px
-  @include ms
+  @include m
     font-size: 18px
 
 .video-intro
@@ -165,7 +165,7 @@ const videoSrc = computed(() => {
   margin: 0 auto
   width: 100%
   height: 576px
-  @include ll
+  @include l
     height: 450px
   @include l
     height: 350px

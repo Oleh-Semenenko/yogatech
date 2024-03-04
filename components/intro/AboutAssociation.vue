@@ -97,6 +97,6 @@
     font-size: 28px
   @include m
     font-size: 20px
-  @include ms
+  @include m
     font-size: 18px
 </style>

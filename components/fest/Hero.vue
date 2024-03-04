@@ -29,7 +29,7 @@ const emit = defineEmits(['register'])
   top: 40%
   animation: spin 30s linear infinite
 
-  @include ll
+  @include l
     width: 250px
     height: 250px
     right: -125px

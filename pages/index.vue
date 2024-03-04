@@ -2,10 +2,10 @@
   <LazyIntroHero />
   <LazyIntroFeatures />
   <LazyIntroAboutAssociation />
-  <LazyIntroProjects />
-  <LazyIntroYoutube />
-  <LazyIntroProfits />
-  <LazyIntroContacts />
+  <!-- <LazyIntroProjects /> -->
+  <!-- <LazyIntroYoutube /> -->
+  <!-- <LazyIntroProfits /> -->
+  <!-- <LazyIntroContacts /> -->
 </template>
 
 <script setup lang="ts"></script>

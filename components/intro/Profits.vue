@@ -77,13 +77,13 @@ const profits: IProfit[] = [
   flex-direction: column
   gap: 60px
 
-  @include ll
+  @include l
     gap: 40px
 
-  @include ll
+  @include l
     gap: 24px
 
-  @include ms
+  @include m
     max-width: 100%
 
 .profits__list
