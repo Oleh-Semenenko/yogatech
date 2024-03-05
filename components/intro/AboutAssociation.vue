@@ -1,19 +1,13 @@
 <template>
-  <div class="about-founder">
+  <div class="about-founder section">
     <div class="container">
       <div class="about-founder__inner">
-        <h2 class="about-founder__inner-title">Про асоціацію</h2>
+        <h2 class="about-founder__inner-title">Про YogaTech</h2>
         <div class="about-founder__inner-wrapper">
-          <!-- <NuxtImg
-            src="/images/hero.png"
-            format="webp"
-            width="741"
-            height="887"
-          /> -->
           <img
             src="/images/hero.png"
-            width="741"
-            height="887"
+            width="435"
+            height="495"
           />
           <div class="about-founder__inner-content">
             <p class="about-founder__inner-text">
@@ -39,20 +33,6 @@
 <style lang="sass" scoped>
 .about-founder
   position: relative
-  
-.about-founder__inner
-  padding-top: 120px
-  padding-bottom: 60px
-  @include xl
-    padding-top: 100px
-    padding-bottom: 52px
-  @include l
-    padding-top: 60px
-    padding-bottom: 36px
-
-.about-founder__inner-title
-  @include m
-    text-align: center
 
 .about-founder__inner-wrapper
   display: grid
@@ -68,35 +48,13 @@
 
 .about-founder__inner-content
   grid-column: 2
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
   @include m
     grid-column: 1
 
   & .btn
-    margin-top: 32px
-
-.about-founder__inner-subtitle
-  font-size: 48px
-  font-weight: 700
-  margin-bottom: 24px
-
-  @include xl
-    font-size: 40px
-  @include l
-    font-size: 32px
-    margin-bottom: 20px
-  @include m
-    font-size: 24px
-    margin-bottom: 16px
-
-
-.about-founder__inner-text
-  font-size: 40px
-  @include xl
-    font-size: 36px
-  @include l
-    font-size: 28px
-  @include m
-    font-size: 20px
-  @include m
-    font-size: 18px
+    align-self: end
 </style>
