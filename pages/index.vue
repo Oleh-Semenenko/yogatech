@@ -2,8 +2,8 @@
   <LazyIntroHero />
   <LazyIntroFeatures />
   <LazyIntroAboutAssociation />
-  <!-- <LazyIntroProjects /> -->
-  <!-- <LazyIntroYoutube /> -->
+  <LazyIntroProjects />
+  <LazyIntroYoutube />
   <!-- <LazyIntroProfits /> -->
   <!-- <LazyIntroContacts /> -->
 </template>

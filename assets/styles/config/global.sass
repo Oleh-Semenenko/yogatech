@@ -26,10 +26,29 @@ body
     font-size: 14px
 
 button
+  font-family: 'Tinos', sans-serif
+
+.btn
+  font-family: 'Tinos', sans-serif
   display: inline-block
   width: max-content
-  font-size: 40px
-  font-family: 'Tinos', sans-serif
+  padding: 8px 28px
+  border-radius: var(--primary-border-radius)
+  background-color: var(--btn-bg)
+  font-size: 20px
+  color: var(--white)
+  @include xl
+    font-size: 16px
+
+  @include m
+    padding: 8px 16px
+    font-size: 14px
+
+  &:hover
+    background-color: var(--light-blue-color)
+  &:disabled
+    opacity: 0.3
+    cursor: not-allowed
 
 a:-webkit-any-link
   color: var(--primary-text-color)
@@ -91,15 +110,17 @@ a.router-link-active
 .cards__list
   width: 100%
   display: grid
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr))
+  grid-template-columns: repeat(auto-fill, minmax(250px, 504px))
+  justify-content: center
   gap: 52px
   @include xl
-    gap: 40px
-  @include l
+    grid-template-columns: repeat(auto-fill, minmax(250px, 352px))
     gap: 32px
-  @include m
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
+  @include l
+    grid-template-columns: repeat(auto-fill, minmax(150px, 340px))
     gap: 24px
+  @include m
+    gap: 12px
 
 .logo
   display: inline-block
@@ -109,23 +130,6 @@ a.router-link-active
     width: 80px
   @include l
     width: 56px
-
-.btn
-  padding: 8px 28px
-  border-radius: var(--primary-border-radius)
-  background-color: var(--btn-bg)
-  font-size: 28px
-  color: var(--white)
-
-  @include m
-    padding: 8px 16px
-    font-size: 24px
-
-  &:hover
-    background-color: var(--light-blue-color)
-  &:disabled
-    opacity: 0.3
-    cursor: not-allowed
 
 // Swiper
 
@@ -167,4 +171,11 @@ h2
     font-size: 16px
 
 h3
-  font-size: 40px
+  font-size: 28px
+  margin-bottom: 0
+  @include xl
+    font-size: 24px
+  @include l
+    font-size: 18px
+  @include m
+    font-size: 15px

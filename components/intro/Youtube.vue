@@ -4,30 +4,45 @@
       <div class="youtube__inner">
         <div class="youtube__inner-text">
           <h2>Youtube</h2>
-          <div class="youtube__inner-text--first">Нові відео</div>
-          <div class="youtube__inner-text--second">ЩОПОНЕДІЛКА</div>
+          <div class="youtube__inner-text--first youtube__text--big">
+            Регулярно
+          </div>
+          <div class="youtube__inner-text--second youtube__text--small">
+            виходять нові відео
+          </div>
 
           <div class="youtube__inner-text--bottom">
             <div>
-              <div class="big">100%</div>
-              <div class="small">корисної інформації</div>
+              <div class="youtube__text--big">100%</div>
+              <div class="youtube__text--small">корисної інформації</div>
             </div>
             <div>
-              <span class="small">більше </span>
-              <span class="big">150</span>
-              <div class="small">відео на каналі</div>
+              <span class="youtube__text--small">більше </span>
+              <span class="youtube__text--big">150</span>
+              <div class="youtube__text--small">відео на каналі</div>
             </div>
           </div>
         </div>
 
         <div class="youtube__swiper">
+          <NuxtImg
+            src="/images/slider_btn_left.png"
+            format="webp,avif"
+            width="80"
+            height="80"
+            class="about-us__slider-prev-btn"
+          />
           <Swiper
             :modules="[SwiperNavigation, SwiperPagination]"
             :centered-slides="true"
             :slides-per-view="1"
-            navigation
             :pagination="{ clickable: true }"
             :loop="true"
+            :navigation="{
+              enabled: true,
+              nextEl: '.about-us__slider-next-btn',
+              prevEl: '.about-us__slider-prev-btn'
+            }"
           >
             <SwiperSlide class="youtube__swiper-item"
               ><iframe
@@ -63,6 +78,17 @@
               ></iframe
             ></SwiperSlide>
           </Swiper>
+          <NuxtImg
+            src="/images/slider_btn_right.png"
+            format="webp,avif"
+            width="80"
+            height="80"
+            class="about-us__slider-next-btn"
+          />
+
+          <div class="about-us__slider-controller">
+            <div class="about-us__slider-pagination"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -74,16 +100,16 @@
 <style lang="sass" scoped>
 .youtube__inner
   display: grid
-  grid-template-columns: auto 1fr
+  grid-template-columns: auto auto
   gap: 60px
   justify-content: space-between
   @include xl
     gap: 52px
   @include xl
     gap: 44px
+  @include l
     grid-template-columns: 1fr
     grid-template-rows: 1fr auto
-  @include l
     gap: 32px
   @include m
     grid-template-columns: 100%
@@ -91,64 +117,51 @@
 .youtube__inner-text
   width: 100%
 
-.youtube__inner-text--first
-  font-size: 40px
-  margin-bottom: 18px
+.youtube__text--big
+  font-size: 64px
+  font-weight: 700
   @include xl
-    font-size: 32px
+    font-size: 48px
   @include l
+    font-size: 36px
+  @include m
     font-size: 24px
 
-.youtube__inner-text--second
-  font-size: 64px
-  font-family: 'Tinos', sans-serif
-  font-style: italic
-  text-align: right
-  font-weight: 700
-  margin-bottom: 60px
+.youtube__text--small
+  font-size: 32px
   @include xl
-    font-size: 60px
-  @include xl
-    margin-bottom: 40px
-    font-size: 56px
+    font-size: 24px
   @include l
-    font-size: 52px
-  @include l
-    margin-bottom: 28px
-    font-size: 40px
+    font-size: 18px
   @include m
-    font-size: 32px
+    font-size: 16px
+
+.youtube__inner-text--second
+  text-align: right
+  margin-bottom: 24px
+  @include xl
+    margin-bottom: 16px
+  @include l
+    margin-bottom: 8px
 
 .youtube__inner-text--bottom
   display: flex
   justify-content: space-between
   gap: 20px
-  padding-top: 60px
-  border-top: 1px solid var(--primary-text-color)
-  font-size: 36px
+  padding-top: 24px
+  border-top: 1px solid var(--border-color)
   font-weight: 400
   @include xl
-    font-size: 32px
+    padding-top: 16px
   @include l
-    font-size: 24px
+    padding-top: 8px
     gap: 12px
 
-  & .big
-    font-size: 60px
-    font-style: italic
-    font-weight: 700
-    @include xl
-      font-size: 56px
-    @include l
-      font-size: 52px
-    @include l
-      font-size: 40px
-    @include m
-      font-size: 32px
-
 .youtube__swiper
+  display: flex
+  align-items: center
   justify-self: center
-  width: 700px
+  width: 678px
   margin-top: 52px
   @include xl
     width: 650px

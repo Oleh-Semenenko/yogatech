@@ -44,7 +44,17 @@
     grid-template-columns: 1fr 1fr
     gap: 28px
   @include m
+    justify-items: center
     grid-template-columns: 1fr
+    gap: 8px
+
+  & img
+    @include l
+      width: 239px
+    @include m
+      width: 200px
+    @include s
+      width: 143px
 
 .about-founder__inner-content
   grid-column: 2
@@ -54,6 +64,7 @@
 
   @include m
     grid-column: 1
+    gap: 20px
 
   & .btn
     align-self: end

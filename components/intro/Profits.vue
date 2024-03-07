@@ -12,7 +12,7 @@
             class="mandala-1"
           />
           <img
-            src="/images/mandala_gray.png"
+            src="/images/mandala_dark.png"
             width="230"
             height="230"
             class="mandala-2"
@@ -103,7 +103,7 @@ const profits: IProfit[] = [
   transform-origin: center
 
 .mandala-2
-  opacity: 0.5
+  opacity: 0.7
   animation: spin-2 30s linear infinite
   transform-origin: center
   position: absolute
