@@ -25,12 +25,11 @@
         </div>
 
         <div class="youtube__swiper">
-          <NuxtImg
-            src="/images/slider_btn_left.png"
-            format="webp,avif"
-            width="80"
-            height="80"
-            class="about-us__slider-prev-btn"
+          <Icon
+            name="mdi-light:chevron-left"
+            class="youtube__swiper-prev-btn"
+            width="54"
+            height="54"
           />
           <Swiper
             :modules="[SwiperNavigation, SwiperPagination]"
@@ -40,8 +39,8 @@
             :loop="true"
             :navigation="{
               enabled: true,
-              nextEl: '.about-us__slider-next-btn',
-              prevEl: '.about-us__slider-prev-btn'
+              nextEl: '.youtube__swiper-next-btn',
+              prevEl: '.youtube__swiper-prev-btn'
             }"
           >
             <SwiperSlide class="youtube__swiper-item"
@@ -78,15 +77,14 @@
               ></iframe
             ></SwiperSlide>
           </Swiper>
-          <NuxtImg
-            src="/images/slider_btn_right.png"
-            format="webp,avif"
-            width="80"
-            height="80"
-            class="about-us__slider-next-btn"
+          <Icon
+            name="mdi-light:chevron-right"
+            class="youtube__swiper-next-btn"
+            width="54"
+            height="54"
           />
 
-          <div class="about-us__slider-controller">
+          <div class="about-us__slider-pagination">
             <div class="about-us__slider-pagination"></div>
           </div>
         </div>
@@ -109,13 +107,20 @@
     gap: 44px
   @include l
     grid-template-columns: 1fr
-    grid-template-rows: 1fr auto
+    grid-template-rows: auto auto
+    justify-items: center
     gap: 32px
   @include m
     grid-template-columns: 100%
     gap: 24px
 .youtube__inner-text
-  width: 100%
+  width: 643px
+  @include xl
+    width: 443px
+  @include l
+    width: 340px
+  @include m
+    width: 80%
 
 .youtube__text--big
   font-size: 64px
@@ -162,18 +167,21 @@
   align-items: center
   justify-self: center
   width: 678px
-  margin-top: 52px
   @include xl
-    width: 650px
-  @include xl
-    margin-top: 0
-    width: 773px
+    width: 618px
   @include l
-    width: 650px
+    width: 534px
   @include m
-    width: 550px
+    width: 90%
+
+.youtube__swiper-next-btn,
+.youtube__swiper-prev-btn
+  &:hover
+    cursor: pointer
+  color: var(--gray-color)
+  flex-shrink: 0
   @include m
-    width: 100%
+    display: none
 
 .youtube__swiper-item
   position: relative
