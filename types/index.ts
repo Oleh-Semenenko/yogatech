@@ -17,3 +17,18 @@ export interface IProduct {
 export interface ISelectedProduct extends IProduct {
   quantity: number;
 }
+
+export enum LinkColor {
+  BLUE = 'blue',
+  ORANGE = 'orange'
+}
+
+export interface ICard {
+  id: number
+  title: string
+  description: string
+  photo: string | string[]
+  link?: string
+  linksText?: string
+  linkColor?: LinkColor
+}

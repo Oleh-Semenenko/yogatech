@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import type { IProduct } from '@/types/index'
+import type { IProduct } from '~/types'
 
 const props = defineProps<{
   product: IProduct

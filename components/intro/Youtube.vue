@@ -110,6 +110,7 @@
     grid-template-rows: auto auto
     justify-items: center
     gap: 32px
+    position: relative
   @include m
     grid-template-columns: 100%
     gap: 24px
@@ -119,8 +120,11 @@
     width: 443px
   @include l
     width: 340px
+    & h2
+      position: absolute
+      left: 0
   @include m
-    width: 80%
+    width: 70%
 
 .youtube__text--big
   font-size: 64px
@@ -140,6 +144,10 @@
     font-size: 18px
   @include m
     font-size: 16px
+
+.youtube__inner-text--first
+  @include l
+    margin-top: 30px
 
 .youtube__inner-text--second
   text-align: right

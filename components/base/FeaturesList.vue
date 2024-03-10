@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import type { IFeature } from '@/types/index'
+import type { IFeature } from '~/types'
 defineProps<{
   features: IFeature[]
 }>()

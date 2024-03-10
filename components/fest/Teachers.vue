@@ -18,7 +18,9 @@ import type { BaseCard } from '#build/components';
 </template>
 
 <script setup lang="ts">
-const teachers = [
+import type { ICard } from '~/types';
+
+const teachers: ICard[] = [
   {
     id: 1,
     title: 'Михайло Ахекян',

@@ -1,5 +1,7 @@
 <template>
-  <div>team</div>
+  <TeamHero />
+  <TeamAboutFounder />
+  <TeamParticipants />
 </template>
 
 <script setup lang="ts"></script>

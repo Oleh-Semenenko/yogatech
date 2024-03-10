@@ -4,8 +4,8 @@
   <LazyIntroAboutAssociation />
   <LazyIntroProjects />
   <LazyIntroYoutube />
-  <!-- <LazyIntroProfits /> -->
-  <!-- <LazyIntroContacts /> -->
+  <LazyIntroProfits />
+  <LazyIntroContacts />
 </template>
 
 <script setup lang="ts"></script>

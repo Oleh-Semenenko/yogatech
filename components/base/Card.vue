@@ -8,21 +8,21 @@
     <p class="card__description">{{ data.description }}</p>
 
     <div v-if="!withoutFooter" class="card__footer">
-      <NuxtLink :to="data.link" class="card__footer-link btn">{{ data.linksText }}</NuxtLink>
+      <NuxtLink
+        :to="data.link"
+        class="card__footer-link btn"
+        :class="{ orange: data.linkColor === LinkColor.ORANGE }"
+        >{{ data.linksText }}</NuxtLink
+      >
     </div>
   </li>
 </template>
 
 <script setup lang="ts">
+import { type ICard, LinkColor } from '~/types'
+
 interface ICardProps {
-  data: {
-    id: number
-    title: string
-    description: string
-    photo: string
-    link?: string
-    linksText?: string
-  },
+  data: ICard
   withoutFooter?: boolean
 }
 defineProps<ICardProps>()
@@ -46,7 +46,6 @@ defineProps<ICardProps>()
 
 .card__header
   display: flex
-  gap: 20px
   justify-content: space-between
   @include m
     gap: 12px
@@ -74,4 +73,6 @@ defineProps<ICardProps>()
 .card__footer-link
   margin-left: auto
   color: var(--white)
+  &.orange
+    background: var(--orange)
 </style>

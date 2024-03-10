@@ -50,16 +50,13 @@
     grid-template-rows: auto 1fr
 
 .hero__title
-  margin-top: 40px
   max-width: 70%
   @include l
-    margin-top: 16px
     max-width: 80%
   @include m
     max-width: 100%
     text-align: center
     margin-bottom: 0
-    margin-top: 12px
     grid-row: 1
 
 .hero__image
