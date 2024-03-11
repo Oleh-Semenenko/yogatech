@@ -27,7 +27,7 @@
         <div class="youtube__swiper">
           <Icon
             name="mdi-light:chevron-left"
-            class="youtube__swiper-prev-btn"
+            class="prev-btn"
             width="54"
             height="54"
           />
@@ -39,8 +39,8 @@
             :loop="true"
             :navigation="{
               enabled: true,
-              nextEl: '.youtube__swiper-next-btn',
-              prevEl: '.youtube__swiper-prev-btn'
+              nextEl: '.next-btn',
+              prevEl: '.prev-btn'
             }"
           >
             <SwiperSlide class="youtube__swiper-item"
@@ -79,7 +79,7 @@
           </Swiper>
           <Icon
             name="mdi-light:chevron-right"
-            class="youtube__swiper-next-btn"
+            class="next-btn"
             width="54"
             height="54"
           />
@@ -181,15 +181,6 @@
     width: 534px
   @include m
     width: 90%
-
-.youtube__swiper-next-btn,
-.youtube__swiper-prev-btn
-  &:hover
-    cursor: pointer
-  color: var(--gray-color)
-  flex-shrink: 0
-  @include m
-    display: none
 
 .youtube__swiper-item
   position: relative

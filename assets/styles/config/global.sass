@@ -144,6 +144,15 @@ a.router-link-active
 .swiper-pagination-bullet-active
   background: var(--gray-color) !important
 
+.prev-btn,
+.next-btn
+  &:hover
+    cursor: pointer
+  color: var(--gray-color)
+  flex-shrink: 0
+  @include m
+    display: none 
+
 // Titles
 
 h1, h2, h3, h4, h5, h6
