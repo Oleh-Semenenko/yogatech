@@ -15,7 +15,7 @@ export interface IProduct {
 }
 
 export interface ISelectedProduct extends IProduct {
-  quantity: number;
+  quantity: number
 }
 
 export enum LinkColor {
@@ -31,4 +31,12 @@ export interface ICard {
   link?: string
   linksText?: string
   linkColor?: LinkColor
+}
+
+export interface ITeammate {
+  id: number
+  img: string
+  name: string
+  description: string
+  instagramLink: string
 }

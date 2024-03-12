@@ -2,6 +2,7 @@
   <TeamHero />
   <TeamAboutFounder />
   <TeamParticipants />
+  <TeamCooperationBenefits />
 </template>
 
 <script setup lang="ts"></script>
