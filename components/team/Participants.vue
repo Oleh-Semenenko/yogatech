@@ -55,10 +55,7 @@
 
         <div>
           <ul class="team__list-mob">
-            <li
-              v-for="teammate in visibleTeammates"
-              :key="teammate.id"
-            >
+            <li v-for="teammate in visibleTeammates" :key="teammate.id">
               <TeamTeammate :participant="teammate" />
             </li>
           </ul>
@@ -80,86 +77,25 @@
 <script setup lang="ts">
 import type { ITeammate } from '~/types'
 
-const teammates: ITeammate[] = [
-  {
-    id: 1,
-    img: '/images/miha.png',
-    name: 'Михайло Ахекян',
-    description:
-      'засновник YogaTech, голова наукового відділу асоціації, лектор, викладач йоги, ментор',
-    instagramLink: 'https://www.instagram.com/mikeyogatech/'
-  },
-  {
-    id: 2,
-    img: '/images/mirka.png',
-    name: 'Міріам Хмарська',
-    description:
-      'голова культурного відділу асоціацї,  викладачка йоги, менеджер',
-    instagramLink: 'https://www.instagram.com/miriam_khmarska_yogini/'
-  },
-  {
-    id: 3,
-    img: '/images/kate.png',
-    name: 'Катерина Ковальчук',
-    description: 'голова відділу маркетингу асоціації, бізнес-коуч, ментор',
-    instagramLink: 'https://www.instagram.com/miriam_khmarska_yogini/'
-  },
-  {
-    id: 4,
-    img: '/images/banda.png',
-    name: 'Дарт Вейдер',
-    description: 'орцукпук окцапшукопшу пткоашоукопщук плдоукшоауко',
-    instagramLink: 'https://www.instagram.com/miriam_khmarska_yogini/'
-  },
-  {
-    id: 5,
-    img: '/images/miha.png',
-    name: 'Михайло Ахекян',
-    description:
-      'засновник YogaTech, голова наукового відділу асоціації, лектор, викладач йоги, ментор',
-    instagramLink: 'https://www.instagram.com/miriam_khmarska_yogini/'
-  },
-  {
-    id: 6,
-    img: '/images/miha.png',
-    name: 'Міріам Хмарська',
-    description:
-      'голова культурного відділу асоціацї,  викладачка йоги, менеджер',
-    instagramLink: 'https://www.instagram.com/miriam_khmarska_yogini/'
-  },
-  {
-    id: 7,
-    img: '/images/miha.png',
-    name: 'Катерина Ковальчук',
-    description: 'голова відділу маркетингу асоціації, бізнес-коуч, ментор',
-    instagramLink: 'https://www.instagram.com/miriam_khmarska_yogini/'
-  },
-  {
-    id: 8,
-    img: '/images/miha.png',
-    name: 'Дарт Вейдер',
-    description: 'орцукпук окцапшукопшу пткоашоукопщук плдоукшоауко',
-    instagramLink: 'https://www.instagram.com/miriam_khmarska_yogini/'
-  }
-]
+const { teammates } = useTeammates()
 
-const visibleTeammates: Ref<ITeammate[] | []> = ref(teammates.slice(0, 4))
+const visibleTeammates: Ref<ITeammate[] | []> = ref(teammates.value.slice(0, 4))
 const isShowMoreBtn = computed(
-  () => teammates.length > visibleTeammates.value.length
+  () => teammates.value.length > visibleTeammates.value.length
 )
 
 const handleShowMore = () => {
   const startIndex = visibleTeammates.value.length
-  const endIndex = Math.min(startIndex + 4, teammates.length)
+  const endIndex = Math.min(startIndex + 4, teammates.value.length)
 
-  if (startIndex < teammates.length) {
-    const additionalTeammates = teammates.slice(startIndex, endIndex)
+  if (startIndex < teammates.value.length) {
+    const additionalTeammates = teammates.value.slice(startIndex, endIndex)
     visibleTeammates.value = [...visibleTeammates.value, ...additionalTeammates]
   }
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .team
   position: relative
 

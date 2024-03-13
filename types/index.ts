@@ -39,4 +39,5 @@ export interface ITeammate {
   name: string
   description: string
   instagramLink: string
+  slug: string
 }

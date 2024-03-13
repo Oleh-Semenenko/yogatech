@@ -144,9 +144,15 @@ svg path
   height: 12px !important
   background: #D0E4EB !important
   opacity: 1 !important
+  width: 12px !important
+  height: 12px !important
+  @include xl
+    width: 8px !important
+    height: 8px !important
 .swiper-pagination
   position: relative !important
   bottom: 0px !important
+  margin-top: 8px !important
 .swiper-pagination-bullet-active
   background: var(--gray-color) !important
 
@@ -200,3 +206,53 @@ h3
     font-size: 18px
   @include m
     font-size: 15px
+
+// Mandala
+.mandala-wrapper
+  width: 400px
+  display: flex
+  position: absolute
+  top: 50%
+  left: -10%
+  @include xl
+    left: -15%
+  @include m
+    display: none
+
+.mandala-1
+  animation: spin-1 30s linear infinite
+  transform-origin: center
+  @include xl
+    width: 180px
+    height: 180px
+  @include l
+    width: 120px
+    height: 120px
+
+.mandala-2
+  opacity: 0.7
+  animation: spin-2 30s linear infinite
+  transform-origin: center
+  position: absolute
+  left: 39%
+  bottom: 65%
+  @include xl
+    width: 180px
+    height: 180px
+    left: 30%
+  @include l
+    width: 120px
+    height: 120px
+    left: 20%
+
+@keyframes spin-1
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+
+@keyframes spin-2
+  from
+    transform: rotate(25deg)
+  to
+    transform: rotate(-335deg)

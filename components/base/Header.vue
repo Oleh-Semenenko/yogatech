@@ -2,13 +2,21 @@
   <div class="header" :class="{ 'without-blur': isMobMenuOpen }">
     <div class="container">
       <div class="header__inner">
-        <img src="/images/logo.svg" class="logo"/>
+        <img src="/images/logo.svg" class="logo" />
 
         <nav class="header__inner-nav">
           <ul class="nav__list">
             <li class="nav__item"><NuxtLink to="/">Про YogaTech</NuxtLink></li>
-            <li class="nav__item"><NuxtLink to="/team">Команда та співпраця</NuxtLink></li>
-            <li class="nav__item"><NuxtLink to="/shop">Навчання RYT200</NuxtLink></li>
+            <li class="nav__item">
+              <NuxtLink
+                to="/team"
+                :class="{ 'router-link-active': isTeamLinkActive }"
+                >Команда та співпраця</NuxtLink
+              >
+            </li>
+            <li class="nav__item">
+              <NuxtLink to="/shop">Навчання RYT200</NuxtLink>
+            </li>
             <li class="nav__item">
               <NuxtLink
                 to="/fest"
@@ -79,6 +87,10 @@ const isMobMenuOpen = ref(false)
 
 const isFestLinkActive = computed(() => {
   return route.path.includes('fest')
+})
+
+const isTeamLinkActive = computed(() => {
+  return route.path.includes('team')
 })
 
 const handleToggleMobMenu = () => {

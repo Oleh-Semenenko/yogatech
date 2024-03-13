@@ -15,7 +15,7 @@
       />
       <div class="teammate__overlay">
         <div class="teammate__overlay-footer">
-          <NuxtLink to="/" class="btn">Дізнатись більше</NuxtLink>
+          <NuxtLink :to="`/team/${slug}`" class="btn">Дізнатись більше</NuxtLink>
           <NuxtLink :to="instagramLink" target="_blank">
             <Icon name="ph:instagram-logo-thin" width="44" height="44" />
           </NuxtLink>
@@ -35,7 +35,7 @@ interface ITeammateProps {
 }
 
 const props = defineProps<ITeammateProps>()
-const { id, img, name, description, instagramLink } = props.participant
+const { id, img, name, description, instagramLink, slug } = props.participant
 
 const showOverlay = ref(false)
 const isMobile = computed(() => {
