@@ -76,7 +76,7 @@ const togglePanel = (id: number) => {
   grid-template-columns: 1fr 642px
   justify-content: space-between
   gap: 52px
-  @include xxl
+  @include xl
     grid-template-columns: 1fr 500px
   @include xl
     grid-template-columns: 1fr 400px

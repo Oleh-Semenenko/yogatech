@@ -1,22 +1,10 @@
-$xxl: 1500px
-$xl: 1350px
-$ll: 1199px
-$l: 1024px
+$xl: 1919px
+$l: 1279px
 $m: 767px
-$ms: 600px
-$s: 480px
-$xs: 350px
-
-@mixin xs
-  @media only screen and (max-width: #{$xs})
-    @content
+$s: 359px
 
 @mixin s
   @media only screen and (max-width: #{$s})
-    @content
-
-@mixin ms
-  @media only screen and (max-width: #{$ms})
     @content
 
 @mixin m
@@ -27,14 +15,6 @@ $xs: 350px
   @media only screen and (max-width: #{$l})
     @content
 
-@mixin ll
-  @media only screen and (max-width: #{$ll})
-    @content
-
 @mixin xl
   @media only screen and (max-width: #{$xl})
-    @content
-
-@mixin xxl
-  @media only screen and (max-width: #{$xxl})
     @content

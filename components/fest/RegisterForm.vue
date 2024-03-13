@@ -70,7 +70,7 @@ const handleFormSubmit = () => {
   padding: 60px 140px
   border: 1px solid #000
 
-  @include xxl
+  @include xl
     max-width: 800px
     padding-right: 100px
     padding-left: 100px
@@ -84,7 +84,7 @@ const handleFormSubmit = () => {
     width: 100%
     grid-template-columns: 100%
     grid-template-rows: repeat(5, 1fr)
-  @include ms
+  @include m
     gap: 24px
     padding-right: 32px
     padding-left: 32px

@@ -2,8 +2,10 @@
   <div class="footer section blue">
     <div class="container">
       <div class="footer__inner">
-        <img src="/images/logo.svg" class="logo"/>
-        <p class="copyright">© Copyright 2022 YogaTech.ua All Rights Reserved</p>
+        <img src="/images/logo.svg" class="logo" />
+        <p class="copyright">
+          © Copyright 2022 YogaTech.ua All Rights Reserved
+        </p>
 
         <ul class="nav__list">
           <li><NuxtLink to="/">Про YogaTech</NuxtLink></li>
@@ -14,10 +16,10 @@
 
         <ul class="socials__nav-list">
           <li>
-            <Icon name="cib:instagram" />
+            <Icon name="ph:instagram-logo-thin" />
           </li>
           <li>
-            <Icon name="cib:telegram-plane" />
+            <Icon name="ph:telegram-logo-thin" />
           </li>
         </ul>
       </div>
@@ -38,7 +40,7 @@
 
   @include m
     grid-template-columns: 1fr
-    grid-template-rows: repeat(3, auto) 
+    grid-template-rows: repeat(3, auto)
 
 .logo
   grid-column: 1

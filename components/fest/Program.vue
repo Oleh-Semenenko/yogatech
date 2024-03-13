@@ -14,7 +14,9 @@ import type { BaseCard } from '#build/components';
 </template>
 
 <script setup lang="ts">
-const days = [
+import type { ICard } from '~/types';
+
+const days: ICard[] = [
   {
     id: 1,
     title: 'День перший',

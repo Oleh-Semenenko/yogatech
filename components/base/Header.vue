@@ -2,19 +2,29 @@
   <div class="header" :class="{ 'without-blur': isMobMenuOpen }">
     <div class="container">
       <div class="header__inner">
-        <img src="/images/logo.svg" class="logo"/>
+        <img src="/images/logo.svg" class="logo" />
 
         <nav class="header__inner-nav">
           <ul class="nav__list">
-            <li><NuxtLink to="/">Про YogaTech</NuxtLink></li>
-            <li>
+            <li class="nav__item"><NuxtLink to="/">Про YogaTech</NuxtLink></li>
+            <li class="nav__item">
+              <NuxtLink
+                to="/team"
+                :class="{ 'router-link-active': isTeamLinkActive }"
+                >Команда та співпраця</NuxtLink
+              >
+            </li>
+            <li class="nav__item">
+              <NuxtLink to="/shop">Навчання RYT200</NuxtLink>
+            </li>
+            <li class="nav__item">
               <NuxtLink
                 to="/fest"
                 :class="{ 'router-link-active': isFestLinkActive }"
                 >Конференція</NuxtLink
               >
             </li>
-            <li><NuxtLink to="/shop">Магазин</NuxtLink></li>
+            <li class="nav__item"><NuxtLink to="/shop">Магазин</NuxtLink></li>
           </ul>
         </nav>
 
@@ -79,6 +89,10 @@ const isFestLinkActive = computed(() => {
   return route.path.includes('fest')
 })
 
+const isTeamLinkActive = computed(() => {
+  return route.path.includes('team')
+})
+
 const handleToggleMobMenu = () => {
   isMobMenuOpen.value = !isMobMenuOpen.value
   if (isMobMenuOpen.value) {
@@ -103,8 +117,8 @@ const handleToggleBasketOpen = () => {
   opacity: 0
 
 .header
-  padding-top: 40px
-  padding-bottom: 40px
+  padding-top: 16px
+  padding-bottom: 16px
   position: fixed
   width: 100%
   background-color: var(--white)
@@ -112,10 +126,9 @@ const handleToggleBasketOpen = () => {
   border-bottom-right-radius: var(--primary-border-radius)
   z-index: 1000
   box-shadow: var(--box-shadow)
-
-  @include m
-    padding-top: 32px
-    padding-bottom: 32px
+  @include l
+    padding-top: 12px
+    padding-bottom: 12px
 
   &.without-blur
     box-shadow: none
@@ -128,7 +141,7 @@ const handleToggleBasketOpen = () => {
   gap: 20px
 .header__inner-nav
   margin-left: auto
-  @include m
+  @include l
     display: none
 
 .basket
@@ -149,7 +162,7 @@ const handleToggleBasketOpen = () => {
 
 .mob-menu__btn
   display: none
-  @include m
+  @include l
     display: block
 
 .mob-menu

@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import type { IProduct } from '@/types/index'
+import type { IProduct } from '~/types'
 
 const props = defineProps<{
   product: IProduct
@@ -73,7 +73,7 @@ watch(count, () => {
   @include l
     padding-top: 32px
     padding-bottom: 32px
-  @include ms
+  @include m
     padding: 20px 16px
 
 .goods__photos-list
@@ -95,13 +95,13 @@ watch(count, () => {
 .goods__title
   font-size: 24px
   margin-bottom: 12px
-  @include ms
+  @include m
     font-size: 20px
 
 .goods__description
   font-size: 18px
   margin-bottom: 12px
-  @include ms
+  @include m
     font-size: 16px
 
 .goods__price
@@ -110,7 +110,7 @@ watch(count, () => {
   margin-bottom: 12px
   @include l
     font-size: 32px
-  @include ms
+  @include m
     font-size: 28px
 
 .goods__controller

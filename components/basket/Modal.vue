@@ -19,6 +19,8 @@
       </ul>
 
       <div>Загальна вартість: {{ totalCost }}</div>
+
+      <a href="https://secure.wayforpay.com/button/bf97a2c2fb2e7">Оплатити</a>
     </div>
   </div>
 </template>

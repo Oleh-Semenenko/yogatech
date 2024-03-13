@@ -1,16 +1,16 @@
 <template>
-  <div class="about-association section">
+  <div class="about-founder section blue">
     <div class="container">
-      <div class="about-association__inner">
-        <h2 class="about-association__inner-title">Про YogaTech</h2>
-        <div class="about-association__inner-wrapper">
+      <div class="about-founder__inner">
+        <h2 class="about-founder__inner-title">Засновник асоціації</h2>
+        <div class="about-founder__inner-wrapper">
           <img
             src="/images/hero.png"
             width="435"
             height="495"
           />
-          <div class="about-association__inner-content">
-            <p class="about-association__inner-text">
+          <div class="about-founder__inner-content">
+            <p class="about-founder__inner-text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia illo
               pariatur iure ab molestias, aperiam dolore expedita, perferendis
               nostrum at maiores voluptatem dignissimos explicabo! Rerum aperiam
@@ -19,8 +19,6 @@
               error commodi! Explicabo similique est repellat dolor iusto, ipsa
               libero temporibus iure, illum iste deleniti tempora perferendis?
             </p>
-
-            <button class="btn">Дізнатись більше</button>
           </div>
         </div>
       </div>
@@ -31,10 +29,10 @@
 <script setup lang="ts"></script>
 
 <style lang="sass" scoped>
-.about-association
+.about-founder
   position: relative
 
-.about-association__inner-wrapper
+.about-founder__inner-wrapper
   display: grid
   grid-template-columns: 1fr 1.5fr
   gap: 52px
@@ -56,7 +54,7 @@
     @include s
       width: 143px
 
-.about-association__inner-content
+.about-founder__inner-content
   grid-column: 2
   display: flex
   flex-direction: column

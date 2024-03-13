@@ -68,7 +68,7 @@
   display: grid
   grid-template-columns: 1fr 885px
   gap: 40px
-  @include xxl
+  @include xl
     grid-template-columns: 1fr 700px
   @include xl
     grid-template-columns: 100%
@@ -83,7 +83,7 @@
     font-size: 28px
   @include m
     font-size: 20px
-  @include ms
+  @include m
     font-size: 18px
 
 .location__swiper

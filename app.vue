@@ -27,8 +27,9 @@ import 'animate.css'
   display: flex
   flex-direction: column
   justify-content: space-between
-  padding-top: 180px
-
-  @include m
-    padding-top: 100px
+  padding-top: 112px
+  @include xl
+    padding-top: 84px
+  @include l
+    padding-top: 60px
 </style>

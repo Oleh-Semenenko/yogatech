@@ -17,7 +17,9 @@
 </template>
 
 <script setup lang="ts">
-const contacts = [
+import { type ICard, LinkColor } from '~/types'
+
+const contacts: ICard[] = [
   {
     id: 1,
     title: 'Telegram Yogatech',
@@ -25,7 +27,8 @@ const contacts = [
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
     photo: '',
     link: '#',
-    linksText: 'Перейти в Телеграм'
+    linksText: 'Зв’язатись',
+    linkColor: LinkColor.ORANGE
   },
   {
     id: 2,
@@ -34,16 +37,18 @@ const contacts = [
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
     photo: '',
     link: '#',
-    linksText: 'Перейти в Інстаграм'
+    linksText: 'Зв’язатись',
+    linkColor: LinkColor.ORANGE
   },
   {
     id: 3,
-    title: 'Telegram Засновника',
+    title: 'Instagram Mike YogaTech',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
     photo: '',
     link: '#',
-    linksText: 'Написати Михайлу'
+    linksText: 'Зв’язатись',
+    linkColor: LinkColor.ORANGE
   }
 ]
 </script>
@@ -51,9 +56,4 @@ const contacts = [
 <style lang="sass" scoped>
 .contacts
   position: relative
-  padding-bottom: 120px
-  @include l
-    padding-bottom: 80px
-  @include m
-    padding-bottom: 40px
 </style>

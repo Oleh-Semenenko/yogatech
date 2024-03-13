@@ -17,16 +17,9 @@
 </template>
 
 <script setup lang="ts">
-interface IProject {
-  id: number
-  title: string
-  description: string
-  photo: string
-  link: string
-  linksText: string
-}
+import type { ICard } from '~/types';
 
-const projects: IProject[] = [
+const projects: ICard[] = [
   {
     id: 1,
     title: 'Конференція',

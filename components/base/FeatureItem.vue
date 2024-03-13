@@ -3,13 +3,13 @@
       class="feature"
       :style="{ '--feature-background-color': feature.color }"
     >
-      <p class="feature__title">{{ feature.title }}</p>
+      <h2 class="feature__title">{{ feature.title }}</h2>
       <p class="feature__text">{{ feature.text }}</p>
     </li>
 </template>
 
 <script setup lang="ts">
-import type { IFeature } from '@/types/index'
+import type { IFeature } from '~/types'
 defineProps<{
   feature: IFeature
 }>()
@@ -18,24 +18,22 @@ defineProps<{
 <style lang="sass" scoped>
 .feature
   position: relative
-  padding-top: 90px
+  padding-top: 32px
   padding-left: 44px
-  @include xxl
-    padding-top: 60px
   @include xl
-    padding-top: 40px
-    padding-left: 36px
+    padding-left: 32px
   @include l
-    padding-top: 32px
-    padding-left: 28px
-  @include m
+    max-width: 269px
     padding-top: 24px
     padding-left: 24px
+  @include m
+    padding-top: 20px
+    padding-left: 20px
   &::before
     content: ''
     display: block
-    width: 164px
-    height: 164px
+    width: 80px
+    height: 80px
     border-radius: 50%
     background-color: var(--feature-background-color)
     position: absolute
@@ -43,32 +41,19 @@ defineProps<{
     left: 0
     z-index: -10
 
-    @include xxl
-      width: 159px
-      height: 150px
     @include xl
-      width: 120px
-      height: 120px
+      width: 64px
+      height: 64px
     @include l
-      width: 80px
-      height: 80px
+      width: 48px
+      height: 48px
     @include m
-      width: 60px
-      height: 60px
+      width: 40px
+      height: 40px
 
 .feature__title
-  font-size: 40px
   font-weight: 700
-  margin-bottom: 44px
-  @include xl
-    font-size: 32px
-    margin-bottom: 32px
-  @include l
-    font-size: 24px
-    margin-bottom: 24px
-  @include m
-    font-size: 20px
-    margin-bottom: 18px
+  margin-bottom: 8px
 
 .feature__text
   font-size: 20px
