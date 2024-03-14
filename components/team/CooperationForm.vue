@@ -12,27 +12,14 @@
 
         <NuxtLink to="/" class="btn form__btn">Заповнити заявку</NuxtLink>
       </div>
-      <div class="mandala-wrapper">
-        <img
-          src="/images/mandala_gray.png"
-          width="230"
-          height="230"
-          class="mandala-1"
-        />
-        <img
-          src="/images/mandala_dark.png"
-          width="230"
-          height="230"
-          class="mandala-2"
-        />
-      </div>
+      <BaseMandala />
     </div>
   </div>
 </template>
 
 <script setup lang="ts"></script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .form 
   & .container
     position: relative

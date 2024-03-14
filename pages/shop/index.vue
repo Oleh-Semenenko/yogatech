@@ -9,11 +9,9 @@
           :autoplay="{ delay: 5000 }"
         >
           <SwiperSlide class="shop-swiper__item">
-            <!-- <NuxtImg src="/images/book.png" class="shop-swiper__img" /> -->
             <img src="/images/book.png" class="shop-swiper__img" />
           </SwiperSlide>
           <SwiperSlide class="shop-swiper__item">
-            <!-- <NuxtImg src="/images/banda.png" class="shop-swiper__img" /> -->
             <img src="/images/banda.png" class="shop-swiper__img" />
           </SwiperSlide>
         </Swiper>
@@ -25,54 +23,56 @@
       </div>
     </div>
 
-    <div class="container section">
-      <ul class="cards__list">
-        <BaseGoodsCard
-          v-for="product in products"
-          :key="product.id"
-          :product="product"
-        />
-      </ul>
+    <div class="section">
+      <div class="container">
+        <h2>Продукти</h2>
+        <ul class="cards__list">
+          <BaseGoodsCard
+            v-for="product in products"
+            :key="product.id"
+            :product="product"
+          />
+        </ul>
+      </div>
     </div>
+
+    <div class="section blue">
+      <div class="container">
+        <h2>Курси</h2>
+        <ul class="cards__list">
+          <BaseGoodsCard
+            v-for="course in courses"
+            :key="course.id"
+            :product="course"
+          />
+        </ul>
+      </div>
+    </div>
+
+    <ShopSection
+      title="Менторство"
+      text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet ipsa consequuntur a perspiciatis. Consequatur maxime, exercitationem autem officia tenetur ad commodi maiores dolores, veritatis eum mollitia, rem impedit enim? Non."
+    />
+
+    <ShopSection
+      title="Навчання “Курс підготовки викладачів RYT500”"
+      text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet ipsa consequuntur a perspiciatis. Consequatur maxime, exercitationem autem officia tenetur ad commodi maiores dolores, veritatis eum mollitia, rem impedit enim? Non."
+      link="/ryt500"
+      blue
+      withBtn
+    />
+
+    <ShopSection
+      title="Конференція"
+      text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet ipsa consequuntur a perspiciatis. Consequatur maxime, exercitationem autem officia tenetur ad commodi maiores dolores, veritatis eum mollitia, rem impedit enim? Non."
+      link="/fest"
+      withBtn
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-import type { IProduct } from '~/types'
-
-const products: IProduct[] = [
-  {
-    id: 1,
-    title: 'Книга “Технологія йоги” Михайла Ахекяна',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro obcaecati ratione, aliquam ducimus optio ea minima maiores inventore omnis illum distinctio. Facere, architecto quaerat. Nobis, iusto. Nam commodi obcaecati ullam.',
-    price: 1,
-    photos: ['/images/book.png', '/images/book.png', '/images/book.png'],
-    payment_link: 'https://secure.wayforpay.com/button/bac90579800e7'
-  },
-  {
-    id: 2,
-    title: 'Брендована біла футболка YOGATECH',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro obcaecati ratione, aliquam ducimus optio ea minima maiores inventore omnis illum distinctio. Facere, architecto quaerat. Nobis, iusto. Nam commodi obcaecati ullam.',
-    price: 1,
-    photos: [
-      '/images/t_shirt/t-shirt.png',
-      '/images/t_shirt/t-shirt-2.png',
-      '/images/t_shirt/t-shirt-3.png'
-    ],
-    payment_link: 'https://secure.wayforpay.com/button/b50682ce6b3a0'
-  },
-  {
-    id: 3,
-    title: 'Курс "Медитація 2.0"',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro obcaecati ratione, aliquam ducimus optio ea minima maiores inventore omnis illum distinctio. Facere, architecto quaerat. Nobis, iusto. Nam commodi obcaecati ullam.',
-    price: 1,
-    photos: ['/images/book.png', '/images/book.png', '/images/book.png'],
-    payment_link: 'https://secure.wayforpay.com/button/bc04782a4b6aa'
-  }
-]
+const { products, courses } = useShop()
 </script>
 
 <style lang="sass" scoped>

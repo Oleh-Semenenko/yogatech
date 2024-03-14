@@ -12,10 +12,12 @@
 
     <p class="goods__title">{{ product.title }}</p>
     <p class="goods__description">{{ product.description }}</p>
-    <p class="goods__price">{{ product.price }} грн</p>
+    <ul v-if="product.sizes">
+      <li v-for="size of product.sizes" :key="size.id">{{ size.value }}</li>
+    </ul>
 
     <div class="goods__controller">
-      <div class="goods__controller-quantity">
+      <!-- <div class="goods__controller-quantity">
         <Icon
           name="streamline:interface-remove-circle-delete-add-circle-subtract-button-buttons-remove"
           @click="() => count--"
@@ -25,20 +27,11 @@
           name="streamline:interface-add-circle-button-remove-cross-add-buttons-plus-circle"
           @click="() => count++"
         />
-      </div>
-      <button
-        class="btn"
-        :disabled="count === 0"
-        @click="addProduct(productData)"
-      >
-        Додати в кошик
+      </div> -->
+      <p class="goods__price">{{ product.price }} грн</p>
+      <button class="btn goods__btn" @click="addProduct(productData)">
+        B кошик
       </button>
-      <!-- <a
-        :href="product.payment_link"
-        class="btn"
-      >
-        Оплатити
-      </a> -->
     </div>
   </li>
 </template>
@@ -65,11 +58,16 @@ watch(count, () => {
 
 <style lang="sass" scoped>
 .goods
-  padding: 40px 20px
-  border: 1px solid black
+  padding: 12px
+  border: 1px solid var(--border-color)
   overflow-x: hidden
+  background: var(--white)
   width: 100%
   box-shadow: var(--box-shadow)
+  display: flex
+  flex-direction: column
+  gap: 12px
+  justify-content: space-between
   @include l
     padding-top: 32px
     padding-bottom: 32px
@@ -80,7 +78,6 @@ watch(count, () => {
   position: relative
   display: flex
   gap: 12px
-  margin-bottom: 12px
 
 .goods__photos-item
   width: 168px
@@ -94,20 +91,17 @@ watch(count, () => {
 
 .goods__title
   font-size: 24px
-  margin-bottom: 12px
   @include m
     font-size: 20px
 
 .goods__description
   font-size: 18px
-  margin-bottom: 12px
   @include m
     font-size: 16px
 
 .goods__price
   font-size: 40px
   font-weight: 700
-  margin-bottom: 12px
   @include l
     font-size: 32px
   @include m
@@ -115,8 +109,9 @@ watch(count, () => {
 
 .goods__controller
   display: flex
-  align-items: center
+  align-items: flex-end
   justify-content: space-between
+  flex-grow: 1
 
 .goods__controller-quantity
   display: flex
@@ -127,4 +122,7 @@ watch(count, () => {
 
   & svg:hover
     cursor: pointer
+
+.goods__btn
+  background-color: var(--orange)
 </style>
