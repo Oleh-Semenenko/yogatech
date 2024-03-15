@@ -11,9 +11,19 @@
     </ul>
 
     <p class="goods__title">{{ product.title }}</p>
-    <p class="goods__description">{{ product.description }}</p>
-    <ul v-if="product.sizes">
-      <li v-for="size of product.sizes" :key="size.id">{{ size.value }}</li>
+    <p v-if="!product.sizes" class="goods__description">
+      {{ product.description }}
+    </p>
+    <ul v-if="product.sizes" class="goods__sizes-list">
+      <li
+        v-for="size of product.sizes"
+        :key="size.id"
+        class="goods__size"
+        :class="{ selected: selectedSize?.id === size.id }"
+        @click="handleSelectSize(size)"
+      >
+        {{ size.value }}
+      </li>
     </ul>
 
     <div class="goods__controller">
@@ -37,17 +47,25 @@
 </template>
 
 <script setup lang="ts">
-import type { IProduct } from '~/types'
+import type { IProduct, ISize } from '~/types'
 
 const props = defineProps<{
   product: IProduct
 }>()
+
 const { addProduct } = useBasket()
 const count = ref(0)
+const selectedSize: Ref<ISize | null> = ref(
+  props.product?.sizes ? props.product?.sizes[0] : null
+)
 const productData = computed(() => ({
   ...props.product,
   quantity: count.value
 }))
+
+const handleSelectSize = (size: ISize) => {
+  selectedSize.value = size
+}
 
 watch(count, () => {
   if (count.value <= 0) {
@@ -98,6 +116,23 @@ watch(count, () => {
   font-size: 18px
   @include m
     font-size: 16px
+
+.goods__sizes-list
+  display: flex
+  gap: 12px
+
+.goods__size
+  cursor: pointer
+  color: var(--gray-color)
+  padding: 4px 12px
+  font-size: 28px
+  border: 1px solid var(--border-color)
+  border-radius: var(--primary-border-radius)
+
+  &.selected
+    color: var(--orange)
+    border-color: var(--orange)
+
 
 .goods__price
   font-size: 40px
