@@ -22,33 +22,18 @@
             :loop="true"
           >
             <SwiperSlide class="location__swiper-item">
-              <!-- <NuxtImg
-                src="/images/banda.png"
-                width="885"
-                format="webp,avif"
-              /> -->
               <img
                 src="/images/banda.png"
                 width="885"
               />
             </SwiperSlide>
             <SwiperSlide class="location__swiper-item">
-              <!-- <NuxtImg
-                src="/images/banda.png"
-                width="885"
-                format="webp,avif"
-              /> -->
               <img
                 src="/images/banda.png"
                 width="885"
               />
             </SwiperSlide>
             <SwiperSlide class="location__swiper-item">
-              <!-- <NuxtImg
-                src="/images/banda.png"
-                width="885"
-                format="webp,avif"
-              /> -->
               <img
                 src="/images/banda.png"
                 width="885"

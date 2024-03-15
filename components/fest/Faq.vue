@@ -27,7 +27,6 @@
           </div>
         </div>
 
-        <!-- <NuxtImg src="/images/placeholder.png" width="642" class="faq__inner-img"/> -->
         <img src="/images/placeholder.png" width="642" class="faq__inner-img"/>
       </div>
     </div>
