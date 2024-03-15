@@ -47,8 +47,9 @@
     </div>
   </div>
 
-  <div class="section">
+  <div class="person__intro section">
     <div class="container">
+      <BaseMandala />
       <iframe
         class="person__intro-video"
         width="772"
@@ -101,55 +102,7 @@
   <div class="section">
     <div class="container">
       <h2>Дивитись ще</h2>
-      <div class="team__swiper">
-        <Swiper
-          :modules="[SwiperPagination, SwiperAutoplay]"
-          :slides-per-view="4"
-          :space-between="52"
-          :centered-slides="false"
-          :pagination="{ clickable: true }"
-          :breakpoints="{
-            1920: {
-              slidesPerView: 4,
-              spaceBetween: 52
-            },
-            1280: {
-              slidesPerView: 3,
-              spaceBetween: 32
-            }
-          }"
-          :autoplay="{
-            delay: 3000
-          }"
-        >
-          <SwiperSlide
-            class="team__swiper-item"
-            v-for="teammate in othersTeammates"
-            :key="teammate.id"
-          >
-            <TeamTeammate :participant="teammate" />
-          </SwiperSlide>
-        </Swiper>
-        <div class="about-us__slider-pagination">
-          <div class="about-us__slider-pagination"></div>
-        </div>
-      </div>
-      <!-- <div>
-        <ul class="team__list-mob">
-          <li v-for="teammate in visibleTeammates" :key="teammate.id">
-            <TeamTeammate :participant="teammate" />
-          </li>
-        </ul>
-
-        <button
-          v-if="isShowMoreBtn"
-          class="team__list-more-btn"
-          @click="handleShowMore"
-        >
-          <span>Дивитись більше</span>
-          <Icon name="ph:arrow-down-thin" width="52" height="52" />
-        </button>
-      </div> -->
+      <TeamList :teammates="othersTeammates"/>
     </div>
   </div>
 </template>
@@ -187,6 +140,9 @@ const othersTeammates = getTeammatesExceptCurrent(route.params.slug as string)
     margin-top: 12px
   @include m
     margin-top: 8px
+
+.person__intro .container
+  position: relative
 
 .person__intro-video
   display: block

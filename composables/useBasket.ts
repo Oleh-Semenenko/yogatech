@@ -5,7 +5,6 @@ export default function useBasket() {
 
   const addProduct = (product: ISelectedProduct) => {
     selectedGoods.value = [...selectedGoods.value, product]
-    console.log("selectedGoods", selectedGoods.value)
   }
   return {
     selectedGoods,
