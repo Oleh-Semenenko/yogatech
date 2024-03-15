@@ -15,7 +15,7 @@
               >
             </li>
             <li class="nav__item">
-              <NuxtLink to="/shop">Навчання RYT200</NuxtLink>
+              <NuxtLink to="/ryt500">Навчання RYT500</NuxtLink>
             </li>
             <li class="nav__item">
               <NuxtLink

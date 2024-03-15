@@ -5,6 +5,11 @@ export interface IFeature {
   color: string
 }
 
+export interface ISize {
+  id: number
+  value: string
+}
+
 export interface IProduct {
   id: number
   title: string
@@ -12,6 +17,7 @@ export interface IProduct {
   price: number
   photos: string[]
   payment_link: string
+  sizes?: ISize[]
 }
 
 export interface ISelectedProduct extends IProduct {
