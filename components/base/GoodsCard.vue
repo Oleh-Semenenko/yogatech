@@ -1,5 +1,5 @@
 <template>
-  <li class="goods">
+  <NuxtLink :to="`/shop/${group}/${product.slug}`" class="goods">
     <ul class="goods__photos-list">
       <li
         v-for="(img, idx) in product.photos"
@@ -43,14 +43,15 @@
         B кошик
       </button>
     </div>
-  </li>
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">
-import type { IProduct, ISize } from '~/types'
+import { type IProduct, type ISize, ProductGroup } from '~/types'
 
 const props = defineProps<{
   product: IProduct
+  group: ProductGroup
 }>()
 
 const { addProduct } = useBasket()
@@ -84,6 +85,7 @@ watch(count, () => {
 
 <style lang="sass" scoped>
 .goods
+  cursor: pointer
   padding: 12px
   border: 1px solid var(--border-color)
   overflow-x: hidden

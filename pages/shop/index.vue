@@ -31,6 +31,7 @@
             v-for="product in products"
             :key="product.id"
             :product="product"
+            :group="ProductGroup.PRODUCT"
           />
         </ul>
       </div>
@@ -44,6 +45,7 @@
             v-for="course in courses"
             :key="course.id"
             :product="course"
+            :group="ProductGroup.COURSE"
           />
         </ul>
       </div>
@@ -72,6 +74,8 @@
 </template>
 
 <script setup lang="ts">
+import { ProductGroup } from '~/types'
+
 const { products, courses } = useShop()
 </script>
 
