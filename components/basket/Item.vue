@@ -1,10 +1,10 @@
 <template>
   <div class="product">
     <img :src="product.photos[0]" alt="Product logo" width="100" height="100" />
-    <div>Назва: {{ product.title }}</div>
+    <div>Назва: {{ productTitle }}</div>
     <div>Кількість: {{ product.quantity }}</div>
     <div>Ціна за 1 одиницю: {{ product.price }}</div>
-    <div>Загальна вартість за товар: {{ totalCostPerItem }}</div>
+    <!-- <div>Загальна вартість за товар: {{ totalCostPerItem }}</div> -->
   </div>
 </template>
 
@@ -15,9 +15,15 @@ const props = defineProps<{
   product: ISelectedProduct
 }>()
 
-const totalCostPerItem = computed(
-  () => (props.product.quantity * props.product.price)
-)
+const productTitle = computed(() => {
+  return props.product?.selectedSize
+    ? props.product.title + ' розмір ' + props.product.selectedSize.value
+    : props.product.title
+})
+
+// const totalCostPerItem = computed(
+//   () => (props.product.quantity * props.product.price)
+// )
 </script>
 
 <style lang="sass" scoped>

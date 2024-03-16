@@ -18,10 +18,11 @@ export interface IProduct {
   photos: string[]
   payment_link: string
   sizes?: ISize[]
+  selectedSize?: ISize
 }
 
 export interface ISelectedProduct extends IProduct {
-  quantity: number
+  quantity?: number
 }
 
 export enum LinkColor {
