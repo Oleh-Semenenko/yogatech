@@ -28,7 +28,8 @@ export default function useShop() {
         { id: 2, value: 'M' },
         { id: 3, value: 'L' },
         { id: 4, value: 'XL' }
-      ]
+      ],
+      selectedSize: { id: 1, value: 'S' }
     }
   ]
 

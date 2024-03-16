@@ -39,7 +39,7 @@
         />
       </div> -->
       <p class="goods__price">{{ product.price }} грн</p>
-      <button class="btn goods__btn" @click="addProduct(productData)">
+      <button class="btn goods__btn" @click="handleAddProductInBasket(productData)">
         B кошик
       </button>
     </div>
@@ -65,6 +65,14 @@ const productData = computed(() => ({
 
 const handleSelectSize = (size: ISize) => {
   selectedSize.value = size
+}
+const handleAddProductInBasket = (product: IProduct) => {
+  if(selectedSize.value && product.sizes) {
+    product.selectedSize = selectedSize.value
+    addProduct(product)
+  } else {
+    addProduct(product)
+  }
 }
 
 watch(count, () => {
@@ -135,12 +143,14 @@ watch(count, () => {
 
 
 .goods__price
-  font-size: 40px
+  font-size: 36px
   font-weight: 700
-  @include l
-    font-size: 32px
-  @include m
+  @include xl
     font-size: 28px
+  @include l
+    font-size: 20px
+  @include m
+    font-size: 16px
 
 .goods__controller
   display: flex
