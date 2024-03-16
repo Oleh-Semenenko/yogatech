@@ -60,6 +60,19 @@
               </li>
               <li>
                 <NuxtLink
+                  to="/team"
+                  :class="{ 'router-link-active': isTeamLinkActive }"
+                  @click="handleToggleMobMenu"
+                  >Команда та співпраця</NuxtLink
+                >
+              </li>
+              <li>
+                <NuxtLink to="/ryt500" @click="handleToggleMobMenu"
+                  >Навчання RYT500</NuxtLink
+                >
+              </li>
+              <li>
+                <NuxtLink
                   to="/fest"
                   :class="{ 'router-link-active': isFestLinkActive }"
                   @click="handleToggleMobMenu"
