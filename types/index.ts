@@ -17,6 +17,7 @@ export interface IProduct {
   price: number
   photos: string[]
   payment_link: string
+  slug: string
   sizes?: ISize[]
   selectedSize?: ISize
 }
@@ -47,4 +48,9 @@ export interface ITeammate {
   description: string
   instagramLink: string
   slug: string
+}
+
+export enum ProductGroup {
+  PRODUCT = 'product',
+  COURSE = 'course'
 }

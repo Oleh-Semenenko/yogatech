@@ -1,5 +1,8 @@
 <template>
-  <li class="goods">
+  <li
+    class="goods"
+    @click.stop="() => navigateTo(`/shop/${group}/${product.slug}`)"
+  >
     <ul class="goods__photos-list">
       <li
         v-for="(img, idx) in product.photos"
@@ -14,17 +17,12 @@
     <p v-if="!product.sizes" class="goods__description">
       {{ product.description }}
     </p>
-    <ul v-if="product.sizes" class="goods__sizes-list">
-      <li
-        v-for="size of product.sizes"
-        :key="size.id"
-        class="goods__size"
-        :class="{ selected: selectedSize?.id === size.id }"
-        @click="handleSelectSize(size)"
-      >
-        {{ size.value }}
-      </li>
-    </ul>
+    <ShopSizesList
+      v-if="product?.sizes && selectedSize"
+      :sizes="product.sizes"
+      :selected-size="selectedSize"
+      @select-size="handleSelectSize"
+    />
 
     <div class="goods__controller">
       <!-- <div class="goods__controller-quantity">
@@ -39,7 +37,11 @@
         />
       </div> -->
       <p class="goods__price">{{ product.price }} грн</p>
-      <button class="btn goods__btn" @click="handleAddProductInBasket(productData)">
+      <button
+        v-if="!withoutBtn"
+        class="btn goods__btn"
+        @click.stop="handleAddProductInBasket(productData)"
+      >
         B кошик
       </button>
     </div>
@@ -47,10 +49,12 @@
 </template>
 
 <script setup lang="ts">
-import type { IProduct, ISize } from '~/types'
+import { type IProduct, type ISize, ProductGroup } from '~/types'
 
 const props = defineProps<{
   product: IProduct
+  group: ProductGroup
+  withoutBtn?: boolean
 }>()
 
 const { addProduct } = useBasket()
@@ -67,7 +71,7 @@ const handleSelectSize = (size: ISize) => {
   selectedSize.value = size
 }
 const handleAddProductInBasket = (product: IProduct) => {
-  if(selectedSize.value && product.sizes) {
+  if (selectedSize.value && product.sizes) {
     product.selectedSize = selectedSize.value
     addProduct(product)
   } else {
@@ -84,6 +88,7 @@ watch(count, () => {
 
 <style lang="sass" scoped>
 .goods
+  cursor: pointer
   padding: 12px
   border: 1px solid var(--border-color)
   overflow-x: hidden
@@ -124,23 +129,6 @@ watch(count, () => {
   font-size: 18px
   @include m
     font-size: 16px
-
-.goods__sizes-list
-  display: flex
-  gap: 12px
-
-.goods__size
-  cursor: pointer
-  color: var(--gray-color)
-  padding: 4px 12px
-  font-size: 28px
-  border: 1px solid var(--border-color)
-  border-radius: var(--primary-border-radius)
-
-  &.selected
-    color: var(--orange)
-    border-color: var(--orange)
-
 
 .goods__price
   font-size: 36px
