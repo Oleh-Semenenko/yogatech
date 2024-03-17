@@ -10,7 +10,7 @@
             <li class="nav__item">
               <NuxtLink
                 to="/team"
-                :class="{ 'router-link-active': isTeamLinkActive }"
+                :class="{ 'router-link-active': $route.path.includes('team') }"
                 >Команда та співпраця</NuxtLink
               >
             </li>
@@ -20,20 +20,26 @@
             <li class="nav__item">
               <NuxtLink
                 to="/fest"
-                :class="{ 'router-link-active': isFestLinkActive }"
+                :class="{ 'router-link-active': $route.path.includes('fest') }"
                 >Конференція</NuxtLink
               >
             </li>
-            <li class="nav__item"><NuxtLink to="/shop">Магазин</NuxtLink></li>
+            <li class="nav__item">
+              <NuxtLink
+                to="/shop"
+                :class="{ 'router-link-active': $route.path.includes('shop') }"
+                >Магазин</NuxtLink
+              >
+            </li>
           </ul>
         </nav>
 
         <div
+          v-if="$route.path.includes('shop')"
           class="basket"
-          v-if="$route.path === '/shop'"
           @click="handleToggleBasketOpen"
         >
-          <Icon name="prime:shopping-cart" />
+          <Icon name="ph:shopping-cart-simple-thin" width="48" height="48" />
           <span class="basket-goods-quantity">{{ selectedGoods.length }}</span>
         </div>
 
@@ -61,7 +67,9 @@
               <li>
                 <NuxtLink
                   to="/team"
-                  :class="{ 'router-link-active': isTeamLinkActive }"
+                  :class="{
+                    'router-link-active': $route.path.includes('team')
+                  }"
                   @click="handleToggleMobMenu"
                   >Команда та співпраця</NuxtLink
                 >
@@ -74,13 +82,20 @@
               <li>
                 <NuxtLink
                   to="/fest"
-                  :class="{ 'router-link-active': isFestLinkActive }"
+                  :class="{
+                    'router-link-active': $route.path.includes('fest')
+                  }"
                   @click="handleToggleMobMenu"
                   >Конференція</NuxtLink
                 >
               </li>
               <li>
-                <NuxtLink to="/shop" @click="handleToggleMobMenu"
+                <NuxtLink
+                  to="/shop"
+                  :class="{
+                    'router-link-active': $route.path.includes('shop')
+                  }"
+                  @click="handleToggleMobMenu"
                   >Магазин</NuxtLink
                 >
               </li>
@@ -98,13 +113,13 @@ const { selectedGoods } = useBasket()
 const isBasketOpen = ref(false)
 const isMobMenuOpen = ref(false)
 
-const isFestLinkActive = computed(() => {
-  return route.path.includes('fest')
-})
+// const $route.path.includes('fest') = computed(() => {
+//   return route.path.includes('fest')
+// })
 
-const isTeamLinkActive = computed(() => {
-  return route.path.includes('team')
-})
+// const $route.path.includes('team') = computed(() => {
+//   return route.path.includes('team')
+// })
 
 const handleToggleMobMenu = () => {
   isMobMenuOpen.value = !isMobMenuOpen.value
@@ -158,21 +173,39 @@ const handleToggleBasketOpen = () => {
     display: none
 
 .basket
+  position: relative
   cursor: pointer
   display: flex
   gap: 4px
+  & svg
+    @include l
+      width: 40px
+      height: 40px
+    @include m
+      width: 32px
+      height: 32px
 
 .basket-goods-quantity
   display: inline-flex
   align-items: center
   justify-content: center
-  font-size: 12px
-  width: 20px
-  height: 20px
-  background-color: rgba(255, 185, 37, 0.3)
+  font-size: 14px
+  width: 31px
+  height: 31px
+  background-color: var(--orange)
   border-radius: 50%
-  position: relative
-
+  color: var(--white)
+  position: absolute
+  top: -20%
+  right: -10%
+  @include l
+    top: -10%
+    width: 24px
+    height: 24px
+  @include m
+    width: 20px
+    height: 20px
+    font-size: 12px
 .mob-menu__btn
   display: none
   @include l

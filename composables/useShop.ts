@@ -62,9 +62,16 @@ export default function useShop() {
       ? products.filter((p) => p.slug === slug)[0]
       : courses.filter((c) => c.slug === slug)[0]
   }
+
+  const getProductsExceptSelected = (slug: string, group: ProductGroup) => {
+    return group === ProductGroup.PRODUCT
+      ? products.filter((p) => p.slug !== slug)
+      : courses.filter((c) => c.slug !== slug)
+  }
   return {
     products,
     courses,
-    getOneProduct
+    getOneProduct,
+    getProductsExceptSelected
   }
 }
