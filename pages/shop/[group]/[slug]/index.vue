@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <div class="shop section">
     <div class="container">
       <div class="go-back-btn" @click="() => $router.go(-1)">
         <Icon name="mdi-light:chevron-left" width="32" height="32" />
@@ -76,8 +76,15 @@
                 @select-size="handleSelectSize"
               />
 
-              <span>Таблиця розмірів</span>
+              <span @click="handleSizesTableOpen">Таблиця розмірів</span>
             </div>
+            <Transition name="page">
+              <BasketModal
+                v-if="isSizesTableOpen"
+                :is-basket-open="isSizesTableOpen"
+                :set-is-basket-open="handleSizesTableOpen"
+              />
+            </Transition>
           </div>
 
           <button class="btn product__add-product-btn">В кошик</button>
@@ -111,6 +118,12 @@ import { ProductGroup, type ISize } from '~/types'
 const route = useRoute()
 const { getOneProduct, getProductsExceptSelected } = useShop()
 
+const isSizesTableOpen = ref(false)
+
+const handleSizesTableOpen = () => {
+  isSizesTableOpen.value = true
+}
+
 const product = getOneProduct(
   route.params.slug as string,
   route.params.group as ProductGroup
@@ -133,6 +146,15 @@ const handleSelectSize = (size: ISize) => {
 </script>
 
 <style lang="sass">
+.page-enter-active,
+.page-leave-active
+  transition: all 0.4s
+
+.page-enter-from,
+.page-leave-to
+  opacity: 0
+.shop
+  position: relative
 .go-back-btn
   & svg path
     fill: var(--primary-text-color)

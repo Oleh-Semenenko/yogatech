@@ -2,15 +2,26 @@
   <li class="card">
     <div class="card__header">
       <h3 class="card__header-title">{{ data.title }}</h3>
-      <div class="card__avatar"></div>
+      <Icon v-if="data.contactsType" :name="(data.photo as string)" width="72" height="72" class="card__contact-avatar" />
+      <div v-else class="card__avatar"></div>
     </div>
 
-    <p class="card__description">{{ data.description }}</p>
+    <div class="card__content">
+      <p class="card__description">{{ data.description }}</p>
+
+      <NuxtLink
+        v-if="data.formBtn"
+        :to="data.formBtn"
+        class="card__link btn form-link"
+        :class="{ orange: data.linkColor === LinkColor.ORANGE }"
+        >Заповнити форму</NuxtLink
+      >
+    </div>
 
     <div v-if="!withoutFooter" class="card__footer">
       <NuxtLink
         :to="data.link"
-        class="card__footer-link btn"
+        class="card__link btn"
         :class="{ orange: data.linkColor === LinkColor.ORANGE }"
         >{{ data.linksText }}</NuxtLink
       >
@@ -47,8 +58,12 @@ defineProps<ICardProps>()
 .card__header
   display: flex
   justify-content: space-between
+  gap: 40px
   @include m
     gap: 12px
+
+.card__contact-avatar
+  flex-shrink: 0
 
 .card__avatar
   border: 1px solid var(--border-color)
@@ -63,6 +78,9 @@ defineProps<ICardProps>()
     width: 60px
     height: 60px
 
+.card__content
+  flex-grow: 1
+
 .card__footer
   border-top: 1px solid var(--border-color)
   padding-top: 20px
@@ -70,9 +88,13 @@ defineProps<ICardProps>()
   @include m
     padding-top: 16px
 
-.card__footer-link
+.card__link
   margin-left: auto
   color: var(--white)
   &.orange
     background: var(--orange)
+
+.form-link
+  margin-top: 20px
+  display: block
 </style>

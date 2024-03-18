@@ -17,32 +17,31 @@
 </template>
 
 <script setup lang="ts">
-import type { ICard } from '~/types';
+import type { ICard } from '~/types'
 
 const projects: ICard[] = [
   {
     id: 1,
-    title: 'Конференція',
+    title: 'Курс для викладачів RYT500',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
+      "Перетворіть вашу любов до йоги в успішну кар'єру  з нашим провідним курсом. Ваш успіх починається тут.",
     photo: '',
-    link: '/fest',
+    link: '/ryt500',
     linksText: 'Дізнатись більше'
   },
   {
     id: 2,
     title: 'Курси',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
+    description: 'Доторкніться до своєї внутрішньої сили через йогу.',
     photo: '',
-    link: '/courses',
+    link: '/shop',
     linksText: 'Дізнатись більше'
   },
   {
     id: 3,
-    title: 'Книга',
+    title: 'Менторство',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
+      'Відкрийте свій потенціал, як інструктор йоги. З нами ваша мрія стане реальністю.',
     photo: '',
     link: '/shop',
     linksText: 'Дізнатись більше'
