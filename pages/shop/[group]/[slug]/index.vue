@@ -79,15 +79,31 @@
               <span @click="handleSizesTableOpen">Таблиця розмірів</span>
             </div>
             <Transition name="page">
-              <BasketModal
-                v-if="isSizesTableOpen"
-                :is-basket-open="isSizesTableOpen"
-                :set-is-basket-open="handleSizesTableOpen"
-              />
+              <div v-if="isSizesTableOpen" class="table__modal">
+                <div class="table__modal-content">
+                  <Icon
+                    name="ph:x-thin"
+                    width="44"
+                    height="44"
+                    @click="handleSizesTableOpen"
+                  />
+                  <img
+                    src="/images/sizes_table.png"
+                    alt="Sizes table"
+                    width="800"
+                    height="400"
+                  />
+                </div>
+              </div>
             </Transition>
           </div>
 
-          <button class="btn product__add-product-btn">В кошик</button>
+          <button
+            class="btn product__add-product-btn"
+            @click="addProduct(product)"
+          >
+            В кошик
+          </button>
 
           <div class="product__description">
             <p class="product__description-title">Опис товару:</p>
@@ -117,11 +133,15 @@ import { ProductGroup, type ISize } from '~/types'
 
 const route = useRoute()
 const { getOneProduct, getProductsExceptSelected } = useShop()
+const { addProduct } = useBasket()
 
 const isSizesTableOpen = ref(false)
 
 const handleSizesTableOpen = () => {
-  isSizesTableOpen.value = true
+  isSizesTableOpen.value = !isSizesTableOpen.value
+  isSizesTableOpen.value
+    ? document.querySelector('body')?.classList.add('fixed')
+    : document.querySelector('body')?.classList.remove('fixed')
 }
 
 const product = getOneProduct(
@@ -227,6 +247,9 @@ const handleSelectSize = (size: ISize) => {
   align-items: baseline
   color: var(--gray-color)
 
+  & span
+    cursor: pointer
+
 .product__add-product-btn
   background-color: var(--orange)
   font-size: 32px
@@ -234,4 +257,30 @@ const handleSelectSize = (size: ISize) => {
 .product__description-title
   color: var(--gray-color)
   margin-bottom: 12px
+
+.table__modal
+  z-index: 1000
+  position: absolute
+  top: 0
+  right: 0
+  width: 100vw
+  height: 100vh
+  backdrop-filter: blur(10px)
+  background-color: rgba(255, 255, 255, 0.3)
+
+.table__modal-content
+  background: var(--white)
+  width: calc( 800px + 50px * 2 )
+  height: calc( 400px + 46px * 2 )
+  position: fixed
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+  & img
+    margin: 0 auto
+  & svg.icon
+    cursor: pointer
+    margin-left: auto
+    display: block
 </style>

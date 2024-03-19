@@ -93,6 +93,9 @@ a.btn
     padding-top: 12px
     padding-bottom: 12px
 
+.fixed
+  overflow: hidden
+
 .blue
   background-color: var(--light-blue-color)
 
@@ -158,6 +161,8 @@ svg path
 
 .prev-btn,
 .next-btn
+  & path
+    fill: var(--gray-color)
   &:hover
     cursor: pointer
   color: var(--gray-color)
@@ -197,7 +202,8 @@ h2
   @include m
     font-size: 16px
 
-h3
+h3,
+.text-3
   font-size: 28px
   margin-bottom: 0
   @include xl

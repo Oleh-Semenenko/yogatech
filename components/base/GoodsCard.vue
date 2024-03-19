@@ -25,17 +25,6 @@
     />
 
     <div class="goods__controller">
-      <!-- <div class="goods__controller-quantity">
-        <Icon
-          name="streamline:interface-remove-circle-delete-add-circle-subtract-button-buttons-remove"
-          @click="() => count--"
-        />
-        {{ count }}
-        <Icon
-          name="streamline:interface-add-circle-button-remove-cross-add-buttons-plus-circle"
-          @click="() => count++"
-        />
-      </div> -->
       <p class="goods__price">{{ product.price }} грн</p>
       <button
         v-if="!withoutBtn"
@@ -78,12 +67,6 @@ const handleAddProductInBasket = (product: IProduct) => {
     addProduct(product)
   }
 }
-
-watch(count, () => {
-  if (count.value <= 0) {
-    count.value = 0
-  }
-})
 </script>
 
 <style lang="sass" scoped>
@@ -145,16 +128,6 @@ watch(count, () => {
   align-items: flex-end
   justify-content: space-between
   flex-grow: 1
-
-.goods__controller-quantity
-  display: flex
-  align-items: center
-  gap: 16px
-  font-size: 24px
-  font-weight: 300
-
-  & svg:hover
-    cursor: pointer
 
 .goods__btn
   background-color: var(--orange)
