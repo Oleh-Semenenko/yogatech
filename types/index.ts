@@ -39,6 +39,8 @@ export interface ICard {
   link?: string
   linksText?: string
   linkColor?: LinkColor
+  formBtn?: string
+  contactsType?: boolean
 }
 
 export interface ITeammate {

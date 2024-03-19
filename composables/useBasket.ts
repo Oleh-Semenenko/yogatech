@@ -10,6 +10,10 @@ export default function useBasket() {
     selectedGoods.value = [...selectedGoods.value, product]
   }
 
+  const removeProduct = (product: ISelectedProduct) => {
+    selectedGoods.value = selectedGoods.value.filter(p => p.id !== product.id)
+  }
+
   const handlePayment = async (amount: number) => {
     const paymentLink = 'https://secure.wayforpay.com/pay'
 
@@ -23,6 +27,7 @@ export default function useBasket() {
   }
   return {
     selectedGoods,
-    addProduct
+    addProduct,
+    removeProduct
   }
 }
