@@ -106,6 +106,8 @@
 <script setup lang="ts">
 const route = useRoute()
 const { selectedGoods } = useBasket()
+
+console.log("selectedGoods", selectedGoods.value)
 const isBasketOpen = ref(false)
 const isMobMenuOpen = ref(false)
 

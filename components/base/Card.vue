@@ -13,7 +13,7 @@
         v-if="data.formBtn"
         :to="data.formBtn"
         class="card__link btn form-link"
-        :class="{ orange: data.linkColor === LinkColor.ORANGE }"
+        :class="{ 'orange-type': data.linkColor === LinkColor.ORANGE }"
         >Заповнити форму</NuxtLink
       >
     </div>
@@ -22,7 +22,7 @@
       <NuxtLink
         :to="data.link"
         class="card__link btn"
-        :class="{ orange: data.linkColor === LinkColor.ORANGE }"
+        :class="{ 'orange-type': data.linkColor === LinkColor.ORANGE }"
         >{{ data.linksText }}</NuxtLink
       >
     </div>
@@ -91,8 +91,6 @@ defineProps<ICardProps>()
 .card__link
   margin-left: auto
   color: var(--white)
-  &.orange
-    background: var(--orange)
 
 .form-link
   margin-top: 20px

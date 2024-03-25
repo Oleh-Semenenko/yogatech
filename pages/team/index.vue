@@ -1,6 +1,6 @@
 <template>
   <TeamHero />
-  <TeamAboutFounder />
+  <TeamAssociationGoals />
   <TeamParticipants />
   <TeamCooperationBenefits />
   <TeamCooperationForm />

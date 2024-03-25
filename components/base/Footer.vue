@@ -67,6 +67,8 @@
   @include m
     grid-template-columns: 1fr
     grid-template-rows: repeat(3, auto)
+    & .nav__list
+      display: none
 
 .footer__logo
   grid-column: 1

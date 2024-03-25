@@ -1,7 +1,7 @@
 export interface IFeature {
   id: number
   title: string
-  text: string
+  text: string | string[]
   color: string
 }
 
@@ -20,6 +20,7 @@ export interface IProduct {
   slug: string
   sizes?: ISize[]
   selectedSize?: ISize
+  shortDescription?: string
 }
 
 export interface ISelectedProduct extends IProduct {
@@ -48,6 +49,7 @@ export interface ITeammate {
   img: string
   name: string
   description: string
+  intro: string
   instagramLink: string
   slug: string
 }

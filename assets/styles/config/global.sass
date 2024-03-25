@@ -45,8 +45,13 @@ button
     padding: 8px 16px
     font-size: 14px
 
+  &.orange-type
+    background-color: var(--orange)
+    &:hover
+      background-color: var(--hover-orange-color)
+
   &:hover
-    background-color: var(--light-blue-color)
+    background-color: var(--hover-blue-color)
   &:disabled
     opacity: 0.3
     cursor: not-allowed
@@ -165,6 +170,9 @@ svg path
     fill: var(--gray-color)
   &:hover
     cursor: pointer
+  &.swiper-button-disabled
+    opacity: 0.5
+    cursor: not-allowed
   color: var(--gray-color)
   flex-shrink: 0
   @include m
@@ -201,6 +209,16 @@ h2
     margin-bottom: 12px
   @include m
     font-size: 16px
+
+.text-2
+  font-size: 36px
+  @include xl
+    font-size: 28px
+  @include l
+    font-size: 20px
+  @include m
+    font-size: 16px
+
 
 h3,
 .text-3

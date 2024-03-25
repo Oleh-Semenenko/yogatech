@@ -3,7 +3,7 @@
       <li
         v-for="size of sizes"
         :key="size.id"
-        class="goods__size"
+        class="goods__size text-3"
         :class="{ selected: selectedSize?.id === size.id }"
         @click.stop="handleSelectSize(size)"
       >
@@ -37,7 +37,6 @@ const handleSelectSize = (size: ISize) => {
   cursor: pointer
   color: var(--gray-color)
   padding: 4px 12px
-  font-size: 28px
   border: 1px solid var(--border-color)
   border-radius: var(--primary-border-radius)
 

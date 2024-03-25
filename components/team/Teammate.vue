@@ -2,8 +2,6 @@
   <div class="teammate">
     <div
       class="teammate__avatar-wrapper"
-      @mouseenter="handleShowOverlay"
-      @mouseleave="hideOverlay"
       @click="toggleOverlay"
     >
       <img
@@ -23,7 +21,7 @@
       </div>
     </div>
     <h3 class="teammate__name">{{ name }}</h3>
-    <p class="teammate__description">{{ description }}</p>
+    <p class="teammate__description">{{ intro }}</p>
   </div>
 </template>
 
@@ -35,7 +33,7 @@ interface ITeammateProps {
 }
 
 const props = defineProps<ITeammateProps>()
-const { id, img, name, description, instagramLink, slug } = props.participant
+const { id, img, name, description, instagramLink, slug, intro } = props.participant
 
 const showOverlay = ref(false)
 const isMobile = computed(() => {

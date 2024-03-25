@@ -2,9 +2,7 @@
   <div class="section" :class="{ blue: blue }">
     <div class="container">
       <h2>{{ title }}</h2>
-      <p>
-        {{ text }}
-      </p>
+      <p v-html="text"></p>
       <NuxtLink v-if="withBtn" :to="link" class="btn">Дізнатись більше</NuxtLink>
     </div>
   </div>

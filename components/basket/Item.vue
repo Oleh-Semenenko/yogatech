@@ -4,18 +4,22 @@
     <div class="product__data">
       <div class="product__data-header">
         <div>Назва: {{ productTitle }}</div>
-        <Icon name="ph:trash-thin" width="44" height="44" @click="removeProduct(product)" />
+        <Icon name="ph:trash-thin" width="44" height="44" @click="removeProduct(product.id)" />
       </div>
       <div class="product__controller">
         <div class="product__price text-3">{{ product.price }} грн</div>
         <div class="product__controller-quantity">
           <Icon
-            name="streamline:interface-remove-circle-delete-add-circle-subtract-button-buttons-remove"
+            name="ph:minus-circle-thin"
+            width="44"
+            height="44"
             @click.stop="() => count--"
           />
           <span class="text-3">{{ count }}</span>
           <Icon
-            name="streamline:interface-add-circle-button-remove-cross-add-buttons-plus-circle"
+            name="ph:plus-circle-thin"
+            width="44"
+            height="44"
             @click.stop="() => count++"
           />
         </div>
@@ -46,7 +50,7 @@ watch(count, () => {
 })
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .product
   padding: 16px 24px
   border-radius: var(--primary-border-radius)
@@ -60,6 +64,8 @@ watch(count, () => {
 .product__data-header
   display: flex
   justify-content: space-between
+  @include s
+    margin-bottom: 12px
 
   & svg
     cursor: pointer
@@ -71,6 +77,8 @@ watch(count, () => {
   display: flex
   align-items: baseline
   gap: 36px
+  @include m
+    gap: 12px
 
 .product__controller-quantity
   display: flex
@@ -79,6 +87,8 @@ watch(count, () => {
   font-size: 24px
   font-weight: 300
   color: var(--gray-color)
+  @include m
+    gap: 8px
 
   & span
     width: 44px
@@ -89,6 +99,16 @@ watch(count, () => {
     justify-content: center
     align-items: center
     font-weight: 700
+    @include m
+      width: 28px
+      height: 28px
+
+  & svg 
+    path
+      fill: var(--gray-color)
+    @include m
+      width: 28px
+      height: 28px
 
   & svg:hover
     cursor: pointer

@@ -1,11 +1,13 @@
 <template>
-  <li
-      class="feature"
-      :style="{ '--feature-background-color': feature.color }"
-    >
-      <h2 class="feature__title">{{ feature.title }}</h2>
-      <p class="feature__text">{{ feature.text }}</p>
-    </li>
+  <li class="feature" :style="{ '--feature-background-color': feature.color }">
+    <h2 class="feature__title">{{ feature.title }}</h2>
+    <div v-if="Array.isArray(feature.text)">
+      <ul class="feature__text-list">
+        <li v-for="item in feature.text" :key="item">{{ item }}</li>
+      </ul>
+    </div>
+    <p v-else class="feature__text">{{ feature.text }}</p>
+  </li>
 </template>
 
 <script setup lang="ts">
@@ -54,6 +56,10 @@ defineProps<{
 .feature__title
   font-weight: 700
   margin-bottom: 8px
+
+.feature__text-list
+  list-style: disc
+  padding-left: 16px
 
 .feature__text
   font-size: 20px
