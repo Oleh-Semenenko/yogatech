@@ -18,15 +18,17 @@
 .hero
   position: relative
 .hero__title
-  width: 50%
+  width: 60%
 
 .mandala-wrapper
-  right: 10%
+  right: 5%
   left: 0
   margin-left: auto
+  @include l
+    right: -5%
 
-.mandala-1
+// .mandala-1
 
-.mandala-2
+// .mandala-2
 
 </style>

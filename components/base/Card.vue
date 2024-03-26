@@ -2,12 +2,19 @@
   <li class="card">
     <div class="card__header">
       <h3 class="card__header-title">{{ data.title }}</h3>
-      <Icon v-if="data.contactsType" :name="(data.photo as string)" width="72" height="72" class="card__contact-avatar" />
-      <div v-else class="card__avatar"></div>
+      <Icon
+        :name="(data.icon as string)"
+        width="72"
+        height="72"
+        class="card__contact-avatar"
+      />
     </div>
 
     <div class="card__content">
-      <p class="card__description">{{ data.description }}</p>
+      <ul v-if="Array.isArray(data.description)" class="card__description-list">
+        <li v-for="item in data.description" :key="item">{{ item }}</li>
+      </ul>
+      <p v-else class="card__description">{{ data.description }}</p>
 
       <NuxtLink
         v-if="data.formBtn"
@@ -23,6 +30,7 @@
         :to="data.link"
         class="card__link btn"
         :class="{ 'orange-type': data.linkColor === LinkColor.ORANGE }"
+        target="_blanc"
         >{{ data.linksText }}</NuxtLink
       >
     </div>
@@ -64,22 +72,22 @@ defineProps<ICardProps>()
 
 .card__contact-avatar
   flex-shrink: 0
-
-.card__avatar
-  border: 1px solid var(--border-color)
-  border-radius: 50%
-  width: 112px
-  height: 112px
-  flex-shrink: 0
   @include xl
-    width: 72px
-    height: 72px
+    width: 56px
+    height: 56px
+  @include l
+    width: 44px
+    height: 44px
   @include m
-    width: 60px
-    height: 60px
+    width: 40px
+    height: 40px
 
 .card__content
   flex-grow: 1
+
+.card__description-list
+  list-style: disc
+  padding-left: 16px
 
 .card__footer
   border-top: 1px solid var(--border-color)

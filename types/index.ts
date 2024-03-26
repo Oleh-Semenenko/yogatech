@@ -35,13 +35,12 @@ export enum LinkColor {
 export interface ICard {
   id: number
   title: string
-  description: string
-  photo: string | string[]
+  description: string | string[]
+  icon: string | string[]
   link?: string
   linksText?: string
   linkColor?: LinkColor
   formBtn?: string
-  contactsType?: boolean
 }
 
 export interface ITeammate {

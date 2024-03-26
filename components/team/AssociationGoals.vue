@@ -97,12 +97,33 @@ const values: IFeature[] = [
   display: flex
   flex-direction: column
   gap: 40px
+  @include xl
+    gap: 28px
+  @include l
+    gap: 20px
+  @include m
+    gap: 12px
 
 .goals__list
   grid-template-columns: repeat(2, auto)
+  grid-template-rows: repeat(2, auto)
+  justify-items: start
+  @include m
+    grid-template-columns: 1fr
+
+  & .feature
+    max-width: 100%
+  & .feature:last-child
+    grid-column: auto
 
 .values__list
   grid-template-columns: repeat(2, auto)
+  grid-template-rows: repeat(2, auto)
+  justify-items: start
+  @include m
+    grid-template-columns: 1fr
+  & .feature
+    max-width: 100%
 
   & .feature:last-child
     justify-self: center
@@ -112,4 +133,8 @@ const values: IFeature[] = [
       max-width: 543px
     @include l
       max-width: 340px
+    @include m
+      justify-self: start
+      max-width: 100%
+
 </style>

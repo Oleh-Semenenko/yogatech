@@ -1,11 +1,9 @@
 <template>
   <li class="feature" :style="{ '--feature-background-color': feature.color }">
     <h2 class="feature__title">{{ feature.title }}</h2>
-    <div v-if="Array.isArray(feature.text)">
-      <ul class="feature__text-list">
-        <li v-for="item in feature.text" :key="item">{{ item }}</li>
-      </ul>
-    </div>
+    <ul v-if="Array.isArray(feature.text)" class="feature__text-list">
+      <li v-for="item in feature.text" :key="item">{{ item }}</li>
+    </ul>
     <p v-else class="feature__text">{{ feature.text }}</p>
   </li>
 </template>
