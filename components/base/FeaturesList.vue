@@ -1,5 +1,5 @@
 <template>
-  <ul class="features__list">
+  <ul class="features__list" :class="styles">
     <BaseFeatureItem
       v-for="feature in features"
       :key="feature.id"
@@ -12,7 +12,8 @@
 <script setup lang="ts">
 import type { IFeature } from '~/types'
 defineProps<{
-  features: IFeature[]
+  features: IFeature[],
+  styles?: string
 }>()
 </script>
 

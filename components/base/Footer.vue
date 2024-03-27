@@ -2,9 +2,14 @@
   <div class="footer section blue">
     <div class="container">
       <div class="footer__inner">
-        <img src="/images/logo_footer.png" class="footer__logo" width="226" height="178" />
+        <img
+          src="/images/logo_footer.png"
+          class="footer__logo"
+          width="226"
+          height="178"
+        />
         <p class="copyright">
-          © Copyright 2024 YogaTech.ua All Rights Reserved
+          © Copyright 2024 YogaTech.ua<br />All Rights Reserved
         </p>
 
         <ul class="nav__list">
@@ -37,13 +42,24 @@
 
         <ul class="socials__nav-list">
           <li>
-            <Icon name="ph:telegram-logo-thin" width="44" height="44" />
+            <NuxtLink to="https://t.me/yogatechua" target="_blanc">
+              <Icon name="ph:telegram-logo-thin" width="44" height="44" />
+            </NuxtLink>
           </li>
           <li>
-            <Icon name="ph:telegram-logo-thin" width="44" height="44" />
+            <NuxtLink to="https://t.me/MikeYogatech" target="_blanc">
+              <Icon name="ph:telegram-logo-thin" width="44" height="44" />
+            </NuxtLink>
           </li>
           <li>
-            <Icon name="ph:youtube-logo-thin" width="44" height="44" />
+            <NuxtLink to="https://www.youtube.com/@Y0GATECH" target="_blanc">
+              <Icon name="ph:youtube-logo-thin" width="44" height="44" />
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="mailto:yogatechua@gmail.com" target="_blanc">
+              <Icon name="ph:envelope-simple-thin" width="44" height="44" />
+            </NuxtLink>
           </li>
         </ul>
       </div>
@@ -63,10 +79,10 @@
   gap: 24px
   @include xl
     gap: 8px
-
-  @include m
-    grid-template-columns: 1fr
-    grid-template-rows: repeat(3, auto)
+  @include l
+    grid-template-rows: repeat(2, auto)
+    & .nav__list
+      display: none
 
 .footer__logo
   grid-column: 1
@@ -74,15 +90,28 @@
   @include xl
     width: 172px
     height: 135px
+  @include l
+    grid-row: 1
+    width: 80px
+    height: 64px
+  @include m
+    width: 60px
+    height: 48px
 
 .copyright
   font-size: 20px
   grid-column: 2
   grid-row: 3
   justify-self: flex-end
+  margin-top: 12px
+  @include l
+    grid-column: 1
+    grid-row: 2
+    margin-top: 20px
   @include m
+    justify-self: flex-start
+    grid-column: 1 / -1
     font-size: 16px
-    grid-row: 3
 
 .nav__list
   grid-column: 2
@@ -104,10 +133,11 @@
   justify-content: flex-end
   display: flex
   gap: 32px
-  @include m
-    grid-column: 1
+  @include l
     grid-row: 1
     gap: 24px
+  @include m
+    gap: 16px
 
 
 .icon:hover

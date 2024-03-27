@@ -14,14 +14,6 @@
               :data="profit"
             ></BaseCard>
           </ul>
-
-          <p class="profits__content-text">
-            І звісно, кожен із вас може бути учасником наших конференцій, за
-            наявності сертифікату RYT-200 від будь-якої школи йоги. Рівно як у
-            клуб автомобілістів не беруть без водійського посвідчення, наша
-            асоціація створена для викладачів і це необхідно підтвердити
-            документально, задля вашої безпеки та комфорту оточуючих
-          </p>
         </div>
       </div>
     </div>
@@ -29,25 +21,33 @@
 </template>
 
 <script setup lang="ts">
-import type { ICard } from '~/types';
+import type { ICard } from '~/types'
 
 const profits: ICard[] = [
   {
     id: 1,
-    title: 'Користь для викладачів-початківців',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
-    photo: '',
-    link: '#',
+    title: 'Користь для викладачів-початківців та практикуючих',
+    description: [
+      'Хороша наукова база',
+      'Високоякісні курси на найрізноманітніші теми',
+      'Найбільший викладацький курс в Україні',
+      'Менторські послуги',
+      'Можливість зростати разом'
+    ],
+    icon: 'ph:flower-lotus-thin',
+    link: '/shop',
     linksText: 'Дізнатись більше'
   },
   {
     id: 2,
     title: 'Користь для просунутих викладачів',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
-    photo: '',
-    link: '#',
+    description: [
+      'Заробляйте знаннями, а не лише проведенням занять',
+      'Реалізовуйте себе, як дослідники, ментори чи організатори',
+      'Будьте учасниками закритих подій'
+    ],
+    icon: 'ph:sketch-logo-thin',
+    link: '/team',
     linksText: 'Дізнатись більше'
   }
 ]
@@ -68,12 +68,6 @@ const profits: ICard[] = [
     gap: 16px
   @include m
     gap: 12px
-
-.profits__content-text
-  display: inline-block
-  max-width: 90%
-  z-index: 50
-  margin: 0 auto
 
 .profits__list
   z-index: 50

@@ -51,14 +51,26 @@
       </div>
     </div>
 
-    <ShopSection
-      title="Менторство"
-      text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet ipsa consequuntur a perspiciatis. Consequatur maxime, exercitationem autem officia tenetur ad commodi maiores dolores, veritatis eum mollitia, rem impedit enim? Non."
-    />
+    <div class="section mentorship">
+      <div class="container">
+        <h2>Менторство</h2>
+        <p>
+          Михайло Ахекян, ментор асоціації:“Коли я лише починав займатися йогою, у моєму житті не було людини, яка могла би мені допомогти і провести мене у  світ йоги. Я не знав у кого краще навчатися, як говорити з роботодавцями, яку ціну ставити за свої послуги, які існують сертифікаційні системи та способи монетизації моїх знань, як потрапити викладачем на йога-фестиваль, організувати власну подію, зрозуміти свою сильну сторону, почати будувати селф-бренд, набрати свою аудиторію.<br />
+          З усім цим мені довелось працювати самостійно і я прекрасно розумію, що маючи провідника у цьому напрямку, я міг би суттєво швидше і з меншими зусиллями опинитись там, де я є зараз. Тому я пропоную вам власні послуги у ролі ментора”. 
+        </p>
+        <p class="mentorship__text-2">
+          У пакет вартістю 5000 грн входить 4 персональні зустрічі протягом місяця, на яких ми ставимо чіткі цілі, працюємо над вашими кейсами та досягаємо якісно нових результатів.
+        </p>
+        <div class="mentorship__footer">
+          <p>Для участі у менторській програмі заповніть, будь ласка, заявку і ми з вами зв’яжемось! </p>
+          <NuxtLink to="/" class="btn orange-type">Заповнити заявку</NuxtLink>
+        </div>
+      </div>
+    </div>
 
     <ShopSection
       title="Навчання “Курс підготовки викладачів RYT500”"
-      text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet ipsa consequuntur a perspiciatis. Consequatur maxime, exercitationem autem officia tenetur ad commodi maiores dolores, veritatis eum mollitia, rem impedit enim? Non."
+      text="Ультимативний курс для інструкторів, що у 5 разів більший за стандартну міжнародну сертифікацію у 200 годин! Пориньте у світ йоги та дослідіть її глибини у затишних Карпатах!"
       link="/ryt500"
       blue
       withBtn
@@ -66,7 +78,7 @@
 
     <ShopSection
       title="Конференція"
-      text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet ipsa consequuntur a perspiciatis. Consequatur maxime, exercitationem autem officia tenetur ad commodi maiores dolores, veritatis eum mollitia, rem impedit enim? Non."
+      :text="`Конференція йога-інструкторів - це проект, який виношувався не один рік. На відміну від фестивалей, куди може приїхати будь-хто і де викладачі мають зважати на досить велике розшарування у аудиторії, конференція дає можливість глибше поринути в тему, розкрити її та говорити про більш складні та глибокі речі, використовуючи відповідну термінологію та не витрачаючи надмірну кількість часу на її пояснення.<br />Разом із цим, це - простір людей, що горить йогою та прагне постійного самовдосконалення. Де можна знайти однодумців, здобути нові зв’язки, створити колаборації та зростати разом.`"
       link="/fest"
       withBtn
     />
@@ -117,4 +129,12 @@ const { products, courses } = useShop()
   width: 100%
   height: 100%
   object-fit: cover
+
+.mentorship__text-2
+  margin-top: 12px
+
+.mentorship__footer
+  display: flex
+  justify-content: space-between
+  margin-top: 40px
 </style>

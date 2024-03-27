@@ -15,7 +15,7 @@
 
       <div class="basket-products">
         <h3>Продукти</h3>
-        <ul class="basket-list">
+        <ul v-if="selectedGoods.length" class="basket-list">
           <li
             v-for="product in selectedGoods"
             :key="product.id"
@@ -24,12 +24,13 @@
             <BasketItem :product="product" />
           </li>
         </ul>
+        <div class="basket-products-empty" v-else>У вашій корзині ще немає доданих товарів</div>
       </div>
 
       <div class="basket-footer">
         <h2>Всього: {{ totalCost }} грн</h2>
 
-        <a href="https://secure.wayforpay.com/button/bf97a2c2fb2e7" class="btn">Перейти до оплати</a>
+        <button class="btn orange-type" :disabled="!selectedGoods.length" @click="handlePayment(totalCost)">Перейти до оплати</button>
       </div>
     </div>
   </div>
@@ -41,7 +42,7 @@ defineProps<{
   setIsBasketOpen: () => void
 }>()
 
-const { selectedGoods } = useBasket()
+const { selectedGoods, handlePayment } = useBasket()
 
 const totalCost = computed(() => {
   return selectedGoods.value.reduce((acc, item) => {
@@ -65,6 +66,8 @@ const totalCost = computed(() => {
   height: 100vh
   width: 50vw
   margin-left: auto
+  @include m
+    width: 100vw
 
 .basket-header
   display: flex
@@ -83,6 +86,8 @@ const totalCost = computed(() => {
   & h3
     padding: 0 24px
     margin-bottom: 16px
+  & .basket-products-empty
+    padding: 0 24px
 
 .basket-list
   border-top: 1px solid var(--border-color)
@@ -93,8 +98,7 @@ const totalCost = computed(() => {
   padding: 0 24px
   margin-top: 16px
 
-  & a
+  & .btn
     margin-left: auto
     display: block
-    background-color: var(--orange)
 </style>

@@ -10,7 +10,7 @@
           quia debitis doloribus.
         </p>
 
-        <NuxtLink to="/" class="btn form__btn">Заповнити заявку</NuxtLink>
+        <NuxtLink to="/" class="btn form__btn orange-type">Заповнити заявку</NuxtLink>
       </div>
       <BaseMandala />
     </div>
@@ -54,8 +54,7 @@
   display: flex
   flex-direction: column
 .form__btn
-  margin: 100px auto 134px
-  background: var(--orange)
+  margin: 100px auto 44px
   z-index: 50
   @include xl
     margin-bottom: 32px

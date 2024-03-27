@@ -8,8 +8,8 @@
     />
     <Swiper
       :modules="[SwiperNavigation, SwiperPagination]"
-      :slides-per-view="4"
-      :space-between="52"
+      :slides-per-view="'auto'"
+      :spaceBetween="52"
       :centered-slides="false"
       :pagination="{ clickable: true }"
       :navigation="{
@@ -19,11 +19,11 @@
       }"
       :breakpoints="{
         1920: {
-          slidesPerView: 4,
+          slidesPerView: 'auto',
           spaceBetween: 52
         },
         1280: {
-          slidesPerView: 3,
+          slidesPerView: 'auto',
           spaceBetween: 32
         }
       }"
@@ -89,6 +89,8 @@ const handleShowMore = () => {
 </script>
 
 <style lang="sass" scoped>
+.swiper
+  margin-left: 0
 .team__swiper
   display: flex
   align-items: center
@@ -101,7 +103,12 @@ const handleShowMore = () => {
     margin-bottom: 130px
 
 .team__swiper-item
+  text-align: center
   width: 365px
+  @include xl
+    width: 316px
+  @include l
+    width: 340px
 
 .team__list-mob
   display: none

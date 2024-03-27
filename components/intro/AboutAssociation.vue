@@ -4,20 +4,20 @@
       <div class="about-association__inner">
         <h2 class="about-association__inner-title">Про YogaTech</h2>
         <div class="about-association__inner-wrapper">
-          <img
-            src="/images/hero.png"
-            width="435"
-            height="495"
-          />
+          <img src="/images/hero.png" width="435" height="495" />
           <div class="about-association__inner-content">
             <p class="about-association__inner-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia illo
-              pariatur iure ab molestias, aperiam dolore expedita, perferendis
-              nostrum at maiores voluptatem dignissimos explicabo! Rerum aperiam
-              eum autem quisquam ducimus? Lorem ipsum dolor sit, amet
-              consectetur adipisicing elit. Quam sunt, voluptatum voluptate amet
-              error commodi! Explicabo similique est repellat dolor iusto, ipsa
-              libero temporibus iure, illum iste deleniti tempora perferendis?
+              Останні сто років у йозі процвітав індивідуалізм, де кожен
+              викладач прагнув створити школу імені себе. Однак понад 5000 років
+              йога існувала, як цілісна наука, тож на нашу думку, настав час
+              згадати про наше спільне коріння. Ми закликаємо йогів усіх
+              традицій та напрямків до об'єднання, конструктивного діалогу та
+              обміну досвідом!
+            </p>
+            <p class="about-association__inner-text--second">
+              Також, однією із наших цілей, є виведення йоги із площини фітнесу
+              та повернення йозі статусу науки, техніки якої логічні, зрозумілі
+              та можуть бути з легкістю впроваджені у життя.
             </p>
 
             <button class="btn">Дізнатись більше</button>
@@ -68,4 +68,8 @@
 
   & .btn
     align-self: end
+
+.about-association__inner-text--second
+  flex-grow: 1
+  margin-top: 20px
 </style>
