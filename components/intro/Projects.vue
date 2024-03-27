@@ -2,7 +2,7 @@
   <div class="projects section blue">
     <div class="container">
       <div class="projects__inner">
-        <h2 class="projects__title">Про проекти</h2>
+        <h2 class="projects__title">Наші проекти</h2>
 
         <ul class="cards__list">
           <BaseCard
@@ -17,33 +17,32 @@
 </template>
 
 <script setup lang="ts">
-import type { ICard } from '~/types';
+import type { ICard } from '~/types'
 
 const projects: ICard[] = [
   {
     id: 1,
-    title: 'Конференція',
+    title: 'Викладацький курс',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
-    photo: '',
-    link: '/fest',
+      "Перетворіть вашу любов до йоги в успішну кар'єру  з нашим провідним курсом. Ваш успіх починається тут.",
+    icon: 'ph:graduation-cap-thin',
+    link: '/ryt500',
     linksText: 'Дізнатись більше'
   },
   {
     id: 2,
     title: 'Курси',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
-    photo: '',
-    link: '/courses',
+    description: 'Доторкніться до своєї внутрішньої сили через йогу. Наші викладачі поділяться з вами своїми знаннями у своїх курсах.',
+    icon: 'ph:brain-thin',
+    link: '/shop',
     linksText: 'Дізнатись більше'
   },
   {
     id: 3,
-    title: 'Книга',
+    title: 'Менторство',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
-    photo: '',
+      'Відкрийте свій потенціал, як інструктор йоги. З нами ваша мрія стане реальністю.',
+    icon: 'ph:users-thin',
     link: '/shop',
     linksText: 'Дізнатись більше'
   }

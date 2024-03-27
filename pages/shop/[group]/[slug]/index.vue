@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <div class="shop section">
     <div class="container">
       <div class="go-back-btn" @click="() => $router.go(-1)">
         <Icon name="mdi-light:chevron-left" width="32" height="32" />
@@ -16,12 +16,13 @@
               height="54"
             />
             <Swiper
-              :modules="[SwiperThumbs, SwiperNavigation]"
+              :modules="[SwiperThumbs, SwiperNavigation, SwiperPagination]"
               :navigation="{
                 enabled: true,
                 nextEl: '.next-btn',
                 prevEl: '.prev-btn'
               }"
+              :pagination="{ clickable: true }"
               :loop="true"
               :thumbs="{ swiper: thumbsSwiper }"
               class="main-swiper"
@@ -45,7 +46,14 @@
           <Swiper
             :modules="[SwiperThumbs]"
             @swiper="setThumbsSwiper"
-            :spaceBetween="20"
+            :breakpoints="{
+              1920: {
+                spaceBetween: 20
+              },
+              1280: {
+                spaceBetween: 16
+              }
+            }"
             :loop="true"
             :slidesPerView="4"
             class="product__swiper--secondary"
@@ -63,7 +71,7 @@
         <div class="product__info">
           <div class="product__info-header">
             <h3>{{ product.title }}</h3>
-            <p>{{ product.price }} грн</p>
+            <p class="text-2">{{ product.price }} грн</p>
           </div>
 
           <div v-if="product?.sizes">
@@ -76,15 +84,38 @@
                 @select-size="handleSelectSize"
               />
 
-              <span>Таблиця розмірів</span>
+              <span @click="handleSizesTableOpen">Таблиця розмірів</span>
             </div>
+            <Transition name="page">
+              <div v-if="isSizesTableOpen" class="table__modal">
+                <div class="table__modal-content">
+                  <Icon
+                    name="ph:x-thin"
+                    width="44"
+                    height="44"
+                    @click="handleSizesTableOpen"
+                  />
+                  <img
+                    src="/images/sizes_table.png"
+                    alt="Sizes table"
+                    width="800"
+                    height="400"
+                  />
+                </div>
+              </div>
+            </Transition>
           </div>
 
-          <button class="btn product__add-product-btn">В кошик</button>
+          <button
+            class="btn product__add-product-btn orange-type"
+            @click="addProduct(product)"
+          >
+            В кошик
+          </button>
 
           <div class="product__description">
             <p class="product__description-title">Опис товару:</p>
-            <p>{{ product.description }}</p>
+            <p v-html="product.description"></p>
           </div>
         </div>
       </div>
@@ -110,6 +141,16 @@ import { ProductGroup, type ISize } from '~/types'
 
 const route = useRoute()
 const { getOneProduct, getProductsExceptSelected } = useShop()
+const { addProduct } = useBasket()
+
+const isSizesTableOpen = ref(false)
+
+const handleSizesTableOpen = () => {
+  isSizesTableOpen.value = !isSizesTableOpen.value
+  isSizesTableOpen.value
+    ? document.querySelector('body')?.classList.add('fixed')
+    : document.querySelector('body')?.classList.remove('fixed')
+}
 
 const product = getOneProduct(
   route.params.slug as string,
@@ -133,6 +174,15 @@ const handleSelectSize = (size: ISize) => {
 </script>
 
 <style lang="sass">
+.page-enter-active,
+.page-leave-active
+  transition: all 0.4s
+
+.page-enter-from,
+.page-leave-to
+  opacity: 0
+.shop
+  position: relative
 .go-back-btn
   & svg path
     fill: var(--primary-text-color)
@@ -141,18 +191,48 @@ const handleSelectSize = (size: ISize) => {
   display: flex
   align-items: center
   margin-bottom: 40px
+  @include xl
+    margin-bottom: 28px
+  @include l
+    margin-bottom: 0
 
 .product__content
   display: flex
   justify-content: space-between
   gap: 40px
-  padding: 40px 0
+  padding-top: 40px
+  padding-bottom: 40px
+  @include xl
+    padding-top: 28px
+    padding-bottom: 28px
+  @include l
+    gap: 24px
+    padding-top: 20px
+    padding-bottom: 20px
+  @include m
+    flex-direction: column
+    align-items: center
 
 .product__swiper
-  width: 751px
+  width: calc( 643px + 54px * 2 )
   display: flex
   flex-direction: column
   gap: 12px
+  @include xl
+    width: calc( 448px + 54px * 2 )
+  @include l
+    width: 340px
+    gap: 0
+
+  & .prev-btn,
+  & .next-btn
+    @include l
+      display: none
+
+.swiper-pagination
+  display: none
+  @include l
+    display: block
 
 .product__swiper--main
   display: flex
@@ -160,10 +240,18 @@ const handleSelectSize = (size: ISize) => {
   width: 100%
   height: 440px
   overflow: hidden
+  @include xl
+    height: 306px
+  @include l
+    height: 259px
 
   & .swiper-slide
     width: 100%
     height: 440px
+    @include xl
+      height: 306px
+    @include l
+      height: 239px
 
   & img
     width: 100%
@@ -172,6 +260,8 @@ const handleSelectSize = (size: ISize) => {
 
 .product__swiper--secondary
   width: calc( 100% - 54px * 2 )
+  @include l
+    display: none
 
   & .swiper-slide
     opacity: 0.6
@@ -186,13 +276,20 @@ const handleSelectSize = (size: ISize) => {
   display: flex
   flex-direction: column
   gap: 40px
+  @include xl
+    gap: 32px
+  @include l
+    gap: 12px
 
 .product__info-header
   & h3
     margin-bottom: 28px
+    @include xl
+      margin-bottom: 20px
+    @include l
+      margin-bottom: 12px
   & p
     color: var(--primary-text-color)
-    font-size: 36px
     font-weight: 700
 
 .product__choose-size-title
@@ -204,12 +301,58 @@ const handleSelectSize = (size: ISize) => {
   gap: 44px
   align-items: baseline
   color: var(--gray-color)
+  @include xl
+    gap: 32px
+  @include l
+    flex-direction: column
+    gap: 12px
+
+  & span
+    cursor: pointer
 
 .product__add-product-btn
-  background-color: var(--orange)
   font-size: 32px
+  @include xl
+    font-size: 28px
+  @include l
+    font-size: 24px
 
 .product__description-title
   color: var(--gray-color)
   margin-bottom: 12px
+  @include xl
+    margin-bottom: 8px
+
+.table__modal
+  z-index: 1000
+  position: absolute
+  top: 0
+  right: 0
+  width: 100vw
+  height: 100%
+  backdrop-filter: blur(10px)
+  background-color: rgba(255, 255, 255, 0.3)
+
+.table__modal-content
+  background: var(--white)
+  width: calc( 800px + 50px * 2 )
+  height: calc( 400px + 46px * 2 )
+  position: fixed
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  @include l
+    width: calc( 600px + 50px * 2 )
+    height: auto
+
+  @include m
+    width: calc( 100% - 24px * 2 )
+    height: auto
+
+  & img
+    margin: 0 auto
+  & svg.icon
+    cursor: pointer
+    margin-left: auto
+    display: block
 </style>

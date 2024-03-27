@@ -14,8 +14,8 @@
     </ul>
 
     <p class="goods__title">{{ product.title }}</p>
-    <p v-if="!product.sizes" class="goods__description">
-      {{ product.description }}
+    <p v-if="!product.sizes && product?.shortDescription" class="goods__description">
+      {{ product.shortDescription }}
     </p>
     <ShopSizesList
       v-if="product?.sizes && selectedSize"
@@ -25,21 +25,10 @@
     />
 
     <div class="goods__controller">
-      <!-- <div class="goods__controller-quantity">
-        <Icon
-          name="streamline:interface-remove-circle-delete-add-circle-subtract-button-buttons-remove"
-          @click="() => count--"
-        />
-        {{ count }}
-        <Icon
-          name="streamline:interface-add-circle-button-remove-cross-add-buttons-plus-circle"
-          @click="() => count++"
-        />
-      </div> -->
-      <p class="goods__price">{{ product.price }} грн</p>
+      <p class="goods__price text-2">{{ product.price }} грн</p>
       <button
         v-if="!withoutBtn"
-        class="btn goods__btn"
+        class="btn orange-type"
         @click.stop="handleAddProductInBasket(productData)"
       >
         B кошик
@@ -78,12 +67,6 @@ const handleAddProductInBasket = (product: IProduct) => {
     addProduct(product)
   }
 }
-
-watch(count, () => {
-  if (count.value <= 0) {
-    count.value = 0
-  }
-})
 </script>
 
 <style lang="sass" scoped>
@@ -131,31 +114,14 @@ watch(count, () => {
     font-size: 16px
 
 .goods__price
-  font-size: 36px
   font-weight: 700
-  @include xl
-    font-size: 28px
-  @include l
-    font-size: 20px
-  @include m
-    font-size: 16px
 
 .goods__controller
   display: flex
   align-items: flex-end
   justify-content: space-between
   flex-grow: 1
-
-.goods__controller-quantity
-  display: flex
-  align-items: center
-  gap: 16px
-  font-size: 24px
-  font-weight: 300
-
-  & svg:hover
-    cursor: pointer
-
-.goods__btn
-  background-color: var(--orange)
+  margin-top: 32px
+  @include xl
+    margin-top: 16px
 </style>

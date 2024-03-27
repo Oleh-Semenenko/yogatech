@@ -3,39 +3,11 @@
     <div class="container">
       <div class="benefits__inner">
         <h2>Заробляй з нами</h2>
-        <BaseFeaturesList :features="cooperationBenefits" class="benefits__list" />
-
-        <div class="benefits__content">
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores
-            dicta voluptate, molestiae deserunt rerum tempore fugiat, iste
-            laudantium sunt, quisquam est! Voluptatum enim architecto
-            perferendis ea? Cupiditate reprehenderit animi rem!
-          </p>
-
-          <div class="benefits__swiper">
-            <Swiper
-              :modules="[SwiperPagination, SwiperAutoplay]"
-              :centered-slides="true"
-              :slides-per-view="1"
-              :autoplay="{
-                delay: 4000
-              }"
-              :pagination="{ clickable: true }"
-              :loop="true"
-            >
-              <SwiperSlide class="benefits__swiper-item">
-                <img src="/images/miha.png" width="640" height="312" />
-              </SwiperSlide>
-              <SwiperSlide class="benefits__swiper-item"
-                ><img src="/images/miha.png" width="640" height="312" />
-              </SwiperSlide>
-              <SwiperSlide class="benefits__swiper-item"
-                ><img src="/images/miha.png" width="640" height="312" />
-              </SwiperSlide>
-            </Swiper>
-          </div>
-        </div>
+        <BaseFeaturesList
+          :features="cooperationBenefits"
+          class="benefits__list"
+          styles="earn-list"
+        />
       </div>
     </div>
   </div>
@@ -47,51 +19,54 @@ const cooperationBenefits: IFeature[] = [
   {
     id: 1,
     title: 'Продавай свої курси',
-    text: 'Ми об’єднюємо викладачів та любителів йоги',
+    text: 'Ви досконало володієте певною темою та створили високоякісний авторський курс? Опублікуйте його на нашому сайті і таким чином отримайте додаткове джерело доходу.',
     color: 'var(--orange)'
   },
   {
     id: 2,
-    title: 'Виступай на сцені',
-    text: 'Курси, література, менторство і багато іншого',
+    title: 'Роби дослідження',
+    text: 'Ми допомагаємо талановитим йога-інструкторам у пошуку та оформленні грантів під вашу дослідницьку діяльність. Також ви можете стати учасником наших викладацьких конференцій, де зможете представити результати ваших досліджень.',
     color: 'var(--blue-color)'
   },
   {
     id: 3,
     title: 'Будь ментором',
-    text: 'Ми допоможемо знайти свій шлях та дамо проявити себе',
+    text: ' У вас є низка сертифікатів, проведених майстер-класів та унікальний викладацький досвід, яким ви хочете поділитись з іншими? У такому випадку ви можете спробувати себе у ролі ментора та допомогти у розвитку менш досвідченим викладачам.',
     color: 'var(--gray-color)'
+  },
+  {
+    id: 4,
+    title: 'Співпрацюй з експертами',
+    text: 'Ми глибоко переконані у тому, що разом ми здатні на більше! Якщо ви маєте власну студію, або хист до організації - ми можемо познайомити вас із експертами, для спільної проведення потужних ретритів та цікавих  подій! В свою чергу, ми виступаємо гарантом якості для обох сторін, а також допомагатимемо у рекламі.',
+    color: 'var(--orange)'
   }
 ]
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
+.benefits
+  position: relative
 .benefits__list
   width: 90%
   margin: 0 auto
   @include xl
     width: 100%
 
-.benefits__content
-  margin-top: 40px
-  display: flex
-  justify-content: space-between
-  gap: 52px
+.earn-list
+  grid-template-columns: 782px
+  gap: 24px
+  justify-content: start
+  margin-left: 140px
+  @include xl
+    margin-left: 96px
+    grid-template-columns: 734px
   @include l
-    flex-direction: column
-    margin-top: 16px
+    grid-template-columns: 1fr
+    margin-left: 70px
     gap: 16px
-    align-items: center
-
-.benefits__swiper
-  width: 640px
   @include m
-    width: 100%
-
-.benefits__swiper-item img
-  object-fit: cover
-  width: 640px
-  height: 312px
-  @include m
-    width: 100%
+    margin-left: 0
+    gap: 8px
+  & .feature
+    max-width: 100%
 </style>

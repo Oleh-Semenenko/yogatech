@@ -40,9 +40,12 @@
   display: grid
   grid-template-columns: 1fr
   grid-template-rows: repeat(2, auto)
-  gap: 32px
+  gap: 60px
   padding-bottom: 40px
+  @include xl
+    gap: 44px
   @include l
+    gap: 32px
     padding-bottom: 16px
   @include m
     gap: 16px

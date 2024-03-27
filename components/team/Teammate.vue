@@ -2,9 +2,7 @@
   <div class="teammate">
     <div
       class="teammate__avatar-wrapper"
-      @mouseenter="handleShowOverlay"
-      @mouseleave="hideOverlay"
-      @click="toggleOverlay"
+      @click="handleCardMobClick"
     >
       <img
         :src="img"
@@ -23,7 +21,7 @@
       </div>
     </div>
     <h3 class="teammate__name">{{ name }}</h3>
-    <p class="teammate__description">{{ description }}</p>
+    <p class="teammate__description">{{ intro }}</p>
   </div>
 </template>
 
@@ -35,28 +33,15 @@ interface ITeammateProps {
 }
 
 const props = defineProps<ITeammateProps>()
-const { id, img, name, description, instagramLink, slug } = props.participant
+const { id, img, name, description, instagramLink, slug, intro } = props.participant
 
-const showOverlay = ref(false)
 const isMobile = computed(() => {
   return window.innerWidth <= 768
 })
 
-const toggleOverlay = () => {
+const handleCardMobClick = () => {
   if (isMobile.value) {
-    showOverlay.value = !showOverlay.value
-  }
-}
-
-const handleShowOverlay = () => {
-  if (!isMobile.value) {
-    showOverlay.value = true
-  }
-}
-
-const hideOverlay = () => {
-  if (!isMobile.value) {
-    showOverlay.value = false
+    navigateTo(`/team/${slug}`)
   }
 }
 </script>
@@ -67,7 +52,7 @@ const hideOverlay = () => {
 
 .teammate__overlay
   position: absolute
-  top: -100%
+  top: 0
   right: 0
   display: flex
   align-items: flex-end
@@ -75,7 +60,8 @@ const hideOverlay = () => {
   padding: 8px 16px
   width: 100%
   height: 100%
-  transition: all 0.3s ease
+  transform: translateY(100%)
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1)
   cursor: pointer
 
 .teammate__overlay-footer
@@ -102,7 +88,7 @@ const hideOverlay = () => {
     width: 100%
 
   &:hover .teammate__overlay
-    top: 0
+    transform: translateY(0)
     background: rgba(255, 255, 255, 0.7)
   &:hover .teammate__overlay-footer
     display: flex

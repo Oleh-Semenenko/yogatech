@@ -45,8 +45,13 @@ button
     padding: 8px 16px
     font-size: 14px
 
+  &.orange-type
+    background-color: var(--orange)
+    &:hover
+      background-color: var(--hover-orange-color)
+
   &:hover
-    background-color: var(--light-blue-color)
+    background-color: var(--hover-blue-color)
   &:disabled
     opacity: 0.3
     cursor: not-allowed
@@ -93,6 +98,9 @@ a.btn
     padding-top: 12px
     padding-bottom: 12px
 
+.fixed
+  overflow: hidden
+
 .blue
   background-color: var(--light-blue-color)
 
@@ -104,7 +112,7 @@ a.btn
   font-weight: 700
 
   @include xl
-    gap: 12px
+    gap: 8px
     font-size: 20px
 
 .nav__item a
@@ -135,7 +143,7 @@ a.btn
     width: 56px
 
 svg path
-  fill: var(--gray-color)
+  fill: var(--blue-color)
 
 // Swiper
 
@@ -158,8 +166,13 @@ svg path
 
 .prev-btn,
 .next-btn
+  & path
+    fill: var(--gray-color)
   &:hover
     cursor: pointer
+  &.swiper-button-disabled
+    opacity: 0.5
+    cursor: not-allowed
   color: var(--gray-color)
   flex-shrink: 0
   @include m
@@ -197,7 +210,18 @@ h2
   @include m
     font-size: 16px
 
-h3
+.text-2
+  font-size: 36px
+  @include xl
+    font-size: 28px
+  @include l
+    font-size: 20px
+  @include m
+    font-size: 16px
+
+
+h3,
+.text-3
   font-size: 28px
   margin-bottom: 0
   @include xl

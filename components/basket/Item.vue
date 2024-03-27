@@ -1,10 +1,30 @@
 <template>
   <div class="product">
     <img :src="product.photos[0]" alt="Product logo" width="100" height="100" />
-    <div>Назва: {{ productTitle }}</div>
-    <div>Кількість: {{ product.quantity }}</div>
-    <div>Ціна за 1 одиницю: {{ product.price }}</div>
-    <!-- <div>Загальна вартість за товар: {{ totalCostPerItem }}</div> -->
+    <div class="product__data">
+      <div class="product__data-header">
+        <div>Назва: {{ productTitle }}</div>
+        <Icon name="ph:trash-thin" width="44" height="44" @click="removeProduct(product.id)" />
+      </div>
+      <div class="product__controller">
+        <div class="product__price text-3">{{ product.price }} грн</div>
+        <div class="product__controller-quantity">
+          <Icon
+            name="ph:minus-circle-thin"
+            width="44"
+            height="44"
+            @click.stop="() => count--"
+          />
+          <span class="text-3">{{ count }}</span>
+          <Icon
+            name="ph:plus-circle-thin"
+            width="44"
+            height="44"
+            @click.stop="() => count++"
+          />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -14,6 +34,8 @@ import type { ISelectedProduct } from '~/types'
 const props = defineProps<{
   product: ISelectedProduct
 }>()
+const { removeProduct } = useBasket()
+const count = ref(1)
 
 const productTitle = computed(() => {
   return props.product?.selectedSize
@@ -21,18 +43,73 @@ const productTitle = computed(() => {
     : props.product.title
 })
 
-// const totalCostPerItem = computed(
-//   () => (props.product.quantity * props.product.price)
-// )
+watch(count, () => {
+  if (count.value <= 1) {
+    count.value = 1
+  }
+})
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .product
-  padding: 16px
+  padding: 16px 24px
   border-radius: var(--primary-border-radius)
-  border: 1px solid var(--primary-text-color)
+  border-bottom: 1px solid var(--border-color)
   display: flex
-  flex-direction: column
-  gap: 8px
-  font-size: 18px
+  gap: 16px
+
+.product__data
+  flex-grow: 1
+
+.product__data-header
+  display: flex
+  justify-content: space-between
+  @include s
+    margin-bottom: 12px
+
+  & svg
+    cursor: pointer
+
+.product__price
+  font-weight: 700
+
+.product__controller
+  display: flex
+  align-items: baseline
+  gap: 36px
+  @include m
+    gap: 12px
+
+.product__controller-quantity
+  display: flex
+  align-items: center
+  gap: 16px
+  font-size: 24px
+  font-weight: 300
+  color: var(--gray-color)
+  @include m
+    gap: 8px
+
+  & span
+    width: 44px
+    height: 44px
+    border: 1px solid var(--border-color)
+    border-radius: var(--primary-border-radius)
+    display: flex
+    justify-content: center
+    align-items: center
+    font-weight: 700
+    @include m
+      width: 28px
+      height: 28px
+
+  & svg 
+    path
+      fill: var(--gray-color)
+    @include m
+      width: 28px
+      height: 28px
+
+  & svg:hover
+    cursor: pointer
 </style>

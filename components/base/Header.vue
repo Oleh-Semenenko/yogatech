@@ -15,7 +15,7 @@
               >
             </li>
             <li class="nav__item">
-              <NuxtLink to="/ryt500">Навчання RYT500</NuxtLink>
+              <NuxtLink to="/ryt500">Викладацький курс</NuxtLink>
             </li>
             <li class="nav__item">
               <NuxtLink
@@ -34,11 +34,7 @@
           </ul>
         </nav>
 
-        <div
-          v-if="$route.path.includes('shop')"
-          class="basket"
-          @click="handleToggleBasketOpen"
-        >
+        <div class="basket" @click="handleToggleBasketOpen">
           <Icon name="ph:shopping-cart-simple-thin" width="48" height="48" />
           <span class="basket-goods-quantity">{{ selectedGoods.length }}</span>
         </div>
@@ -52,8 +48,8 @@
         </Transition>
 
         <div class="mob-menu__btn" @click="handleToggleMobMenu">
-          <Icon v-if="!isMobMenuOpen" name="ci:hamburger" />
-          <Icon v-else name="ci:close-big" />
+          <Icon v-if="!isMobMenuOpen" name="ph:list-thin" width="44" height="44" />
+          <Icon v-else name="ph:x-thin" width="44" height="44" />
         </div>
 
         <div v-if="isMobMenuOpen" class="mob-menu">
@@ -76,7 +72,7 @@
               </li>
               <li>
                 <NuxtLink to="/ryt500" @click="handleToggleMobMenu"
-                  >Навчання RYT500</NuxtLink
+                  >Викладацький курс</NuxtLink
                 >
               </li>
               <li>
@@ -110,16 +106,10 @@
 <script setup lang="ts">
 const route = useRoute()
 const { selectedGoods } = useBasket()
+
+console.log("selectedGoods", selectedGoods.value)
 const isBasketOpen = ref(false)
 const isMobMenuOpen = ref(false)
-
-// const $route.path.includes('fest') = computed(() => {
-//   return route.path.includes('fest')
-// })
-
-// const $route.path.includes('team') = computed(() => {
-//   return route.path.includes('team')
-// })
 
 const handleToggleMobMenu = () => {
   isMobMenuOpen.value = !isMobMenuOpen.value
@@ -167,6 +157,10 @@ const handleToggleBasketOpen = () => {
   align-items: center
   justify-content: space-between
   gap: 20px
+
+.header__mob-nav
+  text-align: center
+
 .header__inner-nav
   margin-left: auto
   @include l
@@ -177,6 +171,8 @@ const handleToggleBasketOpen = () => {
   cursor: pointer
   display: flex
   gap: 4px
+  @include l
+    margin-left: auto
   & svg
     @include l
       width: 40px
@@ -210,6 +206,7 @@ const handleToggleBasketOpen = () => {
   display: none
   @include l
     display: block
+    cursor: pointer
 
 .mob-menu
   position: absolute

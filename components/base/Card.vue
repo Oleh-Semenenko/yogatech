@@ -2,16 +2,35 @@
   <li class="card">
     <div class="card__header">
       <h3 class="card__header-title">{{ data.title }}</h3>
-      <div class="card__avatar"></div>
+      <Icon
+        :name="(data.icon as string)"
+        width="72"
+        height="72"
+        class="card__contact-avatar"
+      />
     </div>
 
-    <p class="card__description">{{ data.description }}</p>
+    <div class="card__content">
+      <ul v-if="Array.isArray(data.description)" class="card__description-list">
+        <li v-for="item in data.description" :key="item">{{ item }}</li>
+      </ul>
+      <p v-else class="card__description">{{ data.description }}</p>
+
+      <NuxtLink
+        v-if="data.formBtn"
+        :to="data.formBtn"
+        class="card__link btn form-link"
+        :class="{ 'orange-type': data.linkColor === LinkColor.ORANGE }"
+        >Заповнити форму</NuxtLink
+      >
+    </div>
 
     <div v-if="!withoutFooter" class="card__footer">
       <NuxtLink
         :to="data.link"
-        class="card__footer-link btn"
-        :class="{ orange: data.linkColor === LinkColor.ORANGE }"
+        class="card__link btn"
+        :class="{ 'orange-type': data.linkColor === LinkColor.ORANGE }"
+        target="_blanc"
         >{{ data.linksText }}</NuxtLink
       >
     </div>
@@ -47,21 +66,26 @@ defineProps<ICardProps>()
 .card__header
   display: flex
   justify-content: space-between
-  @include m
-    gap: 12px
+  gap: 8px
 
-.card__avatar
-  border: 1px solid var(--border-color)
-  border-radius: 50%
-  width: 112px
-  height: 112px
+.card__contact-avatar
   flex-shrink: 0
   @include xl
-    width: 72px
-    height: 72px
+    width: 56px
+    height: 56px
+  @include l
+    width: 44px
+    height: 44px
   @include m
-    width: 60px
-    height: 60px
+    width: 40px
+    height: 40px
+
+.card__content
+  flex-grow: 1
+
+.card__description-list
+  list-style: disc
+  padding-left: 16px
 
 .card__footer
   border-top: 1px solid var(--border-color)
@@ -70,9 +94,11 @@ defineProps<ICardProps>()
   @include m
     padding-top: 16px
 
-.card__footer-link
+.card__link
   margin-left: auto
   color: var(--white)
-  &.orange
-    background: var(--orange)
+
+.form-link
+  margin-top: 20px
+  display: block
 </style>
