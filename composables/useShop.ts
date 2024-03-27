@@ -39,7 +39,8 @@ export default function useShop() {
   const courses: IProduct[] = [
     {
       id: 1,
-      title: '28-денний курс з медитації “Медитація 2.0”',
+      title: 'Медитація 2.0',
+      shortDescription: '9 лекцій, у які утрамбовано понад 9 років моєї особистої практики. Фішки та лайф-хаки, спрощення та ускладнення, розуміння механіки роботи технік та будови психіки.',
       description: `Запис трансляцій нашого найбільш популярного курсу. 9 лекцій, у які утрамбовано понад 9 років моєї особистої практики. Фішки та лайф-хаки, спрощення та ускладнення, розуміння механіки роботи технік та будови психіки.<br />
       <br />
 
@@ -59,13 +60,25 @@ export default function useShop() {
     },
     {
       id: 2,
-      title: 'Курс з 10 лекцій “Пранаями”',
+      title: 'Аутогенне тренування',
+      shortDescription: 'Аутогенне тренування - це суміш медитації та самогіпнозу. Курс складається з семи україномовних аудіо-уроків, які необхідно засвоювати крок за кроком.',
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro obcaecati ratione, aliquam ducimus optio ea minima maiores inventore omnis illum distinctio. Facere, architecto quaerat. Nobis, iusto. Nam commodi obcaecati ullam.',
+        'Аутогенне тренування - це суміш медитації та самогіпнозу. Курс складається з семи україномовних аудіо-уроків, які необхідно засвоювати крок за кроком.',
       price: 1,
       photos: ['/images/book.png', '/images/book.png', '/images/book.png'],
       payment_link: 'https://secure.wayforpay.com/button/bc04782a4b6aa',
-      slug: 'course-pranayamas'
+      slug: 'course-autogenic-training'
+    },
+    {
+      id: 3,
+      title: 'Інтро у йогу',
+      shortDescription: 'Базовий курс, що буде корисний усім початківцям. У ньому ми поговоримо про історію йоги, її цілі та інструменти.',
+      description:
+        'Базовий курс, що буде корисний усім початківцям. У ньому ми поговоримо про історію йоги, її цілі та інструменти.',
+      price: 1,
+      photos: ['/images/book.png', '/images/book.png', '/images/book.png'],
+      payment_link: 'https://secure.wayforpay.com/button/bc04782a4b6aa',
+      slug: 'course-intro'
     }
   ]
 

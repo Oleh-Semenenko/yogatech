@@ -157,6 +157,10 @@ const handleToggleBasketOpen = () => {
   align-items: center
   justify-content: space-between
   gap: 20px
+
+.header__mob-nav
+  text-align: center
+
 .header__inner-nav
   margin-left: auto
   @include l
@@ -202,6 +206,7 @@ const handleToggleBasketOpen = () => {
   display: none
   @include l
     display: block
+    cursor: pointer
 
 .mob-menu
   position: absolute

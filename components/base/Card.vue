@@ -66,9 +66,7 @@ defineProps<ICardProps>()
 .card__header
   display: flex
   justify-content: space-between
-  gap: 40px
-  @include m
-    gap: 12px
+  gap: 8px
 
 .card__contact-avatar
   flex-shrink: 0

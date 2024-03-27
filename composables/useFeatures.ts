@@ -15,7 +15,7 @@ export default function useFeatures() {
     {
       id: 3,
       title: 'Прояви себе',
-      text: 'Ми об’єднюємо викладачів та любителів йоги',
+      text: 'У нас ти знайдеш можливість проявити себе та поділитись знаннями',
       color: 'var(--gray-color)'
     }
   ])

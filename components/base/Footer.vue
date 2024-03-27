@@ -56,6 +56,11 @@
               <Icon name="ph:youtube-logo-thin" width="44" height="44" />
             </NuxtLink>
           </li>
+          <li>
+            <NuxtLink to="mailto:yogatechua@gmail.com" target="_blanc">
+              <Icon name="ph:envelope-simple-thin" width="44" height="44" />
+            </NuxtLink>
+          </li>
         </ul>
       </div>
     </div>
@@ -79,8 +84,6 @@
     & .nav__list
       display: none
 
-  @include m
-    // grid-template-columns: 1fr
 .footer__logo
   grid-column: 1
   grid-row: 1 / -1
@@ -132,8 +135,9 @@
   gap: 32px
   @include l
     grid-row: 1
-  @include m
     gap: 24px
+  @include m
+    gap: 16px
 
 
 .icon:hover
