@@ -21,10 +21,21 @@ export interface IProduct {
   sizes?: ISize[]
   selectedSize?: ISize
   shortDescription?: string
+  video?: string
+}
+
+export interface ICourse extends IProduct {
+  level: DifficultyLevel
 }
 
 export interface ISelectedProduct extends IProduct {
   quantity?: number
+}
+
+export enum DifficultyLevel {
+  LIGHT = 'light',
+  MIDDLE = 'middle',
+  HARD = 'hard'
 }
 
 export enum LinkColor {
@@ -40,7 +51,6 @@ export interface ICard {
   link?: string
   linksText?: string
   linkColor?: LinkColor
-  formBtn?: string
 }
 
 export interface ITeammate {
