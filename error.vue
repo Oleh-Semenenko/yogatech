@@ -34,13 +34,11 @@ const text = computed(() => {
 </script>
 
 <style lang="sass">
-.main
-  justify-content: center
-
 .error
   display: flex
   flex-direction: column
   gap: 40px
+  margin: auto
 
   & .text-2
     font-weight: bold

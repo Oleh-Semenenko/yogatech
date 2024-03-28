@@ -15,14 +15,6 @@
         <li v-for="item in data.description" :key="item">{{ item }}</li>
       </ul>
       <p v-else class="card__description">{{ data.description }}</p>
-
-      <NuxtLink
-        v-if="data.formBtn"
-        :to="data.formBtn"
-        class="card__link btn form-link"
-        :class="{ 'orange-type': data.linkColor === LinkColor.ORANGE }"
-        >Заповнити форму</NuxtLink
-      >
     </div>
 
     <div v-if="!withoutFooter" class="card__footer">
@@ -97,8 +89,4 @@ defineProps<ICardProps>()
 .card__link
   margin-left: auto
   color: var(--white)
-
-.form-link
-  margin-top: 20px
-  display: block
 </style>

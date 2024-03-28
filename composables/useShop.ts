@@ -1,4 +1,4 @@
-import { type IProduct, ProductGroup } from '~/types'
+import { type IProduct, type ICourse, ProductGroup, DifficultyLevel } from '~/types'
 
 export default function useShop() {
   const products: IProduct[] = [
@@ -11,13 +11,14 @@ export default function useShop() {
       price: 1,
       photos: ['/images/book.png', '/images/book.png', '/images/book.png'],
       payment_link: 'https://secure.wayforpay.com/button/bac90579800e7',
-      slug: 'book'
+      slug: 'book',
+      video: 'https://www.youtube.com/embed/Mqa60lgJ1Bk?si=tfYUt29jtqCdlafu'
     },
     {
       id: 2,
       title: 'Брендована біла футболка YOGATECH',
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro obcaecati ratione, aliquam ducimus optio ea minima maiores inventore omnis illum distinctio. Facere, architecto quaerat. Nobis, iusto. Nam commodi obcaecati ullam.',
+        'Неймовірна футболка 100% бавовни, принт з якісної фарби, що не вимивається.',
       price: 1,
       photos: [
         '/images/t_shirt/t-shirt.png',
@@ -36,7 +37,7 @@ export default function useShop() {
     }
   ]
 
-  const courses: IProduct[] = [
+  const courses: ICourse[] = [
     {
       id: 1,
       title: 'Медитація 2.0',
@@ -54,9 +55,10 @@ export default function useShop() {
       Лекція 8 - Самадхі та алгоритм його досягнення<br />
       Лекція 9 - Інструкція до подальшої самостійної практики`,
       price: 1,
-      photos: ['/images/book.png', '/images/book.png', '/images/book.png'],
+      photos: ['/images/course_meditation.png'],
       payment_link: 'https://secure.wayforpay.com/button/bc04782a4b6aa',
-      slug: 'course-meditation-2.0'
+      slug: 'course-meditation-2.0',
+      level: DifficultyLevel.MIDDLE
     },
     {
       id: 2,
@@ -65,9 +67,10 @@ export default function useShop() {
       description:
         'Аутогенне тренування - це суміш медитації та самогіпнозу. Курс складається з семи україномовних аудіо-уроків, які необхідно засвоювати крок за кроком.',
       price: 1,
-      photos: ['/images/book.png', '/images/book.png', '/images/book.png'],
+      photos: ['/images/course_autogenic.png'],
       payment_link: 'https://secure.wayforpay.com/button/bc04782a4b6aa',
-      slug: 'course-autogenic-training'
+      slug: 'course-autogenic-training',
+      level: DifficultyLevel.LIGHT
     },
     {
       id: 3,
@@ -76,9 +79,10 @@ export default function useShop() {
       description:
         'Базовий курс, що буде корисний усім початківцям. У ньому ми поговоримо про історію йоги, її цілі та інструменти.',
       price: 1,
-      photos: ['/images/book.png', '/images/book.png', '/images/book.png'],
+      photos: ['/images/course_intro.png'],
       payment_link: 'https://secure.wayforpay.com/button/bc04782a4b6aa',
-      slug: 'course-intro'
+      slug: 'course-intro',
+      level: DifficultyLevel.LIGHT
     }
   ]
 

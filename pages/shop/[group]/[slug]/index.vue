@@ -27,10 +27,21 @@
               :thumbs="{ swiper: thumbsSwiper }"
               class="main-swiper"
             >
+              <SwiperSlide v-if="product.video" class="product__swiper-item">
+                <iframe
+                  width="643"
+                  height="440"
+                  :src="product.video"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                />
+              </SwiperSlide>
               <SwiperSlide
                 v-for="(slide, idx) in product.photos"
                 :key="idx"
-                class="location__swiper-item"
+                class="product__swiper-item"
               >
                 <img :src="slide" width="643" height="440" />
               </SwiperSlide>
@@ -58,10 +69,21 @@
             :slidesPerView="4"
             class="product__swiper--secondary"
           >
+            <SwiperSlide v-if="product.video" class="product__swiper-item">
+              <iframe
+                width="100"
+                height="100"
+                :src="product.video"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              />
+            </SwiperSlide>
             <SwiperSlide
               v-for="(slide, idx) in product.photos"
               :key="idx"
-              class="location__swiper-item"
+              class="product__swiper-item"
             >
               <img :src="slide" width="100" height="100" />
             </SwiperSlide>
@@ -110,7 +132,7 @@
             class="btn product__add-product-btn orange-type"
             @click="addProduct(product)"
           >
-            В кошик
+            Придбати
           </button>
 
           <div class="product__description">
@@ -253,7 +275,8 @@ const handleSelectSize = (size: ISize) => {
     @include l
       height: 239px
 
-  & img
+  & img,
+  & iframe
     width: 100%
     height: 100%
     object-fit: cover
@@ -267,7 +290,8 @@ const handleSelectSize = (size: ISize) => {
     opacity: 0.6
   & .swiper-slide-thumb-active
     opacity: 1
-  & img
+  & img,
+  & iframe
     width: 100px
     height: 100px
     object-fit: cover

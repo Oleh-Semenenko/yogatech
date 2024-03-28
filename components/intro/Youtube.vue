@@ -43,39 +43,72 @@
               prevEl: '.prev-btn'
             }"
           >
-            <SwiperSlide class="youtube__swiper-item"
-              ><iframe
+            <SwiperSlide class="youtube__swiper-item">
+              <iframe
                 width="773"
                 height="424"
-                src="https://www.youtube.com/embed/ZM3CBfx_IK8?si=QsXbf4fFw3ifFA_q"
+                src="https://www.youtube.com/embed/QAURIxNwiSU?si=rpY1yBJrF3sAIyVg"
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
-              ></iframe
-            ></SwiperSlide>
-            <SwiperSlide class="youtube__swiper-item"
-              ><iframe
+              />
+            </SwiperSlide>
+            <SwiperSlide class="youtube__swiper-item">
+              <iframe
                 width="773"
                 height="424"
-                src="https://www.youtube.com/embed/WcVhZmPqiNc?si=9aYOl8g7us8mzMfm"
+                src="https://www.youtube.com/embed/TCB3o-Rog7w?si=qkJUn50EcoEmC9zO"
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
-              ></iframe
-            ></SwiperSlide>
-            <SwiperSlide class="youtube__swiper-item"
-              ><iframe
+              />
+            </SwiperSlide>
+            <SwiperSlide class="youtube__swiper-item">
+              <iframe
                 width="773"
                 height="424"
-                src="https://www.youtube.com/embed/Mqa60lgJ1Bk?si=VaGJ3tN-N7CyoIEt"
+                src="https://www.youtube.com/embed/9b6AG0XqGRc?si=3gdypa5sI_W2BHfW"
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
-              ></iframe
-            ></SwiperSlide>
+              />
+            </SwiperSlide>
+            <SwiperSlide class="youtube__swiper-item">
+              <iframe
+                width="773"
+                height="424"
+                src="https://www.youtube.com/embed/pcHIiXtsD3o?si=9BFfxuszko_rucwp"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              />
+            </SwiperSlide>
+            <SwiperSlide class="youtube__swiper-item">
+              <iframe
+                width="773"
+                height="424"
+                src="https://www.youtube.com/embed/HUOvQ2e1CW4?si=Lv79RctD8KbTosXJ"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              />
+            </SwiperSlide>
+            <SwiperSlide class="youtube__swiper-item">
+              <iframe
+                width="773"
+                height="424"
+                src="https://www.youtube.com/embed/Mqa60lgJ1Bk?si=0W1_Vijaxeh23Ixe"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              />
+            </SwiperSlide>
           </Swiper>
           <Icon
             name="mdi-light:chevron-right"

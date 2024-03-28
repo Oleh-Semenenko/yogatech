@@ -3,18 +3,35 @@
     class="goods"
     @click.stop="() => navigateTo(`/shop/${group}/${product.slug}`)"
   >
-    <ul class="goods__photos-list">
+    <img
+      v-if="group === ProductGroup.COURSE"
+      :src="product.photos[0]"
+      alt="Course wallpaper"
+    />
+    <ul v-else class="goods__photos-list">
       <li
         v-for="(img, idx) in product.photos"
         :key="idx"
         class="goods__photos-item"
       >
-        <img :src="img" alt="Photo" />
+        <img :src="img" alt="Product photo" />
       </li>
     </ul>
 
-    <p class="goods__title">{{ product.title }}</p>
-    <p v-if="!product.sizes && product?.shortDescription" class="goods__description">
+    <div class="goods__header">
+      <img
+        v-if="(product as ICourse)?.level"
+        :src="`/images/gear-${(product as ICourse).level}.svg`"
+        width="32"
+        height="32"
+        alt="Course level icon"
+      />
+      <p class="goods__title">{{ product.title }}</p>
+    </div>
+    <p
+      v-if="!product.sizes && product?.shortDescription"
+      class="goods__description"
+    >
       {{ product.shortDescription }}
     </p>
     <ShopSizesList
@@ -38,10 +55,10 @@
 </template>
 
 <script setup lang="ts">
-import { type IProduct, type ISize, ProductGroup } from '~/types'
+import { type IProduct, type ICourse, type ISize, ProductGroup } from '~/types'
 
 const props = defineProps<{
-  product: IProduct
+  product: IProduct | ICourse
   group: ProductGroup
   withoutBtn?: boolean
 }>()
@@ -102,6 +119,11 @@ const handleAddProductInBasket = (product: IProduct) => {
     width: 100%
     height: 100%
     object-fit: cover
+
+.goods__header
+  display: flex
+  align-items: center
+  gap: 4px
 
 .goods__title
   font-size: 24px

@@ -1,32 +1,15 @@
 <template>
-  <div class="">
+  <div>
     <div class="shop-hero section">
-      <div class="shop-swiper">
-        <Swiper
-          :modules="[SwiperAutoplay]"
-          :slides-per-view="1"
-          :loop="true"
-          :autoplay="{ delay: 5000 }"
-        >
-          <SwiperSlide class="shop-swiper__item">
-            <img src="/images/book.png" class="shop-swiper__img" />
-          </SwiperSlide>
-          <SwiperSlide class="shop-swiper__item">
-            <img src="/images/banda.png" class="shop-swiper__img" />
-          </SwiperSlide>
-        </Swiper>
-      </div>
       <div class="container">
-        <div class="shop-hero__content">
-          <h1>Простими словами про складні теми</h1>
-        </div>
+        <h1>Мрія дає нуль,<br />якщо її не зробити життям.</h1>
       </div>
     </div>
 
     <div class="section">
       <div class="container">
         <h2>Продукти</h2>
-        <ul class="cards__list">
+        <ul class="cards__list products__list">
           <BaseGoodsCard
             v-for="product in products"
             :key="product.id"
@@ -40,7 +23,16 @@
     <div class="section blue">
       <div class="container">
         <h2>Курси</h2>
-        <ul class="cards__list">
+        <div class="courses__levels">
+          Рівні складності:
+          <ul class="courses__levels-list">
+            <li v-for="{ id, icon, value } in levels" :key="id">
+              <img :src="icon" width="32" height="32" alt="Course level icon" />
+              - {{ value }}
+            </li>
+          </ul>
+        </div>
+        <ul class="cards__list products__list">
           <BaseGoodsCard
             v-for="course in courses"
             :key="course.id"
@@ -55,14 +47,29 @@
       <div class="container">
         <h2>Менторство</h2>
         <p>
-          Михайло Ахекян, ментор асоціації:“Коли я лише починав займатися йогою, у моєму житті не було людини, яка могла би мені допомогти і провести мене у  світ йоги. Я не знав у кого краще навчатися, як говорити з роботодавцями, яку ціну ставити за свої послуги, які існують сертифікаційні системи та способи монетизації моїх знань, як потрапити викладачем на йога-фестиваль, організувати власну подію, зрозуміти свою сильну сторону, почати будувати селф-бренд, набрати свою аудиторію.<br />
-          З усім цим мені довелось працювати самостійно і я прекрасно розумію, що маючи провідника у цьому напрямку, я міг би суттєво швидше і з меншими зусиллями опинитись там, де я є зараз. Тому я пропоную вам власні послуги у ролі ментора”. 
+          Михайло Ахекян, ментор асоціації:“Коли я лише починав займатися йогою,
+          у моєму житті не було людини, яка могла би мені допомогти і провести
+          мене у світ йоги. Я не знав у кого краще навчатися, як говорити з
+          роботодавцями, яку ціну ставити за свої послуги, які існують
+          сертифікаційні системи та способи монетизації моїх знань, як потрапити
+          викладачем на йога-фестиваль, організувати власну подію, зрозуміти
+          свою сильну сторону, почати будувати селф-бренд, набрати свою
+          аудиторію.<br />
+          З усім цим мені довелось працювати самостійно і я прекрасно розумію,
+          що маючи провідника у цьому напрямку, я міг би суттєво швидше і з
+          меншими зусиллями опинитись там, де я є зараз. Тому я пропоную вам
+          власні послуги у ролі ментора”.
         </p>
         <p class="mentorship__text-2">
-          У пакет вартістю 5000 грн входить 4 персональні зустрічі протягом місяця, на яких ми ставимо чіткі цілі, працюємо над вашими кейсами та досягаємо якісно нових результатів.
+          У пакет вартістю 5000 грн входить 4 персональні зустрічі протягом
+          місяця, на яких ми ставимо чіткі цілі, працюємо над вашими кейсами та
+          досягаємо якісно нових результатів.
         </p>
         <div class="mentorship__footer">
-          <p>Для участі у менторській програмі заповніть, будь ласка, заявку і ми з вами зв’яжемось! </p>
+          <p>
+            Для участі у менторській програмі заповніть, будь ласка, заявку і ми
+            з вами зв’яжемось!
+          </p>
           <NuxtLink to="/" class="btn orange-type">Заповнити заявку</NuxtLink>
         </div>
       </div>
@@ -89,37 +96,26 @@
 import { ProductGroup } from '~/types'
 
 const { products, courses } = useShop()
+const levels = [
+  { id: 1, icon: '/images/gear-light.svg', value: 'легкий,' },
+  { id: 2, icon: '/images/gear-middle.svg', value: 'середній,' },
+  { id: 3, icon: '/images/gear-hard.svg', value: 'складний' }
+]
 </script>
 
 <style lang="sass" scoped>
 .shop-hero
-  position: relative
+  padding-top: 40px
+  padding-bottom: 40px
+
+  & h1
+    margin-top: 0
   @include l
     display: flex
     flex-direction: column-reverse
     gap: 32px
   @include m
     gap: 24px
-.shop-swiper
-  width: 50%
-  margin-left: auto
-  @include l
-    margin-left: 0
-    width: 100%
-
-.shop-hero__content
-  width: 40%
-  position: absolute
-  top: 20%
-  z-index: 20
-  @include l
-    position: relative
-    width: 100%
-    top: 0
-
-  & h1
-    @include m
-      margin-bottom: 0
 
 .shop-swiper__item
   width: 100%
@@ -137,4 +133,34 @@ const { products, courses } = useShop()
   display: flex
   justify-content: space-between
   margin-top: 40px
+
+.products__list
+  grid-template-columns: repeat(auto-fill, 365px)
+  @include xl
+    grid-template-columns: repeat(auto-fill, 352px)
+  @include l
+    grid-template-columns: repeat(auto-fill, 340px)
+  @include m
+    grid-template-columns: repeat(auto-fill, 280px)
+  @include s
+    grid-template-columns: 1fr
+
+.courses__levels
+  margin-bottom: 24px
+  display: flex
+  align-items: center
+  gap: 4px
+  @include m
+    margin-bottom: 12px
+    flex-direction: column
+
+.courses__levels-list
+  display: inline-flex
+  gap: 8px
+  @include s
+    gap: 4px
+
+  & li
+    display: flex
+    align-items: center
 </style>
