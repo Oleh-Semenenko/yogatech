@@ -32,14 +32,13 @@ const contacts: ICard[] = [
   },
   {
     id: 2,
-    title: 'Telegram засновника Михайла Ахекяна',
+    title: 'Google-пошта YogaTech',
     description:
-      "Ви можете написати Михайлу, якщо у вас є пропозиції або питання по співпраці, навчанню. Але перед тим рекомендуємо все ж таки заповнити заявку у вигляді Google-форми і ми самі зв'яжемось з вами!",
-    icon: 'ph:telegram-logo-thin',
-    link: 'https://t.me/MikeYogatech',
+      "Ви можете написати нам, якщо у вас є пропозиції або питання по співпраці, навчанню.",
+    icon: 'ph:envelope-simple-thin',
+    link: 'mailto:yogatechua@gmail.com',
     linksText: 'Зв’язатись',
     linkColor: LinkColor.ORANGE,
-    formBtn: '#'
   },
   {
     id: 3,
