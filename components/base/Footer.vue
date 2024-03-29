@@ -41,9 +41,13 @@
         </ul>
 
         <ul class="nav__list terms">
-          <li class="nav__item"><NuxtLink to="/payment-and-shipping">Оплата та Доставка</NuxtLink></li>
           <li class="nav__item">
-            <NuxtLink to="/warranty-and-returns">Гарантії та Повернення</NuxtLink>
+            <NuxtLink to="/payment-and-shipping">Оплата та Доставка</NuxtLink>
+          </li>
+          <li class="nav__item">
+            <NuxtLink to="/warranty-and-returns"
+              >Гарантії та Повернення</NuxtLink
+            >
           </li>
         </ul>
 

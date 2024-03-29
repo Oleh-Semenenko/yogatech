@@ -141,7 +141,6 @@ const levels = [
   @include l
     grid-template-columns: repeat(auto-fill, 340px)
   @include m
-    justify-content: start
     grid-template-columns: repeat(auto-fill, 312px)
   @include s
     grid-template-columns: 1fr

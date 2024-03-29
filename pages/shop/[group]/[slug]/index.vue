@@ -4,7 +4,10 @@
       <BaseGoBackBtn />
 
       <div class="product__content">
-        <div class="product__swiper">
+        <div
+          v-if="route.params.group === ProductGroup.PRODUCT"
+          class="product__swiper"
+        >
           <div class="product__swiper--main">
             <Icon
               name="mdi-light:chevron-left"
@@ -87,6 +90,18 @@
           </Swiper>
         </div>
 
+        <div v-if="route.params.group === ProductGroup.COURSE" class="product__course-intro">
+          <iframe
+            width="773"
+            height="424"
+            :src="product.video"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          />
+        </div>
+
         <div class="product__info">
           <div class="product__info-header">
             <h3>{{ product.title }}</h3>
@@ -105,24 +120,26 @@
 
               <span @click="handleSizesTableOpen">Таблиця розмірів</span>
             </div>
-            <Transition name="page">
-              <div v-if="isSizesTableOpen" class="table__modal">
-                <div class="table__modal-content">
-                  <Icon
-                    name="ph:x-thin"
-                    width="44"
-                    height="44"
-                    @click="handleSizesTableOpen"
-                  />
-                  <img
-                    src="/images/sizes_table.png"
-                    alt="Sizes table"
-                    width="800"
-                    height="400"
-                  />
+            <Teleport to="body">
+              <Transition name="page">
+                <div v-if="isSizesTableOpen" class="table__modal">
+                  <div class="table__modal-content">
+                    <Icon
+                      name="ph:x-thin"
+                      width="44"
+                      height="44"
+                      @click="handleSizesTableOpen"
+                    />
+                    <img
+                      src="/images/sizes_table.png"
+                      alt="Sizes table"
+                      width="800"
+                      height="400"
+                    />
+                  </div>
                 </div>
-              </div>
-            </Transition>
+              </Transition>
+            </Teleport>
           </div>
 
           <button
@@ -220,6 +237,28 @@ const handleSelectSize = (size: ISize) => {
     flex-direction: column
     align-items: center
 
+.product__course-intro
+  width: 100%
+  @include m
+    text-align: center
+  & iframe
+    width: 643px
+    height: 440px
+    @include xl
+      width: 448px
+      height: 306px
+    @include l
+      width: 340px
+      height: 239px
+    @include m
+      width: 80%
+      height: 300px
+    @media screen and (max-width: 600px)
+      width: 100%
+      height: 220px
+    @include s
+      height: 219px
+
 .product__swiper
   width: calc( 643px + 54px * 2 )
   display: flex
@@ -230,6 +269,10 @@ const handleSelectSize = (size: ISize) => {
   @include l
     width: 340px
     gap: 0
+  @include m
+    width: 80%
+  @media screen and (max-width: 600px)
+    width: 100%
 
   & .prev-btn,
   & .next-btn
@@ -288,7 +331,10 @@ const handleSelectSize = (size: ISize) => {
   @include xl
     gap: 32px
   @include l
+    gap: 20px
+  @include m
     gap: 12px
+    width: 100%
 
 .product__info-header
   & h3
@@ -297,6 +343,8 @@ const handleSelectSize = (size: ISize) => {
       margin-bottom: 20px
     @include l
       margin-bottom: 12px
+    @include m
+      margin-bottom: 4px
   & p
     color: var(--primary-text-color)
     font-weight: 700
@@ -304,6 +352,8 @@ const handleSelectSize = (size: ISize) => {
 .product__choose-size-title
   color: var(--gray-color)
   margin-bottom: 12px
+  @include m
+    margin-bottom: 8px
 
 .product__sizes
   display: flex
@@ -325,6 +375,10 @@ const handleSelectSize = (size: ISize) => {
     font-size: 28px
   @include l
     font-size: 24px
+  @include m
+    font-size: 20px
+  @media screen and (max-width: 600px)
+    width: 100%
 
 .product__description-title
   color: var(--gray-color)
@@ -360,6 +414,14 @@ const handleSelectSize = (size: ISize) => {
 
   & img
     margin: 0 auto
+    width: calc( 100% - 50px * 2 )
+    height: calc( 100% - 46px * 2 )
+    @include l
+      margin-bottom: 44px
+
+    @include m
+      width: calc( 100% - 24px * 2 )
+      height: auto
   & svg.icon
     cursor: pointer
     margin-left: auto
