@@ -40,6 +40,13 @@
           </li>
         </ul>
 
+        <ul class="nav__list terms">
+          <li class="nav__item"><NuxtLink to="/payment-and-shipping">Оплата та Доставка</NuxtLink></li>
+          <li class="nav__item">
+            <NuxtLink to="/warranty-and-returns">Гарантії та Повернення</NuxtLink>
+          </li>
+        </ul>
+
         <ul class="socials__nav-list">
           <li>
             <NuxtLink to="https://t.me/yogatechua" target="_blanc">
@@ -72,12 +79,13 @@
 <style lang="sass" scoped>
 .footer__inner
   display: grid
-  grid-template-columns: auto 1fr
+  grid-template-columns: 300px 1fr auto
   grid-template-rows: repeat(3, 1fr)
   justify-content: space-between
   align-items: flex-start
   gap: 24px
   @include xl
+    grid-template-columns: auto 1fr auto
     gap: 8px
   @include l
     grid-template-rows: repeat(2, auto)
@@ -100,7 +108,7 @@
 
 .copyright
   font-size: 20px
-  grid-column: 2
+  grid-column: 3
   grid-row: 3
   justify-self: flex-end
   margin-top: 12px
@@ -114,10 +122,10 @@
     font-size: 16px
 
 .nav__list
-  grid-column: 2
+  grid-column: 2 / 4
   grid-row: 1
   flex-grow: 1
-  justify-content: flex-end
+  justify-content: flex-start
   @include m
     grid-column: 1
     grid-row: 2
@@ -127,8 +135,13 @@
     flex-direction: column
     gap: 16px
 
-.socials__nav-list
+.terms
   grid-column: 2
+  grid-row: 2
+  justify-content: flex-start
+
+.socials__nav-list
+  grid-column: 3
   grid-row: 2
   justify-content: flex-end
   display: flex
