@@ -1,10 +1,7 @@
 <template>
   <div class="shop section">
     <div class="container">
-      <div class="go-back-btn" @click="() => $router.go(-1)">
-        <Icon name="mdi-light:chevron-left" width="32" height="32" />
-        <h3>Назад до магазину</h3>
-      </div>
+      <BaseGoBackBtn />
 
       <div class="product__content">
         <div class="product__swiper">
@@ -205,18 +202,6 @@ const handleSelectSize = (size: ISize) => {
   opacity: 0
 .shop
   position: relative
-.go-back-btn
-  & svg path
-    fill: var(--primary-text-color)
-
-  cursor: pointer
-  display: flex
-  align-items: center
-  margin-bottom: 40px
-  @include xl
-    margin-bottom: 28px
-  @include l
-    margin-bottom: 0
 
 .product__content
   display: flex

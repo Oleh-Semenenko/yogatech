@@ -48,7 +48,12 @@
         </Transition>
 
         <div class="mob-menu__btn" @click="handleToggleMobMenu">
-          <Icon v-if="!isMobMenuOpen" name="ph:list-thin" width="44" height="44" />
+          <Icon
+            v-if="!isMobMenuOpen"
+            name="ph:list-thin"
+            width="44"
+            height="44"
+          />
           <Icon v-else name="ph:x-thin" width="44" height="44" />
         </div>
 
@@ -95,6 +100,20 @@
                   >Магазин</NuxtLink
                 >
               </li>
+              <li>
+                <NuxtLink
+                  to="/payment-and-shipping"
+                  @click="handleToggleMobMenu"
+                  >Оплата та Доставка</NuxtLink
+                >
+              </li>
+              <li>
+                <NuxtLink
+                  to="/warranty-and-returns"
+                  @click="handleToggleMobMenu"
+                  >Гарантії та Повернення</NuxtLink
+                >
+              </li>
             </ul>
           </nav>
         </div>
@@ -107,7 +126,7 @@
 const route = useRoute()
 const { selectedGoods } = useBasket()
 
-console.log("selectedGoods", selectedGoods.value)
+console.log('selectedGoods', selectedGoods.value)
 const isBasketOpen = ref(false)
 const isMobMenuOpen = ref(false)
 
