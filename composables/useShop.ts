@@ -56,6 +56,7 @@ export default function useShop() {
       Лекція 9 - Інструкція до подальшої самостійної практики`,
       price: 1,
       photos: ['/images/course_meditation.png'],
+      video: 'https://www.youtube.com/embed/pcHIiXtsD3o?si=jC0VDrSLGoOh5IDP',
       payment_link: 'https://secure.wayforpay.com/button/bc04782a4b6aa',
       slug: 'course-meditation-2.0',
       level: DifficultyLevel.MIDDLE
@@ -68,6 +69,7 @@ export default function useShop() {
         'Аутогенне тренування - це суміш медитації та самогіпнозу. Курс складається з семи україномовних аудіо-уроків, які необхідно засвоювати крок за кроком.',
       price: 1,
       photos: ['/images/course_autogenic.png'],
+      video: 'https://www.youtube.com/embed/TCB3o-Rog7w?si=GQxnNTbNxdRB6xUr',
       payment_link: 'https://secure.wayforpay.com/button/bc04782a4b6aa',
       slug: 'course-autogenic-training',
       level: DifficultyLevel.LIGHT
@@ -80,6 +82,7 @@ export default function useShop() {
         'Базовий курс, що буде корисний усім початківцям. У ньому ми поговоримо про історію йоги, її цілі та інструменти.',
       price: 1,
       photos: ['/images/course_intro.png'],
+      video: 'https://www.youtube.com/embed/TCB3o-Rog7w?si=GQxnNTbNxdRB6xUr',
       payment_link: 'https://secure.wayforpay.com/button/bc04782a4b6aa',
       slug: 'course-intro',
       level: DifficultyLevel.LIGHT

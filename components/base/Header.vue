@@ -34,7 +34,7 @@
           </ul>
         </nav>
 
-        <div class="basket" @click="handleToggleBasketOpen">
+        <!-- <div class="basket" @click="handleToggleBasketOpen">
           <Icon name="ph:shopping-cart-simple-thin" width="48" height="48" />
           <span class="basket-goods-quantity">{{ selectedGoods.length }}</span>
         </div>
@@ -45,7 +45,7 @@
             :is-basket-open="isBasketOpen"
             :set-is-basket-open="handleToggleBasketOpen"
           />
-        </Transition>
+        </Transition> -->
 
         <div class="mob-menu__btn" @click="handleToggleMobMenu">
           <Icon
@@ -126,7 +126,6 @@
 const route = useRoute()
 const { selectedGoods } = useBasket()
 
-console.log('selectedGoods', selectedGoods.value)
 const isBasketOpen = ref(false)
 const isMobMenuOpen = ref(false)
 
