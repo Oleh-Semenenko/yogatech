@@ -105,4 +105,7 @@ const handleCardMobClick = () => {
   margin-bottom: 4px
   @include m
     margin-top: 4px
+
+.teammate__description
+  text-align: left
 </style>

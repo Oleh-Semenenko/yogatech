@@ -104,7 +104,7 @@
 
         <div class="product__info">
           <div class="product__info-header">
-            <h3>{{ product.title }}</h3>
+            <h3>{{ product.title }} {{ (product as ICourse).author && (product as ICourse).author }}</h3>
             <p class="text-2">{{ product.price }} грн</p>
           </div>
 
@@ -173,7 +173,7 @@
 </template>
 
 <script setup lang="ts">
-import { ProductGroup, type ISize } from '~/types'
+import { ProductGroup, type ISize, type ICourse } from '~/types'
 
 const route = useRoute()
 const { getOneProduct, getProductsExceptSelected } = useShop()

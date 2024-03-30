@@ -7,6 +7,7 @@
           class="footer__logo"
           width="226"
           height="178"
+          @click="navigateTo('/')"
         />
         <p class="copyright">
           © Copyright 2024 YogaTech.ua<br />All Rights Reserved
@@ -22,7 +23,7 @@
             >
           </li>
           <li class="nav__item">
-            <NuxtLink to="/ryt500">Викладацький курс</NuxtLink>
+            <NuxtLink to="/ryt1000">Викладацький курс</NuxtLink>
           </li>
           <li class="nav__item">
             <NuxtLink
@@ -97,6 +98,7 @@
       display: none
 
 .footer__logo
+  cursor: pointer
   grid-column: 1
   grid-row: 1 / -1
   @include xl

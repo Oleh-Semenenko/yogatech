@@ -16,7 +16,7 @@
               Тож головними із наших цілей є: виведення йоги із площини фітнесу та повернення їй заслуженого статусу науки, створення прозорої термінологічної бази та інтеграцію авторських напрацювань у об’єднану методологію йоги.
             </p>
 
-            <button class="btn">Дізнатись більше</button>
+            <NuxtLink to="/team" class="btn">Дізнатись більше</NuxtLink>
           </div>
         </div>
       </div>
@@ -37,7 +37,6 @@
   @include xl
     gap: 40px
   @include l
-    // grid-template-columns: 1fr 1fr
     gap: 28px
   @include m
     justify-items: center

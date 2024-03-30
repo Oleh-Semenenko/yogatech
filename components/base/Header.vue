@@ -2,7 +2,7 @@
   <div class="header" :class="{ 'without-blur': isMobMenuOpen }">
     <div class="container">
       <div class="header__inner">
-        <img src="/images/logo.svg" class="logo" />
+        <img src="/images/logo.svg" class="logo" alt="Logo" @click="navigateTo('/')" />
 
         <nav class="header__inner-nav">
           <ul class="nav__list">
@@ -15,7 +15,7 @@
               >
             </li>
             <li class="nav__item">
-              <NuxtLink to="/ryt500">Викладацький курс</NuxtLink>
+              <NuxtLink to="/ryt1000">Викладацький курс</NuxtLink>
             </li>
             <li class="nav__item">
               <NuxtLink
@@ -76,7 +76,7 @@
                 >
               </li>
               <li>
-                <NuxtLink to="/ryt500" @click="handleToggleMobMenu"
+                <NuxtLink to="/ryt1000" @click="handleToggleMobMenu"
                   >Викладацький курс</NuxtLink
                 >
               </li>
@@ -175,6 +175,9 @@ const handleToggleBasketOpen = () => {
   align-items: center
   justify-content: space-between
   gap: 20px
+
+.logo
+  cursor: pointer
 
 .header__mob-nav
   text-align: center

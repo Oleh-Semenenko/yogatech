@@ -26,6 +26,7 @@ export interface IProduct {
 
 export interface ICourse extends IProduct {
   level: DifficultyLevel
+  author: string
 }
 
 export interface ISelectedProduct extends IProduct {

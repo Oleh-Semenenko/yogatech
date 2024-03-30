@@ -3,7 +3,7 @@
     <div class="container">
       <div class="hero__inner">
         <h1 class="hero__title">
-          Перший україномовний йогічний проект з науковим підгрунтям
+          Українська асоціація йога-інструкторів
         </h1>
         <div class="hero__logo">
           <img
