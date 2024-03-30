@@ -4,13 +4,10 @@
       <div class="form__wrapper">
         <h2>Заповни заявку для участі в проекті</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis magni
-          laudantium ducimus earum maiores atque? Odio vel, repellat neque
-          exercitationem fuga voluptate omnis labore nostrum, aut recusandae
-          quia debitis doloribus.
+          Заповніть Google-форму, якщо маєте питання або пропозиції по співпраці і ми з вами зв’яжемось!
         </p>
 
-        <NuxtLink to="/" class="btn form__btn orange-type">Заповнити заявку</NuxtLink>
+        <NuxtLink to="https://forms.gle/hitRZj1CfKV5fMzJ8" class="btn form__btn orange-type" target="_blanc">Заповнити заявку</NuxtLink>
       </div>
       <BaseMandala />
     </div>
@@ -48,7 +45,8 @@
       left: 42%
 .form__wrapper
   & p
-    max-width: 50%
+    @include l
+      max-width: 50%
     @include m
       max-width: 100%
   display: flex

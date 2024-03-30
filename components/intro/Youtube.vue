@@ -213,7 +213,7 @@
   @include l
     width: 534px
   @include m
-    width: 90%
+    width: 100%
 
 .youtube__swiper-item
   position: relative

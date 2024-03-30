@@ -6,7 +6,7 @@ export default function useShop() {
       id: 1,
       title: 'Книга “Технологія йоги” Михайла Ахекяна',
       description:
-        'Перед вами практичний путівник у світ йоги, написаний йогом і адресований йогам. У ній пояснена квінтесенція йогічної філософії, структуровані усі її основні терміни та інструменти. Усе науково, лаконічно, без двозначностей, протиріч, містики та релігійних домішок. Вона є ідеальним варіант для першої з йоги, однак і знайомі із йогою читачі знайдуть у ній багато корисних ключів для покращення власної практики та розуміння йоги вцілому.',
+        'Перед вами практичний путівник у світ йоги, написаний йогом і адресований йогам. У книзі пояснена квінтесенція йогічної філософії, структуровані усі її основні терміни та інструменти. Усе науково, лаконічно, без двозначностей, протиріч, містики та релігійних домішок. Вона є ідеальним варіантом для першої з йоги, однак і знайомі із йогою читачі знайдуть у ній багато корисних ключів для покращення власної практики та розуміння йоги вцілому.',
       shortDescription: 'Практичний путівник, написаний йогом та адресований йогам.',
       price: 1,
       photos: ['/images/book.png', '/images/book.png', '/images/book.png'],
@@ -18,7 +18,7 @@ export default function useShop() {
       id: 2,
       title: 'Брендована біла футболка YOGATECH',
       description:
-        'Неймовірна футболка 100% бавовни, принт з якісної фарби, що не вимивається.',
+        'Неймовірна футболка зі 100% бавовни, принт з якісної фарби, що не вимивається.',
       price: 1,
       photos: [
         '/images/t_shirt/t-shirt.png',
@@ -41,7 +41,7 @@ export default function useShop() {
     {
       id: 1,
       title: 'Медитація 2.0',
-      shortDescription: '9 лекцій, у які утрамбовано понад 9 років моєї особистої практики. Фішки та лайф-хаки, спрощення та ускладнення, розуміння механіки роботи технік та будови психіки.',
+      shortDescription: '9 лекцій, у які утрамбовано понад 9 років особистої практики. Фішки та лайф-хаки, спрощення та ускладнення, розуміння механіки роботи технік та будови психіки.',
       description: `Запис трансляцій нашого найбільш популярного курсу. 9 лекцій, у які утрамбовано понад 9 років моєї особистої практики. Фішки та лайф-хаки, спрощення та ускладнення, розуміння механіки роботи технік та будови психіки.<br />
       <br />
 
@@ -56,9 +56,11 @@ export default function useShop() {
       Лекція 9 - Інструкція до подальшої самостійної практики`,
       price: 1,
       photos: ['/images/course_meditation.png'],
+      video: 'https://www.youtube.com/embed/pcHIiXtsD3o?si=jC0VDrSLGoOh5IDP',
       payment_link: 'https://secure.wayforpay.com/button/bc04782a4b6aa',
       slug: 'course-meditation-2.0',
-      level: DifficultyLevel.MIDDLE
+      level: DifficultyLevel.MIDDLE,
+      author: 'від Михайла Ахекяна'
     },
     {
       id: 2,
@@ -68,9 +70,11 @@ export default function useShop() {
         'Аутогенне тренування - це суміш медитації та самогіпнозу. Курс складається з семи україномовних аудіо-уроків, які необхідно засвоювати крок за кроком.',
       price: 1,
       photos: ['/images/course_autogenic.png'],
+      video: 'https://www.youtube.com/embed/TCB3o-Rog7w?si=GQxnNTbNxdRB6xUr',
       payment_link: 'https://secure.wayforpay.com/button/bc04782a4b6aa',
       slug: 'course-autogenic-training',
-      level: DifficultyLevel.LIGHT
+      level: DifficultyLevel.LIGHT,
+      author: 'від Михайла Ахекяна'
     },
     {
       id: 3,
@@ -80,9 +84,11 @@ export default function useShop() {
         'Базовий курс, що буде корисний усім початківцям. У ньому ми поговоримо про історію йоги, її цілі та інструменти.',
       price: 1,
       photos: ['/images/course_intro.png'],
+      video: 'https://www.youtube.com/embed/TCB3o-Rog7w?si=GQxnNTbNxdRB6xUr',
       payment_link: 'https://secure.wayforpay.com/button/bc04782a4b6aa',
       slug: 'course-intro',
-      level: DifficultyLevel.LIGHT
+      level: DifficultyLevel.LIGHT,
+      author: 'від Михайла Ахекяна'
     }
   ]
 

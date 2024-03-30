@@ -2,7 +2,7 @@
   <div class="header" :class="{ 'without-blur': isMobMenuOpen }">
     <div class="container">
       <div class="header__inner">
-        <img src="/images/logo.svg" class="logo" />
+        <img src="/images/logo.svg" class="logo" alt="Logo" @click="navigateTo('/')" />
 
         <nav class="header__inner-nav">
           <ul class="nav__list">
@@ -15,7 +15,7 @@
               >
             </li>
             <li class="nav__item">
-              <NuxtLink to="/ryt500">Викладацький курс</NuxtLink>
+              <NuxtLink to="/ryt1000">Викладацький курс</NuxtLink>
             </li>
             <li class="nav__item">
               <NuxtLink
@@ -34,7 +34,7 @@
           </ul>
         </nav>
 
-        <div class="basket" @click="handleToggleBasketOpen">
+        <!-- <div class="basket" @click="handleToggleBasketOpen">
           <Icon name="ph:shopping-cart-simple-thin" width="48" height="48" />
           <span class="basket-goods-quantity">{{ selectedGoods.length }}</span>
         </div>
@@ -45,7 +45,7 @@
             :is-basket-open="isBasketOpen"
             :set-is-basket-open="handleToggleBasketOpen"
           />
-        </Transition>
+        </Transition> -->
 
         <div class="mob-menu__btn" @click="handleToggleMobMenu">
           <Icon
@@ -76,7 +76,7 @@
                 >
               </li>
               <li>
-                <NuxtLink to="/ryt500" @click="handleToggleMobMenu"
+                <NuxtLink to="/ryt1000" @click="handleToggleMobMenu"
                   >Викладацький курс</NuxtLink
                 >
               </li>
@@ -126,7 +126,6 @@
 const route = useRoute()
 const { selectedGoods } = useBasket()
 
-console.log('selectedGoods', selectedGoods.value)
 const isBasketOpen = ref(false)
 const isMobMenuOpen = ref(false)
 
@@ -176,6 +175,9 @@ const handleToggleBasketOpen = () => {
   align-items: center
   justify-content: space-between
   gap: 20px
+
+.logo
+  cursor: pointer
 
 .header__mob-nav
   text-align: center

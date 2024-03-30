@@ -70,15 +70,15 @@
             Для участі у менторській програмі заповніть, будь ласка, заявку і ми
             з вами зв’яжемось!
           </p>
-          <NuxtLink to="/" class="btn orange-type">Заповнити заявку</NuxtLink>
+          <NuxtLink to="https://forms.gle/CtWM1CpQkXp51JbS6" target="_blanc" class="btn orange-type">Заповнити заявку</NuxtLink>
         </div>
       </div>
     </div>
 
     <ShopSection
-      title="Навчання “Курс підготовки викладачів RYT500”"
+      title="Навчання “Курс підготовки викладачів RYT1000”"
       text="Ультимативний курс для інструкторів, що у 5 разів більший за стандартну міжнародну сертифікацію у 200 годин! Пориньте у світ йоги та дослідіть її глибини у затишних Карпатах!"
-      link="/ryt500"
+      link="/ryt1000"
       blue
       withBtn
     />
@@ -141,7 +141,6 @@ const levels = [
   @include l
     grid-template-columns: repeat(auto-fill, 340px)
   @include m
-    justify-content: start
     grid-template-columns: repeat(auto-fill, 312px)
   @include s
     grid-template-columns: 1fr
