@@ -37,7 +37,7 @@ export default function useTeammates() {
         2023 – Отримав два сертифікати від “Fitness Academy”;<br />
         2023 – Пройшов курс “Animal gymnastic yoga” (Костянтин Ронін);<br />
         2023 – Зробив низку наукових публікацій у журналах, зокрема “Йогатерапія у корекції наслідків ПТСР” та “Особливості застосування йогатерапії при травмах ЦНС”;`,
-      intro: 'засновник асоціації, викладач йоги',
+      intro: 'засновник YogaTech, лектор, викладач йоги, ментор',
       instagramLink: 'https://www.instagram.com/mikeyogatech/',
       slug: 'miha'
     },
@@ -45,9 +45,8 @@ export default function useTeammates() {
       id: 2,
       img: '/images/mirka.png',
       name: 'Міріам Хмарська',
-      description:
-        'голова культурного відділу асоціацї,  викладачка йоги, менеджер',
-      intro: 'голова культурного відділу асоціацї,  викладачка йоги, менеджер',
+      description: 'голова культурного відділу асоціацї, викладачка йоги, менеджер',
+      intro: 'голова культурного відділу асоціацї, викладачка йоги, менеджер',
       instagramLink: 'https://www.instagram.com/miriam_khmarska_yogini/',
       slug: 'mirka'
     },
