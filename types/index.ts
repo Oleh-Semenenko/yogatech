@@ -26,6 +26,8 @@ export interface IProduct {
 
 export interface ICourse extends IProduct {
   level: DifficultyLevel
+  levelUA: string
+  lectures: string[]
   author: string
 }
 
