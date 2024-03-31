@@ -5,7 +5,7 @@
       @click="handleCardMobClick"
     >
       <img
-        :src="img"
+        :src="coverImg"
         alt="Teammate avatar"
         width="365"
         height="365"
@@ -33,7 +33,7 @@ interface ITeammateProps {
 }
 
 const props = defineProps<ITeammateProps>()
-const { id, img, name, description, instagramLink, slug, intro } = props.participant
+const { id, coverImg, name, description, instagramLink, slug, intro } = props.participant
 
 const isMobile = computed(() => {
   return window.innerWidth <= 768
@@ -49,6 +49,7 @@ const handleCardMobClick = () => {
 <style lang="sass" scoped>
 .teammate
   width: 100%
+  overflow: hidden
 
 .teammate__overlay
   position: absolute
@@ -61,8 +62,9 @@ const handleCardMobClick = () => {
   width: 100%
   height: 100%
   transform: translateY(100%)
-  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1)
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1), background 300ms cubic-bezier(0.4, 0, 0.2, 1)
   cursor: pointer
+  background: rgba(255, 255, 255, 0)
 
 .teammate__overlay-footer
   display: none
