@@ -14,6 +14,14 @@
 
 <script setup lang="ts">
 import 'animate.css'
+
+useSeoMeta({
+  title: 'Yogatech | Всеукраїнська ассоціація йога-інструкторів',
+  ogTitle: 'Yogatech | Всеукраїнська ассоціація йога-інструкторів',
+  description: 'Курс для викладачів йоги на понад 1000годин, навчання, спрівпраця та взаємодія.',
+  ogDescription: 'Курс для викладачів йоги на понад 1000годин, навчання, спрівпраця та взаємодія.',
+  ogImage: '/images/og_logo.png',
+})
 </script>
 
 <style lang="sass">

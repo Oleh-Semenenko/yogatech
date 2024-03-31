@@ -5,7 +5,7 @@
 
       <div class="product__content">
         <div
-          v-if="route.params.group === ProductGroup.PRODUCT"
+          v-if="!isCourse"
           class="product__swiper"
         >
           <div class="product__swiper--main">
@@ -90,7 +90,10 @@
           </Swiper>
         </div>
 
-        <div v-if="route.params.group === ProductGroup.COURSE" class="product__course-intro">
+        <div
+          v-if="isCourse"
+          class="product__course-intro"
+        >
           <iframe
             width="773"
             height="424"
@@ -104,7 +107,9 @@
 
         <div class="product__info">
           <div class="product__info-header">
-            <h3>{{ product.title }} {{ (product as ICourse).author && (product as ICourse).author }}</h3>
+            <h3>
+              {{ title }}
+            </h3>
             <p class="text-2">{{ product.price }} грн</p>
           </div>
 
@@ -151,7 +156,32 @@
 
           <div class="product__description">
             <p class="product__description-title">Опис товару:</p>
-            <p v-html="product.description"></p>
+            <p
+              v-if="isCourse"
+              class="product__description-level"
+            >
+              Рівень складності:
+              <img
+                v-if="(product as ICourse)?.level"
+                :src="`/images/gear-${(product as ICourse).level}.svg`"
+                width="32"
+                height="32"
+                alt="Course level icon"
+              />
+              - {{ (product as ICourse).levelUA }}
+            </p>
+            <p>
+              {{ product.description }}
+            </p>
+
+            <ul v-if="isCourse" class="product__description-lectures">
+              <li
+                v-for="lecture in (product as ICourse).lectures"
+                :key="lecture"
+              >
+                {{ lecture }}
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -180,6 +210,7 @@ const { getOneProduct, getProductsExceptSelected } = useShop()
 const { addProduct } = useBasket()
 
 const isSizesTableOpen = ref(false)
+const thumbsSwiper: Ref<any | null> = ref(null)
 
 const handleSizesTableOpen = () => {
   isSizesTableOpen.value = !isSizesTableOpen.value
@@ -198,7 +229,12 @@ const moreProductsList = getProductsExceptSelected(
   route.params.group as ProductGroup
 )
 
-const thumbsSwiper: Ref<any | null> = ref(null)
+const title = computed(() => {
+  return route.params.group === ProductGroup.COURSE
+    ? `Курс "${product.title}" ${(product as ICourse).author}`
+    : product.title
+})
+const isCourse = computed(() => route.params.group === ProductGroup.COURSE)
 
 const setThumbsSwiper = (swiper: any) => {
   thumbsSwiper.value = swiper
@@ -221,21 +257,23 @@ const handleSelectSize = (size: ISize) => {
   position: relative
 
 .product__content
-  display: flex
-  justify-content: space-between
+  display: grid
+  grid-template-columns: 751px auto
   gap: 40px
   padding-top: 40px
   padding-bottom: 40px
   @include xl
+    grid-template-columns: 556px auto
     padding-top: 28px
     padding-bottom: 28px
   @include l
+    grid-template-columns: 340px auto
     gap: 24px
     padding-top: 20px
     padding-bottom: 20px
   @include m
-    flex-direction: column
-    align-items: center
+    grid-template-columns: 100%
+    grid-template-rows: repeat(2, auto)
 
 .product__course-intro
   width: 100%
@@ -260,16 +298,14 @@ const handleSelectSize = (size: ISize) => {
       height: 219px
 
 .product__swiper
-  width: calc( 643px + 54px * 2 )
+  width: 100%
   display: flex
   flex-direction: column
   gap: 12px
-  @include xl
-    width: calc( 448px + 54px * 2 )
   @include l
-    width: 340px
     gap: 0
   @include m
+    justify-self: center
     width: 80%
   @media screen and (max-width: 600px)
     width: 100%
@@ -385,6 +421,17 @@ const handleSelectSize = (size: ISize) => {
   margin-bottom: 12px
   @include xl
     margin-bottom: 8px
+
+.product__description-level
+  display: flex
+  align-items: center
+  gap: 4px
+  margin-bottom: 4px
+
+.product__description-lectures
+  margin-top: 20px
+  @include m
+    margin-top: 16px
 
 .table__modal
   z-index: 1000
