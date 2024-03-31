@@ -8,19 +8,16 @@
             :centered-slides="true"
             :slides-per-view="1"
             :autoplay="{
-              delay: 4000
+              delay: 3000
             }"
             :pagination="{ clickable: true }"
             :loop="true"
           >
-            <SwiperSlide class="benefits__swiper-item">
-              <img src="/images/miha.png" width="922" height="627" />
-            </SwiperSlide>
-            <SwiperSlide class="benefits__swiper-item"
-              ><img src="/images/miha.png" width="922" height="627" />
-            </SwiperSlide>
-            <SwiperSlide class="benefits__swiper-item"
-              ><img src="/images/miha.png" width="922" height="627" />
+            <SwiperSlide
+              v-for="(photo, idx) in teammate.photos"
+              :key="idx"
+            >
+              <img :src="photo" width="922" height="627" alt="Teammate photo" />
             </SwiperSlide>
           </Swiper>
         </div>
@@ -28,33 +25,22 @@
         <div>
           <h2>{{ teammate.name }}</h2>
           <p>
-            Михайло Ахекян — сертифікований викладач (RYT-200) з Кундаліні-йоги
-            і Девдан-йоги, має більше 8 років досвіду особистої практики, різних
-            навчань і посвячень. Проводить інтенсивні курси по медитації для ІТ
-            і великого бізнесу. Навчався в провідних викладачів: Наталі Дубенко,
-            Сергія Філімонова, співпрацював з Марією Федосеєвою. Провів понад 6
-            онлайн курсів по медитації і пранаямі, спікер міжнародних фестивалів
-            і конференцій. Проводить практичні курси та лекції на викладацьких
-            семінарах RYT-100 і RYT-200.
+            {{ teammate.description }}
           </p>
-          <h3 class="person__slogan">
-            «Йога — це не спорт! У спорті ми перемагаємо інших, повинні бути
-            кращими за всіх. Швидше, вище, сильніше! Тоді як йога, якщо її
-            викладають правильно, а не як фітнес, дає людині більше.»
-          </h3>
+          <h3 class="person__slogan">«{{ teammate.motivation }}»</h3>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="person__intro section">
+  <div v-if="teammate?.video" class="person__intro section">
     <div class="container">
       <BaseMandala />
       <iframe
         class="person__intro-video"
         width="772"
         height="424"
-        src="https://www.youtube.com/embed/ZM3CBfx_IK8?si=QsXbf4fFw3ifFA_q"
+        :src="teammate.video"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -65,15 +51,20 @@
 
   <div class="section blue">
     <div class="container">
-      <h2>Шлях Михайла в йозі</h2>
-      <p v-html="teammate.description" class="person__about"></p>
+      <h2>Шлях в йозі</h2>
+      <ul>
+        <li v-for="achievement in teammate.achievements" :key="achievement">
+          {{ achievement }}
+        </li>
+      </ul>
+      <p class="person__about"></p>
     </div>
   </div>
 
   <div class="section">
     <div class="container">
       <h2>Дивитись ще</h2>
-      <TeamList :teammates="othersTeammates"/>
+      <TeamList :teammates="othersTeammates" />
     </div>
   </div>
 </template>
@@ -87,21 +78,23 @@ const othersTeammates = getTeammatesExceptCurrent(route.params.slug as string)
 
 <style lang="sass" scoped>
 .person__inner
-  display: flex
+  display: grid
+  grid-template-columns: 922px auto
   gap: 52px
 
   @include xl
+    grid-template-columns: 640px auto
     gap: 32px
   @include l
     gap: 12px
-    flex-direction: column
+    grid-template-columns: 100%
+    grid-auto-rows: repeat(2, auto)
 
 .person__swiper
-  width: 922px
-  @include xl
-    width: 640px
+  width: 100%
   @include l
-    align-self: center
+    width: 500px
+    justify-self: center
   @include m
     width: 100%
 
@@ -132,7 +125,4 @@ const othersTeammates = getTeammatesExceptCurrent(route.params.slug as string)
   @include s
     width: 100%
     height: 180px
-
-.person__about
-  white-space: pre-wrap
 </style>
