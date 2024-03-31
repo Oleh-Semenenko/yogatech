@@ -74,6 +74,11 @@
             </NuxtLink>
           </li>
         </ul>
+
+        <div class="creators">
+          Розробка та підтримка сайту:<br /><NuxtLink to="https://www.instagram.com/miriam_khmarska_yogini/" target="_blanc">Міріам Хмарська, </NuxtLink>
+          <NuxtLink to="https://www.linkedin.com/in/oleh-semenenko" target="_blanc">Олег Семененко</NuxtLink>
+        </div>
       </div>
     </div>
   </div>
@@ -116,7 +121,7 @@
   font-size: 20px
   grid-column: 3
   grid-row: 3
-  justify-self: flex-end
+  justify-self: start
   margin-top: 12px
   @include l
     grid-column: 1
@@ -133,7 +138,7 @@
   flex-grow: 1
   justify-content: flex-start
   @include m
-    grid-column: 1
+    grid-column: 1 / -1
     grid-row: 2
     justify-content: flex-start
   @include s
@@ -157,9 +162,25 @@
     gap: 24px
   @include m
     gap: 16px
-
+  @include s
+    gap: 8px
 
 .icon:hover
   cursor: pointer
   color: var(--orange)
+
+.creators
+  grid-column: 3
+  grid-row: 4
+  @include l
+    grid-row: 2
+    margin-top: 20px
+  @include m
+    grid-row: 3
+    grid-column: 1 / -1
+    margin-top: 0
+
+  & a
+    text-decoration: underline
+    color: var(--blue-color)
 </style>

@@ -58,9 +58,13 @@ export interface ICard {
 
 export interface ITeammate {
   id: number
-  img: string
+  coverImg: string
+  photos: string[]
   name: string
   description: string
+  motivation: string
+  video?: string
+  achievements: string[]
   intro: string
   instagramLink: string
   slug: string
