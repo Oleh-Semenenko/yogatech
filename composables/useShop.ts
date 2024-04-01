@@ -14,7 +14,7 @@ export default function useShop() {
         'Перед вами практичний путівник у світ йоги, написаний йогом і адресований йогам. У книзі пояснена квінтесенція йогічної філософії, структуровані усі її основні терміни та інструменти. Усе науково, лаконічно, без двозначностей, протиріч, містики та релігійних домішок. Вона є ідеальним варіантом для першої з йоги, однак і знайомі із йогою читачі знайдуть у ній багато корисних ключів для покращення власної практики та розуміння йоги вцілому.',
       shortDescription:
         'Практичний путівник, написаний йогом та адресований йогам.',
-      price: 1,
+      price: 500,
       photos: [
         '/images/book/cover.jpg',
         '/images/book/1.png',
@@ -22,7 +22,7 @@ export default function useShop() {
         '/images/book/3.png',
         '/images/book/4.png'
       ],
-      payment_link: 'https://secure.wayforpay.com/button/bac90579800e7',
+      payment_link: 'https://secure.wayforpay.com/button/bda9be6a04c63',
       slug: 'book',
       video: 'https://www.youtube.com/embed/Mqa60lgJ1Bk?si=tfYUt29jtqCdlafu'
     },
@@ -31,13 +31,13 @@ export default function useShop() {
       title: 'Брендована біла футболка YOGATECH',
       description:
         'Неймовірна футболка зі 100% бавовни, принт з якісної фарби, що не вимивається.',
-      price: 1,
+      price: 500,
       photos: [
         '/images/t_shirt/1.jpg',
         '/images/t_shirt/2.jpg',
         '/images/t_shirt/3.jpg'
       ],
-      payment_link: 'https://secure.wayforpay.com/button/b50682ce6b3a0',
+      payment_link: 'https://secure.wayforpay.com/button/b59dbc10c8495',
       slug: 't-shirt',
       sizes: [
         { id: 1, value: 'S' },
@@ -57,10 +57,10 @@ export default function useShop() {
         '9 лекцій, у які утрамбовано понад 9 років особистої практики. Фішки та лайф-хаки, спрощення та ускладнення, розуміння механіки роботи технік та будови психіки.',
       description:
         'Запис трансляцій нашого найбільш популярного курсу. 9 лекцій, у які утрамбовано понад 9 років моєї особистої практики. Фішки та лайф-хаки, спрощення та ускладнення, розуміння механіки роботи технік та будови психіки.',
-      price: 1,
+      price: 2000,
       photos: ['/images/course_meditation.png'],
       video: 'https://www.youtube.com/embed/pcHIiXtsD3o?si=jC0VDrSLGoOh5IDP',
-      payment_link: 'https://secure.wayforpay.com/button/bc04782a4b6aa',
+      payment_link: 'https://secure.wayforpay.com/payment/s75209e762efb',
       slug: 'course-meditation-2.0',
       level: DifficultyLevel.MIDDLE,
       levelUA: 'середній',
@@ -84,10 +84,10 @@ export default function useShop() {
         'Аутогенне тренування - це суміш медитації та самогіпнозу. Курс складається з семи україномовних аудіо-уроків, які необхідно засвоювати крок за кроком.',
       description:
         'Аутогенне тренування - це суміш медитації та самогіпнозу. Воно базується на концепції, що людина може самостійно впливати на свій психічний та фізичний стан шляхом концентрації на внутрішніх відчуттях та самонавіюванню (ауто-сугестії). На PubMed є понад 1300 наукових досліджень цього психотерапевтичного методу, що підтверджують його ефективність у зменшенні симптомів стресу, тривожності та депресії, а також у покращенні сну та спортивних результатів (що закономірно, адже чим меньше стресу - тим краще відновлення та вищий ступінь концентрації).',
-      price: 1,
+      price: 1500,
       photos: ['/images/course_autogenic.png'],
       video: 'https://www.youtube.com/embed/TCB3o-Rog7w?si=GQxnNTbNxdRB6xUr',
-      payment_link: 'https://secure.wayforpay.com/button/bc04782a4b6aa',
+      payment_link: 'https://secure.wayforpay.com/payment/s58e50ece0f0f',
       slug: 'course-autogenic-training',
       level: DifficultyLevel.LIGHT,
       levelUA: 'легкий',
@@ -110,10 +110,10 @@ export default function useShop() {
         'Базовий курс, що буде корисний усім початківцям. У ньому ми поговоримо про історію йоги, її цілі та інструменти.',
       description:
         "Базовий курс, що буде корисний усім початківцям. У ньому ми поговоримо про історію йоги, її цілі та інструменти. Таким чином, цей курс може стати приємним та стійким фундаментом, своєрідним скелетом на який можна сміливо нарощувати м'язи вашої особистої практики.",
-      price: 1,
+      price: 800,
       photos: ['/images/course_intro.png'],
-      video: 'https://www.youtube.com/embed/TCB3o-Rog7w?si=GQxnNTbNxdRB6xUr',
-      payment_link: 'https://secure.wayforpay.com/button/bc04782a4b6aa',
+      video: 'https://www.youtube.com/embed/PPesedU1FOc?si=261cqDgQ-w-3jZWy',
+      payment_link: 'https://secure.wayforpay.com/payment/sf7f35357e856',
       slug: 'course-intro',
       level: DifficultyLevel.LIGHT,
       levelUA: 'легкий',

@@ -1,7 +1,7 @@
 <template>
   <div class="go-back-btn" @click="() => navigateTo('/shop')">
     <Icon name="mdi-light:chevron-left" width="32" height="32" />
-    <p class="text-3">До магазину</p>
+    <p class="text-3">до магазину</p>
   </div>
 </template>
 
