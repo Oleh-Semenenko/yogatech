@@ -41,7 +41,7 @@ export default function useTeammates() {
         '2023 – Зробив низку наукових публікацій у журналах, зокрема “Йогатерапія у корекції наслідків ПТСР” та “Особливості застосування йогатерапії при травмах ЦНС”;'
       ],
       intro: 'засновник YogaTech, лектор, викладач йоги, ментор',
-      video: 'https://www.youtube.com/embed/ZM3CBfx_IK8?si=QsXbf4fFw3ifFA_q',
+      video: 'https://www.youtube.com/embed/-UY_vLmb2UQ?si=Eey_vekUQgEfv06a',
       motivation: 'У суспільстві, де технологічний прогрес катастрофічно випереджає розвиток людської психіки, йога - чи не єдина протиотрута',
       instagramLink: 'https://www.instagram.com/mikeyogatech/',
       slug: 'mykhailo-akhekian'

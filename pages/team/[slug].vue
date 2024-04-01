@@ -4,11 +4,13 @@
       <div class="person__inner">
         <div class="person__swiper">
           <Swiper
-            :modules="[SwiperPagination, SwiperAutoplay]"
+            :modules="[SwiperPagination, SwiperAutoplay, SwiperEffectFade]"
             :centered-slides="true"
             :slides-per-view="1"
+            :effect="'fade'"
             :autoplay="{
-              delay: 3000
+              delay: 3000,
+              pauseOnMouseEnter: true
             }"
             :pagination="{ clickable: true }"
             :loop="true"
@@ -17,7 +19,7 @@
               v-for="(photo, idx) in teammate.photos"
               :key="idx"
             >
-              <img :src="photo" width="922" height="627" alt="Teammate photo" loading="lazy"/>
+              <img :src="photo" width="922" height="627" alt="Teammate photo"/>
             </SwiperSlide>
           </Swiper>
         </div>
@@ -76,7 +78,7 @@ const teammate = getOneTeammate(route.params.slug as string)
 const othersTeammates = getTeammatesExceptCurrent(route.params.slug as string)
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .person__inner
   display: grid
   grid-template-columns: 922px auto
@@ -97,6 +99,9 @@ const othersTeammates = getTeammatesExceptCurrent(route.params.slug as string)
     justify-self: center
   @include m
     width: 100%
+
+  & .swiper-slide
+    transition-delay: 500
 
 .person__slogan
   margin-top: 20px
@@ -125,4 +130,7 @@ const othersTeammates = getTeammatesExceptCurrent(route.params.slug as string)
   @include s
     width: 100%
     height: 180px
+
+.person__swiper .swiper-pagination
+  display: block
 </style>
