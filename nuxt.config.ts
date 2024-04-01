@@ -29,7 +29,7 @@ export default defineNuxtConfig({
   modules: ['nuxt-swiper', '@nuxt/image', 'nuxt-icon'],
   swiper: {
     styleLang: 'scss',
-    modules: ['navigation', 'pagination', 'autoplay', 'thumbs']
+    modules: ['navigation', 'pagination', 'autoplay', 'thumbs', 'effect-fade']
   },
   image: {
     format: ['webp','avif'],

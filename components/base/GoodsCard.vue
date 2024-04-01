@@ -43,13 +43,14 @@
 
     <div class="goods__controller">
       <p class="goods__price text-2">{{ product.price }} грн</p>
-      <button
+      <NuxtLink
         v-if="!withoutBtn"
+        :to="product.payment_link"
         class="btn orange-type"
-        @click.stop="handleAddProductInBasket(productData)"
+        @click.stop
       >
-        B кошик
-      </button>
+        Придбати
+      </NuxtLink>
     </div>
   </li>
 </template>

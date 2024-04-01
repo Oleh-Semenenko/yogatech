@@ -4,105 +4,49 @@
       <BaseGoBackBtn />
 
       <div class="product__content">
-        <div
-          v-if="!isCourse"
-          class="product__swiper"
-        >
+        <div v-if="!isCourse" class="product__swiper">
           <div class="product__swiper--main">
-            <Icon
-              name="mdi-light:chevron-left"
-              class="prev-btn"
-              width="54"
-              height="54"
-            />
-            <Swiper
-              :modules="[SwiperThumbs, SwiperNavigation, SwiperPagination]"
-              :navigation="{
-                enabled: true,
-                nextEl: '.next-btn',
-                prevEl: '.prev-btn'
-              }"
-              :pagination="{ clickable: true }"
-              :loop="true"
-              :thumbs="{ swiper: thumbsSwiper }"
-              class="main-swiper"
-            >
+            <Icon name="mdi-light:chevron-left" class="prev-btn" width="54" height="54" />
+            <Swiper :modules="[SwiperThumbs, SwiperNavigation, SwiperPagination]" :navigation="{
+          enabled: true,
+          nextEl: '.next-btn',
+          prevEl: '.prev-btn'
+        }" :pagination="{ clickable: true }" :loop="true" :thumbs="{ swiper: thumbsSwiper }" class="main-swiper">
               <SwiperSlide v-if="product.video" class="product__swiper-item">
-                <iframe
-                  width="643"
-                  height="440"
-                  :src="product.video"
-                  title="YouTube video player"
-                  frameborder="0"
+                <iframe width="643" height="440" :src="product.video" title="YouTube video player" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
-                />
+                  allowfullscreen />
               </SwiperSlide>
-              <SwiperSlide
-                v-for="(slide, idx) in product.photos"
-                :key="idx"
-                class="product__swiper-item"
-              >
+              <SwiperSlide v-for="(slide, idx) in product.photos" :key="idx" class="product__swiper-item">
                 <img :src="slide" width="643" height="440" loading="lazy" />
               </SwiperSlide>
             </Swiper>
-            <Icon
-              name="mdi-light:chevron-right"
-              class="next-btn"
-              width="54"
-              height="54"
-            />
+            <Icon name="mdi-light:chevron-right" class="next-btn" width="54" height="54" />
           </div>
 
-          <Swiper
-            :modules="[SwiperThumbs]"
-            @swiper="setThumbsSwiper"
-            :breakpoints="{
-              1920: {
-                spaceBetween: 20
-              },
-              1280: {
-                spaceBetween: 16
-              }
-            }"
-            :loop="true"
-            :slidesPerView="4"
-            class="product__swiper--secondary"
-          >
+          <Swiper :modules="[SwiperThumbs]" @swiper="setThumbsSwiper" :breakpoints="{
+          1920: {
+            spaceBetween: 20
+          },
+          1280: {
+            spaceBetween: 16
+          }
+        }" :loop="true" :slidesPerView="4" class="product__swiper--secondary">
             <SwiperSlide v-if="product.video" class="product__swiper-item">
-              <iframe
-                width="100"
-                height="100"
-                :src="product.video"
-                title="YouTube video player"
-                frameborder="0"
+              <iframe width="100" height="100" :src="product.video" title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              />
+                allowfullscreen />
             </SwiperSlide>
-            <SwiperSlide
-              v-for="(slide, idx) in product.photos"
-              :key="idx"
-              class="product__swiper-item"
-            >
+            <SwiperSlide v-for="(slide, idx) in product.photos" :key="idx" class="product__swiper-item">
               <img :src="slide" width="100" height="100" loading="lazy" />
             </SwiperSlide>
           </Swiper>
         </div>
 
-        <div
-          v-if="isCourse"
-          class="product__course-intro"
-        >
-          <iframe
-            width="773"
-            height="424"
-            :src="product.video"
-            title="YouTube video player"
-            frameborder="0"
+        <div v-if="isCourse" class="product__course-intro">
+          <iframe width="773" height="424" :src="product.video" title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          />
+            allowfullscreen />
         </div>
 
         <div class="product__info">
@@ -116,12 +60,8 @@
           <div v-if="product?.sizes">
             <p class="product__choose-size-title">Оберіть розмір:</p>
             <div class="product__sizes">
-              <ShopSizesList
-                v-if="product?.sizes && product?.selectedSize"
-                :sizes="product.sizes"
-                :selected-size="product?.selectedSize"
-                @select-size="handleSelectSize"
-              />
+              <ShopSizesList v-if="product?.sizes && product?.selectedSize" :sizes="product.sizes"
+                :selected-size="product?.selectedSize" @select-size="handleSelectSize" />
 
               <span @click="handleSizesTableOpen">Таблиця розмірів</span>
             </div>
@@ -129,45 +69,24 @@
               <Transition name="page">
                 <div v-if="isSizesTableOpen" class="table__modal">
                   <div class="table__modal-content">
-                    <Icon
-                      name="ph:x-thin"
-                      width="44"
-                      height="44"
-                      @click="handleSizesTableOpen"
-                    />
-                    <img
-                      src="/images/sizes_table.png"
-                      alt="Sizes table"
-                      width="800"
-                      height="400"
-                    />
+                    <Icon name="ph:x-thin" width="44" height="44" @click="handleSizesTableOpen" />
+                    <img src="/images/sizes_table.png" alt="Sizes table" width="800" height="400" />
                   </div>
                 </div>
               </Transition>
             </Teleport>
           </div>
 
-          <button
-            class="btn product__add-product-btn orange-type"
-            @click="addProduct(product)"
-          >
+          <NuxtLink :to="product.payment_link" class="btn product__add-product-btn orange-type">
             Придбати
-          </button>
+          </NuxtLink>
 
           <div class="product__description">
             <p class="product__description-title">Опис товару:</p>
-            <p
-              v-if="isCourse"
-              class="product__description-level"
-            >
+            <p v-if="isCourse" class="product__description-level">
               Рівень складності:
-              <img
-                v-if="(product as ICourse)?.level"
-                :src="`/images/gear-${(product as ICourse).level}.svg`"
-                width="32"
-                height="32"
-                alt="Course level icon"
-              />
+              <img v-if="(product as ICourse)?.level" :src="`/images/gear-${(product as ICourse).level}.svg`" width="32"
+                height="32" alt="Course level icon" />
               - {{ (product as ICourse).levelUA }}
             </p>
             <p>
@@ -175,10 +94,7 @@
             </p>
 
             <ul v-if="isCourse" class="product__description-lectures">
-              <li
-                v-for="lecture in (product as ICourse).lectures"
-                :key="lecture"
-              >
+              <li v-for="lecture in (product as ICourse).lectures" :key="lecture">
                 {{ lecture }}
               </li>
             </ul>
@@ -189,13 +105,8 @@
       <div class="section">
         <h2>Також вас може зацікавити</h2>
         <ul class="cards__list">
-          <li v-for="card in moreProductsList" :key="card.id">
-            <BaseGoodsCard
-              :product="card"
-              :group="(route.params.group as ProductGroup)"
-              withoutBtn
-            />
-          </li>
+          <BaseGoodsCard v-for="card in moreProductsList" :key="card.id" :product="card"
+            :group="(route.params.group as ProductGroup)" withoutBtn />
         </ul>
       </div>
     </div>
@@ -315,7 +226,7 @@ const handleSelectSize = (size: ISize) => {
     @include l
       display: none
 
-.swiper-pagination
+.product__swiper .swiper-pagination
   display: none
   @include l
     display: block
