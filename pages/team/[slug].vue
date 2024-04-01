@@ -17,7 +17,7 @@
               v-for="(photo, idx) in teammate.photos"
               :key="idx"
             >
-              <img :src="photo" width="922" height="627" alt="Teammate photo" />
+              <img :src="photo" width="922" height="627" alt="Teammate photo" loading="lazy"/>
             </SwiperSlide>
           </Swiper>
         </div>

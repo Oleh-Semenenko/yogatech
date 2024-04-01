@@ -43,7 +43,7 @@
                 :key="idx"
                 class="product__swiper-item"
               >
-                <img :src="slide" width="643" height="440" />
+                <img :src="slide" width="643" height="440" loading="lazy" />
               </SwiperSlide>
             </Swiper>
             <Icon
@@ -85,7 +85,7 @@
               :key="idx"
               class="product__swiper-item"
             >
-              <img :src="slide" width="100" height="100" />
+              <img :src="slide" width="100" height="100" loading="lazy" />
             </SwiperSlide>
           </Swiper>
         </div>
