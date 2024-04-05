@@ -70,7 +70,7 @@
             Для участі у менторській програмі заповніть, будь ласка, заявку і ми
             з вами зв’яжемось!
           </p>
-          <NuxtLink to="https://forms.gle/CtWM1CpQkXp51JbS6" target="_blanc" class="btn orange-type">Заповнити заявку</NuxtLink>
+          <NuxtLink to="https://forms.gle/CtWM1CpQkXp51JbS6" target="_blank" class="btn orange-type">Заповнити заявку</NuxtLink>
         </div>
       </div>
     </div>

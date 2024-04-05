@@ -22,7 +22,7 @@
         :to="data.link"
         class="card__link btn"
         :class="{ 'orange-type': data.linkColor === LinkColor.ORANGE }"
-        target="_blanc"
+        target="_blank"
         >{{ data.linksText }}</NuxtLink
       >
     </div>
