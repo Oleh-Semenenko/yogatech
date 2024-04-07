@@ -1,33 +1,17 @@
 <template>
-  <!-- <FestHero @register="handleToRegisterFormScroll" />
-  <LazyFestFeatures />
-  <LazyFestProgram />
-  <LazyFestTeachers />
-  <LazyFestLocation />
-  <LazyFestRegisterForm id="register" />
-  <LazyFestFaq /> -->
   <div class="fest">
     <div class="container">
       <div class="fest__inner">
         <h1>Дякуємо за інтерес до наших проектів!</h1>
         <p class="text-2 fest__text-1">Цей проект наразі в розробці і готується до презентації.</p>
         <BaseMandala />
-        <p class="text-2 fest__text-2">Слідкувати за анонсами подій та презентаціями нових проектів ви можете на нашому Telegram-каналі <NuxtLink to="https://t.me/yogatechua" target="_blanc">https://t.me/yogatechua</NuxtLink></p>
+        <p class="text-2 fest__text-2">Слідкувати за анонсами подій та презентаціями нових проектів ви можете на нашому Telegram-каналі <NuxtLink to="https://t.me/yogatechua" target="_blank">https://t.me/yogatechua</NuxtLink></p>
       </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
-// const handleToRegisterFormScroll = () => {
-//   const el = document.getElementById('register')
-//   if (el) {
-//     el.scrollIntoView({
-//       behavior: 'smooth'
-//     })
-//   }
-// }
-</script>
+<script setup lang="ts"></script>
 
 <style lang="sass">
 .fest

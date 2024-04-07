@@ -1,6 +1,33 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import useShop from './composables/useShop'
+import { ProductGroup } from './types'
+const { products, courses } = useShop()
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  ssr: true,
+  nitro: {
+    hooks: {
+      async 'prerender:routes'(routes) {
+        const productsSlugsForRoutes = products.map((p) => p.slug)
+        const coursesSlugsForRoutes = courses.map((c) => c.slug)
+
+        const productRoutes = productsSlugsForRoutes.map(
+          (slug) => `/shop/${ProductGroup.PRODUCT}/${slug}`
+        )
+        const courseRoutes = coursesSlugsForRoutes.map(
+          (slug) => `/shop/${ProductGroup.COURSE}/${slug}`
+        )
+
+        const dynamicRoutes = [...productRoutes, ...courseRoutes]
+        if (dynamicRoutes.length) {
+          for (const route of dynamicRoutes) {
+            routes.add(route)
+          }
+        }
+      }
+    }
+  },
   vite: {
     css: {
       preprocessorOptions: {
@@ -10,7 +37,6 @@ export default defineNuxtConfig({
       }
     }
   },
-
   css: ['@/assets/styles/main.sass'],
   app: {
     head: {
@@ -24,20 +50,19 @@ export default defineNuxtConfig({
           charset: 'utf-8'
         }
       ]
-    },
+    }
   },
-  modules: ['nuxt-swiper', '@nuxt/image', 'nuxt-icon'],
+  modules: ['nuxt-swiper', 'nuxt-icon', '@nuxtjs/sitemap'],
+  site: {
+    url: 'https://yogatech.com.ua/'
+  },
   swiper: {
     styleLang: 'scss',
     modules: ['navigation', 'pagination', 'autoplay', 'thumbs', 'effect-fade']
   },
-  image: {
-    format: ['webp','avif'],
-    domains: ['netlify.app']
-  },
   runtimeConfig: {
     public: {
-      baseURL: process.env.BASE_URL,
+      baseURL: process.env.BASE_URL
     }
   }
 })

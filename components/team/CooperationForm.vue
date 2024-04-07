@@ -7,7 +7,7 @@
           Заповніть Google-форму, якщо маєте питання або пропозиції по співпраці і ми з вами зв’яжемось!
         </p>
 
-        <NuxtLink to="https://forms.gle/hitRZj1CfKV5fMzJ8" class="btn form__btn orange-type" target="_blanc">Заповнити заявку</NuxtLink>
+        <NuxtLink to="https://forms.gle/hitRZj1CfKV5fMzJ8" class="btn form__btn orange-type" target="_blank">Заповнити заявку</NuxtLink>
       </div>
       <BaseMandala />
     </div>
