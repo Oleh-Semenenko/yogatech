@@ -13,15 +13,17 @@ export interface ISize {
 export interface IProduct {
   id: number
   title: string
-  description: string
-  price: number
+  description: string | string[]
+  price?: number
   photos: string[]
   payment_link: string
   slug: string
   sizes?: ISize[]
+  sizesImg?: string
   selectedSize?: ISize
   shortDescription?: string
   video?: string
+  preOrder?: string
 }
 
 export interface ICourse extends IProduct {

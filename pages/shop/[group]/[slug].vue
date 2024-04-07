@@ -8,10 +8,10 @@
           <div class="product__swiper--main">
             <Icon name="mdi-light:chevron-left" class="prev-btn" width="54" height="54" />
             <Swiper :modules="[SwiperThumbs, SwiperNavigation, SwiperPagination]" :navigation="{
-          enabled: true,
-          nextEl: '.next-btn',
-          prevEl: '.prev-btn'
-        }" :pagination="{ clickable: true }" :loop="true" :thumbs="{ swiper: thumbsSwiper }" class="main-swiper">
+              enabled: true,
+              nextEl: '.next-btn',
+              prevEl: '.prev-btn'
+            }" :pagination="{ clickable: true }" :loop="true" :thumbs="{ swiper: thumbsSwiper }" class="main-swiper">
               <SwiperSlide v-if="product.video" class="product__swiper-item">
                 <iframe width="643" height="440" :src="product.video" title="YouTube video player" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -25,13 +25,13 @@
           </div>
 
           <Swiper :modules="[SwiperThumbs]" @swiper="setThumbsSwiper" :breakpoints="{
-          1920: {
-            spaceBetween: 20
-          },
-          1280: {
-            spaceBetween: 16
-          }
-        }" :loop="true" :slidesPerView="4" class="product__swiper--secondary">
+            1920: {
+              spaceBetween: 20
+            },
+            1280: {
+              spaceBetween: 16
+            }
+          }" :loop="true" :slidesPerView="4" class="product__swiper--secondary">
             <SwiperSlide v-if="product.video" class="product__swiper-item">
               <iframe width="100" height="100" :src="product.video" title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -54,14 +54,14 @@
             <h3>
               {{ title }}
             </h3>
-            <p class="text-2">{{ product.price }} грн</p>
+            <p v-if="product?.price" class="text-2">{{ product.price }} грн</p>
+            <p v-if="product?.preOrder" class="text-2">{{ product.preOrder }}</p>
           </div>
 
           <div v-if="product?.sizes">
             <p class="product__choose-size-title">Оберіть розмір:</p>
             <div class="product__sizes">
-              <ShopSizesList v-if="product?.sizes && product?.selectedSize" :sizes="product.sizes"
-                :selected-size="product?.selectedSize" @select-size="handleSelectSize" />
+              <div>Бажаний розмір можна вказати на сторінці оплати</div>
 
               <span @click="handleSizesTableOpen">Таблиця розмірів</span>
             </div>
@@ -70,14 +70,14 @@
                 <div v-if="isSizesTableOpen" class="table__modal">
                   <div class="table__modal-content">
                     <Icon name="ph:x-thin" width="44" height="44" @click="handleSizesTableOpen" />
-                    <img src="/images/sizes_table.png" alt="Sizes table" width="800" height="400" />
+                    <img :src="product.sizesImg" alt="Sizes table" width="800" height="400" />
                   </div>
                 </div>
               </Transition>
             </Teleport>
           </div>
 
-          <NuxtLink :to="product.payment_link" class="btn product__add-product-btn orange-type">
+          <NuxtLink :to="product.payment_link" class="btn product__add-product-btn orange-type" target="_blank">
             Придбати
           </NuxtLink>
 
@@ -89,7 +89,10 @@
                 height="32" alt="Course level icon" />
               - {{ (product as ICourse).levelUA }}
             </p>
-            <p>
+            <ul v-if="Array.isArray(product.description)">
+              <li v-for="text in product.description" :key="text" class="product__description-text">{{ text }}</li>
+            </ul>
+            <p v-else>
               {{ product.description }}
             </p>
 
@@ -114,11 +117,10 @@
 </template>
 
 <script setup lang="ts">
-import { ProductGroup, type ISize, type ICourse } from '~/types'
+import { ProductGroup, type ICourse } from '~/types'
 
 const route = useRoute()
 const { getOneProduct, getProductsExceptSelected } = useShop()
-const { addProduct } = useBasket()
 
 const isSizesTableOpen = ref(false)
 const thumbsSwiper: Ref<any | null> = ref(null)
@@ -149,10 +151,6 @@ const isCourse = computed(() => route.params.group === ProductGroup.COURSE)
 
 const setThumbsSwiper = (swiper: any) => {
   thumbsSwiper.value = swiper
-}
-
-const handleSelectSize = (size: ISize) => {
-  product.selectedSize = size
 }
 </script>
 
@@ -307,10 +305,10 @@ const handleSelectSize = (size: ISize) => {
   gap: 44px
   align-items: baseline
   color: var(--gray-color)
+  flex-direction: column
   @include xl
     gap: 32px
   @include l
-    flex-direction: column
     gap: 12px
 
   & span
@@ -325,6 +323,7 @@ const handleSelectSize = (size: ISize) => {
   @include m
     font-size: 20px
   @media screen and (max-width: 600px)
+    text-align: center
     width: 100%
 
 .product__description-title
@@ -343,6 +342,13 @@ const handleSelectSize = (size: ISize) => {
   margin-top: 20px
   @include m
     margin-top: 16px
+
+.product__description-text:first-child
+  margin-bottom: 20px
+  @include m
+    margin-bottom: 16px
+
+
 
 .table__modal
   z-index: 1000

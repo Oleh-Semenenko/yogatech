@@ -89,7 +89,7 @@ const values: IFeature[] = [
 ]
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 .about-founder
   position: relative
 
@@ -103,38 +103,5 @@ const values: IFeature[] = [
     gap: 20px
   @include m
     gap: 12px
-
-.goals__list
-  grid-template-columns: repeat(2, auto)
-  grid-template-rows: repeat(2, auto)
-  justify-items: start
-  @include m
-    grid-template-columns: 1fr
-
-  & .feature
-    max-width: 100%
-  & .feature:last-child
-    grid-column: auto
-
-.values__list
-  grid-template-columns: repeat(2, auto)
-  grid-template-rows: repeat(2, auto)
-  justify-items: start
-  @include m
-    grid-template-columns: 1fr
-  & .feature
-    max-width: 100%
-
-  & .feature:last-child
-    justify-self: center
-    grid-column: 1 / -1
-    max-width: 782px
-    @include xl
-      max-width: 543px
-    @include l
-      max-width: 340px
-    @include m
-      justify-self: start
-      max-width: 100%
 
 </style>

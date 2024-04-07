@@ -5,8 +5,7 @@
         <h2>Заробляйте з нами</h2>
         <BaseFeaturesList
           :features="cooperationBenefits"
-          class="benefits__list"
-          styles="earn-list"
+          styles="earn__list"
         />
       </div>
     </div>
@@ -43,30 +42,7 @@ const cooperationBenefits: IFeature[] = [
 ]
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 .benefits
   position: relative
-.benefits__list
-  width: 90%
-  margin: 0 auto
-  @include xl
-    width: 100%
-
-.earn-list
-  grid-template-columns: 782px
-  gap: 24px
-  justify-content: start
-  margin-left: 140px
-  @include xl
-    margin-left: 96px
-    grid-template-columns: 734px
-  @include l
-    grid-template-columns: 1fr
-    margin-left: 70px
-    gap: 16px
-  @include m
-    margin-left: 0
-    gap: 8px
-  & .feature
-    max-width: 100%
 </style>

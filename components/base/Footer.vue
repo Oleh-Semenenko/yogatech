@@ -54,30 +54,30 @@
 
         <ul class="socials__nav-list">
           <li>
-            <NuxtLink to="https://t.me/yogatechua" target="_blanc">
+            <NuxtLink to="https://t.me/yogatechua" target="_blank">
               <Icon name="ph:telegram-logo-thin" width="44" height="44" />
             </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="https://t.me/MikeYogatech" target="_blanc">
+            <NuxtLink to="https://t.me/MikeYogatech" target="_blank">
               <Icon name="ph:telegram-logo-thin" width="44" height="44" />
             </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="https://www.youtube.com/@Y0GATECH" target="_blanc">
+            <NuxtLink to="https://www.youtube.com/@Y0GATECH" target="_blank">
               <Icon name="ph:youtube-logo-thin" width="44" height="44" />
             </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="mailto:yogatechua@gmail.com" target="_blanc">
+            <NuxtLink to="mailto:yogatechua@gmail.com" target="_blank">
               <Icon name="ph:envelope-simple-thin" width="44" height="44" />
             </NuxtLink>
           </li>
         </ul>
 
         <div class="creators">
-          Розробка та підтримка сайту:<br /><NuxtLink to="https://www.instagram.com/miriam_khmarska_yogini/" target="_blanc">Міріам Хмарська, </NuxtLink>
-          <NuxtLink to="https://www.linkedin.com/in/oleh-semenenko" target="_blanc">Олег Семененко</NuxtLink>
+          Розробка та підтримка сайту:<br /><NuxtLink to="https://www.instagram.com/miriam_khmarska_yogini/" target="_blank">Міріам Хмарська, </NuxtLink>
+          <NuxtLink to="https://www.linkedin.com/in/oleh-semenenko" target="_blank">Олег Семененко</NuxtLink>
         </div>
       </div>
     </div>
