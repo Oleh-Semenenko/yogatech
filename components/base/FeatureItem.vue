@@ -60,11 +60,5 @@ defineProps<{
   padding-left: 16px
 
 .feature__text
-  font-size: 20px
   font-weight: 400
-
-  @include l
-    font-size: 18px
-  @include m
-    font-size: 16px
 </style>

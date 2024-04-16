@@ -113,6 +113,34 @@ export default function useShop() {
       sizesImg: '/images/hoodie_sizes_table.png',
       payment_link: 'https://secure.wayforpay.com/button/bd8a49732f0f3',
       slug: 'hoodie'
+    },
+    {
+      id: 5,
+      title: 'Худі оверсайз з логотипом YOGATECH Shiva',
+      description: [
+        '*Худі виготовляється під замовлення, доставка до двох тижнів.',
+        '– 90% бавовни 3% еластану 7% поліестру',
+        '– Щільність тканини 320 г/м2',
+        '– Турецька тканина якості “пен’є”',
+        'Худі за унікальними лекалами в 4х розмірах. Спущені плече та рукав. Збільшена ширина і комфортна довжина виробу. Комфортний збільшений капюшон. У виробництві використовуються найкращі тканини і матеріали, а розмір оверсайз відповідає стандартній розмірній сітці.'
+      ],
+      shortDescription: 'Стильне худі оверсайз з яскравим принтом асоціації.',
+      price: 2000,
+      photos: [
+        '/images/hoodie_shiva/1.jpg',
+        '/images/hoodie_shiva/2.jpg',
+        '/images/hoodie_shiva/3.jpg',
+        '/images/hoodie_shiva/4.jpg'
+      ],
+      sizes: [
+        { id: 1, value: 'S' },
+        { id: 2, value: 'M' },
+        { id: 3, value: 'L' },
+        { id: 4, value: 'XL' }
+      ],
+      sizesImg: '/images/hoodie_sizes_table.png',
+      payment_link: 'https://secure.wayforpay.com/button/b3a7002af9b8f',
+      slug: 'hoodie-shiva'
     }
   ]
 

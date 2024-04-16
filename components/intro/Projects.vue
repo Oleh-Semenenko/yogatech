@@ -2,7 +2,7 @@
   <div class="projects section blue">
     <div class="container">
       <div class="projects__inner">
-        <h2 class="projects__title">Наші проекти</h2>
+        <h2 class="projects__title">Наші проєкти</h2>
 
         <ul class="cards__list">
           <BaseCard
@@ -41,7 +41,7 @@ const projects: ICard[] = [
     id: 3,
     title: 'Менторство для йога-інструкторів',
     description:
-      'Відкрийте свій потенціал, як викладач йоги. З нами ваша мрія стане реальністю.',
+      'Відкрийте свій потенціал як викладач йоги. З нами ваша мрія стане реальністю.',
     icon: 'ph:users-thin',
     link: '/shop',
     linksText: 'Дізнатись більше'
