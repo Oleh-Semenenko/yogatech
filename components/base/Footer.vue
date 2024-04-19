@@ -54,23 +54,23 @@
 
         <ul class="socials__nav-list">
           <li>
+            <NuxtLink to="mailto:yogatechua@gmail.com" target="_blank">
+              <Icon name="ph:envelope-simple-thin" width="44" height="44" />
+            </NuxtLink>
+          </li>
+          <li>
             <NuxtLink to="https://t.me/yogatechua" target="_blank">
               <Icon name="ph:telegram-logo-thin" width="44" height="44" />
             </NuxtLink>
           </li>
           <li>
             <NuxtLink to="https://t.me/MikeYogatech" target="_blank">
-              <Icon name="ph:telegram-logo-thin" width="44" height="44" />
+              <Icon name="ph:phone-thin" width="44" height="44" />
             </NuxtLink>
           </li>
           <li>
             <NuxtLink to="https://www.youtube.com/@Y0GATECH" target="_blank">
               <Icon name="ph:youtube-logo-thin" width="44" height="44" />
-            </NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="mailto:yogatechua@gmail.com" target="_blank">
-              <Icon name="ph:envelope-simple-thin" width="44" height="44" />
             </NuxtLink>
           </li>
         </ul>
