@@ -4,7 +4,7 @@
       <div class="form__wrapper">
         <h2>Заповни заявку для участі в проекті</h2>
         <p>
-          Заповніть Google-форму, якщо маєте питання або пропозиції по співпраці і ми з вами зв’яжемось!
+          Заповніть Google-форму, якщо маєте питання або пропозиції по співпраці, і ми з вами зв’яжемось!
         </p>
 
         <NuxtLink to="https://forms.gle/hitRZj1CfKV5fMzJ8" class="btn form__btn orange-type" target="_blank">Заповнити заявку</NuxtLink>
