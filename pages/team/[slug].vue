@@ -7,8 +7,8 @@
             <Swiper :modules="[SwiperPagination, SwiperAutoplay, SwiperEffectFade]" :centered-slides="true"
               :slides-per-view="1" :effect="'fade'" :autoplay="{
                 delay: 3000,
-                pauseOnMouseEnter: true
-              }" :pagination="{ clickable: true }" :loop="true">
+                pauseOnMouseEnter: true,
+              }" :pagination="{ clickable: true }" :loop="true" >
               <SwiperSlide v-for="(photo, idx) in teammate.photos" :key="idx">
                 <img :src="photo" width="922" height="627" alt="Teammate photo" />
               </SwiperSlide>
@@ -16,11 +16,25 @@
           </div>
 
           <div>
-            <h2>{{ teammate.name }}</h2>
+            <h2 class="person__name">{{ teammate.name }}</h2>
+            <ul class="person__socials-list">
+              <li v-for="({ icon, link }) in teammate.socials" :key="link">
+                <NuxtLink :to="link" target="_blank">
+                  <Icon :name="icon" width="44" height="44" />
+                </NuxtLink>
+              </li>
+            </ul>
             <p>
               {{ teammate.description }}
             </p>
             <h3 class="person__slogan">«{{ teammate.motivation }}»</h3>
+            <ul class="person__socials-list mob">
+              <li v-for="({ icon, link }) in teammate.socials" :key="link">
+                <NuxtLink :to="link" target="_blank">
+                  <Icon :name="icon" width="44" height="44" />
+                </NuxtLink>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -51,13 +65,15 @@
     <div class="section">
       <div class="container">
         <h2>Дивитись ще</h2>
-        <TeamList :teammates="othersTeammates" />
+        <TeamPageList :list-data="othersTeammates" :type="ListItemType.TEAMMATE" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ListItemType } from '~/types'
+
 const { getOneTeammate, getTeammatesExceptCurrent } = useTeammates()
 const route = useRoute()
 const teammate = getOneTeammate(route.params.slug as string)
@@ -88,6 +104,36 @@ const othersTeammates = getTeammatesExceptCurrent(route.params.slug as string)
 
   & .swiper-slide
     transition-delay: 500
+
+.person__name
+  margin: 0
+  @include l
+    margin-bottom: 12px
+  @include m
+    font-size: 16px
+
+.person__socials-list
+  margin-top: 12px
+  margin-bottom: 24px
+  display: flex
+  align-items: center
+  gap: 24px
+  @include xl
+    margin-top: 8px
+    margin-bottom: 20px
+  @include l
+    display: none
+
+  &.mob
+    display: none
+    @include l
+      display: flex
+      gap: 40px
+      margin-top: 28px
+      margin-bottom: 0
+    @include m
+      margin-top: 24px
+      gap: 32px
 
 .person__slogan
   margin-top: 20px

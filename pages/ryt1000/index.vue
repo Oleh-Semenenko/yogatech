@@ -91,14 +91,15 @@
 
     <div class="section">
       <div class="container">
-        <div class="course__contacts">
-          Якщо вас зацікавив курс, ви хочете отримати більше інформації<br /> або у вас
-          є питання - зв’яжіться з нами
-          <NuxtLink to="https://t.me/MikeYogatech" target="_blank">
-            <Icon name="ph:telegram-logo-thin" width="44" height="44" />
-          </NuxtLink>
-          або
-          <NuxtLink to="mailto:yogatechua@gmail.com">yogatechua@gmail.com</NuxtLink>
+        <div class="course__contacts-wrapper">
+          <div class="course__contacts">
+            Для реєстрації на курс та з усіх дотичних питань зв’яжіться з нами <br />
+            <NuxtLink to="https://t.me/MikeYogatech" target="_blank">
+              <Icon name="ph:telegram-logo-thin" width="44" height="44" />
+            </NuxtLink>
+            або
+            <NuxtLink to="mailto:yogatechua@gmail.com">yogatechua@gmail.com</NuxtLink>
+          </div>
         </div>
       </div>
     </div>
@@ -241,13 +242,25 @@ const sections = [
   & .warning
     color: #FF0000
 
+.course__contacts-wrapper
+  display: flex
+
+
 .course__contacts
+  padding: 20px
+  border: 1px solid var(--orange)
+  border-radius: var(--primary-border-radius)
+  display: inline-block
+  @include xl
+    padding: 12px
+  @include l
+    text-align: center
+    margin-right: auto
+    margin-left: auto
   & br
     display: none
     @include l
       display: block
-    @include m
-      display: none
 
 a
   color: var(--blue-color)

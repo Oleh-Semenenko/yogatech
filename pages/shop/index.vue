@@ -8,27 +8,13 @@
 
     <div class="section">
       <div class="container">
-        <h2>Продукти</h2>
-        <ul class="cards__list products__list">
-          <BaseGoodsCard
-            v-for="product in products"
-            :key="product.id"
-            :product="product"
-            :group="ProductGroup.PRODUCT"
-          />
-        </ul>
-      </div>
-    </div>
-
-    <div class="section blue">
-      <div class="container">
         <h2>Курси</h2>
         <div class="courses__levels">
-          Рівні складності:
+          <span>Рівні складності:</span>
           <ul class="courses__levels-list">
             <li v-for="{ id, icon, value } in levels" :key="id">
               <img :src="icon" width="32" height="32" alt="Course level icon" />
-              - {{ value }}
+              – {{ value }}
             </li>
           </ul>
         </div>
@@ -43,7 +29,7 @@
       </div>
     </div>
 
-    <div class="section mentorship">
+    <div class="section mentorship blue">
       <div class="container">
         <h2>Менторство</h2>
         <p>
@@ -75,6 +61,20 @@
       </div>
     </div>
 
+    <div class="section">
+      <div class="container">
+        <h2>Продукти</h2>
+        <ul class="cards__list products__list">
+          <BaseGoodsCard
+            v-for="product in products"
+            :key="product.id"
+            :product="product"
+            :group="ProductGroup.PRODUCT"
+          />
+        </ul>
+      </div>
+    </div>
+
     <ShopSection
       title="Навчання “Курс підготовки викладачів RYT1000”"
       text="Ультимативний курс для інструкторів, що у 5 разів більший за стандартну міжнародну сертифікацію у 200 годин! Пориньте у світ йоги та дослідіть її глибини у затишних Карпатах!"
@@ -97,9 +97,9 @@ import { ProductGroup } from '~/types'
 
 const { products, courses } = useShop()
 const levels = [
-  { id: 1, icon: '/images/gear-light.svg', value: 'легкий,' },
-  { id: 2, icon: '/images/gear-middle.svg', value: 'середній,' },
-  { id: 3, icon: '/images/gear-hard.svg', value: 'складний' }
+  { id: 1, icon: '/images/gear-light.svg', value: 'легкий (лекційні матеріали не потребують попередньої обізнаності у темі, а весь курс можна засвоїти не виконуючи домашніх завдань),' },
+  { id: 2, icon: '/images/gear-middle.svg', value: 'середній (лекційні матеріали не потребують особливої обізнаності у темі, однак для засвоєння курсу необхідно виконувати домашні завдання),' },
+  { id: 3, icon: '/images/gear-hard.svg', value: 'складний (лекційні матеріали потребують обізнаності у темі, а для засвоєння курсу необхідно виконувати домашні завдання).' }
 ]
 </script>
 
@@ -131,36 +131,35 @@ const levels = [
 
 .mentorship__footer
   display: flex
-  justify-content: space-between
+  flex-direction: column
+  gap: 12px
   margin-top: 40px
-
-// .products__list
-//   grid-template-columns: repeat(auto-fill, 365px)
-//   @include xl
-//     grid-template-columns: repeat(auto-fill, 352px)
-//   @include l
-//     grid-template-columns: repeat(auto-fill, 340px)
-//   @include m
-//     grid-template-columns: repeat(auto-fill, 312px)
-//   @include s
-//     grid-template-columns: 1fr
+  & a
+    align-self: end
 
 .courses__levels
   margin-bottom: 24px
   display: flex
-  align-items: center
-  gap: 4px
+  gap: 8px
   @include m
     margin-bottom: 12px
     flex-direction: column
+    align-items: center
+  
+  & span
+    flex-shrink: 0
 
 .courses__levels-list
-  display: inline-flex
+  display: flex
+  flex-direction: column
   gap: 8px
-  @include s
+  @include xl
     gap: 4px
 
   & li
     display: flex
     align-items: center
+    gap: 4px
+    @include xl
+      align-items: start
 </style>

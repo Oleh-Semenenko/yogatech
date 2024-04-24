@@ -2,9 +2,9 @@
   <div class="team section">
     <div class="container">
       <div class="team__inner">
-        <h2 class="team__title">Наша команда</h2>
+        <h2 class="team__title">Члени асоціації</h2>
 
-        <TeamList :teammates="teammates" />
+        <TeamPageList :list-data="teammates" :type="ListItemType.TEAMMATE" />
 
       </div>
     </div>
@@ -12,6 +12,8 @@
 </template>
 
 <script setup lang="ts">
+import { ListItemType } from '~/types'
+
 const { teammates } = useTeammates()
 </script>
 

@@ -127,10 +127,10 @@ export default function useShop() {
       shortDescription: "Стильне худі оверсайз з яскравим принтом асоціації.",
       price: 2000,
       photos: [
-        "/images/hoodie_shiva/1.jpg",
-        "/images/hoodie_shiva/2.jpg",
+        "/images/hoodie_shiva/4.jpg",
         "/images/hoodie_shiva/3.jpg",
-        "/images/hoodie_shiva/4.jpg"
+        "/images/hoodie_shiva/1.jpg",
+        "/images/hoodie_shiva/2.jpg"
       ],
       sizes: [
         { id: 1, value: "S" },
