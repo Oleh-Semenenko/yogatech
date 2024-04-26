@@ -1,7 +1,8 @@
 <template>
   <li class="card">
     <div v-if="(data as IPartner)?.img" class="card__header simple">
-      <img :src="(data as IPartner).img" class="card__header-img" alt="Partner logo">
+      <img :src="(data as IPartner).img" class="card__header-img" width="323" height="163" alt="Partner logo">
+      <h3 class="card__header-title">{{ data.title }}</h3>
     </div>
     <div v-else class="card__header">
       <h3 class="card__header-title">{{ data.title }}</h3>
@@ -43,6 +44,7 @@ defineProps<ICardProps>()
   flex-direction: column
   gap: 12px
   justify-content: space-between
+  height: 100%
   @include xl
     padding: 16px
   @include m
@@ -53,7 +55,13 @@ defineProps<ICardProps>()
   justify-content: space-between
   gap: 8px
   &.simple
+    flex-direction: column
     justify-content: center
+    & h3
+      text-align: left
+    & img
+      display: block
+      object-fit: contain
 
 .card__header-img
   width: auto
@@ -77,6 +85,7 @@ defineProps<ICardProps>()
 .card__description-list
   list-style: disc
   padding-left: 16px
+  text-align: left
 
 .card__footer
   border-top: 1px solid var(--border-color)

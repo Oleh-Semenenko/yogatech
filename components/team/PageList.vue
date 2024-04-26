@@ -1,6 +1,6 @@
 <template>
   <div class="team__swiper">
-    <Icon name="mdi-light:chevron-left" class="prev-btn" width="54" height="54" />
+    <Icon name="mdi-light:chevron-left" class="prev-btn" :class="type" width="54" height="54" />
     <Swiper :modules="[SwiperNavigation, SwiperPagination]" :slides-per-view="'auto'" :spaceBetween="52"
       :centered-slides="false" :pagination="{ clickable: true }" :navigation="{
         enabled: true,
@@ -21,7 +21,7 @@
         <TeamPartner v-if="type === ListItemType.PARTNER" :partner="(listItem as IPartner)" />
       </SwiperSlide>
     </Swiper>
-    <Icon name="mdi-light:chevron-right" class="next-btn" width="54" height="54" />
+    <Icon name="mdi-light:chevron-right" class="next-btn" :class="type" width="54" height="54" />
 
     <div class="about-us__slider-pagination">
       <div class="about-us__slider-pagination"></div>
@@ -71,6 +71,7 @@ const handleShowMore = () => {
 .swiper
   margin-left: 0
 .team__swiper
+  position: relative
   display: flex
   align-items: center
   margin: 0 auto
@@ -81,14 +82,18 @@ const handleShowMore = () => {
   & .prev-btn
     position: absolute
     margin-bottom: 130px
+  & .next-btn.partner,
+  & .prev-btn.partner
+    margin-bottom: 0
   & .next-btn
-    right: 0
+    right: -74px
   & .prev-btn
-    left: 0
+    left: -74px
 
 .team__swiper-item
   text-align: center
   width: 365px
+  height: auto
   @include xl
     width: 316px
   @include l
@@ -111,6 +116,7 @@ const handleShowMore = () => {
       width: 312px
     @include s
       width: 100%
+
 .team__list-more-btn
   display: none
   @include l
