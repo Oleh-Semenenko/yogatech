@@ -9,6 +9,7 @@
             v-for="project in projects"
             :key="project.id"
             :data="project"
+            root-element="li"
           ></BaseCard>
         </ul>
       </div>

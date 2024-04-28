@@ -79,6 +79,7 @@ export interface ITeammate {
 
 export interface IPartner extends ICard {
   img: string
+  promocodeText: string
   promocode: string
 }
 

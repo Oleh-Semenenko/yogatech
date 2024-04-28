@@ -50,8 +50,9 @@ const props = defineProps<{
   listData: ITeammate[] | IPartner[]
   type: ListItemType
 }>()
-const { listData } = props
-const visibleData: Ref<(ITeammate | IPartner)[] | []> = ref(listData.slice(0, 4))
+const { listData, type } = props
+const visibleDataSliceNumber = computed(() => type === ListItemType.TEAMMATE ? 4 : 2)
+const visibleData: Ref<(ITeammate | IPartner)[] | []> = ref(listData.slice(0, visibleDataSliceNumber.value))
 const isShowMoreBtn = computed(
   () => listData.length > visibleData.value.length
 )
@@ -95,7 +96,7 @@ const handleShowMore = () => {
   width: 365px
   height: auto
   @include xl
-    width: 316px
+    width: 352px
   @include l
     width: 340px
 

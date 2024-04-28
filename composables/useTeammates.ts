@@ -4,13 +4,13 @@ export default function useTeammates() {
   const teammates: Ref<ITeammate[]> = useState("teammates", () => [
     {
       id: 1,
-      coverImg: "/images/michael/cover.jpg",
+      coverImg: "/images/teammates/michael/cover.jpg",
       photos: [
-        "/images/michael/1.jpg",
-        "/images/michael/2.jpg",
-        "/images/michael/3.jpg",
-        "/images/michael/4.jpg",
-        "/images/michael/5.jpg"
+        "/images/teammates/michael/1.jpg",
+        "/images/teammates/michael/2.jpg",
+        "/images/teammates/michael/3.jpg",
+        "/images/teammates/michael/4.jpg",
+        "/images/teammates/michael/5.jpg"
       ],
       name: "Михайло Ахекян",
       description:
@@ -25,7 +25,7 @@ export default function useTeammates() {
         "2019 – Співведучий курсу для викладачів Кундаліні-йоги (Марія Федосєєва);",
         '2019 – 2020 – Лектор на таких фестивалях як "Аватар", "Кундаліні-йога", "Кульбаба";',
         "2019 – 2020 - Отримав сертифікацію у школі Девдан-йоги (Олена Бакай) та співведучий викладач на курсі школи Девдан протягом двох років;",
-        "2019-2022 - Проводив майстер-класи з йоги та дихальної гімнастики для студентів Українського Католицького Університету;",
+        "2019 - 2022 - Проводив майстер-класи з йоги та дихальної гімнастики для студентів Українського Католицького Університету;",
         "2020 – Як інструктор, ознайомився з викладацькими програмами шкіл Андрія Сідерського, Андрія Лаппи, Анатолія Зенченка;",
         "2020 – Прослухав експрес курс для викладачів від Московського центру Аштанга-йоги (Агапкін, Бабкін);",
         '2020 – Спікер та співорганізатор конференції "Devdan yoga international";',
@@ -53,14 +53,14 @@ export default function useTeammates() {
     },
     {
       id: 2,
-      coverImg: "/images/miriam/cover.jpg",
+      coverImg: "/images/teammates/miriam/cover.jpg",
       photos: [
-        "/images/miriam/2.jpg",
-        "/images/miriam/3.jpg",
-        "/images/miriam/4.jpg",
-        "/images/miriam/5.jpg",
-        "/images/miriam/6.jpg",
-        "/images/miriam/7.jpg"
+        "/images/teammates/miriam/2.jpg",
+        "/images/teammates/miriam/3.jpg",
+        "/images/teammates/miriam/4.jpg",
+        "/images/teammates/miriam/5.jpg",
+        "/images/teammates/miriam/6.jpg",
+        "/images/teammates/miriam/7.jpg"
       ],
       name: "Міріам Хмарська",
       description:
@@ -68,9 +68,9 @@ export default function useTeammates() {
       achievements: [
         "2020 - Розпочала особисту практику;",
         '2020 - 2024 - Відвідала семінари "Основи йоги", "Внутрішня робота з тілом в асані", "Дихальні техніки йоги" від IshvaraYoga, "Йога під час вагітності та після пологів"  Валентини Малиновської;',
-        '2022-2024 - Пройшла курси "Медитація 2.0" Михайла Ахекяна, "Animal Gymnastic Yoga" Костянтина Роніна, "Пранаяма - серце йоги" Вікторії Колбас;',
+        '2022 - 2024 - Пройшла курси "Медитація 2.0" Михайла Ахекяна, "Animal Gymnastic Yoga" Костянтина Роніна, "Пранаяма - серце йоги" Вікторії Колбас;',
         "2023 - Отримала сертифікацію RYT-200 (1 рівень йогатерапії) в школі SENSE International Yoga&Therapy Center Олени Бакай;",
-        "2022-2023 - Відвідала класи сцени Prof Carpathian Yoga Fest;",
+        "2022 - 2023 - Відвідала класи сцени Prof Carpathian Yoga Fest;",
         '2023 - Працювала менеджером в Carpathian Yoga Fest, організовувала йога-марафони, ретрити, челенджі. Втілила в життя проект "CYF Online Club", який функціонує надалі;',
         '2023 - Викладала йогу та йогатерапію тривожних станів для людей, які постраждали від війни, у БФ "Інші" м.Львів'
       ],
@@ -84,11 +84,11 @@ export default function useTeammates() {
     },
     {
       id: 3,
-      coverImg: "/images/alice/cover.jpg",
+      coverImg: "/images/teammates/alice/cover.jpg",
       photos: [
-        "/images/alice/1.jpg",
-        "/images/alice/2.jpg",
-        "/images/alice/3.jpg",
+        "/images/teammates/alice/1.jpg",
+        "/images/teammates/alice/2.jpg",
+        "/images/teammates/alice/3.jpg",
       ],
       name: "Аліса Мороз",
       description:
@@ -96,7 +96,7 @@ export default function useTeammates() {
       achievements: [
         "2014 – Розпочала практикувати йогу (Юрій Сулик, Марта Чорна);",
         "2015 – Регулярна практика до і під час вагітності з Мартою Чорною;",
-        "2016-2020 – Відновлення після пологів, особиста практика, друга вагітність, відновлення після пологів;",
+        "2016 - 2020 – Відновлення після пологів, особиста практика, друга вагітність, відновлення після пологів;",
         "2021 – Регулярна практика:",
         "- Онлайн: курси Марти Чорної;",
         "- Офлайн: Ігор Левченко(Tapasya Yoga), Ольга Кузьмич (ADHOyoga);",
@@ -124,7 +124,40 @@ export default function useTeammates() {
         {icon: 'ph:instagram-logo-thin', link: 'https://www.instagram.com/alice_in_mountain'},
         {icon: 'ph:instagram-logo-thin', link: 'https://www.instagram.com/yogaspace13.if'}
       ]
-    }
+    },
+    {
+      id: 4,
+      coverImg: "/images/teammates/kate/cover.jpg",
+      photos: [
+        "/images/teammates/kate/1.jpg",
+        "/images/teammates/kate/2.jpg",
+        "/images/teammates/kate/3.jpg",
+        "/images/teammates/kate/4.jpg"
+      ],
+      name: "Катерина Тарасенко",
+      description:
+        "Зважаючи на сучасний ритм життя та стресові ситуації, йога стала для мене не лише практикою, але й способом знайти внутрішню гармонію. Провідна моя думка - це те, що йога може принести користь кожному, незалежно від віку чи фізичної підготовки. Щодня я відчуваю, як ця давня практика змінює не лише моє тіло, але й моє ставлення до життя, роблячи його більш гармонійним і радісним.",
+      achievements: [
+        "2007 - 2019 – Професійно займалася танцями (займала призові місця та готувалась до КМС);",
+        "2018 – Викладала в танцювальній студії «Kosmos Dance»;",
+        "2019 – Вступила до Херсонського державного університету на спеціальність «Хореографія»;",
+        "2021 – Операція на коліні, яка привела на реабілітацію в йогу;",
+        "2021 – Розпочала особисту практику;",
+        "2021 - 2022 – Стала співвласницею танцювальної студії «Kosmos»;",
+        "2022 – Відвідала класи сцени Base Carpathian Yoga Fest, пройшла базове навчання у Михайла Ахекяна, влаштувалась у йога студію «Прана» м. Львів, працювала у реабілітаційному центрі «Dzhevaha Gym» м. Київ;",
+        "2023 – Закінчила університет та отримала диплом бакалавра - «Балмейстер. Постановник»;",
+        "2023 – Пройшла курси 'Інтро у Йогу' Михайла Ахекяна, влаштувалась в йога студію «So.flexi» м. Київ;",
+        "2023 – Відвідала класи сцени Prof Carpathian Yoga Fest, працювала в йога студію «Woow.space»;",
+        "2024 – По запрошенню провела на майстер-класі зі стретчінгу медитацію для жінок, отримала сертифікат з курсу «Цвяхостояння», проводжу онлайн та офлайн заняття в Києві."
+      ],
+      intro: "Викладачка йоги, балетмейстер, майстриня цвяхостояння",
+      motivation:
+        "У просторі йоги - між вдихом та видихом я відчуваю себе вільною, мов крила, які несуть мене у світло моєї власної істини.",
+      slug: "kate-tarasenko",
+      socials: [
+        {icon: 'ph:instagram-logo-thin', link: 'https://www.instagram.com/littlebird_kate?igsh=MWwybXRsNTZoNnU3Mg=='}
+      ]
+    },
   ])
 
   const getOneTeammate = (slug: string) =>

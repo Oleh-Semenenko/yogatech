@@ -1,5 +1,5 @@
 <template>
-  <BaseCard :data="partner" />
+  <BaseCard :data="partner" root-element="div" smaller-padding />
 </template>
 
 <script setup lang="ts">
@@ -10,7 +10,6 @@ interface IPartnerProps {
 }
 
 const props = defineProps<IPartnerProps>()
-const { id, img, title, description, promocode, link } = props.partner
 </script>
 
 <style lang="sass" scoped>

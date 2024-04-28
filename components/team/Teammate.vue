@@ -75,8 +75,8 @@ const handleCardMobClick = () => {
   height: 365px
 
   @include xl
-    width: 316px
-    height: 316px
+    width: 352px
+    height: 352px
   @include l
     width: 340px
     height: 340px
