@@ -220,7 +220,7 @@
   width: 100%
   padding-bottom: 56.25%
   overflow: hidden
-
+  pointer-events: none
   & iframe
     position: absolute
     top: 0
