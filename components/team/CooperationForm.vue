@@ -22,27 +22,24 @@
     position: relative
   
   & .mandala-wrapper
-    top: 40%
+    top: 0
     right: 0
     left: auto
     @include xl
+      top: -10%
       width: 310px
     @include l
+      top: 20%
       width: 250px
     @include m
-      left: -5%
-      top: auto
-      bottom: 0
-      display: flex
+      display: none
 
   & .mandala-2
     @include xl
       left: 39%
     @include l
       left: 32%
-    @include m
-      bottom: 34%
-      left: 42%
+
 .form__wrapper
   & p
     @include l
@@ -52,8 +49,8 @@
   display: flex
   flex-direction: column
 .form__btn
-  margin: 100px auto 44px
+  margin: 28px auto auto
   z-index: 50
-  @include xl
-    margin-bottom: 32px
+  @include l
+    margin-top: 20px
 </style>

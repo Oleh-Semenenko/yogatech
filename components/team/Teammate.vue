@@ -14,9 +14,6 @@
       <div class="teammate__overlay">
         <div class="teammate__overlay-footer">
           <NuxtLink :to="`/team/${slug}`" class="btn">Дізнатись більше</NuxtLink>
-          <NuxtLink :to="instagramLink" target="_blank">
-            <Icon name="ph:instagram-logo-thin" width="44" height="44" />
-          </NuxtLink>
         </div>
       </div>
     </div>
@@ -33,7 +30,7 @@ interface ITeammateProps {
 }
 
 const props = defineProps<ITeammateProps>()
-const { id, coverImg, name, description, instagramLink, slug, intro } = props.participant
+const { coverImg, name, slug, intro } = props.participant
 
 const isMobile = computed(() => {
   return window.innerWidth <= 768
@@ -57,7 +54,7 @@ const handleCardMobClick = () => {
   right: 0
   display: flex
   align-items: flex-end
-  justify-content: flex-end
+  justify-content: center
   padding: 8px 16px
   width: 100%
   height: 100%
@@ -78,8 +75,8 @@ const handleCardMobClick = () => {
   height: 365px
 
   @include xl
-    width: 316px
-    height: 316px
+    width: 352px
+    height: 352px
   @include l
     width: 340px
     height: 340px

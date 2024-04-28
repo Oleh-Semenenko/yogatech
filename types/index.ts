@@ -52,10 +52,15 @@ export interface ICard {
   id: number
   title: string
   description: string | string[]
-  icon: string | string[]
+  icon?: string | string[]
   link?: string
   linksText?: string
   linkColor?: LinkColor
+}
+
+export interface ISocial {
+  icon: string
+  link: string
 }
 
 export interface ITeammate {
@@ -68,11 +73,22 @@ export interface ITeammate {
   video?: string
   achievements: string[]
   intro: string
-  instagramLink: string
   slug: string
+  socials: ISocial[]
+}
+
+export interface IPartner extends ICard {
+  img: string
+  promocodeText: string
+  promocode: string
 }
 
 export enum ProductGroup {
   PRODUCT = 'product',
   COURSE = 'course'
+}
+
+export enum ListItemType {
+  TEAMMATE = 'teammate',
+  PARTNER = 'partner',
 }

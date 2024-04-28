@@ -6,7 +6,7 @@ import type { BaseCard } from '#build/components';
         <h2>Програма конференції</h2>
 
         <ul class="cards__list">
-          <BaseCard v-for="day in days" :key="day.id" :data="day" without-footer />
+          <BaseCard v-for="day in days" :key="day.id" :data="day" without-footer root-element="li" />
         </ul>
       </div>
     </div>
@@ -21,15 +21,13 @@ const days: ICard[] = [
     id: 1,
     title: 'День перший',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
-    photo: ''
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!'
   },
   {
     id: 2,
     title: 'День другий',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
-    photo: ''
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!'
   }
 ]
 </script>
