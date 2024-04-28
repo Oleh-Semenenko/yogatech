@@ -10,6 +10,7 @@ import type { BaseCard } from '#build/components';
             v-for="teacher in teachers"
             :key="teacher.id"
             :data="teacher"
+            root-element="li"
           />
         </ul>
       </div>
@@ -26,7 +27,6 @@ const teachers: ICard[] = [
     title: 'Михайло Ахекян',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
-    photo: '',
     link: '/fest/teachers/ahekyan',
     linksText: 'Дізнатись більше'
   },
@@ -35,7 +35,6 @@ const teachers: ICard[] = [
     title: 'Дмитро Щербаков',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
-    photo: '',
     link: '/fest/teachers/scherbakov',
     linksText: 'Дізнатись більше'
   },
@@ -44,7 +43,6 @@ const teachers: ICard[] = [
     title: 'Роман',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita consectetur qui doloremque molestiae dicta autem tenetur delectus error porro, iusto suscipit repellendus saepe laboriosam quasi cupiditate eius! Incidunt, alias!',
-    photo: '',
     link: '/fest/teachers/roman',
     linksText: 'Дізнатись більше'
   }

@@ -9,6 +9,7 @@
             v-for="contact in contacts"
             :key="contact.id"
             :data="contact"
+            root-element="li"
           ></BaseCard>
         </ul>
       </div>

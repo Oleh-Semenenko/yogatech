@@ -8,7 +8,7 @@
           <p v-if="text.length > 1" class="ryt__section-content--second">{{ text[1] }}</p>
         </div>
         <div class="ryt__section-card">
-          <BaseCard :data="card" without-footer />
+          <BaseCard :data="card" without-footer root-element="div" />
         </div>
       </div>
     </div>

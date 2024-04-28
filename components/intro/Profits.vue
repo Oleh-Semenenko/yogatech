@@ -12,6 +12,7 @@
               v-for="profit in profits"
               :key="profit.id"
               :data="profit"
+              root-element="li"
             ></BaseCard>
           </ul>
         </div>

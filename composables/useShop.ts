@@ -16,11 +16,11 @@ export default function useShop() {
         "Практичний путівник, написаний йогом та адресований йогам.",
       price: 500,
       photos: [
-        "/images/book/cover.jpg",
-        "/images/book/1.png",
-        "/images/book/2.png",
-        "/images/book/3.png",
-        "/images/book/4.png"
+        "/images/goods/book/cover.jpg",
+        "/images/goods/book/1.png",
+        "/images/goods/book/2.png",
+        "/images/goods/book/3.png",
+        "/images/goods/book/4.png"
       ],
       payment_link: "https://secure.wayforpay.com/button/bda9be6a04c63",
       slug: "book",
@@ -35,9 +35,9 @@ export default function useShop() {
         "Неймовірна футболка зі 100% бавовни, принт з якісної фарби, що не вимивається.",
       price: 500,
       photos: [
-        "/images/t_shirt/1.jpg",
-        "/images/t_shirt/2.jpg",
-        "/images/t_shirt/3.jpg"
+        "/images/goods/t_shirt/1.jpg",
+        "/images/goods/t_shirt/2.jpg",
+        "/images/goods/t_shirt/3.jpg"
       ],
       payment_link: "https://secure.wayforpay.com/button/b59dbc10c8495",
       slug: "t-shirt",
@@ -47,7 +47,7 @@ export default function useShop() {
         { id: 3, value: "L" },
         { id: 4, value: "XL" }
       ],
-      sizesImg: "/images/t-shirt_sizes_table.png",
+      sizesImg: "/images/goods/t-shirt_sizes_table.png",
       selectedSize: { id: 1, value: "S" }
     },
     {
@@ -79,9 +79,9 @@ export default function useShop() {
         "Передзамовлення легкого та стильного рюкзака для міста, на тренування та на одноденні сходження.",
       preOrder: "Передзамовлення",
       photos: [
-        "/images/backpack/1.jpg",
-        "/images/backpack/2.jpg",
-        "/images/backpack/3.jpg"
+        "/images/goods/backpack/1.jpg",
+        "/images/goods/backpack/2.jpg",
+        "/images/goods/backpack/3.jpg"
       ],
       payment_link: "https://secure.wayforpay.com/button/b5e319fa253d0",
       slug: "backpack"
@@ -99,10 +99,10 @@ export default function useShop() {
       shortDescription: "Стильне худі оверсайз з яскравим принтом асоціації.",
       price: 2000,
       photos: [
-        "/images/hoodie/1.jpg",
-        "/images/hoodie/2.jpg",
-        "/images/hoodie/3.jpg",
-        "/images/hoodie/4.jpg"
+        "/images/goods/hoodie/1.jpg",
+        "/images/goods/hoodie/3.jpg",
+        "/images/goods/hoodie/4.jpg",
+        "/images/goods/hoodie/2.jpg"
       ],
       sizes: [
         { id: 1, value: "S" },
@@ -110,7 +110,7 @@ export default function useShop() {
         { id: 3, value: "L" },
         { id: 4, value: "XL" }
       ],
-      sizesImg: "/images/hoodie_sizes_table.png",
+      sizesImg: "/images/goods/hoodie_sizes_table.png",
       payment_link: "https://secure.wayforpay.com/button/bd8a49732f0f3",
       slug: "hoodie"
     },
@@ -127,10 +127,10 @@ export default function useShop() {
       shortDescription: "Стильне худі оверсайз з яскравим принтом асоціації.",
       price: 2000,
       photos: [
-        "/images/hoodie_shiva/1.jpg",
-        "/images/hoodie_shiva/2.jpg",
-        "/images/hoodie_shiva/3.jpg",
-        "/images/hoodie_shiva/4.jpg"
+        "/images/goods/hoodie_shiva/3.jpg",
+        "/images/goods/hoodie_shiva/2.jpg",
+        "/images/goods/hoodie_shiva/4.jpg",
+        "/images/goods/hoodie_shiva/1.jpg"
       ],
       sizes: [
         { id: 1, value: "S" },
@@ -138,7 +138,7 @@ export default function useShop() {
         { id: 3, value: "L" },
         { id: 4, value: "XL" }
       ],
-      sizesImg: "/images/hoodie_sizes_table.png",
+      sizesImg: "/images/goods/hoodie_sizes_table.png",
       payment_link: "https://secure.wayforpay.com/button/b3a7002af9b8f",
       slug: "hoodie-shiva"
     },
@@ -167,11 +167,11 @@ export default function useShop() {
         "Унісекс-штани ONE Size ідеально підходять як для жінок так і для чоловіків, обіцяючи незрівнянний комфорт і свободу рухів.",
       price: 890,
       photos: [
-        "/images/sharovary-raowear/1.jpg",
-        "/images/sharovary-raowear/2.jpg",
-        "/images/sharovary-raowear/3.jpg",
-        "/images/sharovary-raowear/4.jpg",
-        "/images/sharovary-raowear/5.jpg"
+        "/images/goods/sharovary-raowear/1.jpg",
+        "/images/goods/sharovary-raowear/2.jpg",
+        "/images/goods/sharovary-raowear/3.jpg",
+        "/images/goods/sharovary-raowear/4.jpg",
+        "/images/goods/sharovary-raowear/5.jpg"
       ],
       payment_link: "https://secure.wayforpay.com/button/ba3e565fbc909",
       slug: "sharovary-raowear"

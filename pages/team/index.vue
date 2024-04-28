@@ -5,6 +5,7 @@
     <TeamParticipants />
     <TeamCooperationBenefits />
     <TeamCooperationForm />
+    <TeamPartners />
   </div>
 </template>
 
