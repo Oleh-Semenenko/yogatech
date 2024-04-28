@@ -1,5 +1,5 @@
 <template>
-  <component :is="rootElement" class="card" :class="{'small-padding': smallerPadding}">
+  <component :is="rootElement" class="card" :class="{'partner-card': isPartnerCard}">
     <div v-if="(data as IPartner)?.img" class="card__header simple">
       <img :src="(data as IPartner).img" class="card__header-img" width="323" height="163" alt="Partner logo">
       <h3 class="card__header-title">{{ data.title }}</h3>
@@ -32,7 +32,7 @@ import { type ICard, type IPartner, LinkColor } from '~/types'
 interface ICardProps {
   data: ICard | IPartner
   rootElement: string
-  smallerPadding?: boolean
+  isPartnerCard?: boolean
   withoutFooter?: boolean
 }
 const props = defineProps<ICardProps>()
@@ -50,13 +50,14 @@ const { rootElement } = props
   flex-direction: column
   gap: 12px
   justify-content: space-between
-  height: 100%
   @include xl
     padding: 16px
   @include m
     padding: 12px
 
-  &.small-padding
+  &.partner-card
+    box-shadow: none
+    height: 100%
     padding: 12px
 
 .card__header
@@ -69,8 +70,6 @@ const { rootElement } = props
     & h3
       text-align: left
     & img
-      // width: 341px
-      // height: 163px
       display: block
       object-fit: contain
 
