@@ -18,7 +18,7 @@
       }">
       <SwiperSlide class="team__swiper-item" v-for="listItem in listData" :key="listItem.id">
         <TeamTeammate v-if="type === ListItemType.TEAMMATE" :participant="(listItem as ITeammate)" />
-        <TeamPartner v-if="type === ListItemType.PARTNER" :partner="(listItem as IPartner)" />
+        <BaseCard v-if="type === ListItemType.PARTNER" :data="(listItem as IPartner)" root-element="div" is-partner-card />
       </SwiperSlide>
     </Swiper>
     <Icon name="mdi-light:chevron-right" class="next-btn" :class="type" width="54" height="54" />
@@ -32,7 +32,7 @@
     <ul class="team__list-mob">
       <li v-for="listItem in visibleData" :key="listItem.id">
         <TeamTeammate v-if="type === ListItemType.TEAMMATE" :participant="(listItem as ITeammate)" />
-        <TeamPartner v-if="type === ListItemType.PARTNER" :partner="(listItem as IPartner)" />
+        <BaseCard v-if="type === ListItemType.PARTNER" :data="(listItem as IPartner)" root-element="div" is-partner-card />
       </li>
     </ul>
 

@@ -76,6 +76,7 @@ defineProps<{
   gap: 24px
   justify-content: start
   margin-left: 140px
+  grid-template-rows: min-content
   @include xl
     margin-left: 96px
     grid-template-columns: 734px
@@ -86,6 +87,7 @@ defineProps<{
   @include m
     margin-left: 0
     gap: 8px
+    // grid-template-rows: min-content
   & .feature
     max-width: 100%
 </style>

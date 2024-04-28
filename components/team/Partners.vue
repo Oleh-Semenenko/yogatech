@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <div class="section blue">
     <div class="container">
       <h2>Наші партнери</h2>
 
@@ -65,7 +65,3 @@ const partners: IPartner[] = [
   }
 ]
 </script>
-
-<style lang="sass" scoped>
-
-</style>
