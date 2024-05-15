@@ -4,13 +4,13 @@ export default function useTeammates() {
   const teammates: Ref<ITeammate[]> = useState("teammates", () => [
     {
       id: 1,
-      coverImg: "/images/teammates/michael/cover.jpg",
+      coverImg: "/images/teammates/mykhailo-akhekian/cover.jpg",
       photos: [
-        "/images/teammates/michael/1.jpg",
-        "/images/teammates/michael/2.jpg",
-        "/images/teammates/michael/3.jpg",
-        "/images/teammates/michael/4.jpg",
-        "/images/teammates/michael/5.jpg"
+        "/images/teammates/mykhailo-akhekian/1.jpg",
+        "/images/teammates/mykhailo-akhekian/2.jpg",
+        "/images/teammates/mykhailo-akhekian/3.jpg",
+        "/images/teammates/mykhailo-akhekian/4.jpg",
+        "/images/teammates/mykhailo-akhekian/5.jpg"
       ],
       name: "Михайло Ахекян",
       description:
@@ -47,20 +47,26 @@ export default function useTeammates() {
         "У суспільстві, де технологічний прогрес катастрофічно випереджає розвиток людської психіки, йога - чи не єдина протиотрута",
       slug: "mykhailo-akhekian",
       socials: [
-        {icon: 'ph:instagram-logo-thin', link: 'https://www.instagram.com/mikeyogatech/'},
-        {icon: 'ph:facebook-logo-thin', link: 'https://www.facebook.com/share/FSd8J9DVW6DkmURn/?mibextid=LQQJ4d'}
+        {
+          icon: "ph:instagram-logo-thin",
+          link: "https://www.instagram.com/mikeyogatech/"
+        },
+        {
+          icon: "ph:facebook-logo-thin",
+          link: "https://www.facebook.com/share/FSd8J9DVW6DkmURn/?mibextid=LQQJ4d"
+        }
       ]
     },
     {
       id: 2,
-      coverImg: "/images/teammates/miriam/cover.jpg",
+      coverImg: "/images/teammates/miriam-khmarska/cover.jpg",
       photos: [
-        "/images/teammates/miriam/2.jpg",
-        "/images/teammates/miriam/3.jpg",
-        "/images/teammates/miriam/4.jpg",
-        "/images/teammates/miriam/5.jpg",
-        "/images/teammates/miriam/6.jpg",
-        "/images/teammates/miriam/7.jpg"
+        "/images/teammates/miriam-khmarska/2.jpg",
+        "/images/teammates/miriam-khmarska/3.jpg",
+        "/images/teammates/miriam-khmarska/4.jpg",
+        "/images/teammates/miriam-khmarska/5.jpg",
+        "/images/teammates/miriam-khmarska/6.jpg",
+        "/images/teammates/miriam-khmarska/7.jpg"
       ],
       name: "Міріам Хмарська",
       description:
@@ -79,16 +85,59 @@ export default function useTeammates() {
         "У сучасному світі, де турботи та стрес диктують ритм, йога - це дихання, яке дарує нам спокій.",
       slug: "miriam-khmarska",
       socials: [
-        {icon: 'ph:instagram-logo-thin', link: 'https://www.instagram.com/miriam_khmarska_yogini/'}
+        {
+          icon: "ph:instagram-logo-thin",
+          link: "https://www.instagram.com/miriam_khmarska_yogini/"
+        }
       ]
     },
     {
       id: 3,
-      coverImg: "/images/teammates/alice/cover.jpg",
+      coverImg: "/images/teammates/kate-tarasenko/cover.jpg",
       photos: [
-        "/images/teammates/alice/1.jpg",
-        "/images/teammates/alice/2.jpg",
-        "/images/teammates/alice/3.jpg",
+        "/images/teammates/kate-tarasenko/1.jpg",
+        "/images/teammates/kate-tarasenko/2.jpg",
+        "/images/teammates/kate-tarasenko/3.jpg",
+        "/images/teammates/kate-tarasenko/4.jpg"
+      ],
+      name: "Катерина Тарасенко",
+      description:
+        "Зважаючи на сучасний ритм життя та стресові ситуації, йога стала для мене не лише практикою, але й способом знайти внутрішню гармонію. Провідна моя думка - це те, що йога може принести користь кожному, незалежно від віку чи фізичної підготовки. Щодня я відчуваю, як ця давня практика змінює не лише моє тіло, але й моє ставлення до життя, роблячи його більш гармонійним і радісним.",
+      achievements: [
+        "2007 - 2019 – Професійно займалася танцями (займала призові місця та готувалась до КМС);",
+        "2018 – Викладала в танцювальній студії «Kosmos Dance»;",
+        "2019 – Вступила до Херсонського державного університету на спеціальність «Хореографія»;",
+        "2021 – Операція на коліні, яка привела на реабілітацію в йогу;",
+        "2021 – Розпочала особисту практику;",
+        "2021 - 2022 – Стала співвласницею танцювальної студії «Kosmos»;",
+        "2022 – Відвідала класи сцени Base Carpathian Yoga Fest, пройшла базове навчання у Михайла Ахекяна, влаштувалась у йога студію «Прана» м. Львів, працювала у реабілітаційному центрі «Dzhevaha Gym» м. Київ;",
+        "2023 – Закінчила університет та отримала диплом бакалавра - «Балмейстер. Постановник»;",
+        "2023 – Пройшла курси 'Інтро у Йогу' Михайла Ахекяна, влаштувалась в йога студію «So.flexi» м. Київ;",
+        "2023 – Відвідала класи сцени Prof Carpathian Yoga Fest, працювала в йога студію «Woow.space»;",
+        "2024 – По запрошенню провела на майстер-класі зі стретчінгу медитацію для жінок, отримала сертифікат з курсу «Цвяхостояння», проводжу онлайн та офлайн заняття в Києві."
+      ],
+      intro: "Викладачка йоги, балетмейстер, майстриня цвяхостояння",
+      motivation:
+        "У просторі йоги - між вдихом та видихом я відчуваю себе вільною, мов крила, які несуть мене у світло моєї власної істини.",
+      slug: "kate-tarasenko",
+      socials: [
+        {
+          icon: "ph:instagram-logo-thin",
+          link: "https://www.instagram.com/littlebird_kate?igsh=MWwybXRsNTZoNnU3Mg=="
+        }
+      ]
+    },
+    {
+      id: 4,
+      coverImg: "/images/teammates/alice-moroz/cover.jpg",
+      photos: [
+        "/images/teammates/alice-moroz/1.jpg",
+        "/images/teammates/alice-moroz/2.jpg",
+        "/images/teammates/alice-moroz/3.jpg",
+        "/images/teammates/alice-moroz/4.jpg",
+        "/images/teammates/alice-moroz/5.jpg",
+        "/images/teammates/alice-moroz/6.jpg",
+        "/images/teammates/alice-moroz/7.jpg",
       ],
       name: "Аліса Мороз",
       description:
@@ -121,43 +170,124 @@ export default function useTeammates() {
         "Життя - це подорож, варто навчитись насолоджуватися кожним кроком.",
       slug: "alice-moroz",
       socials: [
-        {icon: 'ph:instagram-logo-thin', link: 'https://www.instagram.com/alice_in_mountain'},
-        {icon: 'ph:instagram-logo-thin', link: 'https://www.instagram.com/yogaspace13.if'}
+        {
+          icon: "ph:instagram-logo-thin",
+          link: "https://www.instagram.com/alice_in_mountain"
+        },
+        {
+          icon: "ph:instagram-logo-thin",
+          link: "https://www.instagram.com/yogaspace13.if"
+        }
       ]
     },
     {
-      id: 4,
-      coverImg: "/images/teammates/kate/cover.jpg",
+      id: 5,
+      coverImg: "/images/teammates/anastasia-maryan/cover.jpg",
       photos: [
-        "/images/teammates/kate/1.jpg",
-        "/images/teammates/kate/2.jpg",
-        "/images/teammates/kate/3.jpg",
-        "/images/teammates/kate/4.jpg"
+        "/images/teammates/anastasia-maryan/1.jpg",
+        "/images/teammates/anastasia-maryan/2.jpg",
+        "/images/teammates/anastasia-maryan/3.jpg",
+        "/images/teammates/anastasia-maryan/4.jpg"
       ],
-      name: "Катерина Тарасенко",
+      name: "Анастасія Марʼян",
       description:
-        "Зважаючи на сучасний ритм життя та стресові ситуації, йога стала для мене не лише практикою, але й способом знайти внутрішню гармонію. Провідна моя думка - це те, що йога може принести користь кожному, незалежно від віку чи фізичної підготовки. Щодня я відчуваю, як ця давня практика змінює не лише моє тіло, але й моє ставлення до життя, роблячи його більш гармонійним і радісним.",
+        "Спорт завжди був у моєму житті, але коли я вперше познайомилася з йогою, вона вразила мене своєю глибиною та комплексністю. Робота з тілом та розумом дозволила значно покращити своє фізичне та психологічне самопочуття. Я відчуваю себе щасливою та вдячною за цей шлях, що відкрився переді мною, і за можливість розвиватися. Хороше здоров'я - це моє надбання, результат багаторічної праці над собою і я впевнена, що так може кожен. Мій досвід у роботі з учнями, як індивідуально, так і в групах, дозволяє мені використовувати ефективні методи, які допомагають їм досягати своїх цілей.",
       achievements: [
-        "2007 - 2019 – Професійно займалася танцями (займала призові місця та готувалась до КМС);",
-        "2018 – Викладала в танцювальній студії «Kosmos Dance»;",
-        "2019 – Вступила до Херсонського державного університету на спеціальність «Хореографія»;",
-        "2021 – Операція на коліні, яка привела на реабілітацію в йогу;",
-        "2021 – Розпочала особисту практику;",
-        "2021 - 2022 – Стала співвласницею танцювальної студії «Kosmos»;",
-        "2022 – Відвідала класи сцени Base Carpathian Yoga Fest, пройшла базове навчання у Михайла Ахекяна, влаштувалась у йога студію «Прана» м. Львів, працювала у реабілітаційному центрі «Dzhevaha Gym» м. Київ;",
-        "2023 – Закінчила університет та отримала диплом бакалавра - «Балмейстер. Постановник»;",
-        "2023 – Пройшла курси 'Інтро у Йогу' Михайла Ахекяна, влаштувалась в йога студію «So.flexi» м. Київ;",
-        "2023 – Відвідала класи сцени Prof Carpathian Yoga Fest, працювала в йога студію «Woow.space»;",
-        "2024 – По запрошенню провела на майстер-класі зі стретчінгу медитацію для жінок, отримала сертифікат з курсу «Цвяхостояння», проводжу онлайн та офлайн заняття в Києві."
+        "2017 – Розпочала особисту практику медитації;",
+        "2019 – Розпочала особисту практику йоги;",
+        "2019 – Розпочала особисту практику йоги;",
+        "2021 – Здобула сертифікат RYT-200 в школі YOGA&MEDICINE TEACHER TRAINING у Олени Бакай і стала викладати йогу;",
+        "2022 – Завдяки практиці йоги та дихальним вправам вивела себе із тривожних станів;",
+        "2022 – Відвідала майстер-класи з йоги на фестивалі Аватар;",
+        "2022 – Була майстром на фестивалі Аватар;",
+        "2023 – Була майстром на фестивалі Обрій;",
+        "2023 – Відвідала навчальні майстер-класи CYF у викладачів: Олени Бакай, Едуарда Голяка, Костянтина Роніна, Равіндера Джангра, Наталії Салітри, Василя Герасімова;",
+        "2023 – Пройшла курси «Медитація 2.0» Михайла Ахекяна;",
+        "2024 – Відвідала майстер-класи «Алгоритм відбудови асан» та «Підготовка кистей до балансів» від Михайла Ахекяна;",
+        "2024 – Провела дослідження впливу дихальних вправ на організм людини з двадцятьма учасниками;",
+        "2024 – Була запрошена викладачем з йоги на пʼятиденний жіночий ретрит."
       ],
-      intro: "Викладачка йоги, балетмейстер, майстриня цвяхостояння",
+      intro:
+        "Викладач йоги, коуч, провідник цвяхостояння та майстер чайних церемоній",
       motivation:
-        "У просторі йоги - між вдихом та видихом я відчуваю себе вільною, мов крила, які несуть мене у світло моєї власної істини.",
-      slug: "kate-tarasenko",
+        "Кожна практика з йоги - це зустріч з собою, де пізнається власна сила і мудрість.",
+      slug: "anastasia-maryan",
       socials: [
-        {icon: 'ph:instagram-logo-thin', link: 'https://www.instagram.com/littlebird_kate?igsh=MWwybXRsNTZoNnU3Mg=='}
+        {
+          icon: "ph:instagram-logo-thin",
+          link: "https://www.instagram.com/taya_soul__?igsh=dDBqd28wcWJ0MW52"
+        },
+        { icon: "ph:telegram-logo-thin", link: "https://t.me/Anastasyaa_soul" }
       ]
     },
+    {
+      id: 6,
+      coverImg: "/images/teammates/snizhana-yaremchuk/cover.jpg",
+      photos: [
+        "/images/teammates/snizhana-yaremchuk/1.jpg",
+        "/images/teammates/snizhana-yaremchuk/2.jpg",
+        "/images/teammates/snizhana-yaremchuk/3.jpg",
+        "/images/teammates/snizhana-yaremchuk/4.jpg"
+      ],
+      name: "Сніжана Яремчук",
+      description:
+        "П’ять років особистої практики йоги дали мені можливість краще пізнати себе і Світ довкола. Одного разу мені прийшло розуміння, що я готова не лише приймати, а й віддавати, ділитися досвідом з людьми, закохувати їх в йогу. Наразі, викладаю в маленькій сільській школі. Радію, що йога стає доступною не лише для містян. Також вивчаю йога-терапію, маю велике бажання покращувати якість життя людей використовуючи ці знання на практиці. Йога багатогранна. Вивчення та засвоєння цих граней - ось моя мета.",
+      achievements: [
+        "2015 - 2017 – Особиста практика у різних викладачів;",
+        "2022 – Відновлення практики;",
+        "2023 – Отримала  сертифікацію RYT-100 в школі SENSE International Yoga&Therapy Center Олени Бакай;",
+        "2023 – Розпочала викладати йогу;",
+        "2024 – Пройшла  сертифікацію RYT-200 (1 рівень йогатерапії) в школі SENSE International Yoga&Therapy Center Олени Бакай, написала 3 курсові роботи по йога-терапії: робота з плоскостопістю, сколіозом, болями в попереку;",
+        "2024 – Приймаю участь у CYF Online Club, де регулярно відвідую онлайн майстер-класи в різних викладачів, збагачуючи власну практику."
+      ],
+      intro: "Викладачка йоги",
+      motivation:
+        "Якщо постійно роздумувати над тим, що таке йога, то в кінці кінців можна прийти до висновку, що йога - це присутність в собі. Будь-яка діяльність може стати йогою, якщо робити її свідомо.",
+      slug: "snizhana-yaremchuk",
+      socials: [
+        {
+          icon: "ph:instagram-logo-thin",
+          link: "https://www.instagram.com/yaremchuk.snizhana"
+        }
+      ]
+    },
+    {
+      id: 7,
+      coverImg: "/images/teammates/olha-yashchenko/cover.jpg",
+      photos: [
+        "/images/teammates/olha-yashchenko/1.jpg",
+        "/images/teammates/olha-yashchenko/2.jpg",
+        "/images/teammates/olha-yashchenko/3.jpg",
+        "/images/teammates/olha-yashchenko/4.jpg",
+        "/images/teammates/olha-yashchenko/5.jpg",
+        "/images/teammates/olha-yashchenko/6.jpg",
+        "/images/teammates/olha-yashchenko/7.jpg",
+        "/images/teammates/olha-yashchenko/8.jpg"
+      ],
+      name: "Ольга Ященко",
+      description:
+        "П’ять років особистої практики йоги дали мені можливість краще пізнати себе і Світ довкола. Одного разу мені прийшло розуміння, що я готова не лише приймати, а й віддавати, ділитися досвідом з людьми, закохувати їх в йогу. Наразі, викладаю в маленькій сільській школі. Радію, що йога стає доступною не лише для містян. Також вивчаю йога-терапію, маю велике бажання покращувати якість життя людей використовуючи ці знання на практиці. Йога багатогранна. Вивчення та засвоєння цих граней - ось моя мета.",
+      achievements: [
+        "2020 – Початок власної практики;",
+        "2020 – Пройшла перший модуль з курсу «Аюрведа» від Юлії Степури;",
+        "2021 – Пройшла курс для йога викладачів в стилі Balance Yoga від Валентини Малиновської;",
+        "2022 – Успішно здала іспит і отримала сертифікат RYT-200 від Валентини Малиновської;",
+        "2023 – Почала викладати йогу в студії Yogaspace13 в Івано-Франківську;",
+        "2023 – Відвідала семінар Михайла Ахекяна;",
+        "2024 – Орендувала зал і набрала власну групу;",
+        "2024 – Відвідала три семінари Михайла Ахекяна."
+      ],
+      intro: "Викладачка йоги",
+      motivation:
+        "Мета йоги одна. Усунути перешкоди, які заважають людям повною мірою насолоджуватись своїм життям.",
+      slug: "olha-yashchenko",
+      socials: [
+        {
+          icon: "ph:instagram-logo-thin",
+          link: "https://www.instagram.com/olha_yashchenko?igsh=MThsejAycjBvenlhcA=="
+        }
+      ]
+    }
   ])
 
   const getOneTeammate = (slug: string) =>
