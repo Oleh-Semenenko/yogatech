@@ -4,13 +4,13 @@ export default function useTeammates() {
   const teammates: Ref<ITeammate[]> = useState("teammates", () => [
     {
       id: 1,
-      coverImg: "/images/teammates/mykhailo-akhekian/cover.jpg",
+      coverImg: "/images/teammates/mykhailo-akhekian/poster.jpg",
       photos: [
-        "/images/teammates/mykhailo-akhekian/1.jpg",
-        "/images/teammates/mykhailo-akhekian/2.jpg",
-        "/images/teammates/mykhailo-akhekian/3.jpg",
-        "/images/teammates/mykhailo-akhekian/4.jpg",
-        "/images/teammates/mykhailo-akhekian/5.jpg"
+        "/images/teammates/mykhailo-akhekian/01.jpg",
+        "/images/teammates/mykhailo-akhekian/02.jpg",
+        "/images/teammates/mykhailo-akhekian/03.jpg",
+        "/images/teammates/mykhailo-akhekian/04.jpg",
+        "/images/teammates/mykhailo-akhekian/05.jpg"
       ],
       name: "Михайло Ахекян",
       description:
@@ -59,14 +59,14 @@ export default function useTeammates() {
     },
     {
       id: 2,
-      coverImg: "/images/teammates/miriam-khmarska/cover.jpg",
+      coverImg: "/images/teammates/miriam-khmarska/poster.jpg",
       photos: [
-        "/images/teammates/miriam-khmarska/2.jpg",
-        "/images/teammates/miriam-khmarska/3.jpg",
-        "/images/teammates/miriam-khmarska/4.jpg",
-        "/images/teammates/miriam-khmarska/5.jpg",
-        "/images/teammates/miriam-khmarska/6.jpg",
-        "/images/teammates/miriam-khmarska/7.jpg"
+        "/images/teammates/miriam-khmarska/01.jpg",
+        "/images/teammates/miriam-khmarska/02.jpg",
+        "/images/teammates/miriam-khmarska/03.jpg",
+        "/images/teammates/miriam-khmarska/04.jpg",
+        "/images/teammates/miriam-khmarska/05.jpg",
+        "/images/teammates/miriam-khmarska/06.jpg"
       ],
       name: "Міріам Хмарська",
       description:
@@ -93,12 +93,12 @@ export default function useTeammates() {
     },
     {
       id: 3,
-      coverImg: "/images/teammates/kate-tarasenko/cover.jpg",
+      coverImg: "/images/teammates/kate-tarasenko/poster.jpg",
       photos: [
-        "/images/teammates/kate-tarasenko/1.jpg",
-        "/images/teammates/kate-tarasenko/2.jpg",
-        "/images/teammates/kate-tarasenko/3.jpg",
-        "/images/teammates/kate-tarasenko/4.jpg"
+        "/images/teammates/kate-tarasenko/01.jpg",
+        "/images/teammates/kate-tarasenko/02.jpg",
+        "/images/teammates/kate-tarasenko/03.jpg",
+        "/images/teammates/kate-tarasenko/04.jpg"
       ],
       name: "Катерина Тарасенко",
       description:
@@ -129,14 +129,14 @@ export default function useTeammates() {
     },
     {
       id: 4,
-      coverImg: "/images/teammates/alice-moroz/cover.jpg",
+      coverImg: "/images/teammates/alice-moroz/poster.jpg",
       photos: [
-        "/images/teammates/alice-moroz/1.jpg",
-        "/images/teammates/alice-moroz/2.jpg",
-        "/images/teammates/alice-moroz/3.jpg",
-        "/images/teammates/alice-moroz/4.jpg",
-        "/images/teammates/alice-moroz/5.jpg",
-        "/images/teammates/alice-moroz/6.jpg",
+        "/images/teammates/alice-moroz/01.jpg",
+        "/images/teammates/alice-moroz/02.jpg",
+        "/images/teammates/alice-moroz/03.jpg",
+        "/images/teammates/alice-moroz/04.jpg",
+        "/images/teammates/alice-moroz/05.jpg",
+        "/images/teammates/alice-moroz/06.jpg",
       ],
       name: "Аліса Мороз",
       description:
@@ -181,12 +181,12 @@ export default function useTeammates() {
     },
     {
       id: 5,
-      coverImg: "/images/teammates/anastasia-maryan/cover.jpg",
+      coverImg: "/images/teammates/anastasia-maryan/poster.jpg",
       photos: [
-        "/images/teammates/anastasia-maryan/1.jpg",
-        "/images/teammates/anastasia-maryan/2.jpg",
-        "/images/teammates/anastasia-maryan/3.jpg",
-        "/images/teammates/anastasia-maryan/4.jpg"
+        "/images/teammates/anastasia-maryan/01.jpg",
+        "/images/teammates/anastasia-maryan/02.jpg",
+        "/images/teammates/anastasia-maryan/03.jpg",
+        "/images/teammates/anastasia-maryan/04.jpg"
       ],
       name: "Анастасія Марʼян",
       description:
@@ -221,12 +221,12 @@ export default function useTeammates() {
     },
     {
       id: 6,
-      coverImg: "/images/teammates/snizhana-yaremchuk/cover.jpg",
+      coverImg: "/images/teammates/snizhana-yaremchuk/poster.jpg",
       photos: [
-        "/images/teammates/snizhana-yaremchuk/1.jpg",
-        "/images/teammates/snizhana-yaremchuk/2.jpg",
-        "/images/teammates/snizhana-yaremchuk/3.jpg",
-        "/images/teammates/snizhana-yaremchuk/4.jpg"
+        "/images/teammates/snizhana-yaremchuk/01.jpg",
+        "/images/teammates/snizhana-yaremchuk/02.jpg",
+        "/images/teammates/snizhana-yaremchuk/03.jpg",
+        "/images/teammates/snizhana-yaremchuk/04.jpg"
       ],
       name: "Сніжана Яремчук",
       description:
@@ -252,16 +252,16 @@ export default function useTeammates() {
     },
     {
       id: 7,
-      coverImg: "/images/teammates/olha-yashchenko/cover.jpg",
+      coverImg: "/images/teammates/olha-yashchenko/poster.jpg",
       photos: [
-        "/images/teammates/olha-yashchenko/1.jpg",
-        "/images/teammates/olha-yashchenko/2.jpg",
-        "/images/teammates/olha-yashchenko/3.jpg",
-        "/images/teammates/olha-yashchenko/4.jpg",
-        "/images/teammates/olha-yashchenko/5.jpg",
-        "/images/teammates/olha-yashchenko/6.jpg",
-        "/images/teammates/olha-yashchenko/7.jpg",
-        "/images/teammates/olha-yashchenko/8.jpg"
+        "/images/teammates/olha-yashchenko/01.jpg",
+        "/images/teammates/olha-yashchenko/02.jpg",
+        "/images/teammates/olha-yashchenko/03.jpg",
+        "/images/teammates/olha-yashchenko/04.jpg",
+        "/images/teammates/olha-yashchenko/05.jpg",
+        "/images/teammates/olha-yashchenko/06.jpg",
+        "/images/teammates/olha-yashchenko/07.jpg",
+        "/images/teammates/olha-yashchenko/08.jpg"
       ],
       name: "Ольга Ященко",
       description:

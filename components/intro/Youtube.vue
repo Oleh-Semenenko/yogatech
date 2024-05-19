@@ -50,7 +50,7 @@
                 src="https://www.youtube.com/embed/QAURIxNwiSU?si=rpY1yBJrF3sAIyVg"
                 title="YouTube video player"
                 frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                 allowfullscreen
               />
             </SwiperSlide>
@@ -61,7 +61,7 @@
                 src="https://www.youtube.com/embed/TCB3o-Rog7w?si=qkJUn50EcoEmC9zO"
                 title="YouTube video player"
                 frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                 allowfullscreen
               />
             </SwiperSlide>
@@ -72,7 +72,7 @@
                 src="https://www.youtube.com/embed/9b6AG0XqGRc?si=3gdypa5sI_W2BHfW"
                 title="YouTube video player"
                 frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                 allowfullscreen
               />
             </SwiperSlide>
@@ -83,7 +83,7 @@
                 src="https://www.youtube.com/embed/pcHIiXtsD3o?si=9BFfxuszko_rucwp"
                 title="YouTube video player"
                 frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                 allowfullscreen
               />
             </SwiperSlide>
@@ -94,7 +94,7 @@
                 src="https://www.youtube.com/embed/HUOvQ2e1CW4?si=Lv79RctD8KbTosXJ"
                 title="YouTube video player"
                 frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                 allowfullscreen
               />
             </SwiperSlide>
@@ -105,7 +105,7 @@
                 src="https://www.youtube.com/embed/Mqa60lgJ1Bk?si=0W1_Vijaxeh23Ixe"
                 title="YouTube video player"
                 frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                 allowfullscreen
               />
             </SwiperSlide>
