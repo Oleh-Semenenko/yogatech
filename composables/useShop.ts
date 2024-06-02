@@ -24,7 +24,7 @@ export default function useShop() {
       ],
       payment_link: "https://secure.wayforpay.com/button/bda9be6a04c63",
       slug: "book",
-      video: "https://www.youtube.com/embed/Mqa60lgJ1Bk?si=tfYUt29jtqCdlafu"
+      videoId: "Mqa60lgJ1Bk"
     },
     {
       id: 2,
@@ -188,7 +188,7 @@ export default function useShop() {
         "Запис трансляцій нашого найбільш популярного курсу. 9 лекцій, у які утрамбовано понад 9 років моєї особистої практики. Фішки та лайф-хаки, спрощення та ускладнення, розуміння механіки роботи технік та будови психіки.",
       price: 2000,
       photos: ["/images/course_meditation.png"],
-      video: "https://www.youtube.com/embed/pcHIiXtsD3o?si=jC0VDrSLGoOh5IDP",
+      videoId: "pcHIiXtsD3o",
       payment_link: "https://secure.wayforpay.com/payment/s75209e762efb",
       slug: "course-meditation-2.0",
       level: DifficultyLevel.MIDDLE,
@@ -215,7 +215,7 @@ export default function useShop() {
         "Аутогенне тренування - це суміш медитації та самогіпнозу. Воно базується на концепції, що людина може самостійно впливати на свій психічний та фізичний стан шляхом концентрації на внутрішніх відчуттях та самонавіюванню (ауто-сугестії). На PubMed є понад 1300 наукових досліджень цього психотерапевтичного методу, що підтверджують його ефективність у зменшенні симптомів стресу, тривожності та депресії, а також у покращенні сну та спортивних результатів (що закономірно, адже чим меньше стресу - тим краще відновлення та вищий ступінь концентрації).",
       price: 1500,
       photos: ["/images/course_autogenic.png"],
-      video: "https://www.youtube.com/embed/TCB3o-Rog7w?si=GQxnNTbNxdRB6xUr",
+      videoId: "TCB3o-Rog7w",
       payment_link: "https://secure.wayforpay.com/payment/s58e50ece0f0f",
       slug: "course-autogenic-training",
       level: DifficultyLevel.MIDDLE,
@@ -241,7 +241,7 @@ export default function useShop() {
         "Базовий курс, що буде корисний усім початківцям. У ньому ми поговоримо про історію йоги, її цілі та інструменти. Таким чином, цей курс може стати приємним та стійким фундаментом, своєрідним скелетом на який можна сміливо нарощувати м'язи вашої особистої практики.",
       price: 800,
       photos: ["/images/course_intro.png"],
-      video: "https://www.youtube.com/embed/PPesedU1FOc?si=261cqDgQ-w-3jZWy",
+      videoId: "PPesedU1FOc",
       payment_link: "https://secure.wayforpay.com/payment/sf7f35357e856",
       slug: "course-intro",
       level: DifficultyLevel.LIGHT,
