@@ -12,10 +12,10 @@
               nextEl: '.next-btn',
               prevEl: '.prev-btn'
             }" :pagination="{ clickable: true }" :loop="true" :thumbs="{ swiper: thumbsSwiper }" class="main-swiper">
-              <SwiperSlide v-if="product.video" class="product__swiper-item">
-                <iframe width="643" height="440" :src="product.video" title="YouTube video player" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen />
+              <SwiperSlide v-if="product.videoId" class="product__swiper-item">
+                <BaseEmbeddedVideo :id="product.videoId" label="Play: Keynote (Google I/O '18)"
+                  :videoLink="`https://www.youtube.com/watch?v=${product.videoId}`"
+                  :bg-image="`https://i.ytimg.com/vi_webp/${product.videoId}/maxresdefault.webp`"></BaseEmbeddedVideo>
               </SwiperSlide>
               <SwiperSlide v-for="(slide, idx) in product.photos" :key="idx" class="product__swiper-item">
                 <img :src="slide" width="643" height="440" loading="lazy" />
@@ -32,10 +32,10 @@
               spaceBetween: 16
             }
           }" :loop="true" :slidesPerView="4" class="product__swiper--secondary">
-            <SwiperSlide v-if="product.video" class="product__swiper-item">
-              <iframe width="100" height="100" :src="product.video" title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen />
+            <SwiperSlide v-if="product.videoId" class="product__swiper-item">
+              <BaseEmbeddedVideo :id="product.videoId" label="Play: Keynote (Google I/O '18)"
+                :videoLink="`https://www.youtube.com/watch?v=${product.videoId}`"
+                :bg-image="`https://i.ytimg.com/vi_webp/${product.videoId}/maxresdefault.webp`"></BaseEmbeddedVideo>
             </SwiperSlide>
             <SwiperSlide v-for="(slide, idx) in product.photos" :key="idx" class="product__swiper-item">
               <img :src="slide" width="100" height="100" loading="lazy" />
@@ -43,10 +43,10 @@
           </Swiper>
         </div>
 
-        <div v-if="isCourse" class="product__course-intro">
-          <iframe width="773" height="424" :src="product.video" title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen />
+        <div v-if="isCourse && product?.videoId">
+          <BaseEmbeddedVideo :id="product.videoId" label="Play: Keynote (Google I/O '18)"
+            :videoLink="`https://www.youtube.com/watch?v=${product.videoId}`"
+            :bg-image="`https://i.ytimg.com/vi_webp/${product.videoId}/maxresdefault.webp`"></BaseEmbeddedVideo>
         </div>
 
         <div class="product__info">
@@ -188,23 +188,6 @@ const setThumbsSwiper = (swiper: any) => {
   width: 100%
   @include m
     text-align: center
-  & iframe
-    width: 643px
-    height: 440px
-    @include xl
-      width: 448px
-      height: 306px
-    @include l
-      width: 340px
-      height: 239px
-    @include m
-      width: 80%
-      height: 300px
-    @media screen and (max-width: 600px)
-      width: 100%
-      height: 220px
-    @include s
-      height: 219px
 
 .product__swiper
   width: 100%

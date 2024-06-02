@@ -22,7 +22,7 @@ export interface IProduct {
   sizesImg?: string
   selectedSize?: ISize
   shortDescription?: string
-  video?: string
+  videoId?: string
   preOrder?: string
 }
 

@@ -25,97 +25,45 @@
         </div>
 
         <div class="youtube__swiper">
-          <Icon
-            name="mdi-light:chevron-left"
-            class="prev-btn"
-            width="54"
-            height="54"
-          />
-          <Swiper
-            :modules="[SwiperNavigation, SwiperPagination]"
-            :centered-slides="true"
-            :slides-per-view="1"
-            :pagination="{ clickable: true }"
-            :loop="true"
-            :navigation="{
+          <Icon name="mdi-light:chevron-left" class="prev-btn" width="54" height="54" />
+          <Swiper :modules="[SwiperNavigation, SwiperPagination]" :centered-slides="true"
+            :slides-per-view="1" :pagination="{ clickable: true }" :loop="true" :navigation="{
               enabled: true,
               nextEl: '.next-btn',
               prevEl: '.prev-btn'
-            }"
-          >
+            }">
             <SwiperSlide class="youtube__swiper-item">
-              <iframe
-                width="773"
-                height="424"
-                src="https://www.youtube.com/embed/QAURIxNwiSU?si=rpY1yBJrF3sAIyVg"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              />
+              <BaseEmbeddedVideo id="QAURIxNwiSU" label="Play: Keynote (Google I/O '18)"
+                videoLink="https://www.youtube.com/watch?v=QAURIxNwiSU"
+                bg-image="https://i.ytimg.com/vi_webp/QAURIxNwiSU/maxresdefault.webp"></BaseEmbeddedVideo>
             </SwiperSlide>
             <SwiperSlide class="youtube__swiper-item">
-              <iframe
-                width="773"
-                height="424"
-                src="https://www.youtube.com/embed/TCB3o-Rog7w?si=qkJUn50EcoEmC9zO"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              />
+              <BaseEmbeddedVideo id="TCB3o-Rog7w" label="Play: Keynote (Google I/O '18)"
+                videoLink="https://www.youtube.com/watch?v=TCB3o-Rog7w"
+                bg-image="https://i.ytimg.com/vi_webp/TCB3o-Rog7w/maxresdefault.webp"></BaseEmbeddedVideo>
             </SwiperSlide>
             <SwiperSlide class="youtube__swiper-item">
-              <iframe
-                width="773"
-                height="424"
-                src="https://www.youtube.com/embed/9b6AG0XqGRc?si=3gdypa5sI_W2BHfW"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              />
+              <BaseEmbeddedVideo id="9b6AG0XqGRc" label="Play: Keynote (Google I/O '18)"
+                videoLink="https://www.youtube.com/watch?v=9b6AG0XqGRc"
+                bg-image="https://i.ytimg.com/vi_webp/9b6AG0XqGRc/maxresdefault.webp"></BaseEmbeddedVideo>
             </SwiperSlide>
             <SwiperSlide class="youtube__swiper-item">
-              <iframe
-                width="773"
-                height="424"
-                src="https://www.youtube.com/embed/pcHIiXtsD3o?si=9BFfxuszko_rucwp"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              />
+              <BaseEmbeddedVideo id="pcHIiXtsD3o" label="Play: Keynote (Google I/O '18)"
+                videoLink="https://www.youtube.com/watch?v=pcHIiXtsD3o"
+                bg-image="https://i.ytimg.com/vi_webp/pcHIiXtsD3o/maxresdefault.webp"></BaseEmbeddedVideo>
             </SwiperSlide>
             <SwiperSlide class="youtube__swiper-item">
-              <iframe
-                width="773"
-                height="424"
-                src="https://www.youtube.com/embed/HUOvQ2e1CW4?si=Lv79RctD8KbTosXJ"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              />
+              <BaseEmbeddedVideo id="HUOvQ2e1CW4" label="Play: Keynote (Google I/O '18)"
+                videoLink="https://www.youtube.com/watch?v=HUOvQ2e1CW4"
+                bg-image="https://i.ytimg.com/vi_webp/HUOvQ2e1CW4/maxresdefault.webp"></BaseEmbeddedVideo>
             </SwiperSlide>
             <SwiperSlide class="youtube__swiper-item">
-              <iframe
-                width="773"
-                height="424"
-                src="https://www.youtube.com/embed/Mqa60lgJ1Bk?si=0W1_Vijaxeh23Ixe"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              />
+              <BaseEmbeddedVideo id="Mqa60lgJ1Bk" label="Play: Keynote (Google I/O '18)"
+                videoLink="https://www.youtube.com/watch?v=Mqa60lgJ1Bk"
+                bg-image="https://i.ytimg.com/vi_webp/Mqa60lgJ1Bk/maxresdefault.webp"></BaseEmbeddedVideo>
             </SwiperSlide>
           </Swiper>
-          <Icon
-            name="mdi-light:chevron-right"
-            class="next-btn"
-            width="54"
-            height="54"
-          />
+          <Icon name="mdi-light:chevron-right" class="next-btn" width="54" height="54" />
 
           <div class="about-us__slider-pagination">
             <div class="about-us__slider-pagination"></div>
@@ -126,7 +74,8 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 
 <style lang="sass" scoped>
 .youtube__inner
@@ -218,7 +167,6 @@
 .youtube__swiper-item
   position: relative
   width: 100%
-  padding-bottom: 56.25%
   overflow: hidden
   & iframe
     position: absolute
