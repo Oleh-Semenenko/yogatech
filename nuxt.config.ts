@@ -5,7 +5,7 @@ const { products, courses } = useShop()
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  ssr: true,
+  ssr: false,
   nitro: {
     hooks: {
       async 'prerender:routes'(routes) {
@@ -37,7 +37,7 @@ export default defineNuxtConfig({
       }
     }
   },
-  css: ['@/assets/styles/main.sass'],
+  css: ['@/assets/styles/main.sass', '@/node_modules/lite-youtube-embed/src/lite-yt-embed.css'],
   app: {
     head: {
       title: 'YogaTech',
@@ -63,6 +63,12 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       baseURL: process.env.BASE_URL
+    }
+  },
+  plugins: ['@/plugins/youtube.client.js'],
+  appConfig: {
+    compilerOptions: {
+      isCustomElement: (tag: string) => ['lite-youtube'].includes(tag)
     }
   }
 })
