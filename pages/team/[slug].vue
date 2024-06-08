@@ -8,7 +8,7 @@
               :slides-per-view="1" :effect="'fade'" :autoplay="{
                 delay: 3000,
                 pauseOnMouseEnter: true,
-              }" :pagination="{ clickable: true }" :loop="true" >
+              }" :pagination="{ clickable: true }" :loop="true">
               <SwiperSlide v-for="(photo, idx) in teammate.photos" :key="idx">
                 <img :src="photo" width="922" height="627" alt="Teammate photo" />
               </SwiperSlide>
@@ -40,13 +40,13 @@
       </div>
     </div>
 
-    <div v-if="teammate?.video" class="person__intro section">
+    <div v-if="teammate?.videoId" class="person__intro section">
       <div class="container">
         <BaseMandala />
-        <iframe class="person__intro-video" width="772" height="424" :src="teammate.video" title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
+        <BaseEmbeddedVideo class="person__intro-video" :id="teammate.videoId"
+          :title="teammate?.videoTitle ? teammate.videoTitle : ''"
+          :videoLink="`https://www.youtube.com/watch?v=${teammate.videoId}`"
+          :bg-image="`https://i.ytimg.com/vi_webp/${teammate.videoId}/maxresdefault.webp`"></BaseEmbeddedVideo>
       </div>
     </div>
 

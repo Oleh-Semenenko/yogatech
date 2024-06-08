@@ -7,18 +7,26 @@
         <div v-if="!isCourse" class="product__swiper">
           <div class="product__swiper--main">
             <Icon name="mdi-light:chevron-left" class="prev-btn" width="54" height="54" />
-            <Swiper :modules="[SwiperThumbs, SwiperNavigation, SwiperPagination]" :navigation="{
+            <Swiper :modules="[SwiperThumbs, SwiperNavigation, SwiperPagination, SwiperAutoplay]" :autoplay="{
+              delay: 3000,
+              pauseOnMouseEnter: true,
+            }" :navigation="{
               enabled: true,
               nextEl: '.next-btn',
               prevEl: '.prev-btn'
             }" :pagination="{ clickable: true }" :loop="true" :thumbs="{ swiper: thumbsSwiper }" class="main-swiper">
-              <SwiperSlide v-if="product.videoId" class="product__swiper-item">
-                <BaseEmbeddedVideo :id="product.videoId" label="Play: Keynote (Google I/O '18)"
+              <SwiperSlide v-if="product.videoId && !product.lastVideo" class="product__swiper-item">
+                <BaseEmbeddedVideo :id="product.videoId" :title="product?.videoTitle ? product.videoTitle : ''"
                   :videoLink="`https://www.youtube.com/watch?v=${product.videoId}`"
                   :bg-image="`https://i.ytimg.com/vi_webp/${product.videoId}/maxresdefault.webp`"></BaseEmbeddedVideo>
               </SwiperSlide>
               <SwiperSlide v-for="(slide, idx) in product.photos" :key="idx" class="product__swiper-item">
                 <img :src="slide" width="643" height="440" loading="lazy" />
+              </SwiperSlide>
+              <SwiperSlide v-if="product.videoId && product.lastVideo" class="product__swiper-item">
+                <BaseEmbeddedVideo :id="product.videoId" :title="product?.videoTitle ? product.videoTitle : ''"
+                  :videoLink="`https://www.youtube.com/watch?v=${product.videoId}`"
+                  :bg-image="`https://i.ytimg.com/vi_webp/${product.videoId}/maxresdefault.webp`"></BaseEmbeddedVideo>
               </SwiperSlide>
             </Swiper>
             <Icon name="mdi-light:chevron-right" class="next-btn" width="54" height="54" />
@@ -32,19 +40,24 @@
               spaceBetween: 16
             }
           }" :loop="true" :slidesPerView="4" class="product__swiper--secondary">
-            <SwiperSlide v-if="product.videoId" class="product__swiper-item">
-              <BaseEmbeddedVideo :id="product.videoId" label="Play: Keynote (Google I/O '18)"
+            <SwiperSlide v-if="product.videoId && !product.lastVideo" class="product__swiper-item">
+              <BaseEmbeddedVideo :id="product.videoId" :title="product?.videoTitle ? product.videoTitle : ''"
                 :videoLink="`https://www.youtube.com/watch?v=${product.videoId}`"
                 :bg-image="`https://i.ytimg.com/vi_webp/${product.videoId}/maxresdefault.webp`"></BaseEmbeddedVideo>
             </SwiperSlide>
             <SwiperSlide v-for="(slide, idx) in product.photos" :key="idx" class="product__swiper-item">
               <img :src="slide" width="100" height="100" loading="lazy" />
             </SwiperSlide>
+            <SwiperSlide v-if="product.videoId && product.lastVideo" class="product__swiper-item">
+              <BaseEmbeddedVideo :id="product.videoId" :title="product?.videoTitle ? product.videoTitle : ''"
+                :videoLink="`https://www.youtube.com/watch?v=${product.videoId}`"
+                :bg-image="`https://i.ytimg.com/vi_webp/${product.videoId}/maxresdefault.webp`"></BaseEmbeddedVideo>
+            </SwiperSlide>
           </Swiper>
         </div>
 
-        <div v-if="isCourse && product?.videoId">
-          <BaseEmbeddedVideo :id="product.videoId" label="Play: Keynote (Google I/O '18)"
+        <div v-if="isCourse && product?.videoId" class="product__swiper--main">
+          <BaseEmbeddedVideo :id="product.videoId" :title="(product as ICourse).videoTitle"
             :videoLink="`https://www.youtube.com/watch?v=${product.videoId}`"
             :bg-image="`https://i.ytimg.com/vi_webp/${product.videoId}/maxresdefault.webp`"></BaseEmbeddedVideo>
         </div>
@@ -230,6 +243,9 @@ const setThumbsSwiper = (swiper: any) => {
       height: 306px
     @include l
       height: 239px
+
+      & .product__swiper-item
+        height: 100%
 
   & img,
   & iframe
