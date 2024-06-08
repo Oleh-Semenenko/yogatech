@@ -26,39 +26,39 @@
 
         <div class="youtube__swiper">
           <Icon name="mdi-light:chevron-left" class="prev-btn" width="54" height="54" />
-          <Swiper :modules="[SwiperNavigation, SwiperPagination]" :centered-slides="true"
-            :slides-per-view="1" :pagination="{ clickable: true }" :loop="true" :navigation="{
+          <Swiper :modules="[SwiperNavigation, SwiperPagination]" :centered-slides="true" :slides-per-view="1"
+            :pagination="{ clickable: true }" :loop="true" :navigation="{
               enabled: true,
               nextEl: '.next-btn',
               prevEl: '.prev-btn'
             }">
             <SwiperSlide class="youtube__swiper-item">
-              <BaseEmbeddedVideo id="QAURIxNwiSU" label="Play: Keynote (Google I/O '18)"
+              <BaseEmbeddedVideo id="QAURIxNwiSU" title="Визначення Йоги | Філософія Йоги | YOGATECH"
                 videoLink="https://www.youtube.com/watch?v=QAURIxNwiSU"
                 bg-image="https://i.ytimg.com/vi_webp/QAURIxNwiSU/maxresdefault.webp"></BaseEmbeddedVideo>
             </SwiperSlide>
             <SwiperSlide class="youtube__swiper-item">
-              <BaseEmbeddedVideo id="TCB3o-Rog7w" label="Play: Keynote (Google I/O '18)"
+              <BaseEmbeddedVideo id="TCB3o-Rog7w" title="Аутогенне Тренування | Повний Курс Українською | YOGATECH"
                 videoLink="https://www.youtube.com/watch?v=TCB3o-Rog7w"
                 bg-image="https://i.ytimg.com/vi_webp/TCB3o-Rog7w/maxresdefault.webp"></BaseEmbeddedVideo>
             </SwiperSlide>
             <SwiperSlide class="youtube__swiper-item">
-              <BaseEmbeddedVideo id="9b6AG0XqGRc" label="Play: Keynote (Google I/O '18)"
+              <BaseEmbeddedVideo id="9b6AG0XqGRc" title="Як Працюють Чакри? | Без Шизи | YOGATECH"
                 videoLink="https://www.youtube.com/watch?v=9b6AG0XqGRc"
                 bg-image="https://i.ytimg.com/vi_webp/9b6AG0XqGRc/maxresdefault.webp"></BaseEmbeddedVideo>
             </SwiperSlide>
             <SwiperSlide class="youtube__swiper-item">
-              <BaseEmbeddedVideo id="pcHIiXtsD3o" label="Play: Keynote (Google I/O '18)"
+              <BaseEmbeddedVideo id="pcHIiXtsD3o" title="Медитація 2.0 | Повний Практичний Курс | YOGATECH"
                 videoLink="https://www.youtube.com/watch?v=pcHIiXtsD3o"
                 bg-image="https://i.ytimg.com/vi_webp/pcHIiXtsD3o/maxresdefault.webp"></BaseEmbeddedVideo>
             </SwiperSlide>
             <SwiperSlide class="youtube__swiper-item">
-              <BaseEmbeddedVideo id="HUOvQ2e1CW4" label="Play: Keynote (Google I/O '18)"
+              <BaseEmbeddedVideo id="HUOvQ2e1CW4" title="Як Обрати Килимок Для Йоги | YOGATECH"
                 videoLink="https://www.youtube.com/watch?v=HUOvQ2e1CW4"
                 bg-image="https://i.ytimg.com/vi_webp/HUOvQ2e1CW4/maxresdefault.webp"></BaseEmbeddedVideo>
             </SwiperSlide>
             <SwiperSlide class="youtube__swiper-item">
-              <BaseEmbeddedVideo id="Mqa60lgJ1Bk" label="Play: Keynote (Google I/O '18)"
+              <BaseEmbeddedVideo id="Mqa60lgJ1Bk" title="Найкраща Перша Книга Про Йогу | 'Технологія Йоги' | YOGATECH"
                 videoLink="https://www.youtube.com/watch?v=Mqa60lgJ1Bk"
                 bg-image="https://i.ytimg.com/vi_webp/Mqa60lgJ1Bk/maxresdefault.webp"></BaseEmbeddedVideo>
             </SwiperSlide>

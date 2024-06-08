@@ -1,11 +1,10 @@
 <template>
   <div class="lty-wrapper">
     <ClientOnly>
-      <lite-youtube :videoid="id" :playlabel="label" params="enablejsapi=1"
+      <lite-youtube :videoid="id" :title="title" params="enablejsapi=1"
         :style="{ backgroundImage: 'url(' + bgImage + ')', width: 100, height: 100 }" js-api @click="handleClick"
         ref="playerRef">
-        <a :href="videoLink" class="lty-playbtn">
-        </a>
+        <a :href="videoLink" class="lty-playbtn"></a>
       </lite-youtube>
     </ClientOnly>
   </div>
@@ -13,7 +12,7 @@
 <script setup lang="ts">
 defineProps<{
   id: string,
-  label: string,
+  title: string,
   videoLink: string,
   bgImage: string,
 }>()

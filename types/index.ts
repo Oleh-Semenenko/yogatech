@@ -24,6 +24,8 @@ export interface IProduct {
   shortDescription?: string
   videoId?: string
   preOrder?: string
+  lastVideo?: boolean
+  videoTitle?: string
 }
 
 export interface ICourse extends IProduct {
@@ -31,6 +33,7 @@ export interface ICourse extends IProduct {
   levelUA: string
   lectures: string[]
   author: string
+  videoTitle: string
 }
 
 export interface ISelectedProduct extends IProduct {
@@ -70,11 +73,12 @@ export interface ITeammate {
   name: string
   description: string
   motivation: string
-  video?: string
+  videoId?: string
   achievements: string[]
   intro: string
   slug: string
   socials: ISocial[]
+  videoTitle?: string
 }
 
 export interface IPartner extends ICard {
