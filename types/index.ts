@@ -26,6 +26,9 @@ export interface IProduct {
   preOrder?: string
   lastVideo?: boolean
   videoTitle?: string
+  salePeriod?: string
+  newPrice?: number,
+  newPaymentLink?: string
 }
 
 export interface ICourse extends IProduct {
