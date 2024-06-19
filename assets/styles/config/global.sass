@@ -7,7 +7,6 @@ html, body, #__nuxt, #__layout
   min-height: 100vh
   width: 100vw
 
-
 html
   scroll-behavior: smooth
 
@@ -72,7 +71,7 @@ a.btn
 
   @include xl
     width: 1152px
-  
+
   @include l
     width: 736px
 
@@ -158,6 +157,12 @@ svg path
 .team__list-more-btn svg path
   fill: var(--gray-color)
 
+.sale
+  opacity: 0.5
+  text-decoration: line-through
+.new
+  color: red !important
+
 // Swiper
 
 .swiper-pagination-bullet
@@ -186,10 +191,10 @@ svg.icon.next-btn
   &.swiper-button-disabled
     opacity: 0.5
     cursor: not-allowed
-  color: var(--gray-color)
-  flex-shrink: 0
+    color: var(--gray-color)
+    flex-shrink: 0
   @include m
-    display: none 
+    display: none
 
 // Titles
 
@@ -231,7 +236,6 @@ h2
     font-size: 20px
   @include m
     font-size: 16px
-
 
 h3,
 .text-3

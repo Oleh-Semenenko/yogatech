@@ -17,11 +17,22 @@
     </p>
 
     <div class="goods__controller">
-      <p v-if="product?.price" class="goods__price text-2">{{ product.price }} грн</p>
+      <div class="goods__price-wrapper">
+        <p v-if="showNewPrice" class="goods__price text-2 new">{{ product.newPrice }} грн
+        </p>
+        <p v-if="product?.price" class="goods__price text-2" :class="{ sale: showNewPrice }">{{ product.price }}
+          грн
+        </p>
+      </div>
       <p v-if="product?.preOrder" class="goods__price">{{ product.preOrder }}</p>
-      <NuxtLink v-if="!withoutBtn" :to="product.payment_link" class="btn orange-type" target="_blanc" @click.stop>
-        Придбати
-      </NuxtLink>
+
+      <div class="goods__buy-wrapper">
+        <BaseCountdown v-if="showCountdown && product.salePeriod" :countdownEndTimestamp="new Date(product.salePeriod)"
+          @countdownEnded="handleCountdownEnded" />
+        <NuxtLink v-if="!withoutBtn" :to="paymentLink" class="btn orange-type" target="_blanc" @click.stop>
+          Придбати
+        </NuxtLink>
+      </div>
     </div>
   </li>
 </template>
@@ -34,6 +45,15 @@ const props = defineProps<{
   group: ProductGroup
   withoutBtn?: boolean
 }>()
+
+const showNewPrice = ref(!!props.product.newPrice);
+const showCountdown = ref(!!props.product.salePeriod);
+const paymentLink = computed(() => showNewPrice.value && props.product.newPaymentLink ? props.product.newPaymentLink : props.product.payment_link)
+
+const handleCountdownEnded = () => {
+  showNewPrice.value = false;
+  showCountdown.value = false;
+};
 </script>
 
 <style lang="sass" scoped>
@@ -84,6 +104,12 @@ const props = defineProps<{
   font-size: 18px
   @include m
     font-size: 16px
+
+.goods__price-wrapper,
+.goods__buy-wrapper
+  display: flex
+  flex-direction: column
+  gap: 8px
 
 .goods__price
   font-weight: 700

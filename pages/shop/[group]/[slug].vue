@@ -67,7 +67,13 @@
             <h3>
               {{ title }}
             </h3>
-            <p v-if="product?.price" class="text-2">{{ product.price }} грн</p>
+            <div class="product__info-price-wrapper">
+              <p v-if="product?.price" class="text-2" :class="{ sale: showNewPrice }">{{ product.price }} грн</p>
+              <p v-if="showNewPrice" class="text-2 new">{{ product.newPrice }} грн
+              </p>
+              <BaseCountdown v-if="showCountdown && product.salePeriod"
+                :countdownEndTimestamp="new Date(product.salePeriod)" @countdownEnded="handleCountdownEnded" />
+            </div>
             <p v-if="product?.preOrder" class="text-2">{{ product.preOrder }}</p>
           </div>
 
@@ -90,7 +96,7 @@
             </Teleport>
           </div>
 
-          <NuxtLink :to="product.payment_link" class="btn product__add-product-btn orange-type" target="_blank">
+          <NuxtLink :to="paymentLink" class="btn product__add-product-btn orange-type" target="_blank">
             Придбати
           </NuxtLink>
 
@@ -154,6 +160,15 @@ const moreProductsList = getProductsExceptSelected(
   route.params.slug as string,
   route.params.group as ProductGroup
 )
+
+const showNewPrice = ref(!!product.newPrice);
+const showCountdown = ref(!!product.salePeriod);
+const paymentLink = computed(() => showNewPrice.value && product.newPaymentLink ? product.newPaymentLink : product.payment_link)
+
+const handleCountdownEnded = () => {
+  showNewPrice.value = false;
+  showCountdown.value = false;
+};
 
 const title = computed(() => {
   return route.params.group === ProductGroup.COURSE
@@ -292,6 +307,20 @@ const setThumbsSwiper = (swiper: any) => {
   & p
     color: var(--primary-text-color)
     font-weight: 700
+
+.product__info-price-wrapper
+  display: flex
+  gap: 20px
+  align-items: center
+  @include l
+    gap: 8px
+  & .countdown
+    display: inline-flex
+    margin-left: auto
+    justify-content: flex-end
+    font-size: 40px
+    @include l
+      font-size: 32px
 
 .product__choose-size-title
   color: var(--gray-color)
