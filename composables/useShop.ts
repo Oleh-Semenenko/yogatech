@@ -268,7 +268,10 @@ export default function useShop() {
         "Лекція 9 - Бонус. Аутогенне тренування, як мікс медитації та самогіпнозу"
       ],
       author: "від Михайла Ахекяна",
-      videoTitle: "Медитація 2.0 | Повний Практичний Курс | YOGATECH"
+      videoTitle: "Медитація 2.0 | Повний Практичний Курс | YOGATECH",
+      salePeriod: "2024-06-20T15:00:00",
+      newPrice: 1000,
+      newPaymentLink: "https://secure.wayforpay.com/payment/s3ef476f78170"
     },
     {
       id: 2,
@@ -295,7 +298,10 @@ export default function useShop() {
         "Урок 7 - Збірна практика усіх попередніх частин"
       ],
       author: "від Михайла Ахекяна",
-      videoTitle: "Аутогенне Тренування | Повний Курс Українською | YOGATECH"
+      videoTitle: "Аутогенне Тренування | Повний Курс Українською | YOGATECH",
+      salePeriod: "2024-06-20T15:00:00",
+      newPrice: 750,
+      newPaymentLink: "https://secure.wayforpay.com/payment/scf64a8c7d2e8"
     },
     {
       id: 3,
@@ -322,7 +328,10 @@ export default function useShop() {
         "Лекція 8 - Харчування"
       ],
       author: "від Михайла Ахекяна",
-      videoTitle: "Курс 'Інтро в йогу' | YOGATECH"
+      videoTitle: "Курс 'Інтро в йогу' | YOGATECH",
+      salePeriod: "2024-06-20T15:00:00",
+      newPrice: 400,
+      newPaymentLink: "https://secure.wayforpay.com/payment/s93e2f23e4e1c"
     }
   ]
 
