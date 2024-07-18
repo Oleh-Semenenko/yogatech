@@ -269,7 +269,7 @@ export default function useShop() {
       ],
       author: "від Михайла Ахекяна",
       videoTitle: "Медитація 2.0 | Повний Практичний Курс | YOGATECH",
-      salePeriod: "2024-06-20T15:00:00",
+      salePeriod: "2024-06-22T00:00:00",
       newPrice: 1000,
       newPaymentLink: "https://secure.wayforpay.com/payment/s3ef476f78170"
     },
@@ -299,7 +299,7 @@ export default function useShop() {
       ],
       author: "від Михайла Ахекяна",
       videoTitle: "Аутогенне Тренування | Повний Курс Українською | YOGATECH",
-      salePeriod: "2024-06-20T15:00:00",
+      salePeriod: "2024-06-22T00:00:00",
       newPrice: 750,
       newPaymentLink: "https://secure.wayforpay.com/payment/scf64a8c7d2e8"
     },
@@ -329,7 +329,7 @@ export default function useShop() {
       ],
       author: "від Михайла Ахекяна",
       videoTitle: "Курс 'Інтро в йогу' | YOGATECH",
-      salePeriod: "2024-06-20T15:00:00",
+      salePeriod: "2024-06-22T00:00:00",
       newPrice: 400,
       newPaymentLink: "https://secure.wayforpay.com/payment/s93e2f23e4e1c"
     }

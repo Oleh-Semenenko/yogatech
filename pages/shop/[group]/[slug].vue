@@ -212,6 +212,9 @@ const setThumbsSwiper = (swiper: any) => {
     grid-template-columns: 100%
     grid-template-rows: repeat(2, auto)
 
+.main-swiper 
+  width: 100%
+
 .product__course-intro
   width: 100%
   @include m
@@ -270,6 +273,7 @@ const setThumbsSwiper = (swiper: any) => {
 
 .product__swiper--secondary
   width: calc( 100% - 54px * 2 )
+  margin: 0
   @include l
     display: none
 
