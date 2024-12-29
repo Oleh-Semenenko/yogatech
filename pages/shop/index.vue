@@ -56,7 +56,12 @@
             Для участі у менторській програмі заповніть, будь ласка, заявку і ми
             з вами зв’яжемось!
           </p>
-          <NuxtLink to="https://forms.gle/CtWM1CpQkXp51JbS6" target="_blank" class="btn orange-type">Заповнити заявку</NuxtLink>
+          <NuxtLink
+            to="https://forms.gle/CtWM1CpQkXp51JbS6"
+            target="_blank"
+            class="btn orange-type"
+            >Заповнити заявку</NuxtLink
+          >
         </div>
       </div>
     </div>
@@ -74,14 +79,14 @@
         </ul>
       </div>
     </div>
-
-    <ShopSection
+    <!-- TEMPORARY: removed RYT-1000 course -->
+    <!-- <ShopSection
       title="Навчання “Курс підготовки викладачів RYT1000”"
       text="Ультимативний курс для інструкторів, що у 5 разів більший за стандартну міжнародну сертифікацію у 200 годин! Пориньте у світ йоги та дослідіть її глибини у затишних Карпатах!"
       link="/ryt1000"
       blue
       withBtn
-    />
+    /> -->
 
     <ShopSection
       title="Конференція"
@@ -93,14 +98,29 @@
 </template>
 
 <script setup lang="ts">
-import { ProductGroup } from '~/types'
+import { ProductGroup } from '~/types';
 
-const { products, courses } = useShop()
+const { products, courses } = useShop();
 const levels = [
-  { id: 1, icon: '/images/gear-light.svg', value: 'легкий (лекційні матеріали не потребують попередньої обізнаності у темі, а весь курс можна засвоїти не виконуючи домашніх завдань),' },
-  { id: 2, icon: '/images/gear-middle.svg', value: 'середній (лекційні матеріали не потребують особливої обізнаності у темі, однак для засвоєння курсу необхідно виконувати домашні завдання),' },
-  { id: 3, icon: '/images/gear-hard.svg', value: 'складний (лекційні матеріали потребують обізнаності у темі, а для засвоєння курсу необхідно виконувати домашні завдання).' }
-]
+  {
+    id: 1,
+    icon: '/images/gear-light.svg',
+    value:
+      'легкий (лекційні матеріали не потребують попередньої обізнаності у темі, а весь курс можна засвоїти не виконуючи домашніх завдань),'
+  },
+  {
+    id: 2,
+    icon: '/images/gear-middle.svg',
+    value:
+      'середній (лекційні матеріали не потребують особливої обізнаності у темі, однак для засвоєння курсу необхідно виконувати домашні завдання),'
+  },
+  {
+    id: 3,
+    icon: '/images/gear-hard.svg',
+    value:
+      'складний (лекційні матеріали потребують обізнаності у темі, а для засвоєння курсу необхідно виконувати домашні завдання).'
+  }
+];
 </script>
 
 <style lang="sass" scoped>
@@ -145,7 +165,7 @@ const levels = [
     margin-bottom: 12px
     flex-direction: column
     align-items: center
-  
+
   & span
     flex-shrink: 0
 
