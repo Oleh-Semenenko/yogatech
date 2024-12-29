@@ -22,9 +22,10 @@
               >Команда та співпраця</NuxtLink
             >
           </li>
-          <li class="nav__item">
+          <!-- TEMPORARY: removed RYT-1000 course -->
+          <!-- <li class="nav__item">
             <NuxtLink to="/ryt1000">Викладацький курс</NuxtLink>
-          </li>
+          </li> -->
           <li class="nav__item">
             <NuxtLink
               to="/fest"
@@ -76,8 +77,16 @@
         </ul>
 
         <div class="creators">
-          Розробка та підтримка сайту:<br /><NuxtLink to="https://www.instagram.com/miriam_khmarska_yogini/" target="_blank">Міріам Хмарська, </NuxtLink>
-          <NuxtLink to="https://www.linkedin.com/in/oleh-semenenko" target="_blank">Олег Семененко</NuxtLink>
+          Розробка та підтримка сайту:<br /><NuxtLink
+            to="https://www.instagram.com/miriam_khmarska_yogini/"
+            target="_blank"
+            >Міріам Хмарська,
+          </NuxtLink>
+          <NuxtLink
+            to="https://www.linkedin.com/in/oleh-semenenko"
+            target="_blank"
+            >Олег Семененко</NuxtLink
+          >
         </div>
       </div>
     </div>
