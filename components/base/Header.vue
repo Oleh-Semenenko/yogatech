@@ -2,7 +2,12 @@
   <div class="header" :class="{ 'without-blur': isMobMenuOpen }">
     <div class="container">
       <div class="header__inner">
-        <img src="/images/logo.svg" class="logo" alt="Logo" @click="navigateTo('/')" />
+        <img
+          src="/images/logo.svg"
+          class="logo"
+          alt="Logo"
+          @click="navigateTo('/')"
+        />
 
         <nav class="header__inner-nav">
           <ul class="nav__list">
@@ -14,9 +19,10 @@
                 >Команда та співпраця</NuxtLink
               >
             </li>
-            <li class="nav__item">
+            <!-- TEMPORARY: removed RYT-1000 course -->
+            <!-- <li class="nav__item">
               <NuxtLink to="/ryt1000">Викладацький курс</NuxtLink>
-            </li>
+            </li> -->
             <li class="nav__item">
               <NuxtLink
                 to="/fest"
@@ -75,11 +81,12 @@
                   >Команда та співпраця</NuxtLink
                 >
               </li>
-              <li>
+              <!-- TEMPORARY: removed RYT-1000 course -->
+              <!-- <li>
                 <NuxtLink to="/ryt1000" @click="handleToggleMobMenu"
                   >Викладацький курс</NuxtLink
                 >
-              </li>
+              </li> -->
               <li>
                 <NuxtLink
                   to="/fest"
@@ -123,24 +130,24 @@
 </template>
 
 <script setup lang="ts">
-const route = useRoute()
-const { selectedGoods } = useBasket()
+const route = useRoute();
+const { selectedGoods } = useBasket();
 
-const isBasketOpen = ref(false)
-const isMobMenuOpen = ref(false)
+const isBasketOpen = ref(false);
+const isMobMenuOpen = ref(false);
 
 const handleToggleMobMenu = () => {
-  isMobMenuOpen.value = !isMobMenuOpen.value
+  isMobMenuOpen.value = !isMobMenuOpen.value;
   if (isMobMenuOpen.value) {
-    document.documentElement.style.overflow = 'hidden'
+    document.documentElement.style.overflow = 'hidden';
   } else {
-    document.documentElement.style.overflow = ''
+    document.documentElement.style.overflow = '';
   }
-}
+};
 
 const handleToggleBasketOpen = () => {
-  isBasketOpen.value = !isBasketOpen.value
-}
+  isBasketOpen.value = !isBasketOpen.value;
+};
 </script>
 
 <style lang="sass" scoped>

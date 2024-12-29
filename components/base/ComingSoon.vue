@@ -1,21 +1,28 @@
 <template>
-  <BaseComingSoon />
-  <!-- <div class="fest">
+  <div class="coming-soon">
     <div class="container">
-      <div class="fest__inner">
+      <div class="coming-soon__inner">
         <h1>Дякуємо за інтерес до наших проектів!</h1>
-        <p class="text-2 fest__text-1">Цей проект наразі в розробці і готується до презентації.</p>
+        <p class="text-2 coming-soon__text-1">
+          Цей проект наразі в розробці і готується до презентації.
+        </p>
         <BaseMandala />
-        <p class="text-2 fest__text-2">Слідкувати за анонсами подій та презентаціями нових проектів ви можете на нашому Telegram-каналі <NuxtLink to="https://t.me/yogatechua" target="_blank">https://t.me/yogatechua</NuxtLink></p>
+        <p class="text-2 coming-soon__text-2">
+          Слідкувати за анонсами подій та презентаціями нових проектів ви можете
+          на нашому Telegram-каналі
+          <NuxtLink to="https://t.me/yogatechua" target="_blank"
+            >https://t.me/yogatechua</NuxtLink
+          >
+        </p>
       </div>
     </div>
-  </div> -->
+  </div>
 </template>
 
 <script setup lang="ts"></script>
 
-<!-- <style lang="sass">
-.fest
+<style lang="sass" scoped>
+.coming-soon
   margin: 170px 0
   @include xl
     margin: 100px 0
@@ -24,7 +31,7 @@
   @include m
     margin: 28px 0
 
-.fest__inner
+.coming-soon__inner
   display: flex
   flex-direction: column
   gap: 40px
@@ -36,11 +43,11 @@
   @include m
     gap: 12px
 
-.fest__text-1
+.coming-soon__text-1
   text-align: center
   font-weight: bold
 
-.fest__text-2
+.coming-soon__text-2
   max-width: 64%
   margin-left: auto
   font-weight: bold
@@ -52,7 +59,7 @@
     text-decoration: underline
 
 
-.fest .mandala-wrapper
+.coming-soon .mandala-wrapper
   position: relative
   top: 0
   left: 0
@@ -69,4 +76,4 @@
       left: 42%
     @include l
       left: 47%
-</style> -->
+</style>

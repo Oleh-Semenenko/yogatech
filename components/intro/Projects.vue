@@ -18,22 +18,24 @@
 </template>
 
 <script setup lang="ts">
-import type { ICard } from '~/types'
+import type { ICard } from '~/types';
 
 const projects: ICard[] = [
-  {
-    id: 1,
-    title: 'Викладацький курс RYT-1000',
-    description:
-      "Перетворіть вашу любов до йоги в успішну кар'єру  з нашим провідним курсом. Ваш успіх починається тут.",
-    icon: 'ph:graduation-cap-thin',
-    link: '/ryt1000',
-    linksText: 'Дізнатись більше'
-  },
+  // TEMPORARY: removed RYT-1000 course
+  // {
+  //   id: 1,
+  //   title: 'Викладацький курс RYT-1000',
+  //   description:
+  //     "Перетворіть вашу любов до йоги в успішну кар'єру  з нашим провідним курсом. Ваш успіх починається тут.",
+  //   icon: 'ph:graduation-cap-thin',
+  //   link: '/ryt1000',
+  //   linksText: 'Дізнатись більше'
+  // },
   {
     id: 2,
     title: 'Авторські курси',
-    description: 'Доторкніться до своєї внутрішньої сили через йогу. Найкращі викладачі України поділяться з вами своїми знаннями.',
+    description:
+      'Доторкніться до своєї внутрішньої сили через йогу. Найкращі викладачі України поділяться з вами своїми знаннями.',
     icon: 'ph:brain-thin',
     link: '/shop',
     linksText: 'Дізнатись більше'
@@ -47,7 +49,7 @@ const projects: ICard[] = [
     link: '/shop',
     linksText: 'Дізнатись більше'
   }
-]
+];
 </script>
 
 <style lang="sass" scoped></style>
