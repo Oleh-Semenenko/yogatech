@@ -1,15 +1,31 @@
 <template>
-  <li class="goods" @click.stop="() => navigateTo(`/shop/${group}/${product.slug}`)">
-    <img v-if="group === ProductGroup.COURSE" :src="product.photos[0]" alt="Course wallpaper" />
+  <li
+    class="goods"
+    @click.stop="() => navigateTo(`/shop/${group}/${product.slug}`)"
+  >
+    <img
+      v-if="group === ProductGroup.COURSE"
+      :src="product.photos[0]"
+      alt="Course wallpaper"
+    />
     <ul v-else class="goods__photos-list">
-      <li v-for="(img, idx) in product.photos" :key="idx" class="goods__photos-item">
+      <li
+        v-for="(img, idx) in product.photos"
+        :key="idx"
+        class="goods__photos-item"
+      >
         <img :src="img" alt="Product photo" />
       </li>
     </ul>
 
     <div class="goods__header">
-      <img v-if="(product as ICourse)?.level" :src="`/images/gear-${(product as ICourse).level}.svg`" width="32"
-        height="32" alt="Course level icon" />
+      <img
+        v-if="(product as ICourse)?.level"
+        :src="`/images/gear-${(product as ICourse).level}.svg`"
+        width="32"
+        height="32"
+        alt="Course level icon"
+      />
       <p class="goods__title">{{ product.title }}</p>
     </div>
     <p v-if="product?.shortDescription" class="goods__description">
@@ -18,19 +34,37 @@
 
     <div class="goods__controller">
       <div class="goods__price-wrapper">
-        <p v-if="showNewPrice" class="goods__price text-2 new">{{ product.newPrice }} грн
+        <p v-if="showNewPrice" class="goods__price text-2 new">
+          {{ product.newPrice }} грн
         </p>
-        <p v-if="product?.price" class="goods__price text-2" :class="{ sale: showNewPrice }">{{ product.price }}
+        <p
+          v-if="product?.price"
+          class="goods__price text-2"
+          :class="{ sale: showNewPrice }"
+        >
+          {{ product.price }}
           грн
         </p>
       </div>
-      <p v-if="product?.preOrder" class="goods__price">{{ product.preOrder }}</p>
+      <p v-if="product?.preOrder" class="goods__price">
+        {{ product.preOrder }}
+      </p>
 
       <div class="goods__buy-wrapper">
-        <BaseCountdown v-if="showCountdown && product.salePeriod" :countdownEndTimestamp="new Date(product.salePeriod)"
-          @countdownEnded="handleCountdownEnded" />
-        <NuxtLink v-if="!withoutBtn" :to="paymentLink" class="btn orange-type" target="_blanc" @click.stop>
-          Придбати
+        <BaseCountdown
+          v-if="showCountdown && product.salePeriod"
+          :countdownEndTimestamp="new Date(product.salePeriod)"
+          @countdownEnded="handleCountdownEnded"
+        />
+        <NuxtLink
+          v-if="!withoutBtn"
+          :to="paymentLink"
+          class="btn orange-type goods__buy-btn"
+          target="_blanc"
+          @click.stop
+        >
+          Замовити
+          <Icon name="ph:telegram-logo-thin" width="20" height="20" />
         </NuxtLink>
       </div>
     </div>
@@ -38,17 +72,21 @@
 </template>
 
 <script setup lang="ts">
-import { type IProduct, type ICourse, ProductGroup } from '~/types'
+import { type IProduct, type ICourse, ProductGroup } from '~/types';
 
 const props = defineProps<{
-  product: IProduct | ICourse
-  group: ProductGroup
-  withoutBtn?: boolean
-}>()
+  product: IProduct | ICourse;
+  group: ProductGroup;
+  withoutBtn?: boolean;
+}>();
 
 const showNewPrice = ref(!!props.product.newPrice);
 const showCountdown = ref(!!props.product.salePeriod);
-const paymentLink = computed(() => showNewPrice.value && props.product.newPaymentLink ? props.product.newPaymentLink : props.product.payment_link)
+const paymentLink = computed(() =>
+  showNewPrice.value && props.product.newPaymentLink
+    ? props.product.newPaymentLink
+    : props.product.payment_link
+);
 
 const handleCountdownEnded = () => {
   showNewPrice.value = false;
@@ -122,4 +160,9 @@ const handleCountdownEnded = () => {
   margin-top: 32px
   @include xl
     margin-top: 16px
+
+.goods__buy-btn
+  display: flex
+  align-items: center
+  gap: 8px
 </style>

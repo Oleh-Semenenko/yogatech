@@ -6,6 +6,7 @@ const { products, courses } = useShop()
 export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
+
   nitro: {
     hooks: {
       async 'prerender:routes'(routes) {
@@ -28,6 +29,7 @@ export default defineNuxtConfig({
       }
     }
   },
+
   vite: {
     css: {
       preprocessorOptions: {
@@ -37,7 +39,9 @@ export default defineNuxtConfig({
       }
     }
   },
+
   css: ['@/assets/styles/main.sass', '@/node_modules/lite-youtube-embed/src/lite-yt-embed.css'],
+
   app: {
     head: {
       title: 'YogaTech',
@@ -52,23 +56,31 @@ export default defineNuxtConfig({
       ]
     }
   },
+
   modules: ['nuxt-swiper', 'nuxt-icon', '@nuxtjs/sitemap'],
+
   site: {
     url: 'https://yogatech.com.ua/'
   },
+
   swiper: {
     styleLang: 'scss',
     modules: ['navigation', 'pagination', 'autoplay', 'thumbs', 'effect-fade']
   },
+
   runtimeConfig: {
     public: {
       baseURL: process.env.BASE_URL
     }
   },
+
   plugins: ['@/plugins/youtube.client.js'],
+
   appConfig: {
     compilerOptions: {
       isCustomElement: (tag: string) => ['lite-youtube'].includes(tag)
     }
-  }
+  },
+
+  compatibilityDate: '2025-02-13'
 })
